@@ -1,0 +1,59 @@
+\begin{thebibliography}{8}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Anděl(1998)]{Andel98}
+{\sc Anděl, J.} (1998).
+\newblock \emph{Statistické metody}.
+\newblock Druhé přepracované vydání. Matfyzpress, Praha.
+\newblock ISBN 80-85863-27-8.
+
+\bibitem[Anděl(2007)]{Andel07}
+{\sc Anděl, J.} (2007).
+\newblock \emph{Základy matematické statistiky}.
+\newblock Druhé opravené vydání. Matfyzpress, Praha.
+\newblock ISBN 80-7378-001-1.
+
+\bibitem[Cox(1972)]{Cox72}
+{\sc Cox, D.~R.} (1972).
+\newblock Regression models and life-tables (with {D}iscussion).
+\newblock \emph{Journal of the Royal Statistical Society, Series B}, {\bf
+  34}\penalty0 (2), \penalty0 187--220.
+
+\bibitem[Dempster a~kol.(1977)Dempster, Laird a Rubin]{DempsterLairdRubin77}
+{\sc Dempster, A.~P., Laird, N.~M. {\rm a} Rubin, D.~B.} (1977).
+\newblock Maximum likelihood from incomplete data via the {EM} algorithm.
+\newblock \emph{Journal of the Royal Statistical Society, Series B}, {\bf
+  39}\penalty0 (1), \penalty0 1--38.
+
+\bibitem[Genberg a~kol.(2008)Genberg, Kulich, Kawichai, Modiba, Chingono,
+  Kilonzo, Richter, Pettifor, Sweat a Celentano]{Genberget08}
+{\sc Genberg, B.~L., Kulich, M., Kawichai, S., Modiba, P., Chingono, A.,
+  Kilonzo, G.~P., Richter, L., Pettifor, A., Sweat, M. {\rm a} Celentano,
+  D.~D.} (2008).
+\newblock {HIV} risk behaviors in sub-{S}aharan {A}frica and {N}orthern
+  {T}hailand: {B}aseline behavioral data from project {A}ccept.
+\newblock \emph{Journal of Acquired Immune Deficiency Syndrome}, {\bf 49},
+  \penalty0 309--319.
+
+\bibitem[Kaplan a Meier(1958)]{KaplanMeier58}
+{\sc Kaplan, E.~L. {\rm a} Meier, P.} (1958).
+\newblock Nonparametric estimation from incomplete observations.
+\newblock \emph{Journal of the American Statistical Association}, {\bf
+  53}\penalty0 (282), \penalty0 457--481.
+
+\bibitem[Lehmann a Casella(1998)]{LehmannCasella98}
+{\sc Lehmann, E.~L. {\rm a} Casella, G.} (1998).
+\newblock \emph{Theory of Point Estimation}.
+\newblock {S}econd {E}dition. Springer-Verlag, New York.
+\newblock ISBN 0-387-98502-6.
+
+\bibitem[Student(1908)]{Student08}
+{\sc Student} (1908).
+\newblock On the probable error of the mean.
+\newblock \emph{Biometrika}, {\bf 6}, \penalty0 1--25.
+
+\end{thebibliography}
