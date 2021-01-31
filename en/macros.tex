@@ -62,7 +62,10 @@
 \DefineVerbatimEnvironment{code}{Verbatim}{fontsize=\small, frame=single}
 
 %%% The field of all real and natural numbers
+\renewcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
 
 %%% Useful operators for statistics and probability
@@ -85,3 +88,35 @@
 %%% Various table goodies
 \newcommand{\pulrad}[1]{\raisebox{1.5ex}[0pt]{#1}}
 \newcommand{\mc}[1]{\multicolumn{1}{c}{#1}}
+
+
+%%% Custom commands
+\renewcommand{\d}[1]{\, \mathrm{d}#1 \,}
+\renewcommand{\i}{\mathrm{i}}
+\newcommand{\Hilb}{\mathcal{H}}
+\newcommand{\Domain}{\mathrm{D}}
+\newcommand{\norm}[1]{\big\lVert #1 \big\rVert}
+\newcommand{\Hf}{\mathscr{H}}
+\newcommand{\Af}{\mathscr{A}}
+\newcommand{\ve}{\varepsilon}
+
+\newcommand{\Sp}{\sigma}
+\newcommand{\SpP}{\sigma_{\mathrm{p}}}
+\newcommand{\SpAc}{\sigma_{\mathrm{ac}}}
+\newcommand{\SpSc}{\sigma_{\mathrm{sc}}}
+
+
+\def\ph{\phantom}
+\def\vph{\vphantom}
+\def\hph{\hphantom}
+\def\rzw{\mathrlap}
+\def\lzw{\mathllap}
+\def\czw{\mathclap}
+\newcommand*{\mask}[2]{\mathord{\makebox[\widthof{\(#1\)}]{\(#2\)}}}
+
+
+\newcommand{\dd}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+\newcommand{\pd}[2]{\frac{\partial  #1}{\partial  #2}}
+\newcommand{\e}[1]{\mathrm{e}^{#1}}
+
+

@@ -30,6 +30,7 @@
 
 %% Character encoding: usually latin2, cp1250 or utf8:
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 %% Prefer Latin Modern fonts
 \usepackage{lmodern}
@@ -50,6 +51,9 @@
 \usepackage{booktabs}       % improved horizontal lines in tables
 \usepackage{paralist}       % improved enumerate and itemize
 \usepackage{xcolor}         % typesetting in color
+\usepackage{mathrsfs}		% mathscr
+\usepackage[h]{esvect}		% vv
+\usepackage{makecell}		% makecell
 
 %%% Basic information on the thesis
 
@@ -77,7 +81,7 @@
 \def\SupervisorsDepartment{Institute of Theoretical Physics}
 
 % Study programme and specialization
-\def\StudyProgramme{Fyzika}
+\def\StudyProgramme{Physics}
 \def\StudyBranch{FOF}
 
 % An optional dedication: you can thank whomever you wish (your supervisor,
@@ -104,6 +108,7 @@ Abstract.
 
 % Definitions of macros (see description inside)
 \include{macros}
+\include{hyphenation}
 
 % Title page and various mandatory informational pages
 \begin{document}
@@ -115,8 +120,8 @@ Abstract.
 
 %%% Each chapter is kept in a separate file
 \include{preface}
-\include{chap01}
-\include{chap02}
+\include{formulation}
+\include{dirac}
 
 \include{epilog}
 

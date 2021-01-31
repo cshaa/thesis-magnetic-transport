@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.8)  30 JAN 2021 13:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.8)  31 JAN 2021 23:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -208,6 +208,8 @@ Using XMP template file: pdfa.xmp
 
 <<pdfa.xmpi>>) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
+) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
 ) (/usr/share/texmf/tex/latex/lm/lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -394,57 +396,73 @@ Package: paralist 2017/01/22 v2.7 Extended list environments
 \plitemsep=\skip62
 \plparsep=\skip63
 \pl@lab=\toks32
+) (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup9
+) (/usr/share/texlive/texmf-dist/tex/latex/esvect/esvect.sty
+Package: esvect 
+\symesvector=\mathgroup10
+LaTeX Font Info:    Redeclaring math symbol \fldr on input line 38.
+) (/usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen165
+\c@nlinenum=\count274
+\TeXr@lab=\toks33
 )
-Package hyperref Info: Option `unicode' set `true' on input line 102.
-Package hyperref Info: Option `breaklinks' set `true' on input line 103.
+Package hyperref Info: Option `unicode' set `true' on input line 106.
+Package hyperref Info: Option `breaklinks' set `true' on input line 107.
 
 \@input{macros.aux}
 \openout2 = `macros.aux'.
 
 (/home/m93a/Bakalářka/tex/en/macros.tex
-\c@thm=\count274
-\c@defn=\count275
-) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+\c@thm=\count275
+\c@defn=\count276
+)
+\@input{hyphenation.aux}
+\openout2 = `hyphenation.aux'.
+
+(/home/m93a/Bakalářka/tex/en/hyphenation.tex) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count276
+\l__kernel_color_stack_int=\count277
 \l__pdf_internal_box=\box50
-) (/home/m93a/Bakalářka/tex/en/thesis.aux (/home/m93a/Bakalářka/tex/en/title.aux) (/home/m93a/Bakalářka/tex/en/preface.aux) (/home/m93a/Bakalářka/tex/en/chap01.aux) (/home/m93a/Bakalářka/tex/en/chap02.aux) (/home/m93a/Bakalářka/tex/en/epilog.aux) (/home/m93a/Bakalářka/tex/en/bibliography.aux))
+) (/home/m93a/Bakalářka/tex/en/thesis.aux (/home/m93a/Bakalářka/tex/en/title.aux) (/home/m93a/Bakalářka/tex/en/preface.aux) (/home/m93a/Bakalářka/tex/en/formulation.aux) (/home/m93a/Bakalářka/tex/en/dirac.aux) (/home/m93a/Bakalářka/tex/en/epilog.aux) (/home/m93a/Bakalářka/tex/en/bibliography.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 109.
- (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 114.
+ (/usr/share/texmf/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) ABD: EveryShipout initializing macros (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count277
-\scratchdimen=\dimen165
+\scratchcounter=\count278
+\scratchdimen=\dimen166
 \scratchbox=\box51
-\nofMPsegments=\count278
-\nofMParguments=\count279
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count280
-\MPscratchDim=\dimen166
-\MPnumerator=\count281
-\makeMPintoPDFobject=\count282
-\everyMPtoPDFconversion=\toks34
+\nofMPsegments=\count279
+\nofMParguments=\count280
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count281
+\MPscratchDim=\dimen167
+\MPnumerator=\count282
+\makeMPintoPDFobject=\count283
+\everyMPtoPDFconversion=\toks35
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -452,7 +470,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \AtBeginShipoutBox=\box52
-Package hyperref Info: Link coloring OFF on input line 109.
+Package hyperref Info: Link coloring OFF on input line 114.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -460,11 +478,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count283
+\c@section@level=\count284
 )
-LaTeX Info: Redefining \ref on input line 109.
-LaTeX Info: Redefining \pageref on input line 109.
-LaTeX Info: Redefining \nameref on input line 109.
+LaTeX Info: Redefining \ref on input line 114.
+LaTeX Info: Redefining \pageref on input line 114.
+LaTeX Info: Redefining \nameref on input line 114.
  (/home/m93a/Bakalářka/tex/en/thesis.out) (/home/m93a/Bakalářka/tex/en/thesis.out)
 \@outlinefile=\write5
 \openout5 = `thesis.out'.
@@ -473,12 +491,14 @@ LaTeX Info: Redefining \nameref on input line 109.
 
  (/home/m93a/Bakalářka/tex/en/title.tex
 Package hyperref Info: Option `pageanchor' set `false' on input line 6.
-<../img/logo-en.pdf, id=63, 506.4591pt x 156.49065pt>
+<../img/logo-en.pdf, id=71, 506.4591pt x 156.49065pt>
 File: ../img/logo-en.pdf Graphic file (type pdf)
 <use ../img/logo-en.pdf>
 Package pdftex.def Info: ../img/logo-en.pdf  used on input line 9.
 (pdftex.def)             Requested size: 472.31573pt x 145.9455pt.
  [1
+
+
 
 
 
@@ -492,31 +512,43 @@ Package hyperref Info: Option `pageanchor' set `true' on input line 55.
 ] [3
 
 ]) (/home/m93a/Bakalářka/tex/en/thesis.toc
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4.
+ (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4.
  (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 3.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 4.
  (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 3.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 4.
  (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 3.
+(Font)              <12> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 3.
+(Font)              <8> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 3.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+(Font)              <6> on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 4.
+ (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Trying to load font information for U+esvect on input line 4.
+ (/usr/share/texlive/texmf-dist/tex/latex/esvect/uesvect.fd
+File: uesvect.fd 
 ))
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
@@ -528,38 +560,40 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ]
 \openout2 = `preface.aux'.
 
- (/home/m93a/Bakalářka/tex/en/preface.tex) [2
+ (/home/m93a/Bakalářka/tex/en/preface.tex [2
 
+
+]) [3
 
 ]
-\openout2 = `chap01.aux'.
+\openout2 = `formulation.aux'.
 
- (/home/m93a/Bakalářka/tex/en/chap01.tex
+ (/home/m93a/Bakalářka/tex/en/formulation.tex
 Chapter 1.
-) [3
+[4
 
 
 
-]
-\openout2 = `chap02.aux'.
+] [5]) [6]
+\openout2 = `dirac.aux'.
 
- (/home/m93a/Bakalářka/tex/en/chap02.tex
+ (/home/m93a/Bakalářka/tex/en/dirac.tex
 Chapter 2.
-) [4
+) [7
 
 
 
 ]
 \openout2 = `epilog.aux'.
 
- (/home/m93a/Bakalářka/tex/en/epilog.tex) [5
+ (/home/m93a/Bakalářka/tex/en/epilog.tex) [8
 
 
 
 ]
 \openout2 = `bibliography.aux'.
 
- (/home/m93a/Bakalářka/tex/en/bibliography.tex (/home/m93a/Bakalářka/tex/en/thesis.bbl)) [6
+ (/home/m93a/Bakalářka/tex/en/bibliography.tex (/home/m93a/Bakalářka/tex/en/thesis.bbl)) [9
 
 
 
@@ -567,44 +601,44 @@ Chapter 2.
 \tf@lof=\write7
 \openout7 = `thesis.lof'.
 
- [7
+ [10
 
 
 ] (/home/m93a/Bakalářka/tex/en/thesis.lot)
 \tf@lot=\write8
 \openout8 = `thesis.lot'.
 
- [8
+ [11
 
-] [9
+] [12
 
 ]
 Appendix A.
-[10
+[13
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 154.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 154.
- (/home/m93a/Bakalářka/tex/en/thesis.aux (/home/m93a/Bakalářka/tex/en/title.aux) (/home/m93a/Bakalářka/tex/en/preface.aux) (/home/m93a/Bakalářka/tex/en/chap01.aux) (/home/m93a/Bakalářka/tex/en/chap02.aux) (/home/m93a/Bakalářka/tex/en/epilog.aux) (/home/m93a/Bakalářka/tex/en/bibliography.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 154.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 154.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 159.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 159.
+ (/home/m93a/Bakalářka/tex/en/thesis.aux (/home/m93a/Bakalářka/tex/en/title.aux) (/home/m93a/Bakalářka/tex/en/preface.aux) (/home/m93a/Bakalářka/tex/en/formulation.aux) (/home/m93a/Bakalářka/tex/en/dirac.aux) (/home/m93a/Bakalářka/tex/en/epilog.aux) (/home/m93a/Bakalářka/tex/en/bibliography.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 159.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 159.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: F926D30495A07CFBBFEDFE215791BBA4;2651.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 154.
+(rerunfilecheck)             Checksum: 57EF46C3C2A48706EBB7BB80DE58B419;2782.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 159.
  ) 
 Here is how much of TeX's memory you used:
- 14550 strings out of 482050
- 204366 string characters out of 5934590
- 437848 words of memory out of 5000000
- 29550 multiletter control sequences out of 15000+600000
- 577643 words of font info for 57 fonts, out of 8000000 for 9000
- 473 hyphenation exceptions out of 8191
- 44i,6n,41p,533b,2341s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb>
-Output written on /home/m93a/Bakalářka/tex/en/thesis.pdf (14 pages, 418997 bytes).
+ 14891 strings out of 482050
+ 208882 string characters out of 5934590
+ 448372 words of memory out of 5000000
+ 29837 multiletter control sequences out of 15000+600000
+ 598312 words of font info for 69 fonts, out of 8000000 for 9000
+ 479 hyphenation exceptions out of 8191
+ 44i,22n,41p,810b,2341s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/esvect/vect10.pfb>
+Output written on /home/m93a/Bakalářka/tex/en/thesis.pdf (17 pages, 556372 bytes).
 PDF statistics:
- 186 PDF objects out of 1000 (max. 8388607)
- 152 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 130 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 293 PDF objects out of 1000 (max. 8388607)
+ 228 compressed objects within 3 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 146 words of extra memory for PDF output out of 10000 (max. 10000000)
 

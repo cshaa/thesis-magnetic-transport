@@ -1,0 +1,126 @@
+\chapter{Formulation \& known results}
+In this chapter we will explain what is magnetic transport, give a precise mathematical formulation of the problem and restate known results.
+
+\section{The magnetic Hamiltonian}
+The simplest example of a quantum system with a magnetic field is the system consisting of a single charged particle inside a constant homogeneous magnetic field and zero scalar potential. The Hamiltonian that corresponds to this system~is:
+\begin{align*}
+    H = (\vv P + \vv A)^2 \: , \quad
+    \vv B = \nabla \times \vv A = (0, 0, b_0) \: .
+\end{align*}
+Here $\vv P = -\i \nabla$ is the momentum operator, $\vv B$ is the magnetic field (which is constant with magnitude $b_0$) and $\vv A$ is its corresponding vector potential. This Hamiltonian has continuous spectrum and commutes with $P_z$, thus it allows the particle to move freely along the $z$-axis. However if we restrict the particle to the layer $z=0$ – either physically, or only formally because we are not interested in the movement along~$z$ – we get a two-dimensional Hamiltonian with infinitely degenerate pure point spectrum, the so-called Landau Hamiltonian:
+\begin{align*}
+    H = (P_x + A_x)^2 + (P_y + A_y)^2 \: .
+\end{align*}
+A detailed analysis of this well-known Hamiltonian can be found eg. in §112 of \cite{LandauLifshitz3}. The pure point spectrum means that the particle is not free to move along $x$ or $y$, but instead it is “trapped” in some superposition of stationary states. We will investigate perturbations to the Landau Hamiltonian, which cause its spectrum to become continuous and allow the particle to move freely along the $y$-axis. These perturbations can be either in the form of a scalar potential, a modification of the magnetic field, or a purely geometric deformation of the layer, to which our particle is constrained. We will require all of these perturbations to be translationally invariant, thus independent on $y$.
+
+Throughout this thesis, we will use the Landau gauge:
+\begin{align*}
+    A_x &= 0 \: , \\
+    A_y &= \int_0^x B_z(x') \d{x'} \: , \\
+    A_z &= 0 \: .
+\end{align*}
+Now we can specify precisely which Hamiltonians we will investigate.
+
+\begin{defn}[Potential perturbation]
+    Let $\Hilb = L^2(\R^2)$, $D(H)$ a dense subset of $\Hilb$ and $V \in L^1_{\text{loc}}(\R)$. A self-adjoint operator $H: D(H) \to \Hilb$ given by the equation
+    \begin{equation*}
+        H
+        = P^2_x
+        + \big( P_y + b \, Q_x \big)^2
+        + V(x)
+        \: ,
+    \end{equation*}
+    is called the \textbf{Landau Hamiltonian with a potential perturbation}. We will investigate, which choices of $D(H)$ and $V$ lead to $\sigma(H) \neq \sigma_{\mathrm{p}}(H)$.
+\end{defn}
+
+\begin{defn}[Magnetic perturbation]
+    Let $b \in C^\infty(\R)$, $\Hilb = L^2(\R^2)$ and $\mathcal{D} = C^\infty_0(\R^2)$ be the set of $\C^\infty$ functions with compact support. Let $A_y$ be a multiplication operator on $\Hilb$ given by:
+    \begin{align*}
+        A_y \, \psi(x, y) = \Big( \int_0^x b(x') \d{x'} \Big) \, \psi(x, y)
+    \end{align*}
+    Let $\tilde H: \mathcal{D} \to \Hilb$ be an essentially self-adjoint operator given by the equation:
+    \begin{align*}
+        \tilde H = P^2_x + \big( P_y + A_y \big)^2 \: ,
+    \end{align*}
+    Its closure $H$ is called the \textbf{Landau Hamiltonian with a magnetic perturbation}. We will investigate, which choices of $b$ lead to $\sigma(H) \neq \sigma_{\mathrm{p}}(H)$.
+\end{defn}
+
+\begin{defn}[Geometric perturbation]
+    Let $\omega: \R \to \R^2$ be a $C^4$-smooth curve and $\ell \in \R$. We define a set $\Omega' \subset \R^2$ by
+    \begin{equation*}
+        \Omega' = \big\{\;
+            P \in \R^2
+        \;\;|\;\;
+            \exists s \in \R \;
+            \norm{ \, \omega(s) - P \, } \leq \ell
+        \;\big\}
+        \: ,
+    \end{equation*}
+    this gives a band of width $2\ell$ around the curve $\omega$. \!Then we define a set $\Omega \subset \R^3$ as
+    \begin{equation*}
+        \Omega = \big\{\;
+            (x, y, z) \in \R^3
+        \;\;|\;\;
+            (x, z) \in \Omega'
+        \;\big\} \: .
+    \end{equation*}
+    We shall call $\Omega$ a \textbf{translationally invariant layer of width $2\ell$ given by the curve $\omega$}.
+\end{defn}
+
+
+
+\section{Direct integral}
+An~example citation: \cite{ReedSimon4}
+\begin{defn}[Direct integral, fiber]
+    Let $\Hilb'$ be a separable Hilbert space and $(M, \mu)$ a measure space. We define a Hilbert space $\Hilb$, which is the space of all square-integrable functions from $M$ to $\Hilb'$:
+    \begin{equation*}
+        \Hilb = L^2(M, \d{\mu}, \Hilb') \: .
+    \end{equation*}
+
+    Let $\Af$ be a measurable function from $M$ to the self-adjoint operators on $\Hilb'$. Let $f_\psi: M \to \R$ be a function defined by
+    \begin{align*}
+        f_\psi(s) = \norm{\Af(s) \psi(s)}_{\Hilb'}
+        \quad
+        \text{for all } \psi \in \Hilb, s \in M \text{ such that } \psi(s) \in \Domain(\Af(s)) \: .
+    \end{align*}
+    We define an operator $A$ on $\Hilb$ by:
+    \begin{gather*}
+        (A \psi)(s) = \Af(s) \, \psi(s) \: , \\
+        \Domain(A) = \big\{
+            \psi \in \Hilb
+            \; \big| \;
+            \psi(s) \in \Domain(\Af(s)) \text{ a.e.}
+            \; \wedge \;
+            \norm{f_\psi}_{L^2} < \infty
+        \big\} \: .
+    \end{gather*}
+    Then we shall write
+    \begin{gather*}
+        \Hilb = \int^\oplus_M \Hilb', \qquad
+        A = \int^\oplus_M \Af(s) \d{s}.
+    \end{gather*}
+    We shall call $\Hilb$ and $A$ the \textbf{the direct integral} of $\Hilb'$ and $\Af$, respectively. Reversely, we shall call $\Hilb'$ a \textbf{fiber space} of $\Hilb$ and $\Af(s)$ a \textbf{fiber} of $A$.
+\end{defn}
+
+\begin{thm}[Spectrum of direct integral]
+    Let $\lambda \in \C$ and $A = \int^\oplus_M \Af(s) \d{s}$, as in the previous definition. We define $\Gamma(\lambda)$ as the set of all $s$, such that $\lambda$ is an eigenvalue of $\Af(s)$, and $\Omega_\ve(\lambda)$ as the set of all $s$, such that the $\ve$-neighbourhood of $\lambda$ intersects the spectrum of $\Af(s)$ – written symbolically:
+    \begin{gather*}
+        \Gamma(\lambda)
+        = \big\{\; s \;\;|\;\; \lambda \text{ is an eigenvalue of } \Af(s) \;\big\} \: ,
+        \\
+        \Omega_\ve(\lambda)
+        = \big\{\; s \;\;|\;\; \sigma(\Af(s)) \, \cap (\lambda - \ve, \lambda + \ve) \neq \emptyset \;\big\} \: .
+    \end{gather*}
+    Then $\lambda$ belongs to the spectrum of $A$ if and only if
+    \begin{gather*}
+        \mu(\; \Omega_\ve(\lambda) \;) > 0
+        \qquad \text{for all } \ve > 0 \: .
+    \end{gather*}
+    Additionally, $\lambda$ is an eigenvalue of $A$ if and only if
+    \begin{gather*}
+        \mu(\; \Gamma(\lambda) \;) > 0 \: .
+    \end{gather*}
+\end{thm}
+
+
+\section{Title of the second subchapter of the first chapter}
