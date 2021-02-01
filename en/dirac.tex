@@ -1,4 +1,19 @@
-\chapter{Title of the second chapter}
+\chapter{Harmonic potential with \texorpdfstring{$\delta$}{δ}}
+In this chapter we will examine the Landau Hamiltonian with a potential perturbation (see definition \ref{defn-perturb-potential}), caused by the potential
+\begin{equation*}
+    V(x) = \alpha \, x^2 + \beta \, x + \gamma \, \delta(x - x_0) \: ,
+\end{equation*}
+where $\alpha, \beta, \gamma, x_0 \in \R$ and $\delta$ is the Dirac delta. This gives rise to the Hamiltonian
+\begin{equation*}
+    \big( H\psi \big)(x, y) = \left( \pd{^2}{x^2} + \big( \pd{}{y} + bx \big)^2 + \alpha \, x^2 + \beta \, x \right) \; \psi(x,y)
+    \quad \text{on } (\R \setminus \{ x_0 \}) \times \R
+\end{equation*}
+with a domain given by the conditions
+\begin{gather*}
+    \psi \in W^{1,2}(\R^2) \; \cap \; W^{2,2}( \,(\R \setminus \{ x_0 \}) \times \R \, ) \: , \\[5pt]
+    \lim_{x \to x_0 +} \!\psi\; - \lim_{x \to x_0 -} \!\psi\; = \; \gamma \, \psi(x_0) \: , \\[5pt]
+    \text{\textbf{[To do: a growth condition]}} \: .
+\end{gather*}
 
 \section{Title of the first subchapter of the second chapter}
 
