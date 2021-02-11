@@ -1,20 +1,105 @@
-\chapter{Harmonic potential with \texorpdfstring{$\delta$}{δ}}
-In this chapter we will examine the Landau Hamiltonian with a potential perturbation (see definition \ref{defn-perturb-potential}), caused by the potential
+\chapter{Delta potential}
+In this chapter we will examine the Landau Hamiltonian with a potential perturbation (see definition \ref{defn-perturb-potential}), caused by the potential $V(x) = \alpha\,\delta_{x_0}$, ie. the Dirac delta in $x=x_0$, scaled by $\alpha \in \R$. Since such a potential is a distribution and not a locally integrable function, the Hamiltonian is formally given by:
 \begin{equation*}
-    V(x) = \alpha \, x^2 + \beta \, x + \gamma \, \delta(x - x_0) \: ,
+    \big( H\psi \big)(x, y) = \left( -\pd{^2}{x^2} + \big( \i\pd{}{y} + bx \big)^2 \right) \; \psi(x,y)
+    \quad \text{a.e.\footnotemark on } (\R \setminus \{ x_0 \}) \times \R
 \end{equation*}
-where $\alpha, \beta, \gamma, x_0 \in \R$ and $\delta$ is the Dirac delta. This gives rise to the Hamiltonian
-\begin{equation*}
-    \big( H\psi \big)(x, y) = \left( \pd{^2}{x^2} + \big( \pd{}{y} + bx \big)^2 + \alpha \, x^2 + \beta \, x \right) \; \psi(x,y)
-    \quad \text{on } (\R \setminus \{ x_0 \}) \times \R
-\end{equation*}
+\footnotetext{The pointwise equality is to be understood \textit{almost everywhere} with respect to the Lebesgue measure on $\R^2$.}
 with a domain given by the conditions
 \begin{gather*}
-    \psi \in W^{1,2}(\R^2) \; \cap \; W^{2,2}( \,(\R \setminus \{ x_0 \}) \times \R \, ) \: , \\[5pt]
-    \lim_{x \to x_0 +} \!\psi\; - \lim_{x \to x_0 -} \!\psi\; = \; \gamma \, \psi(x_0) \: , \\[5pt]
-    \text{\textbf{[To do: a growth condition]}} \: .
+    \psi \in W^{1,2}(\R^2) \; \cap \; W^{2,2}\big( \,(\R \setminus \{ x_0 \}) \times \R \, \big) \: ,
+    \\[5pt]
+    \lim_{x \to x_0 +} \!\psi'(x,y)\; - \lim_{x \to x_0 -} \!\psi'(x,y) = \alpha \lim_{x \to x_0} \!\psi(x, y)
+    \quad \text{for a.e. } y \: ,\footnotemark
+    \\[5pt]
+    \int_{\R^2} x^2 \, \big|\, \psi(x,y) \,\big| \, \d{x}\d{y} < \infty \: .
 \end{gather*}
+\footnotetext{The equality holds for \textit{almost every} $y$ and $\lim_{x\to x_0}$ means the \textit{essential} limit with respect to the Lebesgue measure on $\R$.}
+The Hamiltonian is self-adjoint. \textbf{[PROVE.]} Then, by an approach equivalent to that in \eqref{eqn-vague-direct-integral-decomp}, one can show that $H$ is isomorphic to a direct integral:
+\begin{equation*}
+    H \simeq \int^\oplus_\R \Hf(s) \d{s} \: ,
+\end{equation*}
+where $\Hf(s)$ is a fiber Hamiltonian satisfying very similar conditions to those of~$H$ – that is, for almost every $s \in \R$:
+\begin{gather*}
+    \big( \Hf(s) \, \varphi \big)(x)
+    = -\varphi''(x)
+    + \big( b^2 \, x^2 + 2 s b \, x + s^2 \big) \, \varphi(x) \: ,
+    \\[15pt]
+    \varphi \in W^{1,2}(\R) \; \cap \; W^{2,2}( \R \setminus \{ x_0 \}) \: ,
+    \\[5pt]
+    \lim_{x \to x_0+} \varphi'(x) - \lim_{x \to x_0-} \varphi'(x) = \lim_{x \to x_0} \varphi(x),
+    \\[3pt]
+    \int_\R x^2 \, |\varphi(x)| \d{x} < \infty \: .
+\end{gather*}
+In the next section, we will see that $\Hf(s)$ has a pure point spectrum [\textbf{I don't know how to prove this}] and investigate how it depends on $s$ and $\alpha$.
 
-\section{Title of the first subchapter of the second chapter}
+\section{The eigenproblem of the fiber Hamiltonian}
+From now on, we shall suppose that $b>0$; for $b<0$ one can do a reflection $x \mapsto -x$ and arrive at the same results. Let $\epsilon \in \R$, we define:
+\begin{gather*}
+    w_0 = \sqrt{2b} \, \big( x_0 + \frac{s}{b} \big) \: ,
+    \qquad
+    \nu = \frac{\epsilon + b}{2b} \: .
+\end{gather*}
+Let $h_- \in C^2\big( (-\infty, w_0], \, \C \big)$ and $h_+ \in C^2\big( [w_0, +\infty), \, \C \big)$, such that:
+\begin{align*}
+    h_\pm''(w) = \Big( \frac{1}{4}w^2 - \nu  - \frac{1}{2} \Big) \, h_\pm(w) \: , \numberthis\label{parabolic-cylinder-ode}
+    \\[-2em]
+\end{align*}
+\begin{align*}
+    h_+(w_0) - h_-(w_0) &= 0 \: , \\[5pt]
+    h_+'(w_0) - h_-'(w_0) &= \alpha \, \sqrt{2b} \: .
+\end{align*}
+(If such functions exist for a given $\nu$.) Then, if the function $\varphi: \R \to \C$ given by
+\begin{equation*}
+    \varphi(x) = \begin{cases}
+        h_+ \big( \sqrt{2b} \, (x + \frac{s}{b}) \big)
+        \quad \text{for } x \geq x_0
+        \\[5pt]
+        h_- \big( \sqrt{2b} \, (x + \frac{s}{b}) \big)
+        \quad \text{for } x < x_0
+    \end{cases}
+\end{equation*}
+is in $\Domain(\Hf(s))$, it is an eigenfunction of $\Hf(s)$ with the eigenvalue $\epsilon$. To check this is really the case, one can simply substitute $w = \sqrt{2b} (x + s/b)$ in the equation \eqref{parabolic-cylinder-ode} and see they arrive at the equation $\Hf(s) \, \varphi(x) = \epsilon \, \varphi(x)$.
+
+As stated in \cite{GradshteynRyzhik}, the solutions to \eqref{parabolic-cylinder-ode} can be expressed as a linear combination of the functions
+\begin{equation}
+    D_\nu(w) \: , \;\;
+    D_\nu(-w) \: , \;\;
+    D_{-\nu-1}(\i w) \: , \;\;
+    D_{-\nu-1}(-\i w) \: ,
+    \label{parabolic-cylinder-solutions}
+\end{equation}
+where $D_\nu$ is a so-called \textit{parabolic cylinder function}, which is a special function that can be expressed in terms of the gamma function $\Gamma$ and the confluent hypergeometric function $\hypF$:
+\begin{align*}
+    D_\nu(w)
+    = 2^{\frac{\nu}{2}}
+    \exp \big({-}\tfrac{w^2}{4} \big) \,
+    \scalemath{0.93}{
+    \Bigg(
+        \frac{\sqrt{\pi}}{\Gamma\big( \frac{1-\nu}{2} \big)} \;
+        \hypF\big( -\frac{\nu}{2}, \; \frac{1}{2} ; \; \frac{w^2}{2} \big)
+        - \frac{w \, \sqrt{2\pi}}{\Gamma\big( -\frac{\nu}{2} \big)} \;
+        \hypF\big( \frac{1-\nu}{2}, \; \frac{3}{2} ; \; \frac{w^2}{2} \big)
+    \Bigg)
+    }
+\end{align*}
+In the special case when $\nu \in \N_0$, the function $D_\nu$ can be expressed using the Hermite polynomials $H_n$:
+\begin{align*}
+    D_\nu(w)
+    = 2^{\frac{\nu}{2}}
+    \exp \big({-}\tfrac{w^2}{4} \big) \,
+    H_\nu \big( \frac{w}{\sqrt{2}} \big)
+\end{align*}
+The solutions in \eqref{parabolic-cylinder-solutions} are linearly dependent. For most values of $\nu$, any of the four functions can be expressed as a linear combination of any two others. However, specifically in the case $\nu \in \N_0$ we get $D_\nu(w) = \pm D_\nu(-w)$.
+
+Asymptotic behavior of the solutions is also given in \cite{GradshteynRyzhik}. As $|w|\to\infty$, the solutions $D_{-\nu-1}(\i w)$ and $D_{-\nu-1}(-\i w)$ grow exponentially. Meanwhile $D_\nu(w)$ decays exponentially for $w \to +\infty$. Therefore $D_\nu(w)$ and $D_\nu(-w)$ are better suited for the growth conditions imposed by the domain of $\Hf(s)$. We define $c_{+1}, c_{+2}, c_{-1}, c_{-2} \in \C$, such that
+\begin{equation*}
+    h_\pm = c_{\pm 1} \, D_\nu(w) + c_{\pm 2} \, D_\nu(-w) \: .
+\end{equation*}
+It can be further shown, that if $\nu \notin \N_0$, the solution $D_\nu(w)$ diverges for $w \to -\infty$. \textbf{[Then show it.]} Therefore $c_{-1} = c_{+2} = 0$ in order for $\varphi$ to be integrable. Applying the gluing equations for $h_-, \, h_+$ now, we get:
+\begin{gather*}
+    c_{+1} \, D_\nu(w_0) = c_{-2} \, D_\nu(-w_0) \\[5pt]
+    c_{+1} \, \dd{}{w} D_\nu(w) \big|_{w_0} - c_{-2} \, \dd{}{w} D_\nu(-w) \big|_{w_0} = \alpha \, \sqrt{2b}
+\end{gather*}
 
 \section{Title of the second subchapter of the second chapter}

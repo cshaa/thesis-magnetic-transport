@@ -1,5 +1,5 @@
 \chapter{Formulation \& known results}
-In this chapter we will explain what is magnetic transport, give a precise mathematical formulation of the problem and restate known results.
+In this chapter we will explain what is the magnetic transport, give a precise mathematical formulation of the problem and restate the known results.
 
 \section{The magnetic Hamiltonian}
 The simplest example of a quantum system with a magnetic field is the system consisting of a single charged particle inside a constant homogeneous magnetic field and zero scalar potential. The Hamiltonian that corresponds to this system~is:
@@ -7,11 +7,11 @@ The simplest example of a quantum system with a magnetic field is the system con
     H = (\vv P + \vv A)^2 \: , \quad
     \vv B = \nabla \times \vv A = (0, 0, b_0) \: .
 \end{align*}
-Here $\vv P = -\i \nabla$ is the momentum operator, $\vv B$ is the magnetic field (which is constant with magnitude $b_0$) and $\vv A$ is its corresponding vector potential. Notice that we have used nondimensionalization to remove physical units from the Hamiltonian. $H$ has absolutely continuous spectrum and commutes with $P_z$, thus it allows the particle to move freely along the $z$-axis. However if we restrict the particle to the layer $z=0$, either physically, or only formally because we are not interested in the movement along~$z$, we get a two-dimensional Hamiltonian with infinitely degenerate pure point spectrum, the so-called Landau Hamiltonian:
+Here $\vv P = -\i \nabla$ is the momentum operator, $\vv B$ is the magnetic field (which is constant with magnitude $b_0$) and $\vv A$ is its corresponding vector potential. Notice that we have used nondimensionalization to remove physical units from the Hamiltonian. $H$ has absolutely continuous spectrum and commutes with $P_z$, thus it allows the particle to move freely along the $z$-axis. However if we restrict the particle to the layer $z=0$, either physically, or only formally because we are not interested in the movement along~$z$ \textbf{[EXPAND]}, we get a two-dimensional Hamiltonian with infinitely degenerate pure point spectrum, the so-called Landau Hamiltonian:
 \begin{align*}
     H = (P_x + A_x)^2 + (P_y + A_y)^2 \: .
 \end{align*}
-A detailed analysis of this well-known Hamiltonian can be found eg. in §112 of \cite{LandauLifshitz3}. The pure point spectrum means that the particle is not free to move along $x$ or $y$, but instead it is “trapped” in some superposition of stationary states. We will investigate perturbations to the Landau Hamiltonian, which cause its spectrum to become continuous and allow the particle to move freely along the $y$-axis. These perturbations can be either in the form of a scalar potential, a modification of the magnetic field, or a purely geometric deformation of the layer, to which our particle is constrained. We will require all of these perturbations to be translationally invariant, thus independent on $y$.
+A detailed analysis of this well-known Hamiltonian can be found eg. in §112 of \cite{LandauLifshitz3}. The pure point spectrum means that the particle is not free to move along $x$ or $y$, but instead it is “trapped” in some superposition of stationary states. We will investigate perturbations to the Landau Hamiltonian, which cause its spectrum to become continuous and allow the particle to move freely along the $y$-axis. These perturbations can be either in the form of a scalar potential, a modification of the magnetic field, or a purely geometric deformation of the layer, to which our particle is constrained. We will require all of these perturbations to be translationally invariant, thus constant along one axis – without loss of generality, we choose that they are independent of~$y$ and only depend on~$x$.
 
 Throughout this thesis, we will use the Landau gauge:
 \begin{align*}
@@ -23,7 +23,7 @@ Now we can specify precisely which Hamiltonians we will investigate.
 
 \begin{defn}[Potential perturbation]
     \label{defn-perturb-potential}
-    Let $\Hilb = L^2(\R^2)$, $D(H)$ a dense subset of $\Hilb$, $b>0$ and $V \in L^1_{\text{loc}}(\R)$. A self-adjoint operator $H: D(H) \to \Hilb$ given by the equation
+    Let $\Hilb = L^2(\R^2)$, $D(H)$ a \textnormal{\textbf{[???]}} dense subset of $\Hilb$, $b>0$ and $V \in L^1_{\text{loc}}(\R)$. A self-adjoint operator $H: D(H) \to \Hilb$ given by the equation
     \begin{equation*}
         H
         = P^2_x
@@ -113,14 +113,14 @@ The following definition is a rephrasing of definitions given in \cite{ReedSimon
     We shall call $\Hilb$ and $A$ the \textbf{the direct integral} of $\Hilb'$ and $\Af$, respectively. Reversely, we shall call $\Hilb'$ a \textbf{fiber space} of $\Hilb$ and $\Af(s)$ a \textbf{fiber} of $A$.
 \end{defn}
 
-Before we apply this to the magnetic Hamiltonian, let us remind the Fourier-Plancherel operator. It is a standard textbook result (see \cite{BEH}) that if we take the Fourier transform as an operator on $\Schwa(\R) \subset L^2(\R)$, its closure is a unitary operator on $L^2(\R)$. This operator is called the Fourier-Plancharel operator $\Fourier$, it transforms momentum to position $\Fourier P_{\!y\,} \Fourier^{-1} = Q_y$, and as an isomorphism, it does not change the spectrum of self-adjoint operators – in particular:
+Before we apply this to the magnetic Hamiltonian, let us remind the Fourier-Plancherel operator. It is a standard textbook result (see \cite{BEH}) that if we take the Fourier transform as an operator on $\Schwa(\R) \subset L^2(\R)$, its closure is a unitary operator on $L^2(\R)$. This operator is called the Fourier-Plancharel operator $\Fourier$, it transforms momentum to position $\Fourier P \Fourier^{-1} = Q$, and as an isomorphism, it does not change the spectrum of self-adjoint operators – in particular:
 \begin{equation*}
     \Sp(A) \neq \SpP(A)
     \;\Longleftrightarrow\;
     \Sp(\Fourier A \Fourier^{-1}) \neq \SpP(\Fourier A \Fourier^{-1})
     \: .
 \end{equation*}
-In more than one dimension, we will use subscript to indicate which variable is being transformed, for example $\Fourier_y: (x,y) \mapsto (x,\xi)$.
+This theory regards functions of one variable. In this thesis, we will often perform a \textit{partial} Fourier transformation on multivariate functions – that is, perform the Fourier transformation on one variable whilst keeping the other variables fixed. We will use subscript to indicate which variable is being transformed, for example $\Fourier_y: (x,y) \mapsto (x,\xi)$.
 
 Now, we can show, how to express a Landau Hamiltonian with potential and magnetic perturbation in terms of the direct integral:
 \begin{align*}

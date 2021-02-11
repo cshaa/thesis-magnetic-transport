@@ -1,4 +1,4 @@
-\begin{thebibliography}{3}
+\begin{thebibliography}{4}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -9,6 +9,11 @@
 Jiří Blank, Pavel Exner, and Miroslav Havlíček.
 \newblock \emph{Hilbert space operators in quantum physics}.
 \newblock Springer, 2008.
+
+\bibitem[Gradshteyn and Ryzhik(2014)]{GradshteynRyzhik}
+I.~S. Gradshteyn and I.~M. Ryzhik.
+\newblock \emph{Table of Integrals, Series and Products}.
+\newblock Eighth Edition. Elsevier, 2014.
 
 \bibitem[Landau and Lifshitz(1981)]{LandauLifshitz3}
 L.~D. Landau and E.~M. Lifshitz.
