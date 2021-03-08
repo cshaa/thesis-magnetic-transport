@@ -35,20 +35,26 @@ In the next section, we will see that $\Hf(s)$ has a pure point spectrum [\textb
 
 \section{The eigenproblem of the fiber Hamiltonian}
 From now on, we shall suppose that $b>0$; for $b<0$ one can do a reflection $x \mapsto -x$ and arrive at the same results. Let $\epsilon \in \R$, we define:
-\begin{gather*}
+\begin{equation}
     w_0 = \sqrt{2b} \, \big( x_0 + \frac{s}{b} \big) \: ,
     \qquad
     \nu = \frac{\epsilon + b}{2b} \: .
-\end{gather*}
+    \label{eqn-w-nu-definition}
+\end{equation}
 Let $h_- \in C^2\big( (-\infty, w_0], \, \C \big)$ and $h_+ \in C^2\big( [w_0, +\infty), \, \C \big)$, such that:
 \begin{align*}
-    h_\pm''(w) = \Big( \frac{1}{4}w^2 - \nu  - \frac{1}{2} \Big) \, h_\pm(w) \: , \numberthis\label{parabolic-cylinder-ode}
+    h_\pm''(w) = \Big( \frac{1}{4}w^2 - \nu  - \frac{1}{2} \Big) \, h_\pm(w) \: ,
+    \numberthis
+    \label{eqn-parabolic-cylinder-ode}
     \\[-2em]
 \end{align*}
-\begin{align*}
-    h_+(w_0) - h_-(w_0) &= 0 \: , \\[5pt]
-    h_+'(w_0) - h_-'(w_0) &= \alpha \, \sqrt{2b} \: .
-\end{align*}
+\begin{equation}
+    \begin{aligned}[c]
+        h_+(w_0) - h_-(w_0) &= 0 \: , \\[5pt]
+        h_+'(w_0) - h_-'(w_0) &= \alpha \, \sqrt{2b} \; h_+(w_0) \: .
+    \end{aligned}
+    \label{eqn-gluing-equations}
+\end{equation}
 (If such functions exist for a given $\nu$.) Then, if the function $\varphi: \R \to \C$ given by
 \begin{equation*}
     \varphi(x) = \begin{cases}
@@ -59,15 +65,15 @@ Let $h_- \in C^2\big( (-\infty, w_0], \, \C \big)$ and $h_+ \in C^2\big( [w_0, +
         \quad \text{for } x < x_0
     \end{cases}
 \end{equation*}
-is in $\Domain(\Hf(s))$, it is an eigenfunction of $\Hf(s)$ with the eigenvalue $\epsilon$. To check this is really the case, one can simply substitute $w = \sqrt{2b} (x + s/b)$ in the equation \eqref{parabolic-cylinder-ode} and see they arrive at the equation $\Hf(s) \, \varphi(x) = \epsilon \, \varphi(x)$.
+is in $\Domain(\Hf(s))$, it is an eigenfunction of $\Hf(s)$ with the eigenvalue $\epsilon$. To check this is really the case, one can simply substitute $w = \sqrt{2b} (x + s/b)$ in the equation \eqref{eqn-parabolic-cylinder-ode} and see they arrive at the equation $\Hf(s) \, \varphi(x) = \epsilon \, \varphi(x)$.
 
-As stated in \cite{GradshteynRyzhik}, the solutions to \eqref{parabolic-cylinder-ode} can be expressed as a linear combination of the functions
+As stated in \cite{GradshteynRyzhik}, the solutions to \eqref{eqn-parabolic-cylinder-ode} can be expressed as a linear combination of the functions
 \begin{equation}
     D_\nu(w) \: , \;\;
     D_\nu(-w) \: , \;\;
     D_{-\nu-1}(\i w) \: , \;\;
     D_{-\nu-1}(-\i w) \: ,
-    \label{parabolic-cylinder-solutions}
+    \label{eqn-parabolic-cylinder-solutions}
 \end{equation}
 where $D_\nu$ is a so-called \textit{parabolic cylinder function}, which is a special function that can be expressed in terms of the gamma function $\Gamma$ and the confluent hypergeometric function $\hypF$:
 \begin{align*}
@@ -76,13 +82,18 @@ where $D_\nu$ is a so-called \textit{parabolic cylinder function}, which is a sp
     \exp \big({-}\tfrac{w^2}{4} \big) \,
     \scalemath{0.93}{
     \Bigg(
-        \frac{\sqrt{\pi}}{\Gamma\big( \frac{1-\nu}{2} \big)} \;
+        \frac{\sqrt{\pi}}{\Gamma\big( \frac{1-\nu}{2} \big)} \,
         \hypF\big( -\frac{\nu}{2}, \; \frac{1}{2} ; \; \frac{w^2}{2} \big)
         - \frac{w \, \sqrt{2\pi}}{\Gamma\big( -\frac{\nu}{2} \big)} \;
-        \hypF\big( \frac{1-\nu}{2}, \; \frac{3}{2} ; \; \frac{w^2}{2} \big)
+        \hypF\big( \frac{1-\nu}{2}, \, \frac{3}{2} ; \; \frac{w^2}{2} \big)
     \Bigg)
-    }
+    } .
+    \\
+    \numberthis
+    \label{eqn-D-1F1}
 \end{align*}
+Since $1/\Gamma(z)$ is an entire function and $(\alpha, z) \mapsto \hypF(\alpha, \gamma; z)$ is holomorphic on $\C^2$ for all $\gamma$ other than non-positive integers, it follows that $(\nu, w) \mapsto D_\nu(w)$ is also holomorphic on $\C^2$.
+
 In the special case when $\nu \in \N_0$, the function $D_\nu$ can be expressed using the Hermite polynomials $H_n$:
 \begin{align*}
     D_\nu(w)
@@ -90,16 +101,173 @@ In the special case when $\nu \in \N_0$, the function $D_\nu$ can be expressed u
     \exp \big({-}\tfrac{w^2}{4} \big) \,
     H_\nu \big( \frac{w}{\sqrt{2}} \big)
 \end{align*}
-The solutions in \eqref{parabolic-cylinder-solutions} are linearly dependent. For most values of $\nu$, any of the four functions can be expressed as a linear combination of any two others. However, specifically in the case $\nu \in \N_0$ we get $D_\nu(w) = \pm D_\nu(-w)$.
+The solutions in \eqref{eqn-parabolic-cylinder-solutions} are linearly dependent. For most values of $\nu$, any of the four functions can be expressed as a linear combination of any two others. However, specifically in the case $\nu \in \N_0$ we get $D_\nu(w) = \pm D_\nu(-w)$.
 
-Asymptotic behavior of the solutions is also given in \cite{GradshteynRyzhik}. As $|w|\to\infty$, the solutions $D_{-\nu-1}(\i w)$ and $D_{-\nu-1}(-\i w)$ grow exponentially. Meanwhile $D_\nu(w)$ decays exponentially for $w \to +\infty$. Therefore $D_\nu(w)$ and $D_\nu(-w)$ are better suited for the growth conditions imposed by the domain of $\Hf(s)$. We define $c_{+1}, c_{+2}, c_{-1}, c_{-2} \in \C$, such that
+Asymptotic behavior of the solutions is also given by \cite{GradshteynRyzhik}. As $|w|\to\infty$, the solutions $D_{-\nu-1}(\i w)$ and $D_{-\nu-1}(-\i w)$ grow exponentially. Meanwhile $D_\nu(w)$ decays exponentially for $w \to +\infty$. Therefore $D_\nu(w)$ and $D_\nu(-w)$ are better suited for the growth conditions imposed by the domain of $\Hf(s)$. We define $c_{+1}, c_{+2}, c_{-1}, c_{-2} \in \C$, such that
 \begin{equation*}
     h_\pm = c_{\pm 1} \, D_\nu(w) + c_{\pm 2} \, D_\nu(-w) \: .
 \end{equation*}
-It can be further shown, that if $\nu \notin \N_0$, the solution $D_\nu(w)$ diverges for $w \to -\infty$. \textbf{[Then show it.]} Therefore $c_{-1} = c_{+2} = 0$ in order for $\varphi$ to be integrable. Applying the gluing equations for $h_-, \, h_+$ now, we get:
+It can be further shown, that if $\nu \notin \N_0$, the solution $D_\nu(w)$ diverges for $w \to -\infty$. \textbf{[Then show it.]} Therefore $c_{-1} = c_{+2} = 0$ in order for $\varphi$ to be integrable. On the other hand, for $\nu \in \N_0$, the solutions aren't independent (as discussed above), therefore we can also set $c_{-1} = c_{+2} = 0$ without loss of generality. Applying the gluing equations \eqref{eqn-gluing-equations}, we get:
 \begin{gather*}
     c_{+1} \, D_\nu(w_0) = c_{-2} \, D_\nu(-w_0) \\[5pt]
-    c_{+1} \, \dd{}{w} D_\nu(w) \big|_{w_0} - c_{-2} \, \dd{}{w} D_\nu(-w) \big|_{w_0} = \alpha \, \sqrt{2b}
+    c_{+1} \, \dd{}{w} D_\nu(w) \big|_{w_0} - c_{-2} \, \dd{}{w} D_\nu(-w) \big|_{w_0} = \alpha \, \sqrt{2b} \; c_{+1} \, D_\nu(w_0)
 \end{gather*}
+We substitute using the equality $\dd{}{w} D_\nu(w) = \frac{w}{2} \, D_\nu(w) - D_{\nu+1}(w)$ from \cite{GradshteynRyzhik} and arrive at the equation:
+\begin{align*}
+    \begin{pmatrix}
+        D_\nu(w_0) & -D_\nu(-w_0) \\[5pt]
+        \big( \frac{w_0}{2} \!-\! \alpha \sqrt{2b} \big)
+        D_\nu(w_0) \!-\! D_{\nu+1}(w_0) &
+        -\frac{w_0}{2} \, D_\nu(-w_0) \!-\! D_{\nu+1}(-w_0)
+    \end{pmatrix}
+    \begin{pmatrix}
+        c_{+1} \\[5pt] c_{-2}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        0 \\[5pt] 0
+    \end{pmatrix}
+    .
+\end{align*}
+In order for the equation to have a non-trivial solution, the determinant of the matrix must be zero. Hence, we arrive at the condition:
+\begin{align*}
+    0 \hspace{-1pt} &= \hspace{-2pt}
+    D_\nu(w_0) \big( \tfrac{w_0}{2} \, D_\nu(-w_0) \!-\! D_{\nu+1}(-w_0) \big)
+    \hspace{-2pt} + \hspace{-2pt}
+    D_\nu(-w_0) \big( ( {\tfrac{w_0}{2} \scriptstyle - \alpha \sqrt{2b}} )
+    D_\nu(w_0) \!-\! D_{\nu+1}(w_0) \big)
+    \\[5pt]
+    &= D_\nu(w_0) \, D_{\nu+1}(-w_0)
+    \;+\; D_\nu(-w_0) \, D_{\nu+1}(w_0)
+    \;+\; \alpha \sqrt{2b} \; D_\nu(w_0) \, D_\nu(-w_0)
+    \: .
+    \numberthis
+    \label{eqn-implicit-pre}
+\end{align*}
+Since we're interested in the allowed values of $\nu$ for given $w_0$ and $\alpha \, \sqrt{2b} \eqqcolon a$, this equation effectively defines an implicit function $\nu(a, w_0)$.
 
-\section{Title of the second subchapter of the second chapter}
+\section{Implicit function for energy levels}
+Let $F$ be a function of three real variables given by
+\begin{equation*}
+    F(a, w, \nu) =
+    D_\nu(w) \, D_{\nu+1}(-w)
+    \;+\; D_\nu(-w) \, D_{\nu+1}(w)
+    \;+\; a \, D_\nu(w) \, D_\nu(-w)
+    \: .
+\end{equation*}
+We have shown that
+\begin{align*}
+    \epsilon(s) \text{ is an eigenvalue of } \Hf(s)
+    \; \Longleftrightarrow \;
+    F\Big(
+        \alpha \, \sqrt{2b}, \;
+        \sqrt{2b} \, \big( x_0 + \frac{s}{b} \, \big), \;
+        \frac{\, \epsilon(s) + b \,}{2b}
+    \Big) = 0 \: .
+\end{align*}
+Truly, this is simply the equation \eqref{eqn-implicit-pre} after the substitution from \eqref{eqn-w-nu-definition}. Furthermore, for $\alpha = 0$ the fiber Hamiltonian $\Hf(s)$ reduces to that of a harmonic oscillator. From this fact, it is straightforward to derive the following result:
+\begin{equation*}
+    F(0, w, k) = 0
+    \text{ holds for }
+    k \in \N_0
+    \text{ and all }
+    w \in \R
+    \: .
+\end{equation*}
+Moreover, $F$ is analytic in the three variables, as it is a sum of products of entire functions. The implicit function theorem then tells us that, provided $\pd{}{\nu} F(0, w, k) \neq 0$ for a fixed $k \in \N_0$ (which we will prove soon), there exists an analytic function $\nu(a, w)$, such that $\nu(0,w) = k$ and $F(a, w, \nu(a,w)) = 0$ on the neighbourhood of $a=0$. Since there is a different implicit function for every $k$, we will denote them $\nu_k(a,w)$. We will also investigate the behavior of $\pd{}{a} \nu_k$ and $\pd{}{w} \nu_k$ as $w \to \pm\infty$. First, let us write down the partial derivatives of $F$:
+\begin{gather*}
+    \pd{}{a} \, F(a,w,\nu) = D_\nu(w) \, D_\nu(-w)
+    \\[5pt]
+    \pd{}{w} \, F(a,w,\nu)
+    = a \, w \, D_\nu(w) \, D_\nu(-w)
+    + a \big(
+        D_\nu(w) \, D_{\nu + 1}(-w) - D_\nu(-w) \, D_{\nu+1}(w)
+    \big)
+\end{gather*}
+In the second equality we used the recursion formulas $\dd{}{w} D_\nu(w) = \frac{w}{2} \, D_\nu(w) - D_{\nu+1}(w)$ and $\dd{}{w} D_{\nu+1}(w) = -\frac{w}{2} \, D_{\nu+1}(w) + (\nu+1) \, D_\nu(w)$ from \cite{GradshteynRyzhik}. The last partial derivative of $F$ is a little tougher, therefore we will start with the small bits and build our way up.
+\begin{align*}
+    \digamma(x) := \dd{}{x} \ln \Gamma(x)
+    \quad \Longrightarrow \quad
+    \dd{}{x} \Gamma(x) = \digamma(x) \, \Gamma(x)
+\end{align*}
+\begin{align*}
+    \pd{}{\alpha} \, \hypF&(\alpha, \gamma; z)
+    = \pd{}{\alpha} \, \sum_{n=0}^\infty \frac{(\alpha)_n \, z^n}{(\gamma)_n \, n!}
+    = \pd{}{\alpha} \, \sum_{n=0}^\infty \frac{\Gamma(\alpha+n)}{\Gamma(\alpha)} \, \frac{z^n}{(\gamma)_n \, n!}
+    \\[5pt]
+    &= \sum_{n=0}^\infty \tfrac{\digamma(\alpha+n) \, \Gamma(\alpha+k) \, \Gamma(\alpha) - \Gamma(\alpha+n) \, \digamma(\alpha) \, \Gamma(\alpha)}{\Gamma(\alpha)^2} \, \frac{z^n}{(\gamma)_n \, n!}
+    = \sum_{n=0}^\infty \big({ \scriptstyle \digamma(\alpha+n) - \digamma(\alpha) }\big) \, \frac{(\alpha)_n \, z^n}{(\gamma)_n \, n!}
+\end{align*}
+\begin{align*}
+    \pd{}{\nu} \, &D_\nu(w)
+    = \pd{}{\nu} \, 2^{\frac{\nu}{2}} \,
+    \e{-\frac{w^2\!}{4}} \,
+    \scalemath{0.8}{
+    \Bigg(
+        \frac{\sqrt{\pi}}{\Gamma\big( \frac{1-\nu}{2} \big)} \,
+        \hypF\big( -\frac{\nu}{2}, \; \frac{1}{2} ; \; \frac{w^2}{2} \big)
+        - \frac{w \, \sqrt{2\pi}}{\Gamma\big( -\frac{\nu}{2} \big)} \;
+        \hypF\big( \frac{1-\nu}{2}, \, \frac{3}{2} ; \; \frac{w^2}{2} \big)
+    \Bigg)
+    }
+    \\
+    &= \frac{\ln 2}{2} \, D_\nu(w) + 2^{\frac{\nu}{2}} \,
+    \e{-\frac{w^2\!}{4}} \, \Big(
+        \scalemath{0.8}{
+            -\frac{\sqrt{\pi} \, \digamma(\frac{1-\nu}{2})}{2 \, \Gamma(\frac{1-\nu}{2})}
+            \hypF\big( -\tfrac{\nu}{2}, \, \tfrac{1}{2}; \, \tfrac{w^2}{2} \big)
+            +\frac{w \, \sqrt{2\pi} \, \digamma(-\frac{\nu}{2})}{2 \, \Gamma(-\frac{\nu}{2})}
+            \hypF\big( \tfrac{1-\nu}{2}, \, \tfrac{3}{2}; \, \tfrac{w^2}{2} \big)
+            \, -
+        }
+        \\
+        &\ph{=} \;
+        \scalemath{0.8}{
+            - \, \frac{\sqrt{\pi}}{2 \, \Gamma(\frac{1-\nu}{2})}
+            \sum_{n=0}^\infty \big({ \scriptstyle \digamma(-\tfrac{\nu}{2}+n) - \digamma(-\tfrac{\nu}{2}) }\big) \, \frac{(-\tfrac{\nu}{2})_n \, (\frac{w^2}{2})^n}{(\tfrac{1}{2})_n \; n!}
+            + \frac{w \, \sqrt{2\pi}}{2 \, \Gamma(-\frac{\nu}{2})}
+            \sum_{n=0}^\infty \big({ \scriptstyle \digamma(\tfrac{1-\nu}{2}+n) - \digamma(\tfrac{1-\nu}{2}) }\big) \, \frac{(\tfrac{1-\nu}{2})_n \, (\tfrac{w^2}{2})^n}{(\tfrac{3}{2})_n \; n!}
+        }
+    \Big)
+\end{align*}
+Here, $(a)_n \equiv a (a+1) ... (a+n-1)$ is the Pochhammer symbol and $\digamma(x)$ is the digamma function.
+
+\textbf{Následují poznámky a nedotažené myšlenky.} Podle numerických výpočtů to vypadá, že $\pd{}{a} F \to 0$ a $\pd{}{w} F \to 0$ při $w\to\pm\infty$ pro všechny $a, \nu$. Zbývá najít vhodný odhad. Pro $D_\nu(w \to \infty)$ to není problém, ale chování $D_\nu(w\to -\infty)$ je velmi citlivé na $\nu$. Naopak $\pd{}{\nu} F$ jde do plus nebo mínus $\infty$ a je odražené od nuly kromě bodu $w=0$. Zde se pravděpodobně budou hodit odhady:
+\begin{gather*}
+    \sum_{n=0}^\infty \frac{z^n}{n! \, (\tfrac{1}{2})_n}
+    = \cosh(2 \sqrt{z})
+    \\[5pt]
+    \sum_{n=0}^\infty \frac{z^n}{n! \, (\tfrac{3}{2})_n}
+    = \frac{1}{2\sqrt{z}} \, \sinh(2 \sqrt{z})
+\end{gather*}
+Následují grafy pro $F(a,w,\nu) = 0$ od $a=0$ do $a=10$. Bohužel se mi ještě nepodařilo rozchodit Mathematicu na studentskou licenci, takže tohle je jenom z bezplatné webové verze. U kamaráda, který Mathematicu má, jsem to zkoušel až do $a=100$ a pásy se nikdy nepřekřížily.
+\begin{figure}[h!]
+    \centering
+    \includegraphics{../img/dirac_0.png}
+    \caption{$a=0$}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics{../img/dirac_1.png}
+    \caption{$a=1$}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics{../img/dirac_2.png}
+    \caption{$a=2$}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics{../img/dirac_3.png}
+    \caption{$a=3$}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics{../img/dirac_5.png}
+    \caption{$a=5$}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics{../img/dirac_10.png}
+    \caption{$a=10$}
+\end{figure}

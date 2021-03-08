@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.8)  10 FEB 2021 08:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.8)  8 MAR 2021 01:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -587,17 +587,71 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 
-]) [9] [10]
+] [9] [10]
+Overfull \hbox (7.15941pt too wide) in paragraph at lines 235--236
+[]\T1/lmr/bx/n/12 N·sledujÌ pozn·mky a ne-do-ta∫enÈ my≤lenky. \T1/lmr/m/n/12 Po-dle nu-m-er-ick-˝ch v˝po£t∑|
+ []
+
+<../img/dirac_0.png, id=240, 260.172pt x 260.8947pt>
+File: ../img/dirac_0.png Graphic file (type png)
+<use ../img/dirac_0.png>
+Package pdftex.def Info: ../img/dirac_0.png  used on input line 246.
+(pdftex.def)             Requested size: 260.17134pt x 260.89404pt.
+<../img/dirac_1.png, id=242, 260.172pt x 260.8947pt>
+File: ../img/dirac_1.png Graphic file (type png)
+<use ../img/dirac_1.png>
+Package pdftex.def Info: ../img/dirac_1.png  used on input line 251.
+(pdftex.def)             Requested size: 260.17134pt x 260.89404pt.
+<../img/dirac_2.png, id=243, 260.172pt x 260.8947pt>
+File: ../img/dirac_2.png Graphic file (type png)
+<use ../img/dirac_2.png>
+Package pdftex.def Info: ../img/dirac_2.png  used on input line 256.
+(pdftex.def)             Requested size: 260.17134pt x 260.89404pt.
+<../img/dirac_3.png, id=244, 260.172pt x 260.8947pt>
+File: ../img/dirac_3.png Graphic file (type png)
+<use ../img/dirac_3.png>
+Package pdftex.def Info: ../img/dirac_3.png  used on input line 261.
+(pdftex.def)             Requested size: 260.17134pt x 260.89404pt.
+<../img/dirac_5.png, id=245, 260.172pt x 260.8947pt>
+File: ../img/dirac_5.png Graphic file (type png)
+<use ../img/dirac_5.png>
+Package pdftex.def Info: ../img/dirac_5.png  used on input line 266.
+(pdftex.def)             Requested size: 260.17134pt x 260.89404pt.
+<../img/dirac_10.png, id=246, 260.172pt x 260.8947pt>
+File: ../img/dirac_10.png Graphic file (type png)
+<use ../img/dirac_10.png>
+Package pdftex.def Info: ../img/dirac_10.png  used on input line 271.
+(pdftex.def)             Requested size: 260.17134pt x 260.89404pt.
+)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[11] [12 <../img/dirac_0.png> <../img/dirac_1.png>] [13 <../img/dirac_2.png> <../img/dirac_3.png>] [14 <../img/dirac_5.png> <../img/dirac_10.png>]
 \openout2 = `epilog.aux'.
 
- (/home/m93a/Bakal√°≈ôka/tex/en/epilog.tex) [11
+ (/home/m93a/Bakal√°≈ôka/tex/en/epilog.tex) [15
 
 
 
 ]
 \openout2 = `bibliography.aux'.
 
- (/home/m93a/Bakal√°≈ôka/tex/en/bibliography.tex (/home/m93a/Bakal√°≈ôka/tex/en/thesis.bbl)) [12
+ (/home/m93a/Bakal√°≈ôka/tex/en/bibliography.tex (/home/m93a/Bakal√°≈ôka/tex/en/thesis.bbl)) [16
 
 
 
@@ -605,18 +659,18 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@lof=\write7
 \openout7 = `thesis.lof'.
 
- [13
+ [17
 
 
 ] (/home/m93a/Bakal√°≈ôka/tex/en/thesis.lot)
 \tf@lot=\write8
 \openout8 = `thesis.lot'.
 
- [14
+ [18
 
 ]
 Appendix A.
-[15
+[19
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 159.
@@ -625,22 +679,22 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 159.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 159.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 159.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 07F5AE23E186AF0F3BC7A24B38EAB166;2648.
+(rerunfilecheck)             Checksum: 549C172936F8036C9986290EFD187A15;2551.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 159.
  ) 
 Here is how much of TeX's memory you used:
- 14981 strings out of 482050
- 209995 string characters out of 5934590
- 450913 words of memory out of 5000000
- 29894 multiletter control sequences out of 15000+600000
+ 15037 strings out of 482050
+ 210948 string characters out of 5934590
+ 456216 words of memory out of 5000000
+ 29931 multiletter control sequences out of 15000+600000
  641088 words of font info for 105 fonts, out of 8000000 for 9000
  480 hyphenation exceptions out of 8191
  44i,22n,41p,913b,2341s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/esvect/vect10.pfb>
-Output written on /home/m93a/Bakal√°≈ôka/tex/en/thesis.pdf (19 pages, 679681 bytes).
+Output written on /home/m93a/Bakal√°≈ôka/tex/en/thesis.pdf (23 pages, 1035683 bytes).
 PDF statistics:
- 382 PDF objects out of 1000 (max. 8388607)
- 292 compressed objects within 3 object streams
- 49 named destinations out of 1000 (max. 500000)
- 154 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 437 PDF objects out of 1000 (max. 8388607)
+ 330 compressed objects within 4 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 184 words of extra memory for PDF output out of 10000 (max. 10000000)
 

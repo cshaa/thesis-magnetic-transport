@@ -8,10 +8,10 @@
 \contentsline {section}{\numberline {1.5}Geometric perturbation}{7}{section.1.5}%
 \contentsline {chapter}{\numberline {2}Delta potential}{8}{chapter.2}%
 \contentsline {section}{\numberline {2.1}The eigenproblem of the fiber Hamiltonian}{8}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Title of the second subchapter of the second chapter}{10}{section.2.2}%
-\contentsline {chapter}{Conclusion}{11}{chapter*.4}%
-\contentsline {chapter}{Bibliography}{12}{chapter*.5}%
-\contentsline {chapter}{List of Figures}{13}{chapter*.6}%
-\contentsline {chapter}{List of Tables}{14}{chapter*.7}%
-\contentsline {chapter}{\numberline {A}Attachments}{15}{appendix.A}%
-\contentsline {section}{\numberline {A.1}First Attachment}{15}{section.A.1}%
+\contentsline {section}{\numberline {2.2}Implicit function for energy levels}{10}{section.2.2}%
+\contentsline {chapter}{Conclusion}{15}{chapter*.4}%
+\contentsline {chapter}{Bibliography}{16}{chapter*.5}%
+\contentsline {chapter}{List of Figures}{17}{chapter*.6}%
+\contentsline {chapter}{List of Tables}{18}{chapter*.7}%
+\contentsline {chapter}{\numberline {A}Attachments}{19}{appendix.A}%
+\contentsline {section}{\numberline {A.1}First Attachment}{19}{section.A.1}%
