@@ -120,7 +120,7 @@ Before we apply this to the magnetic Hamiltonian, let us remind the Fourier-Plan
     \Sp(\Fourier A \Fourier^{-1}) \neq \SpP(\Fourier A \Fourier^{-1})
     \: .
 \end{equation*}
-This theory regards functions of one variable. In this thesis, we will often perform a \textit{partial} Fourier transformation on multivariate functions – that is, perform the Fourier transformation on one variable whilst keeping the other variables fixed. We will use subscript to indicate which variable is being transformed, for example $\Fourier_y: (x,y) \mapsto (x,\xi)$.
+The theory given so far regards functions of one variable. In this thesis, we will often perform a \textit{partial} Fourier transformation on multivariate functions – that is, perform the Fourier transformation on one variable whilst keeping the other variables fixed. We will use a subscript to indicate which variable is being transformed, for example $\Fourier_y: \psi(x,y) \mapsto \tilde\psi(x,\xi)$.
 
 Now, we can show, how to express a Landau Hamiltonian with potential and magnetic perturbation in terms of the direct integral:
 \begin{align*}
@@ -129,13 +129,14 @@ Now, we can show, how to express a Landau Hamiltonian with potential and magneti
     &\simeq \Fourier_y \big( P_x^2 + \left( P_y + A_y(x) \right)^2 + V(x) \big) \Fourier_y^{-1} \\[5pt]
     &= P_x^2 + \left( Q_y + A_y(x) \right)^2 + V(x) \\[5pt]
     &= \int_\R^\oplus \underbrace{
-        {P_x}^2 + \left( s + A_y(x) \right)^2 + V(x)
-    }_{\displaystyle \Hf(s)} \; \d{s}
+        {P_x}^2 + \left( p + A_y(x) \right)^2 + V(x)
+    }_{\displaystyle \Hf(p)} \; \d{p}
     \numberthis \label{eqn-vague-direct-integral-decomp}
 \end{align*}
-Where for every $s$, $\Hf(s)$ is a self-adjoint operator on $L^2(\R)$. The following theorem is a weakened version of Theorem XIII.85 of \cite{ReedSimon4}.
+Where for every $p \in \R$, $\Hf(p)$ is a self-adjoint operator on $L^2(\R)$. The physical meaning of the parameter $p$ is the particle's momentum in the $y$ direction and $\Hf(p)$ is the Hamiltonian for a particle with a fixed $y$-momentum. The following theorem is a weakened version of Theorem XIII.85 of \cite{ReedSimon4}.
 
 \begin{thm}[Spectrum of direct integral]
+    \label{thm-direct-integral-spectrum}
     Let $\lambda \in \C$ and $A = \int^\oplus_M \Af(s) \d{s}$, as in the previous definition. We define $\Gamma(\lambda)$ as the set of all $s$, such that $\lambda$ is an eigenvalue of $\Af(s)$, and $\Omega_\ve(\lambda)$ as the set of all $s$, such that the $\ve$-neighbourhood of $\lambda$ intersects the spectrum of $\Af(s)$ – written symbolically:
     \begin{gather*}
         \Gamma(\lambda)
@@ -155,7 +156,26 @@ Where for every $s$, $\Hf(s)$ is a self-adjoint operator on $L^2(\R)$. The follo
     \end{gather*}
 \end{thm}
 
-This means that we can deduce the spectrum of the Hamiltonian $H$ simply by investigating how the spectrum of its fiber $\Hf(s)$ depends on $s$.
+This means that we can deduce the spectrum of the Hamiltonian $H$ simply by investigating how the spectrum of its fiber $\Hf(p)$ depends on $p$. Furthermore, the spectrum of $\Hf(p)$ typically consists of simple eigenvalues which are particularly convenient to work with – to prove this is the case for a specific Hamiltonian, one can utilize for example the \textit{min-max principle} given as Theorem XIII.1 in \cite{ReedSimon4}.
+
+\begin{thm}[Min-max principle]
+    \label{thm-minmax}
+    Let $c \in \R$ and $A$ be a self-adjoint operator satisfying
+    \begin{equation*}
+        (\psi, A \psi) \geq c \, (\psi, \, \psi)
+        \quad \text{for all }
+        \psi \in \Domain(A) \: .
+    \end{equation*}
+    Let $n \in \N$, we define
+    \begin{equation*}
+        \mu_n =
+        \sup_{\{ \varphi_j \}_{j=1}^n} \;
+        \inf_{\psi \, \in \, \{ \varphi_j \}^\perp \, \cap \, \Domain(A)}
+        \frac{ (\psi, \, A\psi) }{ (\psi, \, \psi) }
+        \: ,
+    \end{equation*}
+    where the supremum is to be understood over all sets $\{ \varphi_1, ... \varphi_n \}$ of $n$ vectors and the infimum is taken over all vectors $\psi$ which are in the domain of $A$ and orthogonal to each $\varphi_j$. Then the set $\{ \lambda \in \sigma(A) \; | \; \lambda < \mu_n \}$ consists of eigenvalues (at most $n-1$ of them) and $\mu_n$ is either an eigenvalue itself, or the infimum of~$\sigma_{\mathrm{ess.}}(A)$.
+\end{thm}
 
 
 \section{Potential perturbation}

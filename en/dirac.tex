@@ -12,42 +12,85 @@ with a domain given by the conditions
     \lim_{x \to x_0 +} \!\psi'(x,y)\; - \lim_{x \to x_0 -} \!\psi'(x,y) = \alpha \lim_{x \to x_0} \!\psi(x, y)
     \quad \text{for a.e. } y \: ,\footnotemark
     \\[5pt]
-    \int_{\R^2} x^2 \, \big|\, \psi(x,y) \,\big| \, \d{x}\d{y} < \infty \: .
+    \int_{\R^2} x^2 \, \big|\, \psi(x,y) \,\big|^2 \, \d{x}\d{y} < \infty \: .
 \end{gather*}
 \footnotetext{The equality holds for \textit{almost every} $y$ and $\lim_{x\to x_0}$ means the \textit{essential} limit with respect to the Lebesgue measure on $\R$.}
 The Hamiltonian is self-adjoint. \textbf{[PROVE.]} Then, by an approach equivalent to that in \eqref{eqn-vague-direct-integral-decomp}, one can show that $H$ is isomorphic to a direct integral:
 \begin{equation*}
-    H \simeq \int^\oplus_\R \Hf(s) \d{s} \: ,
+    H \simeq \int^\oplus_\R \Hf(p) \d{p} \: ,
 \end{equation*}
-where $\Hf(s)$ is a fiber Hamiltonian satisfying very similar conditions to those of~$H$ – that is, for almost every $s \in \R$:
+where $\Hf(p)$ is a fiber Hamiltonian satisfying very similar conditions to those of~$H$ – that is, for almost every $p \in \R$:
 \begin{gather*}
-    \big( \Hf(s) \, \varphi \big)(x)
+    \big( \Hf(p) \, \varphi \big)(x)
     = -\varphi''(x)
-    + \big( b^2 \, x^2 + 2 s b \, x + s^2 \big) \, \varphi(x) \: ,
+    + \big( b^2 \, x^2 + 2 p b \, x + p^2 \big) \, \varphi(x) \: ,
+    \numberthis\label{eqn-dirac-fiber-hamiltonian}
     \\[15pt]
     \varphi \in W^{1,2}(\R) \; \cap \; W^{2,2}( \R \setminus \{ x_0 \}) \: ,
     \\[5pt]
-    \lim_{x \to x_0+} \varphi'(x) - \lim_{x \to x_0-} \varphi'(x) = \lim_{x \to x_0} \varphi(x),
+    \lim_{x \to x_0+} \varphi'(x) - \lim_{x \to x_0-} \varphi'(x) = \alpha \, \lim_{x \to x_0} \varphi(x),
     \\[3pt]
-    \int_\R x^2 \, |\varphi(x)| \d{x} < \infty \: .
+    \int_\R x^2 \, |\varphi(x)|^2 \d{x} < \infty \: .
 \end{gather*}
-In the next section, we will see that $\Hf(s)$ has a pure point spectrum [\textbf{I don't know how to prove this}] and investigate how it depends on $s$ and $\alpha$.
+To prove that $\Hf(p)$ is bounded from below and its spectrum consists of simple eigenvalues, we will use the theorem \ref{thm-minmax}. We start by expressing the quadratic form associated with $\Hf(p)$:
+\begin{align*}
+    (\varphi, \, \Hf(p) \, \varphi)
+    &= \int_\R \overline{\varphi}(x) \, \Big( -\varphi''(x) + (b^2 x^2 + 2pb \, x + p^2) \varphi(x) \Big) \d{x}
+    \\
+    &= -\int_\R \overline{\varphi} \varphi''
+    + \int_\R (b^2 x^2 + 2pb \, x + p^2) \;\, \overline{\varphi}(x) \, \varphi(x) \; \d{x}
+    \\
+    &= \norm{\varphi'}_{L^2(\R)}
+    + \alpha \, \big|\varphi(x_0)\big|^2
+    + \int_\R (b^2 x^2 + 2pb \, x + p^2) \;\, \big|\varphi(x)\big|^2 \; \d{x}
+\end{align*}
+[\textbf{Hmm... how to continue?}] \\
+In the next section, we will investigate how the eigenvalues of $\Hf(p)$ depend on $p$ and $\alpha$.
 
 \section{The eigenproblem of the fiber Hamiltonian}
-From now on, we shall suppose that $b>0$; for $b<0$ one can do a reflection $x \mapsto -x$ and arrive at the same results. Let $\epsilon \in \R$, we define:
-\begin{equation}
-    w_0 = \sqrt{2b} \, \big( x_0 + \frac{s}{b} \big) \: ,
+In order to use the utilize the theorem \ref{thm-direct-integral-spectrum} we need to find the eigenvalues of the fiber Hamiltonian for each $p$. That is, we are looking for a real analytic function $\epsilon(p)$, such that for all $p \in \R$ there exists a $\varphi \in \Domain(\Hf(p))$ satisfying
+\begin{equation*}
+    \Hf(p) \, \varphi = \epsilon(p) \, \varphi \: .
+\end{equation*}
+As a shorthand, we will often denote $\epsilon(p)$ simply as $\epsilon$. Substituting from \eqref{eqn-dirac-fiber-hamiltonian}, we get an ordinary differential equation:
+\begin{gather*}
+    -\varphi''(x)
+    + \big( b^2 \, x^2 + 2 p b \, x + p^2 \big) \, \varphi(x)
+    = \epsilon \, \varphi(x)
+    \quad \text{on } x \neq x_0 \: ,
+    \\
+    \varphi'(x_0+) - \varphi'(x_0-) = \alpha \, \varphi(x_0)
+    \: .
+\end{gather*}
+From now on, we shall suppose that $b>0$; for $b<0$ one can perform a reflection $x \mapsto -x$ and arrive at the same results. In order to refine this differential equation into the standard form, we do a change of variables and instead of one function $\psi$ on $\R$ we introduce two functions $h_-, h_+$ on the left and right half-line respectively:
+\begin{gather*}
+    w \coloneqq \sqrt{2b} \, \big( x + \frac{p}{b} \big) \: ,
     \qquad
-    \nu = \frac{\epsilon + b}{2b} \: .
+    w_0 \coloneqq \sqrt{2b}\,\big( x_0 + \frac{p}{b} \big) \: ,
+    \qquad
+    \nu \coloneqq \frac{\epsilon - b}{2b} \: ,
+    \numberthis
     \label{eqn-w-nu-definition}
-\end{equation}
-Let $h_- \in C^2\big( (-\infty, w_0], \, \C \big)$ and $h_+ \in C^2\big( [w_0, +\infty), \, \C \big)$, such that:
+    \\[10pt]
+    h_-: (-\infty, w_0] \to \C \: , \qquad
+    h_+: [w_0, +\infty) \to \C \: ,
+    \\[10pt]
+    \varphi(x) = \begin{cases}
+        h_+ \big( \sqrt{2b} \, (x + \frac{p}{b}) \big)
+        \quad \text{for } x \geq x_0 \: ,
+        \\[5pt]
+        h_- \big( \sqrt{2b} \, (x + \frac{p}{b}) \big)
+        \quad \text{for } x < x_0 \: .
+    \end{cases}
+\end{gather*}
+Then we arrive at the so-called parabolic cylinder differential equation:
 \begin{align*}
     h_\pm''(w) = \Big( \frac{1}{4}w^2 - \nu  - \frac{1}{2} \Big) \, h_\pm(w) \: ,
     \numberthis
     \label{eqn-parabolic-cylinder-ode}
     \\[-2em]
 \end{align*}
+The two functions are then \textit{“glued together”} by the following equations:
 \begin{equation}
     \begin{aligned}[c]
         h_+(w_0) - h_-(w_0) &= 0 \: , \\[5pt]
@@ -55,17 +98,6 @@ Let $h_- \in C^2\big( (-\infty, w_0], \, \C \big)$ and $h_+ \in C^2\big( [w_0, +
     \end{aligned}
     \label{eqn-gluing-equations}
 \end{equation}
-(If such functions exist for a given $\nu$.) Then, if the function $\varphi: \R \to \C$ given by
-\begin{equation*}
-    \varphi(x) = \begin{cases}
-        h_+ \big( \sqrt{2b} \, (x + \frac{s}{b}) \big)
-        \quad \text{for } x \geq x_0
-        \\[5pt]
-        h_- \big( \sqrt{2b} \, (x + \frac{s}{b}) \big)
-        \quad \text{for } x < x_0
-    \end{cases}
-\end{equation*}
-is in $\Domain(\Hf(s))$, it is an eigenfunction of $\Hf(s)$ with the eigenvalue $\epsilon$. To check this is really the case, one can simply substitute $w = \sqrt{2b} (x + s/b)$ in the equation \eqref{eqn-parabolic-cylinder-ode} and see they arrive at the equation $\Hf(s) \, \varphi(x) = \epsilon \, \varphi(x)$.
 
 As stated in \cite{GradshteynRyzhik}, the solutions to \eqref{eqn-parabolic-cylinder-ode} can be expressed as a linear combination of the functions
 \begin{equation}
@@ -103,7 +135,7 @@ In the special case when $\nu \in \N_0$, the function $D_\nu$ can be expressed u
 \end{align*}
 The solutions in \eqref{eqn-parabolic-cylinder-solutions} are linearly dependent. For most values of $\nu$, any of the four functions can be expressed as a linear combination of any two others. However, specifically in the case $\nu \in \N_0$ we get $D_\nu(w) = \pm D_\nu(-w)$.
 
-Asymptotic behavior of the solutions is also given by \cite{GradshteynRyzhik}. As $|w|\to\infty$, the solutions $D_{-\nu-1}(\i w)$ and $D_{-\nu-1}(-\i w)$ grow exponentially. Meanwhile $D_\nu(w)$ decays exponentially for $w \to +\infty$. Therefore $D_\nu(w)$ and $D_\nu(-w)$ are better suited for the growth conditions imposed by the domain of $\Hf(s)$. We define $c_{+1}, c_{+2}, c_{-1}, c_{-2} \in \C$, such that
+Asymptotic behavior of the solutions is also given by \cite{GradshteynRyzhik}. As $|w|\to\infty$, the solutions $D_{-\nu-1}(\i w)$ and $D_{-\nu-1}(-\i w)$ grow exponentially. Meanwhile $D_\nu(w)$ decays exponentially for $w \to +\infty$. Therefore $D_\nu(w)$ and $D_\nu(-w)$ are better suited for the growth conditions imposed by the domain of $\Hf(p)$. We define $c_{+1}, c_{+2}, c_{-1}, c_{-2} \in \C$, such that
 \begin{equation*}
     h_\pm = c_{\pm 1} \, D_\nu(w) + c_{\pm 2} \, D_\nu(-w) \: .
 \end{equation*}
@@ -157,15 +189,15 @@ Let $F$ be a function of three real variables given by
 \end{equation*}
 We have shown that
 \begin{align*}
-    \epsilon(s) \text{ is an eigenvalue of } \Hf(s)
+    \epsilon(p) \text{ is an eigenvalue of } \Hf(p)
     \; \Longleftrightarrow \;
     F\Big(
         \alpha \, \sqrt{2b}, \;
-        \sqrt{2b} \, \big( x_0 + \frac{s}{b} \, \big), \;
-        \frac{\, \epsilon(s) + b \,}{2b}
+        \sqrt{2b} \, \big( x_0 + \frac{p}{b} \, \big), \;
+        \frac{\, \epsilon(p) + b \,}{2b}
     \Big) = 0 \: .
 \end{align*}
-Truly, this is simply the equation \eqref{eqn-implicit-pre} after the substitution from \eqref{eqn-w-nu-definition}. Furthermore, for $\alpha = 0$ the fiber Hamiltonian $\Hf(s)$ reduces to that of a harmonic oscillator. From this fact, it is straightforward to derive the following result:
+Truly, this is simply the equation \eqref{eqn-implicit-pre} after the substitution from \eqref{eqn-w-nu-definition}. Furthermore, for $\alpha = 0$ the fiber Hamiltonian $\Hf(p)$ reduces to that of a harmonic oscillator. From this fact, it is straightforward to derive the following result:
 \begin{equation*}
     F(0, w, k) = 0
     \text{ holds for }
@@ -174,7 +206,13 @@ Truly, this is simply the equation \eqref{eqn-implicit-pre} after the substituti
     w \in \R
     \: .
 \end{equation*}
-Moreover, $F$ is analytic in the three variables, as it is a sum of products of entire functions. The implicit function theorem then tells us that, provided $\pd{}{\nu} F(0, w, k) \neq 0$ for a fixed $k \in \N_0$ (which we will prove soon), there exists an analytic function $\nu(a, w)$, such that $\nu(0,w) = k$ and $F(a, w, \nu(a,w)) = 0$ on the neighbourhood of $a=0$. Since there is a different implicit function for every $k$, we will denote them $\nu_k(a,w)$. We will also investigate the behavior of $\pd{}{a} \nu_k$ and $\pd{}{w} \nu_k$ as $w \to \pm\infty$. First, let us write down the partial derivatives of $F$:
+Moreover, $F$ is analytic in the three variables, as it is a sum of products of entire functions. The implicit function theorem then tells us that, provided $\pd{}{\nu} F(0, w, k) \neq 0$ for a fixed $k \in \N_0$ (which we will prove soon), there exists an analytic function $\nu(a, w)$, such that $\nu(0,w) = k$ and $F(a, w, \nu(a,w)) = 0$ on the neighbourhood of $a=0$. Since there is a different implicit function for every $k$, we will denote them $\nu_k(a,w)$. After changing our variables back to the physical ones and putting $x_0=0$ (since it only depends on the choice of origin), we get that the energy levels for a fixed magnitude of the perturbation $\alpha$ are
+\begin{equation*}
+    \epsilon_k(p) = b + 2b\;\nu_k\big( \alpha \, \sqrt{2b}, \; p \, \sqrt{\tfrac{2}{b}}  \big) \: ,
+    \qquad k \in \N_0 \: .
+\end{equation*}
+
+For an unperturbed system $\alpha=0$, the allowed energies are the Landau levels $\epsilon_k = b(2k+1)$. We will to show that for $p\to\pm\infty$, the energy approaches those unperturbed levels – in our rescaled coordinates, this is equivalent to $\lim_{w\to\pm\infty} \nu_k(a, w) = k$. To show this is the case, we will investigate the behavior of $\pd{}{a} \nu_k$ and $\pd{}{w} \nu_k$ as $w \to \pm\infty$. First, let us write down the partial derivatives of~$F$:
 \begin{gather*}
     \pd{}{a} \, F(a,w,\nu) = D_\nu(w) \, D_\nu(-w)
     \\[5pt]
@@ -232,7 +270,7 @@ In the second equality we used the recursion formulas $\dd{}{w} D_\nu(w) = \frac
 \end{align*}
 Here, $(a)_n \equiv a (a+1) ... (a+n-1)$ is the Pochhammer symbol and $\digamma(x)$ is the digamma function.
 
-\textbf{Následují poznámky a nedotažené myšlenky.} Podle numerických výpočtů to vypadá, že $\pd{}{a} F \to 0$ a $\pd{}{w} F \to 0$ při $w\to\pm\infty$ pro všechny $a, \nu$. Zbývá najít vhodný odhad. Pro $D_\nu(w \to \infty)$ to není problém, ale chování $D_\nu(w\to -\infty)$ je velmi citlivé na $\nu$. Naopak $\pd{}{\nu} F$ jde do plus nebo mínus $\infty$ a je odražené od nuly kromě bodu $w=0$. Zde se pravděpodobně budou hodit odhady:
+\textbf{Následují poznámky a nedotažené myšlenky.} Pravděpodobně se budou hodit odhady:
 \begin{gather*}
     \sum_{n=0}^\infty \frac{z^n}{n! \, (\tfrac{1}{2})_n}
     = \cosh(2 \sqrt{z})
@@ -240,34 +278,40 @@ Here, $(a)_n \equiv a (a+1) ... (a+n-1)$ is the Pochhammer symbol and $\digamma(
     \sum_{n=0}^\infty \frac{z^n}{n! \, (\tfrac{3}{2})_n}
     = \frac{1}{2\sqrt{z}} \, \sinh(2 \sqrt{z})
 \end{gather*}
-Následují grafy pro $F(a,w,\nu) = 0$ od $a=0$ do $a=10$. Bohužel se mi ještě nepodařilo rozchodit Mathematicu na studentskou licenci, takže tohle je jenom z bezplatné webové verze. U kamaráda, který Mathematicu má, jsem to zkoušel až do $a=100$ a pásy se nikdy nepřekřížily.
-\begin{figure}[h!]
+
+
+
+
+
+
+\begin{figure}[p]
     \centering
-    \includegraphics{../img/dirac_0.png}
-    \caption{$a=0$}
+    \noindent
+    \includegraphics[width=0.45\textwidth]{grafy/dirac0.pdf}%
+    \hspace{0.1\textwidth}%
+    \includegraphics[width=0.45\textwidth]{grafy/dirac1.pdf}%
+    \\[1em]%
+    \includegraphics[width=0.45\textwidth]{grafy/dirac2.pdf}%
+    \hspace{0.1\textwidth}%
+    \includegraphics[width=0.45\textwidth]{grafy/dirac5.pdf}%
+    \\[1em]%
+    \includegraphics[width=0.45\textwidth]{grafy/dirac10.pdf}%
+    \hspace{0.1\textwidth}%
+    \includegraphics[width=0.45\textwidth]{grafy/dirac100.pdf}\par
+    \caption{The first four energy levels $\epsilon$ as a function of the $y$-momentum $p$ for $\alpha\,\sqrt{2b} = 0, 1, 2, 5, 10$ and $100$ (starting with an unperturbed system, followed by an increasingly repulsive perturbation).}
+    \label{plots-dirac-repulsive}
 \end{figure}
-\begin{figure}[h!]
+
+\begin{figure}[p]
     \centering
-    \includegraphics{../img/dirac_1.png}
-    \caption{$a=1$}
-\end{figure}
-\begin{figure}[h!]
-    \centering
-    \includegraphics{../img/dirac_2.png}
-    \caption{$a=2$}
-\end{figure}
-\begin{figure}[h!]
-    \centering
-    \includegraphics{../img/dirac_3.png}
-    \caption{$a=3$}
-\end{figure}
-\begin{figure}[h!]
-    \centering
-    \includegraphics{../img/dirac_5.png}
-    \caption{$a=5$}
-\end{figure}
-\begin{figure}[h!]
-    \centering
-    \includegraphics{../img/dirac_10.png}
-    \caption{$a=10$}
+    \noindent
+    \includegraphics[width=0.45\textwidth]{grafy/dirac-1.pdf}%
+    \hspace{0.1\textwidth}%
+    \includegraphics[width=0.45\textwidth]{grafy/dirac-2.pdf}%
+    \\[2em]%
+    \includegraphics[width=0.45\textwidth]{grafy/dirac-4.pdf}%
+    \hspace{0.1\textwidth}%
+    \includegraphics[width=0.45\textwidth]{grafy/dirac-5.pdf}\par
+    \caption{The first five energy levels $\epsilon$ as a function of the $y$-momentum $p$ for $\alpha\,\sqrt{2b} = -1, -2, -4$ and $-5$ (system with an increasingly attractive perturbation).}
+    \label{plots-dirac-attractive}
 \end{figure}

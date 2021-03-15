@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.8)  8 MAR 2021 01:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.8)  15 MAR 2021 03:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -574,7 +574,7 @@ Chapter 1.
 
 
 
-] [5] [6]) [7]
+] [5] [6]) [7] [8]
 \openout2 = `dirac.aux'.
 
  (/home/m93a/Bakalářka/tex/en/dirac.tex
@@ -583,75 +583,96 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 7.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 7.
-[8
+[9
 
 
 
-] [9] [10]
-Overfull \hbox (7.15941pt too wide) in paragraph at lines 235--236
-[]\T1/lmr/bx/n/12 N�sleduj� pozn�mky a ne-do-ta�en� my�lenky. \T1/lmr/m/n/12 Po-dle nu-m-er-ick-�ch v�po�t�|
- []
+] [10] [11] [12]
+<grafy/dirac0.pdf, id=254, 297.11pt x 323.2075pt>
+File: grafy/dirac0.pdf Graphic file (type pdf)
+<use grafy/dirac0.pdf>
+Package pdftex.def Info: grafy/dirac0.pdf  used on input line 290.
+(pdftex.def)             Requested size: 185.65297pt x 201.96967pt.
+<grafy/dirac1.pdf, id=255, 297.11pt x 323.2075pt>
+File: grafy/dirac1.pdf Graphic file (type pdf)
+<use grafy/dirac1.pdf>
+Package pdftex.def Info: grafy/dirac1.pdf  used on input line 292.
+(pdftex.def)             Requested size: 185.65297pt x 201.96967pt.
+<grafy/dirac2.pdf, id=256, 297.11pt x 323.2075pt>
+File: grafy/dirac2.pdf Graphic file (type pdf)
+<use grafy/dirac2.pdf>
+Package pdftex.def Info: grafy/dirac2.pdf  used on input line 294.
+(pdftex.def)             Requested size: 185.65297pt x 201.96967pt.
+<grafy/dirac5.pdf, id=257, 297.11pt x 323.2075pt>
+File: grafy/dirac5.pdf Graphic file (type pdf)
+<use grafy/dirac5.pdf>
+Package pdftex.def Info: grafy/dirac5.pdf  used on input line 296.
+(pdftex.def)             Requested size: 185.65297pt x 201.96967pt.
+<grafy/dirac10.pdf, id=258, 297.11pt x 323.2075pt>
+File: grafy/dirac10.pdf Graphic file (type pdf)
+<use grafy/dirac10.pdf>
+Package pdftex.def Info: grafy/dirac10.pdf  used on input line 298.
+(pdftex.def)             Requested size: 185.65297pt x 201.96967pt.
+<grafy/dirac100.pdf, id=259, 297.11pt x 323.2075pt>
+File: grafy/dirac100.pdf Graphic file (type pdf)
+<use grafy/dirac100.pdf>
+Package pdftex.def Info: grafy/dirac100.pdf  used on input line 300.
+(pdftex.def)             Requested size: 185.65297pt x 201.96967pt.
+<grafy/dirac-1.pdf, id=260, 297.11pt x 318.18875pt>
+File: grafy/dirac-1.pdf Graphic file (type pdf)
+<use grafy/dirac-1.pdf>
+Package pdftex.def Info: grafy/dirac-1.pdf  used on input line 308.
+(pdftex.def)             Requested size: 185.65297pt x 198.83348pt.
+<grafy/dirac-2.pdf, id=261, 297.11pt x 318.18875pt>
+File: grafy/dirac-2.pdf Graphic file (type pdf)
+<use grafy/dirac-2.pdf>
+Package pdftex.def Info: grafy/dirac-2.pdf  used on input line 310.
+(pdftex.def)             Requested size: 185.65297pt x 198.83348pt.
+<grafy/dirac-4.pdf, id=262, 297.11pt x 318.18875pt>
+File: grafy/dirac-4.pdf Graphic file (type pdf)
+<use grafy/dirac-4.pdf>
+Package pdftex.def Info: grafy/dirac-4.pdf  used on input line 312.
+(pdftex.def)             Requested size: 185.65297pt x 198.83348pt.
+<grafy/dirac-5.pdf, id=263, 297.11pt x 318.18875pt>
+File: grafy/dirac-5.pdf Graphic file (type pdf)
+<use grafy/dirac-5.pdf>
+Package pdftex.def Info: grafy/dirac-5.pdf  used on input line 314.
+(pdftex.def)             Requested size: 185.65297pt x 198.83348pt.
+) [13] [14 </home/m93a/Bakalářka/tex/en/grafy/dirac0.pdf> </home/m93a/Bakalářka/tex/en/grafy/dirac1.pdf
 
-<../img/dirac_0.png, id=240, 260.172pt x 260.8947pt>
-File: ../img/dirac_0.png Graphic file (type png)
-<use ../img/dirac_0.png>
-Package pdftex.def Info: ../img/dirac_0.png  used on input line 246.
-(pdftex.def)             Requested size: 260.17134pt x 260.89404pt.
-<../img/dirac_1.png, id=242, 260.172pt x 260.8947pt>
-File: ../img/dirac_1.png Graphic file (type png)
-<use ../img/dirac_1.png>
-Package pdftex.def Info: ../img/dirac_1.png  used on input line 251.
-(pdftex.def)             Requested size: 260.17134pt x 260.89404pt.
-<../img/dirac_2.png, id=243, 260.172pt x 260.8947pt>
-File: ../img/dirac_2.png Graphic file (type png)
-<use ../img/dirac_2.png>
-Package pdftex.def Info: ../img/dirac_2.png  used on input line 256.
-(pdftex.def)             Requested size: 260.17134pt x 260.89404pt.
-<../img/dirac_3.png, id=244, 260.172pt x 260.8947pt>
-File: ../img/dirac_3.png Graphic file (type png)
-<use ../img/dirac_3.png>
-Package pdftex.def Info: ../img/dirac_3.png  used on input line 261.
-(pdftex.def)             Requested size: 260.17134pt x 260.89404pt.
-<../img/dirac_5.png, id=245, 260.172pt x 260.8947pt>
-File: ../img/dirac_5.png Graphic file (type png)
-<use ../img/dirac_5.png>
-Package pdftex.def Info: ../img/dirac_5.png  used on input line 266.
-(pdftex.def)             Requested size: 260.17134pt x 260.89404pt.
-<../img/dirac_10.png, id=246, 260.172pt x 260.8947pt>
-File: ../img/dirac_10.png Graphic file (type png)
-<use ../img/dirac_10.png>
-Package pdftex.def Info: ../img/dirac_10.png  used on input line 271.
-(pdftex.def)             Requested size: 260.17134pt x 260.89404pt.
-)
+pdfTeX warning: pdflatex (file /home/m93a/Bakalářka/tex/en/grafy/dirac1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> </home/m93a/Bakalářka/tex/en/grafy/dirac2.pdf
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+pdfTeX warning: pdflatex (file /home/m93a/Bakalářka/tex/en/grafy/dirac2.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> </home/m93a/Bakalářka/tex/en/grafy/dirac5.pdf
 
+pdfTeX warning: pdflatex (file /home/m93a/Bakalářka/tex/en/grafy/dirac5.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> </home/m93a/Bakalářka/tex/en/grafy/dirac10.pdf
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+pdfTeX warning: pdflatex (file /home/m93a/Bakalářka/tex/en/grafy/dirac10.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> </home/m93a/Bakalářka/tex/en/grafy/dirac100.pdf
 
+pdfTeX warning: pdflatex (file /home/m93a/Bakalářka/tex/en/grafy/dirac100.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] [15 </home/m93a/Bakalářka/tex/en/grafy/dirac-1.pdf> </home/m93a/Bakalářka/tex/en/grafy/dirac-2.pdf
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+pdfTeX warning: pdflatex (file /home/m93a/Bakalářka/tex/en/grafy/dirac-2.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> </home/m93a/Bakalářka/tex/en/grafy/dirac-4.pdf
 
+pdfTeX warning: pdflatex (file /home/m93a/Bakalářka/tex/en/grafy/dirac-4.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> </home/m93a/Bakalářka/tex/en/grafy/dirac-5.pdf
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[11] [12 <../img/dirac_0.png> <../img/dirac_1.png>] [13 <../img/dirac_2.png> <../img/dirac_3.png>] [14 <../img/dirac_5.png> <../img/dirac_10.png>]
+pdfTeX warning: pdflatex (file /home/m93a/Bakalářka/tex/en/grafy/dirac-5.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
 \openout2 = `epilog.aux'.
 
- (/home/m93a/Bakalářka/tex/en/epilog.tex) [15
+ (/home/m93a/Bakalářka/tex/en/epilog.tex) [16
 
 
 
 ]
 \openout2 = `bibliography.aux'.
 
- (/home/m93a/Bakalářka/tex/en/bibliography.tex (/home/m93a/Bakalářka/tex/en/thesis.bbl)) [16
+ (/home/m93a/Bakalářka/tex/en/bibliography.tex (/home/m93a/Bakalářka/tex/en/thesis.bbl)) [17
 
 
 
@@ -659,18 +680,18 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 \tf@lof=\write7
 \openout7 = `thesis.lof'.
 
- [17
+ [18
 
 
 ] (/home/m93a/Bakalářka/tex/en/thesis.lot)
 \tf@lot=\write8
 \openout8 = `thesis.lot'.
 
- [18
+ [19
 
 ]
 Appendix A.
-[19
+[20
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 159.
@@ -683,18 +704,18 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 159.
  ) 
 Here is how much of TeX's memory you used:
- 15037 strings out of 482050
- 210948 string characters out of 5934590
- 456216 words of memory out of 5000000
- 29931 multiletter control sequences out of 15000+600000
+ 15063 strings out of 482050
+ 211672 string characters out of 5934590
+ 459756 words of memory out of 5000000
+ 29956 multiletter control sequences out of 15000+600000
  641088 words of font info for 105 fonts, out of 8000000 for 9000
  480 hyphenation exceptions out of 8191
  44i,22n,41p,913b,2341s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/esvect/vect10.pfb>
-Output written on /home/m93a/Bakalářka/tex/en/thesis.pdf (23 pages, 1035683 bytes).
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/esvect/vect10.pfb>
+Output written on /home/m93a/Bakalářka/tex/en/thesis.pdf (24 pages, 1284208 bytes).
 PDF statistics:
- 437 PDF objects out of 1000 (max. 8388607)
- 330 compressed objects within 4 object streams
- 61 named destinations out of 1000 (max. 500000)
- 184 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 490 PDF objects out of 1000 (max. 8388607)
+ 364 compressed objects within 4 object streams
+ 58 named destinations out of 1000 (max. 500000)
+ 204 words of extra memory for PDF output out of 10000 (max. 10000000)
 
