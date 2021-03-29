@@ -1,0 +1,64 @@
+\section{Sobolev-type inequality}
+\label{apdx-sobolev-ineq}
+
+In this section we prove a Sobolev-type inequality analogical to the inequality (7.16) in \cite{BEH}. The presented proof is a simple modification of their proof.
+\begin{lemma}
+	Let $\psi \in W^{1,2}(\R)$, then for every $a>0$ there exists $b>0$ such that
+	\begin{equation}
+		\norm{\psi}^{\,n}_{L^\infty(\R)}
+		\leq
+		a \, \norm{\psi'}^{\,n}_{L^2(\R)} +
+		b \, \norm{\psi}^{\,n}_{L^2(\R)}
+		\: ,
+		\label{sobolev-type-0}
+	\end{equation}
+	where $n \in \{ 1, 2 \}$.
+	\label{lemma-sobolev-type-inequality}
+\end{lemma}
+\begin{proof}
+	We define $\phi := \Fourier \psi$. Since, by definition, $\psi' \in L^2(\R)$ we have $\Fourier \psi' = T_x \Fourier \psi = T_x \phi \in L^2(\R)$, where $T_x$ means the operator of multiplication by the identity function $x \mapsto x$. Next, we utilize the Hölder inequality to find an estimate of $\lVert\phi\rVert_{L^1}$.
+	\begin{equation}
+		\norm{\phi}_{L^1}
+		\!=
+		\norm{\tfrac{1}{x+\i} \, (x+\i) \, \phi(x) }_{L^1}
+		\!\leq \underbrace{ \norm{\tfrac{1}{x+\i}}_{L^2} }_{=: \, c}
+		\; \norm{(x+\i) \, \phi(x)}_{L^2}
+		\leq \,c\, \Big(
+			\norm{T_x \, \phi}_{L^2} \!+
+			\norm{\phi}_{L^2}
+		\Big)
+		\: .
+		\label{sobolev-type-1}
+	\end{equation}
+	Since $\phi \in L^1$, it follows that $\psi \in L^\infty$ and
+	\begin{equation}
+		\norm{\psi}_{L^\infty}
+		\leq \frac{1}{\sqrt{2\pi}} \,
+		\norm{\phi}_{L^1}
+		\: .
+		\label{sobolev-type-2}
+	\end{equation}
+	We introduce a scaled function $\phi_r(x) := r \, \phi(r x)$. Scaling changes the norms in the following way:
+	\begin{gather*}
+		\norm{\phi_r}_{L^2}^{\,2}
+		= r \, \norm{\phi}_{L^2}^{\,2}
+		\: ,
+		\qquad
+		\norm{T_x \phi_r}_{L^2}^{\,2}
+		= \frac{1}{r} \, \norm{T_x}_{L^2}^{\,2}
+		\: .
+	\end{gather*}
+	By substituting $\phi \mapsto \phi_r$ in \eqref{sobolev-type-1} and combining with \eqref{sobolev-type-2}, we get
+	\begin{gather*}
+		\norm{\psi}_{L^\infty}
+		\leq
+		c \, \sqrt{r} \, \norm{T_x \, \phi}_{L^2} \!+
+		\frac{c}{\sqrt{r}} \, \norm{\phi}_{L^2}
+		=
+		c \, \sqrt{r} \, \norm{\psi'}_{L^2} \!+
+		\frac{c}{\sqrt{r}} \, \norm{\psi}_{L^2}
+		\: .
+	\end{gather*}
+	Choosing $r = a^2/c^2$, we have proven the inequality \eqref{sobolev-type-0} for $n=1$.
+	\\{}[\textbf{Dodělat $n=2$ podle BEH nerovnost (4.3) a diskuse pod ní.}]
+\end{proof}

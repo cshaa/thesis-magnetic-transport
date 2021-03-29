@@ -385,6 +385,8 @@ OUTPUT /home/m93a/Bakalářka/tex/en/thesis.lof
 INPUT /home/m93a/Bakalářka/tex/en/thesis.lot
 INPUT /home/m93a/Bakalářka/tex/en/thesis.lot
 OUTPUT /home/m93a/Bakalářka/tex/en/thesis.lot
+INPUT /home/m93a/Bakalářka/tex/en/apdx-sobolev-ineq.tex
+INPUT /home/m93a/Bakalářka/tex/en/apdx-sobolev-ineq.tex
 INPUT /home/m93a/Bakalářka/tex/en/thesis.aux
 INPUT /home/m93a/Bakalářka/tex/en/title.aux
 INPUT /home/m93a/Bakalářka/tex/en/title.aux
@@ -400,9 +402,9 @@ INPUT /home/m93a/Bakalářka/tex/en/bibliography.aux
 INPUT /home/m93a/Bakalářka/tex/en/bibliography.aux
 INPUT /home/m93a/Bakalářka/tex/en/thesis.out
 INPUT /home/m93a/Bakalářka/tex/en/thesis.out
+INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc
-INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb

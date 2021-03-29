@@ -156,26 +156,8 @@ Where for every $p \in \R$, $\Hf(p)$ is a self-adjoint operator on $L^2(\R)$. Th
     \end{gather*}
 \end{thm}
 
-This means that we can deduce the spectrum of the Hamiltonian $H$ simply by investigating how the spectrum of its fiber $\Hf(p)$ depends on $p$. Furthermore, the spectrum of $\Hf(p)$ typically consists of simple eigenvalues which are particularly convenient to work with – to prove this is the case for a specific Hamiltonian, one can utilize for example the \textit{min-max principle} given as Theorem XIII.1 in \cite{ReedSimon4}.
+This means that we can deduce the spectrum of the Hamiltonian $H$ simply by investigating how the spectrum of its fiber $\Hf(p)$ depends on $p$. Furthermore, the spectrum of $\Hf(p)$ typically consists of simple eigenvalues which are particularly convenient to work with.
 
-\begin{thm}[Min-max principle]
-    \label{thm-minmax}
-    Let $c \in \R$ and $A$ be a self-adjoint operator satisfying
-    \begin{equation*}
-        (\psi, A \psi) \geq c \, (\psi, \, \psi)
-        \quad \text{for all }
-        \psi \in \Domain(A) \: .
-    \end{equation*}
-    Let $n \in \N$, we define
-    \begin{equation*}
-        \mu_n =
-        \sup_{\{ \varphi_j \}_{j=1}^n} \;
-        \inf_{\psi \, \in \, \{ \varphi_j \}^\perp \, \cap \, \Domain(A)}
-        \frac{ (\psi, \, A\psi) }{ (\psi, \, \psi) }
-        \: ,
-    \end{equation*}
-    where the supremum is to be understood over all sets $\{ \varphi_1, ... \varphi_n \}$ of $n$ vectors and the infimum is taken over all vectors $\psi$ which are in the domain of $A$ and orthogonal to each $\varphi_j$. Then the set $\{ \lambda \in \sigma(A) \; | \; \lambda < \mu_n \}$ consists of eigenvalues (at most $n-1$ of them) and $\mu_n$ is either an eigenvalue itself, or the infimum of~$\sigma_{\mathrm{ess.}}(A)$.
-\end{thm}
 
 
 \section{Potential perturbation}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.8)  24 MAR 2021 01:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.8)  29 MAR 2021 02:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -491,7 +491,7 @@ LaTeX Info: Redefining \nameref on input line 114.
 
  (/home/m93a/Bakalářka/tex/en/title.tex
 Package hyperref Info: Option `pageanchor' set `false' on input line 6.
-<../img/logo-en.pdf, id=75, 506.4591pt x 156.49065pt>
+<../img/logo-en.pdf, id=79, 506.4591pt x 156.49065pt>
 File: ../img/logo-en.pdf Graphic file (type pdf)
 <use ../img/logo-en.pdf>
 Package pdftex.def Info: ../img/logo-en.pdf  used on input line 9.
@@ -574,7 +574,7 @@ Chapter 1.
 
 
 
-] [5] [6]) [7] [8]
+] [5] [6]) [7]
 \openout2 = `dirac.aux'.
 
  (/home/m93a/Bakalářka/tex/en/dirac.tex
@@ -583,60 +583,60 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 7.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 7.
-[9
+[8
 
 
 
-] [10] [11] [12]
-<grafy/dirac0.pdf, id=254, 297.11pt x 323.2075pt>
+] [9] [10] [11] [12]
+<grafy/dirac0.pdf, id=255, 297.11pt x 323.2075pt>
 File: grafy/dirac0.pdf Graphic file (type pdf)
 <use grafy/dirac0.pdf>
-Package pdftex.def Info: grafy/dirac0.pdf  used on input line 290.
+Package pdftex.def Info: grafy/dirac0.pdf  used on input line 340.
 (pdftex.def)             Requested size: 185.65297pt x 201.96967pt.
-<grafy/dirac1.pdf, id=255, 297.11pt x 323.2075pt>
+<grafy/dirac1.pdf, id=256, 297.11pt x 323.2075pt>
 File: grafy/dirac1.pdf Graphic file (type pdf)
 <use grafy/dirac1.pdf>
-Package pdftex.def Info: grafy/dirac1.pdf  used on input line 292.
+Package pdftex.def Info: grafy/dirac1.pdf  used on input line 342.
 (pdftex.def)             Requested size: 185.65297pt x 201.96967pt.
-<grafy/dirac2.pdf, id=256, 297.11pt x 323.2075pt>
+<grafy/dirac2.pdf, id=257, 297.11pt x 323.2075pt>
 File: grafy/dirac2.pdf Graphic file (type pdf)
 <use grafy/dirac2.pdf>
-Package pdftex.def Info: grafy/dirac2.pdf  used on input line 294.
+Package pdftex.def Info: grafy/dirac2.pdf  used on input line 344.
 (pdftex.def)             Requested size: 185.65297pt x 201.96967pt.
-<grafy/dirac5.pdf, id=257, 297.11pt x 323.2075pt>
+<grafy/dirac5.pdf, id=258, 297.11pt x 323.2075pt>
 File: grafy/dirac5.pdf Graphic file (type pdf)
 <use grafy/dirac5.pdf>
-Package pdftex.def Info: grafy/dirac5.pdf  used on input line 296.
+Package pdftex.def Info: grafy/dirac5.pdf  used on input line 346.
 (pdftex.def)             Requested size: 185.65297pt x 201.96967pt.
-<grafy/dirac10.pdf, id=258, 297.11pt x 323.2075pt>
+<grafy/dirac10.pdf, id=259, 297.11pt x 323.2075pt>
 File: grafy/dirac10.pdf Graphic file (type pdf)
 <use grafy/dirac10.pdf>
-Package pdftex.def Info: grafy/dirac10.pdf  used on input line 298.
+Package pdftex.def Info: grafy/dirac10.pdf  used on input line 348.
 (pdftex.def)             Requested size: 185.65297pt x 201.96967pt.
-<grafy/dirac100.pdf, id=259, 297.11pt x 323.2075pt>
+<grafy/dirac100.pdf, id=260, 297.11pt x 323.2075pt>
 File: grafy/dirac100.pdf Graphic file (type pdf)
 <use grafy/dirac100.pdf>
-Package pdftex.def Info: grafy/dirac100.pdf  used on input line 300.
+Package pdftex.def Info: grafy/dirac100.pdf  used on input line 350.
 (pdftex.def)             Requested size: 185.65297pt x 201.96967pt.
-<grafy/dirac-1.pdf, id=260, 297.11pt x 318.18875pt>
+<grafy/dirac-1.pdf, id=261, 297.11pt x 318.18875pt>
 File: grafy/dirac-1.pdf Graphic file (type pdf)
 <use grafy/dirac-1.pdf>
-Package pdftex.def Info: grafy/dirac-1.pdf  used on input line 308.
+Package pdftex.def Info: grafy/dirac-1.pdf  used on input line 358.
 (pdftex.def)             Requested size: 185.65297pt x 198.83348pt.
-<grafy/dirac-2.pdf, id=261, 297.11pt x 318.18875pt>
+<grafy/dirac-2.pdf, id=262, 297.11pt x 318.18875pt>
 File: grafy/dirac-2.pdf Graphic file (type pdf)
 <use grafy/dirac-2.pdf>
-Package pdftex.def Info: grafy/dirac-2.pdf  used on input line 310.
+Package pdftex.def Info: grafy/dirac-2.pdf  used on input line 360.
 (pdftex.def)             Requested size: 185.65297pt x 198.83348pt.
-<grafy/dirac-4.pdf, id=262, 297.11pt x 318.18875pt>
+<grafy/dirac-4.pdf, id=263, 297.11pt x 318.18875pt>
 File: grafy/dirac-4.pdf Graphic file (type pdf)
 <use grafy/dirac-4.pdf>
-Package pdftex.def Info: grafy/dirac-4.pdf  used on input line 312.
+Package pdftex.def Info: grafy/dirac-4.pdf  used on input line 362.
 (pdftex.def)             Requested size: 185.65297pt x 198.83348pt.
-<grafy/dirac-5.pdf, id=263, 297.11pt x 318.18875pt>
+<grafy/dirac-5.pdf, id=264, 297.11pt x 318.18875pt>
 File: grafy/dirac-5.pdf Graphic file (type pdf)
 <use grafy/dirac-5.pdf>
-Package pdftex.def Info: grafy/dirac-5.pdf  used on input line 314.
+Package pdftex.def Info: grafy/dirac-5.pdf  used on input line 364.
 (pdftex.def)             Requested size: 185.65297pt x 198.83348pt.
 ) [13] [14 </home/m93a/Bakalářka/tex/en/grafy/dirac0.pdf> </home/m93a/Bakalářka/tex/en/grafy/dirac1.pdf
 
@@ -691,7 +691,7 @@ pdfTeX warning: pdflatex (file /home/m93a/Bakalářka/tex/en/grafy/dirac-5.pdf):
 
 ]
 Appendix A.
-[20
+(/home/m93a/Bakalářka/tex/en/apdx-sobolev-ineq.tex) [20
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 159.
@@ -700,22 +700,22 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 159.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 159.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 159.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 549C172936F8036C9986290EFD187A15;2551.
+(rerunfilecheck)             Checksum: 09B68B3DFA842955304E4512F725C1F4;2673.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 159.
  ) 
 Here is how much of TeX's memory you used:
- 15063 strings out of 482050
- 211672 string characters out of 5934590
- 459756 words of memory out of 5000000
- 29956 multiletter control sequences out of 15000+600000
+ 15075 strings out of 482050
+ 211943 string characters out of 5934590
+ 458915 words of memory out of 5000000
+ 29962 multiletter control sequences out of 15000+600000
  641088 words of font info for 105 fonts, out of 8000000 for 9000
  480 hyphenation exceptions out of 8191
  44i,22n,41p,913b,2341s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/esvect/vect10.pfb>
-Output written on /home/m93a/Bakalářka/tex/en/thesis.pdf (24 pages, 1284556 bytes).
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/esvect/vect10.pfb>
+Output written on /home/m93a/Bakalářka/tex/en/thesis.pdf (24 pages, 1287503 bytes).
 PDF statistics:
- 490 PDF objects out of 1000 (max. 8388607)
- 364 compressed objects within 4 object streams
- 58 named destinations out of 1000 (max. 500000)
- 204 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 501 PDF objects out of 1000 (max. 8388607)
+ 375 compressed objects within 4 object streams
+ 62 named destinations out of 1000 (max. 500000)
+ 212 words of extra memory for PDF output out of 10000 (max. 10000000)
 
