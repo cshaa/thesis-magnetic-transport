@@ -202,6 +202,8 @@ INPUT /home/m93a/Bakalářka/tex/en/formulation.aux
 INPUT /home/m93a/Bakalářka/tex/en/formulation.aux
 INPUT /home/m93a/Bakalářka/tex/en/dirac.aux
 INPUT /home/m93a/Bakalářka/tex/en/dirac.aux
+INPUT /home/m93a/Bakalářka/tex/en/halfplane-robin.aux
+INPUT /home/m93a/Bakalářka/tex/en/halfplane-robin.aux
 INPUT /home/m93a/Bakalářka/tex/en/epilog.aux
 INPUT /home/m93a/Bakalářka/tex/en/epilog.aux
 INPUT /home/m93a/Bakalářka/tex/en/bibliography.aux
@@ -371,6 +373,9 @@ INPUT /home/m93a/Bakalářka/tex/en/grafy/dirac-4.pdf
 INPUT /home/m93a/Bakalářka/tex/en/grafy/dirac-5.pdf
 INPUT /home/m93a/Bakalářka/tex/en/grafy/dirac-5.pdf
 INPUT /home/m93a/Bakalářka/tex/en/grafy/dirac-5.pdf
+OUTPUT /home/m93a/Bakalářka/tex/en/halfplane-robin.aux
+INPUT /home/m93a/Bakalářka/tex/en/halfplane-robin.tex
+INPUT /home/m93a/Bakalářka/tex/en/halfplane-robin.tex
 OUTPUT /home/m93a/Bakalářka/tex/en/epilog.aux
 INPUT /home/m93a/Bakalářka/tex/en/epilog.tex
 INPUT /home/m93a/Bakalářka/tex/en/epilog.tex
@@ -396,6 +401,8 @@ INPUT /home/m93a/Bakalářka/tex/en/formulation.aux
 INPUT /home/m93a/Bakalářka/tex/en/formulation.aux
 INPUT /home/m93a/Bakalářka/tex/en/dirac.aux
 INPUT /home/m93a/Bakalářka/tex/en/dirac.aux
+INPUT /home/m93a/Bakalářka/tex/en/halfplane-robin.aux
+INPUT /home/m93a/Bakalářka/tex/en/halfplane-robin.aux
 INPUT /home/m93a/Bakalářka/tex/en/epilog.aux
 INPUT /home/m93a/Bakalářka/tex/en/epilog.aux
 INPUT /home/m93a/Bakalářka/tex/en/bibliography.aux

@@ -1,0 +1,13 @@
+eigenproblem
+pointwise
+well-posedness
+Sobolev-type
+holomorphic
+nondimensionalization
+Fourier-Plancherel
+self-adjointness
+Combes
+Iwatsuka
+Hermite
+Pochhammer
+digamma

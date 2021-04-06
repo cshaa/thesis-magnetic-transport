@@ -5,50 +5,52 @@ A level-1 auxiliary file: title.aux
 A level-1 auxiliary file: preface.aux
 A level-1 auxiliary file: formulation.aux
 A level-1 auxiliary file: dirac.aux
+A level-1 auxiliary file: halfplane-robin.aux
 A level-1 auxiliary file: epilog.aux
 A level-1 auxiliary file: bibliography.aux
 The style file: plainnat.bst
 Database file #1: bibliography.bib
 Warning--can't use both author and editor fields in GradshteynRyzhik
-You've used 4 entries,
+Warning--can't use both author and editor fields in Weidmann
+You've used 5 entries,
             2773 wiz_defined-function locations,
-            624 strings with 5434 characters,
-and the built_in function-call counts, 1528 in all, are:
-= -- 118
-> -- 93
-< -- 3
-+ -- 31
-- -- 27
-* -- 109
-:= -- 250
-add.period$ -- 13
-call.type$ -- 4
-change.case$ -- 17
-chr.to.int$ -- 4
-cite$ -- 9
-duplicate$ -- 81
-empty$ -- 130
-format.name$ -- 37
-if$ -- 313
+            631 strings with 5566 characters,
+and the built_in function-call counts, 1825 in all, are:
+= -- 140
+> -- 103
+< -- 4
++ -- 35
+- -- 30
+* -- 127
+:= -- 298
+add.period$ -- 16
+call.type$ -- 5
+change.case$ -- 20
+chr.to.int$ -- 5
+cite$ -- 12
+duplicate$ -- 101
+empty$ -- 162
+format.name$ -- 41
+if$ -- 374
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 8
-newline$ -- 28
-num.names$ -- 16
-pop$ -- 51
+missing$ -- 10
+newline$ -- 33
+num.names$ -- 20
+pop$ -- 62
 preamble$ -- 1
-purify$ -- 17
+purify$ -- 20
 quote$ -- 0
-skip$ -- 60
+skip$ -- 72
 stack$ -- 0
-substring$ -- 8
-swap$ -- 5
+substring$ -- 10
+swap$ -- 7
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
-warning$ -- 1
-while$ -- 12
+type$ -- 30
+warning$ -- 2
+while$ -- 15
 width$ -- 0
-write$ -- 56
-(There was 1 warning)
+write$ -- 68
+(There were 2 warnings)

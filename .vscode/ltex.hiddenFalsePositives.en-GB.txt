@@ -1,0 +1,1 @@
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qwith a domain given by the conditions \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q for a.e.\\E$"}

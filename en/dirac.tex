@@ -1,5 +1,5 @@
 \chapter{Delta potential}
-In this chapter we will examine the Landau Hamiltonian with a potential perturbation (see definition \ref{defn-perturb-potential}), formally given by the potential $V(x) = \alpha\,\delta_{x_0}$, ie. the Dirac delta in $x=x_0$, scaled by $\alpha \in \R$. Since such a potential is a distribution and not a locally integrable function, the Hamiltonian is rigorously defined as:
+In this chapter we will examine the Landau Hamiltonian with a potential perturbation (see definition \ref{defn-perturb-potential}), formally given by the potential $V(x) = \alpha\,\delta_{x_0}$, i.e. the Dirac delta in $x=x_0$, scaled by $\alpha \in \R$. Since such a potential is a distribution and not a locally integrable function, the Hamiltonian is rigorously defined as:
 \begin{equation*}
     \big( H_\alpha \psi \big)(x, y) = \left( -\pd{^2}{x^2} + \big( \i\pd{}{y} + bx \big)^2 \right) \; \psi(x,y)
     \quad \text{a.e.\footnotemark on } (\R \setminus \{ x_0 \}) \times \R
@@ -19,12 +19,12 @@ Then, by an approach equivalent to that in \eqref{eqn-vague-direct-integral-deco
 \begin{equation*}
     H_\alpha \simeq \int^\oplus_\R \Hf_\alpha(p) \d{p} \: ,
 \end{equation*}
-where $\Hf_\alpha(p)$ is a fiber Hamiltonian satisfying very similar conditions to those of~$H_\alpha$, that is, for almost every $p \in \R$:
+where $\Hf_\alpha(p)$ is a fibre Hamiltonian satisfying very similar conditions to those of~$H_\alpha$, that is, for almost every $p \in \R$:
 \begin{gather*}
     \big( \Hf_\alpha(p) \, \varphi \big)(x)
     = -\varphi''(x)
     + \big( b \, x + p \big)^2 \, \varphi(x) \: ,
-    \numberthis\label{eqn-dirac-fiber-hamiltonian}
+    \numberthis\label{eqn-dirac-fibre-hamiltonian}
     \\[15pt]
     \varphi \in W^{1,2}(\R) \; \cap \; W^{2,2}( \R \setminus \{ x_0 \}) \: ,
     \\[5pt]
@@ -32,26 +32,30 @@ where $\Hf_\alpha(p)$ is a fiber Hamiltonian satisfying very similar conditions 
     \\[3pt]
     \int_\R x^2 \, |\varphi(x)|^2 \d{x} < \infty \: .
 \end{gather*}
-Before we start investigating the spectrum, we need to show that the problem is well-posed, ie. that the Hamiltonian $H_\alpha$ is self-adjoint and bounded from below. Then we will show that the spectrum of $\Hf_\alpha(p)$ is discrete for every $p$, and only after that we will investigate the continuity of the spectrum of $H_\alpha$.
+Before we start investigating the spectrum, we need to show that the problem is well-posed, i.e. that the Hamiltonian $H_\alpha$ is self-adjoint and bounded from below. Then we will show that the spectrum of $\Hf_\alpha(p)$ is discrete for every $p$, and only after that we will investigate the continuity of the spectrum of $H_\alpha$.
 
 \section{Well-posedness}
-It is straightforward to check that the fiber Hamiltonian is bounded from below:
+It is straightforward to check that the fibre Hamiltonian is bounded from below:
 \begin{align*}
     (\varphi, \, \Hf_\alpha(p) \, \varphi)
     &= \int_\R \overline{\varphi}(x) \, \Big( -\varphi''(x) + (b x + p)^2 \varphi(x) \Big) \d{x}
     \\
     &= -\int_\R \overline{\varphi} \varphi''
-    + \int_\R (b x + p)^2 \;\, \overline{\varphi}(x) \, \varphi(x) \; \d{x}
+    + \int_\R (b x + p)^2 \;\, \big|\varphi(x)\big|^2 \; \d{x}
+    \\
+    &\geq -\int_\R \overline{\varphi} \varphi''
+    = \int \overline{\varphi}' \varphi'
+    - [\overline{\varphi}\varphi]_{-\infty}^{x_0}
+    - [\overline{\varphi}\varphi]_{x_0}^{\infty}
+    \\
+    &= \norm{\varphi'}_{L^2(\R)}^2
+    + \overline{\varphi}(x_0)
+    \, \big( \varphi'(x_0+) - \varphi'(x_0-) \big)
     \\
     &= \norm{\varphi'}_{L^2(\R)}^2
     + \alpha \, \big|\varphi(x_0)\big|^2
-    + \int_\R (b x + p)^2 \;\, \big|\varphi(x)\big|^2 \; \d{x}
-    \\
-    &\geq \norm{\varphi'}_{L^2(\R)}^2
-    + \alpha \, \big|\varphi(x_0)\big|^2
-    + \norm{\varphi}_{L^2(\R)}^2
 \end{align*}
-In case when $\alpha\geq0$, the right-hand side is non-negative, therefore we can use zero as the lower bound. For $\alpha<0$ we estimate $|\varphi(x_0)|^2 \leq \lVert\varphi\rVert_{L^\infty}^{\,2}$ and then use the Sobolev-type inequality
+In the last two steps we have used the fact that for $\varphi \in W^{2,2}$ both $\varphi$ and $\varphi'$ vanish at infinity, and that $\varphi(x_0+)-\varphi(x_0-) = \alpha \varphi(x_0)$. In case when $\alpha\geq0$, the right-hand side is non-negative, therefore we can use zero as the lower bound. For $\alpha<0$ we estimate $|\varphi(x_0)|^2 \leq \lVert\varphi\rVert_{L^\infty}^{\,2}$ and then use the Sobolev-type inequality
 \begin{equation*}
     \forall a\!>\!0 \; \exists b\!>\!0: \; \norm{\varphi}_{L^\infty}^{\,2} \leq a \, \norm{\varphi'}_{L^2}^{\,2} + b \, \norm{\varphi}_{L^2}^{\,2} \:,
 \end{equation*}
@@ -60,49 +64,74 @@ the proof of which is given in the chapter \ref{apdx-sobolev-ineq} of the append
     (\varphi, \, \Hf_\alpha(p) \, \varphi)
     &\geq \norm{\varphi'}_{L^2}^2
     + \alpha \, \big|\varphi(x_0)\big|^2
-    + \norm{\varphi}_{L^2}^2
     \\
     &\geq \norm{\varphi'}_{L^2}^2
     + \alpha \, \norm{\varphi}_{L^\infty}^2
-    + \norm{\varphi}_{L^2}^2
     \\
     &\geq \norm{\varphi'}_{L^2}^2
     + \alpha \, \big(
         a \, \norm{\varphi'}_{L^2}^{\,2} + b \, \norm{\varphi}_{L^2}^{\,2}
     \big)
-    + \norm{\varphi}_{L^2}^2
     \\
     &= \big( 1 + \alpha a \big) \, \norm{\varphi'}_{L^2}^2
-    + \big( 1 + \alpha b \big) \, \norm{\varphi}_{L^2}^2
+    +\alpha b \, \norm{\varphi}_{L^2}^2
 \end{align*}
 By choosing $a \leq |\alpha|^{-1}$, we get
 \begin{equation*}
     (\varphi, \, \Hf_\alpha(p) \, \varphi)
-    \geq \big( 1 + \alpha b \big) \, \norm{\varphi}_{L^2}^2
+    \leq \alpha b \, \norm{\varphi}_{L^2(\R)}^2
     \:,
 \end{equation*}
-thus we have shown that the fiber Hamiltonian is bounded from below.
+thus we have shown that the fibre Hamiltonian $\Hf(p)$ is bounded from below. And because the bound is independent of $p$, it is also a lower bound for $H_\alpha$:
+\begin{align*}
+    \big(\psi, \, H_\alpha \psi\big)_{L^2(\R^2)}
+    &= \int\! \big( \psi(\cdot, p), \, \Hf(p) \, \psi(\cdot, p) \big)_{L^2(\R)} \d{p}
+    \\[10pt]
+    &\leq \int\! \alpha b \, \norm{ \psi(\cdot, p) }^2_{L^2(\R)} \d{p}
+    = \alpha b \, \norm{\psi}^2_{L^2(\R^2)}
+    \\
+\end{align*}
 
-In order to show that the fiber Hamiltonian is self-adjoint and has a discrete spectrum, we will resort to perturbation theory. The family of operators given by $\alpha \mapsto \Hf_\alpha(p)$ has a common symmetric restriction:
-\begin{equation*}
+Now we will show that the fibre Hamiltonian is self-adjoint and has a discrete spectrum. The family of operators $\{  \Hf_\alpha(p) \, | \, \alpha {\,\in\,} \R \}$ has a common symmetric restriction:
+\begin{gather*}
     \Omega := \big\{
-        f \in \Schwa(\R) \;\big|\;
-        f(x_0) = 0
+        \varphi \in W^{2,2}(\R) \;\big|\;
+        x^2 \, \varphi(x) \in L^2(\R), \;
+        \varphi(x_0) = 0
     \big\}
-    \: , \qquad
-    \Hf_\alpha(p) |_\Omega \text{ is symmetric for all } \alpha
+    \: ,
+    \quad
+    \Hf_\alpha(p) |_\Omega
+    \text{ is symmetric.}
+\end{gather*}
+Since fibres $\Hf_\alpha(p)$ for various values of~$\alpha$ only differ in the boundary conditions, the restriction to $\Omega$ gives just one operator $h(p) := \Hf_\alpha(p) |_\Omega$, independent of~$\alpha$. The operator $h(p)$ is closed, we can show it directly from the definition: let $\{ \varphi_n \} \subset \Omega$ such that $\varphi_n \to \varphi \in L^2(\R)$, then
+\begin{align*}
+    &\lim_{n\to\infty} h(p) \, \varphi_n
+    = \lim_{n\to\infty} \big( -\varphi''_n + (bx+p)^2 \varphi_n \big)
+    \in L^2
+    \\[5pt]
+    &\quad\Longleftrightarrow\quad
+    \lim_{n\to\infty} \varphi_n'' \in L^2
+    \;\wedge\;
+    \lim_{n\to\infty} x^2 \varphi_n \in L^2
+    \quad\Longleftrightarrow\quad
+    \varphi'' \in L^2
+    \;\wedge\;
+    x^2 \varphi  \in L^2
     \: .
-\end{equation*}
-The unperturbed Hamiltonian $\Hf_{\alpha=0}(p)$ has a non-degenerate, discrete spectrum. [\textbf{Finish this section.}]
+\end{align*}
+Furthermore, there is no way for $\varphi(0) \neq \varphi_n(0)$ without causing $\varphi''_n(0)$ to diverge. Therefore, $h(p) \, \varphi_n \to \psi \implies \varphi \in \Omega$. Finally, the requirement $h(p) \, \varphi = \psi$ follows from the fact that both second derivative and multiplication by $x^2$ are closed operators on their respective domains.
+
+We have shown that $h(p)$ is a closed symmetric operator with many different extensions $\Hf_\alpha(p)$. We know that at least one of the extensions, the fibre $\Hf_{\alpha = 0}(p)$ of the unperturbed system, has a discrete spectrum. Now, we want to use the theorem~\ref{thm-sym-extension-spectrum} to show that the spectrum of all $\Hf_\alpha(p)$ is discrete. Since the
 
 In the next section, we will investigate how the eigenvalues of $\Hf_\alpha(p)$ depend on $p$ and $\alpha$.
 
-\section{Eigenproblem of the fiber Hamiltonian}
-In order to use the utilize the theorem \ref{thm-direct-integral-spectrum} we need to find the eigenvalues of the fiber Hamiltonian for each $p$. That is, we are looking for a real analytic function $\epsilon(p)$, such that for all $p \in \R$ there exists a $\varphi \in \Domain(\Hf_\alpha(p))$ satisfying
+\section{Eigenproblem of the fibre Hamiltonian}
+In order to use utilize the theorem \ref{thm-direct-integral-spectrum} we need to find the eigenvalues of the fibre Hamiltonian for each $p$. That is, we are looking for a real analytic function $\epsilon(p)$, such that for all $p \in \R$ there exists a $\varphi \in \Domain(\Hf_\alpha(p))$ satisfying
 \begin{equation*}
     \Hf_\alpha(p) \, \varphi = \epsilon(p) \, \varphi \: .
 \end{equation*}
-As a shorthand, we will often denote $\epsilon(p)$ simply as $\epsilon$. Substituting from \eqref{eqn-dirac-fiber-hamiltonian}, we get an ordinary differential equation:
+As a shorthand, we will often denote $\epsilon(p)$ simply as $\epsilon$. Substituting from \eqref{eqn-dirac-fibre-hamiltonian}, we get an ordinary differential equation:
 \begin{gather*}
     -\varphi''(x)
     + \big( b^2 \, x^2 + 2 p b \, x + p^2 \big) \, \varphi(x)
@@ -112,7 +141,7 @@ As a shorthand, we will often denote $\epsilon(p)$ simply as $\epsilon$. Substit
     \varphi'(x_0+) - \varphi'(x_0-) = \alpha \, \varphi(x_0)
     \: .
 \end{gather*}
-From now on, we shall suppose that $b>0$; for $b<0$ one can perform a reflection $x \mapsto -x$ and arrive at the same results. In order to refine this differential equation into the standard form, we change variables $x\mapsto w$ and instead of one function $\psi$ on $\R$ we introduce two functions $h_-, h_+$ on the left and right half-line respectively:
+From now on, we shall suppose that $b>0$; for $b<0$ one can perform a reflection $x \mapsto -x$ and arrive at the same results. In order to refine this differential equation into the standard form, we change variables $x\mapsto w$ and instead of one function $\varphi$ on $\R$ we introduce two functions $h_-, h_+$ on the left and right half-line respectively:
 \begin{gather*}
     w \coloneqq \sqrt{2b} \, \big( x + \frac{p}{b} \big) \: ,
     \qquad
@@ -185,11 +214,11 @@ In the special case when $\nu \in \N_0$, the function $D_\nu$ can be expressed u
 \end{align*}
 The solutions in \eqref{eqn-parabolic-cylinder-solutions} are linearly dependent. For most values of $\nu$, any of the four functions can be expressed as a linear combination of any two others. However, specifically in the case $\nu \in \N_0$ we get $D_\nu(w) = \pm D_\nu(-w)$.
 
-Asymptotic behavior of the solutions is also given by \cite{GradshteynRyzhik}. As $|w|\to\infty$, the solutions $D_{-\nu-1}(\i w)$ and $D_{-\nu-1}(-\i w)$ grow exponentially. Meanwhile $D_\nu(w)$ decays exponentially for $w \to +\infty$. Therefore $D_\nu(w)$ and $D_\nu(-w)$ are better suited for the growth conditions imposed by the domain of $\Hf_\alpha(p)$. We define $c_{+1}, c_{+2}, c_{-1}, c_{-2} \in \C$, such that
+Asymptotic behaviour of the solutions is also given by \cite{GradshteynRyzhik}. As $|w|\to\infty$, the solutions $D_{-\nu-1}(\i w)$ and $D_{-\nu-1}(-\i w)$ grow exponentially. Meanwhile, $D_\nu(w)$ decays exponentially for $w \to +\infty$. Therefore, $D_\nu(w)$ and $D_\nu(-w)$ are better suited for the growth conditions imposed by the domain of $\Hf_\alpha(p)$. We define $c_{+1}, c_{+2}, c_{-1}, c_{-2} \in \C$, such that
 \begin{equation*}
     h_\pm = c_{\pm 1} \, D_\nu(w) + c_{\pm 2} \, D_\nu(-w) \: .
 \end{equation*}
-It can be further shown, that if $\nu \notin \N_0$, the solution $D_\nu(w)$ diverges for $w \to -\infty$. \textbf{[Then show it.]} Therefore $c_{-1} = c_{+2} = 0$ in order for $\varphi$ to be integrable. On the other hand, for $\nu \in \N_0$, the solutions aren't independent (as discussed above), therefore we can also set $c_{-1} = c_{+2} = 0$ without loss of generality. Applying the gluing equations \eqref{eqn-gluing-equations}, we get:
+It can be further shown, that if $\nu \notin \N_0$, the solution $D_\nu(w)$ diverges for $w \to -\infty$. \textbf{[Then show it.]} Therefore, $c_{-1} = c_{+2} = 0$ in order for $\varphi$ to be integrable. On the other hand, for $\nu \in \N_0$, the solutions aren't independent (as discussed above), therefore we can also set $c_{-1} = c_{+2} = 0$ without loss of generality. Applying the gluing equations \eqref{eqn-gluing-equations}, we get:
 \begin{gather*}
     c_{+1} \, D_\nu(w_0) = c_{-2} \, D_\nu(-w_0) \\[5pt]
     c_{+1} \, \dd{}{w} D_\nu(w) \big|_{w_0} - c_{-2} \, \dd{}{w} D_\nu(-w) \big|_{w_0} = \alpha \, \sqrt{2b} \; c_{+1} \, D_\nu(w_0)
@@ -247,7 +276,7 @@ We have shown that
         \frac{\, \epsilon(p) + b \,}{2b}
     \Big) = 0 \: .
 \end{align*}
-Truly, this is simply the equation \eqref{eqn-implicit-pre} after the substitution from \eqref{eqn-w-nu-definition}. Furthermore, for $\alpha = 0$ the fiber Hamiltonian $\Hf_\alpha(p)$ reduces to that of a harmonic oscillator. From this fact, it is straightforward to derive the following result:
+Truly, this is simply the equation \eqref{eqn-implicit-pre} after the substitution from \eqref{eqn-w-nu-definition}. Furthermore, for $\alpha = 0$ the fibre Hamiltonian $\Hf_\alpha(p)$ reduces to that of a harmonic oscillator. From this fact, it is straightforward to derive the following result:
 \begin{equation*}
     F(0, w, k) = 0
     \text{ holds for }
@@ -262,7 +291,7 @@ Moreover, $F$ is analytic in the three variables, as it is a sum of products of 
     \qquad k \in \N_0 \: .
 \end{equation*}
 
-For an unperturbed system $\alpha=0$, the allowed energies are the Landau levels $\epsilon_k = b(2k+1)$. We will to show that for $p\to\pm\infty$, the energy approaches those unperturbed levels – in our rescaled coordinates, this is equivalent to $\lim_{w\to\pm\infty} \nu_k(a, w) = k$. To show this is the case, we will investigate the behavior of $\pd{}{a} \nu_k$ and $\pd{}{w} \nu_k$ as $w \to \pm\infty$. First, let us write down the partial derivatives of~$F$:
+For an unperturbed system $\alpha=0$, the allowed energies are the Landau levels $\epsilon_k = b(2k+1)$. We will to show that for $p\to\pm\infty$, the energy approaches those unperturbed levels – in our rescaled coordinates, this is equivalent to $\lim_{w\to\pm\infty} \nu_k(a, w) = k$. To show this is the case, we will investigate the behaviour of $\pd{}{a} \nu_k$ and $\pd{}{w} \nu_k$ as $w \to \pm\infty$. First, let us write down the partial derivatives of~$F$:
 \begin{gather*}
     \pd{}{a} \, F(a,w,\nu) = D_\nu(w) \, D_\nu(-w)
     \\[5pt]

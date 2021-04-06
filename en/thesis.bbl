@@ -1,4 +1,4 @@
-\begin{thebibliography}{4}
+\begin{thebibliography}{5}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -25,5 +25,10 @@ Michael Reed and Barry Simon.
 \newblock \emph{Methods of Modern Mathematical Physics IV: Analysis of
   Operators}.
 \newblock Academic Press, 1978.
+
+\bibitem[Weidmann(1980)]{Weidmann}
+Joachim Weidmann.
+\newblock \emph{Linear Operators in Hilbert Spaces}.
+\newblock Springer, 1980.
 
 \end{thebibliography}

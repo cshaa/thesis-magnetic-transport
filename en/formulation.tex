@@ -7,11 +7,11 @@ The simplest example of a quantum system with a magnetic field is the system con
     H = (\vv P + \vv A)^2 \: , \quad
     \vv B = \nabla \times \vv A = (0, 0, b_0) \: .
 \end{align*}
-Here $\vv P = -\i \nabla$ is the momentum operator, $\vv B$ is the magnetic field (which is constant with magnitude $b_0$) and $\vv A$ is its corresponding vector potential. Notice that we have used nondimensionalization to remove physical units from the Hamiltonian. $H$ has absolutely continuous spectrum and commutes with $P_z$, thus it allows the particle to move freely along the $z$-axis. However if we restrict the particle to the layer $z=0$, either physically, or only formally because we are not interested in the movement along~$z$ \textbf{[EXPAND]}, we get a two-dimensional Hamiltonian with infinitely degenerate pure point spectrum, the so-called Landau Hamiltonian:
+Here $\vv P = -\i \nabla$ is the momentum operator, $\vv B$ is the magnetic field (which is constant with magnitude $b_0$) and $\vv A$ is its corresponding vector potential. Notice that we have used nondimensionalization to remove physical units from the Hamiltonian. The spectrum of $H$ is absolutely continuous and the Hamiltonian commutes with $P_z$, thus it allows the particle to move freely along the $z$-axis. However, if we restrict the particle to the layer $z=0$, either physically, or only formally because we are not interested in the movement along~$z$ \textbf{[EXPAND]}, we get a two-dimensional Hamiltonian with infinitely degenerate discrete spectrum, the so-called Landau Hamiltonian:
 \begin{align*}
     H = (P_x + A_x)^2 + (P_y + A_y)^2 \: .
 \end{align*}
-A detailed analysis of this well-known Hamiltonian can be found eg. in §112 of \cite{LandauLifshitz3}. The pure point spectrum means that the particle is not free to move along $x$ or $y$, but instead it is “trapped” in some superposition of stationary states. We will investigate perturbations to the Landau Hamiltonian, which cause its spectrum to become continuous and allow the particle to move freely along the $y$-axis. These perturbations can be either in the form of a scalar potential, a modification of the magnetic field, or a purely geometric deformation of the layer, to which our particle is constrained. We will require all of these perturbations to be translationally invariant, thus constant along one axis – without loss of generality, we choose that they are independent of~$y$ and only depend on~$x$.
+A detailed analysis of this well-known Hamiltonian can be found e.g. in §112 of \cite{LandauLifshitz3}. The pure point spectrum means that the particle is not free to move along $x$ or $y$, but instead it is “trapped” in some superposition of stationary states. We will investigate perturbations to the Landau Hamiltonian, which cause its spectrum to become continuous and allow the particle to move freely along the $y$-axis. These perturbations can be either in the form of a scalar potential, a modification of the magnetic field, or a purely geometric deformation of the layer to which our particle is constrained. We will require all of these perturbations to be translationally invariant, thus constant along one axis – without loss of generality, we choose that they are independent of~$y$ and only depend on~$x$.
 
 Throughout this thesis, we will use the Landau gauge:
 \begin{align*}
@@ -23,7 +23,7 @@ Now we can specify precisely which Hamiltonians we will investigate.
 
 \begin{defn}[Potential perturbation]
     \label{defn-perturb-potential}
-    Let $\Hilb = L^2(\R^2)$, $D(H)$ a \textnormal{\textbf{[???]}} dense subset of $\Hilb$, $b>0$ and $V \in L^1_{\text{loc}}(\R)$. A self-adjoint operator $H: D(H) \to \Hilb$ given by the equation
+    Let $\Hilb = L^2(\R^2)$, $\Domain(H)$ a dense subset of $\Hilb$, $b>0$ and $V \in L^1_{\text{loc}}(\R)$. A self-adjoint operator $H: \Domain(H) \to \Hilb$ given by the equation
     \begin{equation*}
         H
         = P^2_x
@@ -31,7 +31,7 @@ Now we can specify precisely which Hamiltonians we will investigate.
         + V(x)
         \: ,
     \end{equation*}
-    is called the \textbf{Landau Hamiltonian with a potential perturbation}. We will investigate, which choices of $D(H)$ and $V$ lead to $\sigma(H) \neq \sigma_{\mathrm{p}}(H)$.
+    is called the \textbf{Landau Hamiltonian with a potential perturbation}. We will investigate, which choices of $\Domain(H)$ and $V$ lead to $\SpE(H) \neq \emptyset$. The domain $\Domain(H)$ is determined not only by the asymptotic behaviour of $V$, but also by the boundary conditions imposed on the wave function.
 \end{defn}
 
 \begin{defn}[Magnetic perturbation]
@@ -44,7 +44,7 @@ Now we can specify precisely which Hamiltonians we will investigate.
     \begin{align*}
         \tilde H = P^2_x + \big( P_y + A_y \big)^2 \: ,
     \end{align*}
-    Its closure $H$ is called the \textbf{Landau Hamiltonian with a magnetic perturbation}. We will investigate, which choices of $b$ lead to $\sigma(H) \neq \sigma_{\mathrm{p}}(H)$.
+    Its closure $H$ is called the \textbf{Landau Hamiltonian with a magnetic perturbation}. We will investigate, which choices of $b$ lead to $\SpE(H) \neq \emptyset$.
 \end{defn}
 
 \begin{defn}[Geometric perturbation, transl. inv. layer]
@@ -72,7 +72,7 @@ Now we can specify precisely which Hamiltonians we will investigate.
         \Delta^\Omega_{\mathrm{D}, A} \psi(x,y,z)
         = \Delta \psi + 2\i b \, x \, \pd{\psi}{y} - b^2 x^2 \, \psi
     \end{align*}
-    defined on functions $\psi \in C^\infty(\Omega)$, such that $\Delta^\Omega_{\mathrm{D}, A} \psi = 0$ on the boundary of $\Omega$. The operator $H$ which is a closure of $-\Delta^\Omega_{\mathrm{D}, A}$ is called the \textbf{Landau Hamiltonian with a geometric perturbation}. We will investigate, which choices of $\omega$ lead to $\sigma(H) \neq \sigma_{\mathrm{p}}(H)$.
+    defined on functions $\psi \in C^\infty(\Omega)$, such that $\psi(x,y,z) = 0$ on the boundary of $\Omega$. The~operator $H$ which is the closure of $-\Delta^\Omega_{\mathrm{D}, A}$ is called the \textbf{Landau Hamiltonian with a geometric perturbation}. We will investigate, which choices of~$\omega$ lead to $\SpE(H) \neq \emptyset$.
 \end{defn}
 
 
@@ -81,7 +81,7 @@ Now we can specify precisely which Hamiltonians we will investigate.
 The key insight to all three of these problems is that the Hamiltonians in question only depend on the momentum $p_y$ of the particle, and not on its position $y$. If we were to fix $p_y$ of the particle to a certain value somehow, we could reduce the problem to a one-dimensional operator and solve for each $p_y$ separately. This vague idea can be given a rigorous meaning in terms of the \textit{direct integral}.
 
 The following definition is a rephrasing of definitions given in \cite{ReedSimon4}, pages 280 and 281.
-\begin{defn}[Direct integral, fiber]
+\begin{defn}[Direct integral, fibre]
     \label{defn-direct-integral}
     Let $\Hilb'$ be a separable Hilbert space and $(M, \mu)$ a measure space. We define a Hilbert space $\Hilb$, which is the space of all square-integrable functions from $M$ to $\Hilb'$:
     \begin{equation*}
@@ -110,19 +110,22 @@ The following definition is a rephrasing of definitions given in \cite{ReedSimon
         \Hilb = \int^\oplus_M \Hilb', \qquad
         A = \int^\oplus_M \Af(s) \d{s}.
     \end{gather*}
-    We shall call $\Hilb$ and $A$ the \textbf{the direct integral} of $\Hilb'$ and $\Af$, respectively. Reversely, we shall call $\Hilb'$ a \textbf{fiber space} of $\Hilb$ and $\Af(s)$ a \textbf{fiber} of $A$.
+    We shall call $\Hilb$ and $A$ \textbf{the direct integral} of $\Hilb'$ and $\Af$, respectively. Reversely, we shall call $\Hilb'$ a \textbf{fibre space} of $\Hilb$ and $\Af(s)$ a \textbf{fibre} of $A$.
 \end{defn}
 
-Before we apply this to the magnetic Hamiltonian, let us remind the Fourier-Plancherel operator. It is a standard textbook result (see \cite{BEH}) that if we take the Fourier transform as an operator on $\Schwa(\R) \subset L^2(\R)$, its closure is a unitary operator on $L^2(\R)$. This operator is called the Fourier-Plancharel operator $\Fourier$, it transforms momentum to position $\Fourier P \Fourier^{-1} = Q$, and as an isomorphism, it does not change the spectrum of self-adjoint operators – in particular:
-\begin{equation*}
-    \Sp(A) \neq \SpP(A)
-    \;\Longleftrightarrow\;
-    \Sp(\Fourier A \Fourier^{-1}) \neq \SpP(\Fourier A \Fourier^{-1})
-    \: .
-\end{equation*}
-The theory given so far regards functions of one variable. In this thesis, we will often perform a \textit{partial} Fourier transformation on multivariate functions – that is, perform the Fourier transformation on one variable whilst keeping the other variables fixed. We will use a subscript to indicate which variable is being transformed, for example $\Fourier_y: \psi(x,y) \mapsto \tilde\psi(x,\xi)$.
+The concept of a direct integral might initially seem strange to readers who encounter it for their first time. These readers may find it helpful to think of the direct integral as a simple \textit{“rebranding”} of several concepts they already know and understand. For example, a free spin-$\frac{1}{2}$ particle is represented in the Hilbert space $L^2(\R^3, \C^2)$ of square-integrable functions from the physical space $\R^3$ to the qubit $\C^2$. This space is by definition the direct integral $L^2(\R^3, \C^2) = \int_{\R^3}^\oplus \C^2$, the qubit plays the role of the fibre space here. Another example is related to the fact that a function of two variables can be understood as a function of one variable which returns another function of one variable (programmers call this \textit{currying}). That is exactly the meaning of this direct integral: $L^2(M\times N) \simeq \int_M^\oplus L^2(N) \simeq \int_N^\oplus L^2(M)$.
 
-Now, we can show, how to express a Landau Hamiltonian with potential and magnetic perturbation in terms of the direct integral:
+Before we apply the theory of direct integrals to the magnetic Hamiltonian, let us remind the Fourier-Plancherel operator. It is a standard textbook result (see \cite{BEH}) that if we take the Fourier transform as an operator on $\Schwa(\R) \subset L^2(\R)$, its closure is a unitary operator on $L^2(\R)$. This operator is called the Fourier-Plancherel operator $\Fourier$, it transforms momentum to position $\Fourier P \Fourier^{-1} = Q$, and as an isomorphism, it does not change the spectrum of self-adjoint operators:
+\begin{equation*}
+    \Sp(A) = \Sp(\Fourier A \Fourier^{-1}) \: ,
+    \quad
+    \SpD(A) = \SpD(\Fourier A \Fourier^{-1}) \: ,
+    \quad
+    \SpE(A) = \SpE(\Fourier A \Fourier^{-1}) \: .
+\end{equation*}
+The theory given so far regards functions of one variable. In this thesis, we will perform a \textit{partial} Fourier transformations on multivariate functions – that is, perform the Fourier transformation on one variable whilst keeping the other variables fixed. We will use a subscript to indicate which variable is being transformed, for example $\Fourier_y: \psi(x,y) \mapsto \tilde\psi(x,\xi)$.
+
+Now, we can show, how to express a Landau Hamiltonian with potential and magnetic perturbations in terms of the direct integral:
 \begin{align*}
     H &= \left( \vv P + \vv A(x) \right)^2 + V(x) \\[5pt]
     &= P_x^2 + \left( P_y + A_y(x) \right)^2 + V(x) \\[5pt]
@@ -156,15 +159,41 @@ Where for every $p \in \R$, $\Hf(p)$ is a self-adjoint operator on $L^2(\R)$. Th
     \end{gather*}
 \end{thm}
 
-This means that we can deduce the spectrum of the Hamiltonian $H$ simply by investigating how the spectrum of its fiber $\Hf(p)$ depends on $p$. Furthermore, the spectrum of $\Hf(p)$ typically consists of simple eigenvalues which are particularly convenient to work with.
+This means that we can deduce the spectrum of the Hamiltonian $H$ simply by investigating how the spectrum of its fibre $\Hf(p)$ depends on $p$. Furthermore, the spectrum of $\Hf(p)$ typically consists of simple eigenvalues which are particularly convenient to work with.
+
+\section{A refresher on linear operators}
+Before we start investigating specific Hamiltonians, let us remind a few textbook theorems regarding self-adjointness and spectral properties of linear operators, which will be useful later. The following definition and the subsequent theorem are from the chapter 4.7 in \cite{BEH}.
+\begin{defn}[Deficiency indices]
+    Let $T$ be a linear operator on $\Hilb$. We define two numbers $n_+, \, n_- \in \N_0 \cup \{ \infty \}$ as follows:
+    \begin{equation*}
+        n_\pm(T) = \mathrm{dim~Ker~} (T^* \pm \i I) \: ,
+    \end{equation*}
+    where $I$ is the identity operator on $\Hilb$. We call these numbers the \textbf{deficiency indices} of $T$.
+\end{defn}
+\begin{thm}[Deficiency indices and self-adjoint extensions]
+    Let $T$ be a closed symmetric operator on $\Hilb$, such that
+    \begin{equation*}
+        n_+(T) = n_-(T) < \infty \: .
+    \end{equation*}
+    Then all maximal extensions of $T$ are self-adjoint. Furthermore, if $n_\pm = 0$, then $T$ is already self-adjoint.
+\end{thm}
+The following theorem is given in \cite{Weidmann} as Theorem~8.18.
+\begin{thm}[Spectrum of self-adjoint extensions]
+    \label{thm-sym-extension-spectrum}
+    Let $T$ be a closed symmetric operator on $\Hilb$, such that
+    \begin{equation*}
+        n_+(T) = n_-(T) < \infty \: .
+    \end{equation*}
+    Then the essential spectrum of every self-adjoint extension of $T$ is the same. In~particular, if one self-adjoint extension of $T$ has a pure discrete spectrum, all of them do.
+\end{thm}
 
 
 
 \section{Potential perturbation}
-\textbf{REWORK THIS SECTION.} A well-studied case of potential bariers is the Hall effect, where a particle is confined to a strip or semi-plane by electrostatic potential (Combes, 2001 ?). The Hall effect on a plane with two different electrostatic potentials, one on each half of the plane, was studied in (Combes, 2005).
+\textbf{REWORK THIS SECTION.} A well-studied case of potential barriers is the Hall effect, where a particle is confined to a strip or semi-plane by electrostatic potential (Combes, 2001 ?). The Hall effect on a plane with two different electrostatic potentials, one on each half of the plane, was studied in (Combes, 2005).
 
 \section{Magnetic perturbation}
-\textbf{REWORK THIS SECTION.} The case of non-local perturbations (ie. those which don't disapear at infinity) of the magnetic field were studied by (Iwatsuka, 1985).
+\textbf{REWORK THIS SECTION.} The case of non-local perturbations (i.e. those which don't disappear at infinity) of the magnetic field were studied by (Iwatsuka, 1985).
 
 \section{Geometric perturbation}
 \textbf{REWORK THIS SECTION.} A tilted planar layer of fixed width, as well as more general thin layers with translationally invariant bends were studied in (Exner, 2018) and some sufficient conditions for the continuity of spectrum were given.
