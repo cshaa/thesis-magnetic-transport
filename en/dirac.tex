@@ -44,9 +44,9 @@ It is straightforward to check that the fibre Hamiltonian is bounded from below:
     + \int_\R (b x + p)^2 \;\, \big|\varphi(x)\big|^2 \; \d{x}
     \\
     &\geq -\int_\R \overline{\varphi} \varphi''
-    = \int \overline{\varphi}' \varphi'
-    - [\overline{\varphi}\varphi]_{-\infty}^{x_0}
-    - [\overline{\varphi}\varphi]_{x_0}^{\infty}
+    = \int_\R \overline{\varphi}' \varphi'
+    - [\overline{\varphi}\varphi']_{-\infty}^{x_0}
+    - [\overline{\varphi}\varphi']_{x_0}^{\infty}
     \\
     &= \norm{\varphi'}_{L^2(\R)}^2
     + \overline{\varphi}(x_0)
@@ -82,17 +82,48 @@ By choosing $a \leq |\alpha|^{-1}$, we get
     \leq \alpha b \, \norm{\varphi}_{L^2(\R)}^2
     \:,
 \end{equation*}
-thus we have shown that the fibre Hamiltonian $\Hf(p)$ is bounded from below. And because the bound is independent of $p$, it is also a lower bound for $H_\alpha$:
+thus we have shown that the fibre Hamiltonian $\Hf_\alpha(p)$ is bounded from below. And because the bound is independent of $p$, it is also a lower bound for $H_\alpha$:
 \begin{align*}
     \big(\psi, \, H_\alpha \psi\big)_{L^2(\R^2)}
-    &= \int\! \big( \psi(\cdot, p), \, \Hf(p) \, \psi(\cdot, p) \big)_{L^2(\R)} \d{p}
+    &= \int_\R\! \big( \tilde\psi(\cdot, p), \, \Hf_\alpha(p) \, \tilde\psi(\cdot, p) \big)_{L^2(\R)} \d{p}
     \\[10pt]
-    &\leq \int\! \alpha b \, \norm{ \psi(\cdot, p) }^2_{L^2(\R)} \d{p}
-    = \alpha b \, \norm{\psi}^2_{L^2(\R^2)}
+    &\leq \int_\R\! \alpha b \, \norm{ \tilde\psi(\cdot, p) }^2_{L^2(\R)} \d{p}
+    = \alpha b \, \norm{\psi}^2_{L^2(\R^2)} \: ,
+    \; \text{ where } \tilde\psi = \Fourier_y \psi \: .
     \\
 \end{align*}
 
-Now we will show that the fibre Hamiltonian is self-adjoint and has a discrete spectrum. The family of operators $\{  \Hf_\alpha(p) \, | \, \alpha {\,\in\,} \R \}$ has a common symmetric restriction:
+Now we will show that the fibre Hamiltonian is self-adjoint. Let $\varphi \in \Domain( \Hf_\alpha(p) )$ and $\psi$ from a yet-unknown subset of $\Hilb$.
+\begin{align*}
+    \big(\Hf_\alpha(p) \, \varphi, \; \psi \big)
+    &= \int_\R\! -\overline\varphi'' \psi + \int_\R\! \big(bx + p\big)^2 \, \overline\varphi \, \psi
+    \numberthis\label{eqn-dirac-fiber-selfadj}
+    \\[5pt]
+    &= \big[ -\overline\varphi'\psi + \overline\varphi\psi' \big]_{-\infty}^{x_0}
+    \!+ \big[ \overline\varphi'\psi - \overline\varphi\psi'\big]_{x_0}^{+\infty}
+    \!+ \int_\R\! -\overline\varphi \, \psi'' + \int_\R\! \big(bx + p\big)^2
+    \\
+    &=
+    - \overline\varphi'(x_0-) \psi(x_0-)
+    + \overline\varphi(x_0) \psi'(x_0-) \\ & \ph{=}
+    + \overline\varphi'(x_0+) \psi(x_0+)
+    - \overline\varphi(x_0) \psi'(x_0+)
+    + \int_\R\! \overline\varphi \, \Big(
+        \psi'' + \int_\R\! \big(bx + p\big)^2 \psi
+    \Big) \: .
+\end{align*}
+This whole expression has to be equal to $(\varphi, \chi)$ for some $\chi\in\Hilb$ independent of~$\varphi$. At the second line, we performed an integration by parts, already assuming $\psi \in W^{2,2}(\R \setminus \{x_0\})$. If there was another isolated point $c\in\R$ where $\psi$ weren't twice weakly differentiable, we would get terms $\overline\varphi'(c)\big(\psi(c-)-\psi(c+)\big)$ and $\overline\varphi(c)\big(\psi'(c-)-\psi'(c+)\big)$ which can't be independent of $\varphi$ unless $\psi(c-) = \psi(c+)$ and $\psi'(c-) = \psi'(c+)$. However, this would make $\psi$ twice weakly differentiable at $c$, hence a contradiction. At the third line we simply evaluated the square brackets, making use of the fact that $W^{2,2}$ functions (and their derivatives) vanish at infinity. In order for the entire expression to be independent of $\varphi$, the following equation must hold:
+\begin{equation*}
+    - \overline\varphi'(x_0-) \psi(x_0-)
+    + \overline\varphi(x_0) \psi'(x_0-)
+    + \overline\varphi'(x_0+) \psi(x_0+)
+    - \overline\varphi(x_0) \psi'(x_0+)
+    = 0 \: .
+\end{equation*}
+Substituting $\varphi'(x_0+) - \varphi'(x_0-) = \alpha \varphi(x_0)$ and solving for all $\varphi$, we get that $\psi(x_0+) = \psi(x_0-)$ and $\psi'(x_0+) - \psi'(x_0-) = \alpha \psi(x_0+)$. Therefore, $\psi$ must be from $\Domain(\Hf_\alpha(p))$ and $\chi = \Hf_\alpha(p) \psi$. We have shown that $\Hf_\alpha(p)$ is self-adjoint. And because the direct integral of a self-adjoint operator is also a self-adjoint operator, $H_\alpha$ is also self-adjoint.
+
+
+Finally, we will show that the fibre Hamiltonian has a discrete spectrum. The family of operators $\{  \Hf_\alpha(p) \, | \, \alpha {\,\in\,} \R \}$ has a common symmetric restriction:
 \begin{gather*}
     \Omega := \big\{
         \varphi \in W^{2,2}(\R) \;\big|\;
@@ -120,9 +151,40 @@ Since fibres $\Hf_\alpha(p)$ for various values of~$\alpha$ only differ in the b
     x^2 \varphi  \in L^2
     \: .
 \end{align*}
-Furthermore, there is no way for $\varphi(0) \neq \varphi_n(0)$ without causing $\varphi''_n(0)$ to diverge. Therefore, $h(p) \, \varphi_n \to \psi \implies \varphi \in \Omega$. Finally, the requirement $h(p) \, \varphi = \psi$ follows from the fact that both second derivative and multiplication by $x^2$ are closed operators on their respective domains.
+Furthermore, there is no way for $\varphi(x_0) \neq \varphi_n(x_0) \equiv 0$ without causing $\varphi''_n(x_0)$ to diverge. Therefore, $h(p) \, \varphi_n \to \psi \implies \varphi \in \Omega$. Finally, the requirement $h(p) \, \varphi = \psi$ follows from the fact that both second derivative and multiplication by $x^2$ are closed operators on their respective domains.
 
-We have shown that $h(p)$ is a closed symmetric operator with many different extensions $\Hf_\alpha(p)$. We know that at least one of the extensions, the fibre $\Hf_{\alpha = 0}(p)$ of the unperturbed system, has a discrete spectrum. Now, we want to use the theorem~\ref{thm-sym-extension-spectrum} to show that the spectrum of all $\Hf_\alpha(p)$ is discrete. Since the
+We have shown that $h(p)$ is a closed symmetric operator with many different extensions $\Hf_\alpha(p)$. We know that at least one of the extensions, the fibre $\Hf_{\alpha = 0}(p)$ of the unperturbed system, has a discrete spectrum. Now, we want to use the theorem~\ref{thm-sym-extension-spectrum} to show that the spectrum of all $\Hf_\alpha(p)$ is discrete. The last premise left to demonstrate is the fact that $n_+(h(p)) = n_-(h(p)) < \infty$. Since the deficiency indices (definition \ref{defn-deficiency-indices}) are equal to the multiplicity of $\pm\i$ as an eigenvalue of $h(p)^*$, we first need to find the operator $h(p)^*$. Let $\varphi \in \Omega$ and $\psi$ from a yet-unknown set $\Omega'\subset\Hilb$.
+\begin{align*}
+    \\[-2\baselineskip]
+    \big( h(p) \varphi, \, \psi \big)
+    &= \int_\R\! -\overline\varphi'' \psi
+    + \int_\R\! \big( bx + p \big)^2 \overline\varphi\psi
+    = \int_\R \overline\varphi \, \overbrace{\Big(
+        \psi'' + \int_\R\! \big(bx + p\big)^2 \psi
+    \Big)}^{=: \, h(p)^* \psi} + \ph{x}\\
+    &+ \underbrace{\vph{\big|} \overline\varphi(x_0)}_0 \psi'(x_0-)
+    - \underbrace{\vph{\big|} \overline\varphi(x_0)}_0 \psi'(x_0+)
+    + \overline\varphi'(x_0) \big( \psi(x_0+) - \psi(x_0-) \big)
+    \: .
+\end{align*}
+We performed an integration by parts, assuming $\Omega' \subseteq W^{2,2}(\R \setminus \{x_0\})$, which can be justified by an argument analogical to that under equation \eqref{eqn-dirac-fiber-selfadj}. Since $\overline\varphi'(x_0)$ can take on any value, it must hold that $\psi(x_0+) - \psi(x_0-) = 0$. However, there is no constraint on the values of $\psi'$. Therefore, the domain of $h(p)^*$ is:
+\begin{equation*}
+    \Omega' := \big\{
+        \varphi \in W^{1,2}(\R) \cap W^{2,2}(\R \setminus \{x_0\})
+        \; | \;
+        x^2 \varphi(x) \in L^2(\R)
+    \big\}
+    \: .
+\end{equation*}
+The deficiency indices $n_\pm$ are then equal to the number of linearly independent solutions of the ordinary differential equation:
+\begin{equation*}
+    h(p)^* \varphi = \pm \i
+    \quad \Longleftrightarrow \quad
+    \varphi''(x) = \big( (bx + p)^2 \mp \i \big)^2 \varphi(x)
+    \quad \text{ where } \varphi \in \Omega'
+    \: .
+    \numberthis\label{eqn-dirac-deficiency-indices-ode}
+\end{equation*}
 
 In the next section, we will investigate how the eigenvalues of $\Hf_\alpha(p)$ depend on $p$ and $\alpha$.
 

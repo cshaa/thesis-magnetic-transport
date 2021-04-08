@@ -1,1 +1,2 @@
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qwith a domain given by the conditions \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q for a.e.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\Q[tc]\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q The spectrum of normal operator \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q; the point, absolutely continuous, singular continuous, discrete, essential spectrum of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}

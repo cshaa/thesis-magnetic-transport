@@ -23,7 +23,7 @@ Now we can specify precisely which Hamiltonians we will investigate.
 
 \begin{defn}[Potential perturbation]
     \label{defn-perturb-potential}
-    Let $\Hilb = L^2(\R^2)$, $\Domain(H)$ a dense subset of $\Hilb$, $b>0$ and $V \in L^1_{\text{loc}}(\R)$. A self-adjoint operator $H: \Domain(H) \to \Hilb$ given by the equation
+    Let $\Omega \subseteq \R^2$, $\Hilb = L^2(\Omega)$, $\Domain(H)$ a dense subset of $\Hilb$, $b>0$ and $V \in L^1_{\text{loc}}(\R)$. A self-adjoint operator $H: \Domain(H) \to \Hilb$ given by the equation
     \begin{equation*}
         H
         = P^2_x
@@ -72,7 +72,7 @@ Now we can specify precisely which Hamiltonians we will investigate.
         \Delta^\Omega_{\mathrm{D}, A} \psi(x,y,z)
         = \Delta \psi + 2\i b \, x \, \pd{\psi}{y} - b^2 x^2 \, \psi
     \end{align*}
-    defined on functions $\psi \in C^\infty(\Omega)$, such that $\psi(x,y,z) = 0$ on the boundary of $\Omega$. The~operator $H$ which is the closure of $-\Delta^\Omega_{\mathrm{D}, A}$ is called the \textbf{Landau Hamiltonian with a geometric perturbation}. We will investigate, which choices of~$\omega$ lead to $\SpE(H) \neq \emptyset$.
+    defined on functions $\psi \in C^\infty(\Omega)$, such that $\psi(x,y,z) = 0$ on the boundary of $\Omega$. The~operator $H$ which is the closure of $-\Delta^\Omega_{\mathrm{D}, A}$ in $L^2(\Omega)$ is called the \textbf{Landau Hamiltonian with a geometric perturbation}. We will investigate, which choices of~$\omega$ lead to $\SpE(H) \neq \emptyset$.
 \end{defn}
 
 
@@ -161,9 +161,10 @@ Where for every $p \in \R$, $\Hf(p)$ is a self-adjoint operator on $L^2(\R)$. Th
 
 This means that we can deduce the spectrum of the Hamiltonian $H$ simply by investigating how the spectrum of its fibre $\Hf(p)$ depends on $p$. Furthermore, the spectrum of $\Hf(p)$ typically consists of simple eigenvalues which are particularly convenient to work with.
 
-\section{A refresher on linear operators}
+\section{Refresher on linear operators}
 Before we start investigating specific Hamiltonians, let us remind a few textbook theorems regarding self-adjointness and spectral properties of linear operators, which will be useful later. The following definition and the subsequent theorem are from the chapter 4.7 in \cite{BEH}.
 \begin{defn}[Deficiency indices]
+    \label{defn-deficiency-indices}
     Let $T$ be a linear operator on $\Hilb$. We define two numbers $n_+, \, n_- \in \N_0 \cup \{ \infty \}$ as follows:
     \begin{equation*}
         n_\pm(T) = \mathrm{dim~Ker~} (T^* \pm \i I) \: ,
@@ -171,6 +172,7 @@ Before we start investigating specific Hamiltonians, let us remind a few textboo
     where $I$ is the identity operator on $\Hilb$. We call these numbers the \textbf{deficiency indices} of $T$.
 \end{defn}
 \begin{thm}[Deficiency indices and self-adjoint extensions]
+    \label{thm-deficiency-self-adj}
     Let $T$ be a closed symmetric operator on $\Hilb$, such that
     \begin{equation*}
         n_+(T) = n_-(T) < \infty \: .
