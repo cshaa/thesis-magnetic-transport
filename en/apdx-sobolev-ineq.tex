@@ -60,5 +60,34 @@ In this section we prove a Sobolev-type inequality analogical to the inequality 
 		\: .
 	\end{gather*}
 	Choosing $r = a^2/c^2$, we have proven the inequality \eqref{sobolev-type-0} for $n=1$.
-	\\{}[\textbf{Dodělat $n=2$ podle BEH nerovnost (4.3) a diskuse pod ní.}]
+
+	To prove $n=2$, we start with the case $n=1$ and square both sides of the inequality.
+	\begin{gather*}
+		\\[-1.7\baselineskip]
+		\norm{\psi}_{L^\infty}
+		\leq
+		a \, \norm{\psi'}_{L^2}
+		+ b \, \norm{\psi}_{L^2}
+		\\[5pt]
+		\norm{\psi}_{L^\infty}^{\,2}
+		\leq
+		a \, \norm{\psi'}_{L^2}^{\,2}
+		+ 2ab \, \norm{\psi'}_{L^2} \, \norm{\psi}_{L^2}
+		+ b \, \norm{\psi}_{L^2}^{\,2}
+		\leq
+		2a \, \norm{\psi'}_{L^2}^{\,2}
+		+ 2b \, \norm{\psi}_{L^2}^{\,2}
+	\end{gather*}
+	In the last step we have used the fact, that
+	\begin{equation*}
+		0 \leq
+		\big( a\, \norm{\psi'}_{L^2} - b\, \norm{\psi}_{L^2} \big)^2
+		\quad \Leftrightarrow \quad
+		2ab \, \norm{\psi'}_{L^2} \, \norm{\psi}_{L^2}
+		\leq
+		a \, \norm{\psi'}_{L^2}^{\,2}
+		+ b \, \norm{\psi}_{L^2}^{\,2}
+		\: .
+	\end{equation*}
+	Finally, substituting $2a^2 \mapsto a$ and $2b^2 \mapsto b$, we have proven the inequality for~${n=2}$.
 \end{proof}

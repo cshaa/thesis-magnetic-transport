@@ -112,7 +112,7 @@ Now we will show that the fibre Hamiltonian is self-adjoint. Let $\varphi \in \D
         \psi'' + \int_\R\! \big(bx + p\big)^2 \psi
     \Big) \: .
 \end{align*}
-This whole expression has to be equal to $(\varphi, \chi)$ for some $\chi\in\Hilb$ independent of~$\varphi$. At the second line, we performed an integration by parts, already assuming $\psi \in W^{2,2}(\R \setminus \{x_0\})$. If there was another isolated point $c\in\R$ where $\psi$ weren't twice weakly differentiable, we would get terms $\overline\varphi'(c)\big(\psi(c-)-\psi(c+)\big)$ and $\overline\varphi(c)\big(\psi'(c-)-\psi'(c+)\big)$ which can't be independent of $\varphi$ unless $\psi(c-) = \psi(c+)$ and $\psi'(c-) = \psi'(c+)$. However, this would make $\psi$ twice weakly differentiable at $c$, hence a contradiction. At the third line we simply evaluated the square brackets, making use of the fact that $W^{2,2}$ functions (and their derivatives) vanish at infinity. In order for the entire expression to be independent of $\varphi$, the following equation must hold:
+This whole expression has to be equal to $(\varphi, \chi)$ for some $\chi\in\Hilb$ independent of~$\varphi$. At the second line, we performed an integration by parts, already assuming $\psi \in W^{2,2}(\R \setminus \{x_0\})$. If there was another isolated point $c\in\R$ where $\psi$ weren't twice weakly differentiable, we would get terms $\overline\varphi'(c)\big(\psi(c-)-\psi(c+)\big)$ and $\overline\varphi(c)\big(\psi'(c-)-\psi'(c+)\big)$ which can't be independent of $\varphi$ unless $\psi(c-) = \psi(c+)$ and $\psi'(c-) = \psi'(c+)$. However, this would make $\psi$ twice weakly differentiable at~$c$, hence a contradiction. At the third line we simply evaluated the square brackets, making use of the fact that $W^{2,2}$ functions (and their derivatives) vanish at infinity. In order for the entire expression to be independent of $\varphi$, the following equation must hold:
 \begin{equation*}
     - \overline\varphi'(x_0-) \psi(x_0-)
     + \overline\varphi(x_0) \psi'(x_0-)
@@ -120,7 +120,7 @@ This whole expression has to be equal to $(\varphi, \chi)$ for some $\chi\in\Hil
     - \overline\varphi(x_0) \psi'(x_0+)
     = 0 \: .
 \end{equation*}
-Substituting $\varphi'(x_0+) - \varphi'(x_0-) = \alpha \varphi(x_0)$ and solving for all $\varphi$, we get that $\psi(x_0+) = \psi(x_0-)$ and $\psi'(x_0+) - \psi'(x_0-) = \alpha \psi(x_0+)$. Therefore, $\psi$ must be from $\Domain(\Hf_\alpha(p))$ and $\chi = \Hf_\alpha(p) \psi$. We have shown that $\Hf_\alpha(p)$ is self-adjoint. And because the direct integral of a self-adjoint operator is also a self-adjoint operator, $H_\alpha$ is also self-adjoint.
+Substituting $\varphi'(x_0+) - \varphi'(x_0-) = \alpha \varphi(x_0)$ and solving for all $\varphi$, we get that $\psi(x_0+) = \psi(x_0-)$ and $\psi'(x_0+) - \psi'(x_0-) = \alpha \psi(x_0+)$. Therefore, $\psi$ must be from $\Domain(\Hf_\alpha(p))$ and $\chi = \Hf_\alpha(p) \psi$. We have shown that $\Hf_\alpha(p)$ is self-adjoint. And because the direct integral of a self-adjoint operator is also a self-adjoint operator, $H_\alpha$ is self-adjoint, too.
 
 
 Finally, we will show that the fibre Hamiltonian has a discrete spectrum. The family of operators $\{  \Hf_\alpha(p) \, | \, \alpha {\,\in\,} \R \}$ has a common symmetric restriction:
@@ -178,18 +178,19 @@ We performed an integration by parts, assuming $\Omega' \subseteq W^{2,2}(\R \se
 \end{equation*}
 The deficiency indices $n_\pm$ are then equal to the number of linearly independent solutions of the ordinary differential equation:
 \begin{equation*}
-    h(p)^* \varphi = \pm \i
+    h(p)^* \varphi = \pm \i \, \varphi
     \quad \Longleftrightarrow \quad
     \varphi''(x) = \big( (bx + p)^2 \mp \i \big)^2 \varphi(x)
     \quad \text{ where } \varphi \in \Omega'
     \: .
     \numberthis\label{eqn-dirac-deficiency-indices-ode}
 \end{equation*}
+This equation is the generalized parabolic cylinder equation which generally has two solutions. The fact that $\varphi'$ can have an arbitrarily large jump in~$x_0$ allows us to make both of the solutions obey the growth conditions given by $\Omega'$ hence we have $n_+ = n_- = 2$. The details of this calculation will be flashed out in the next section, right under the equation \eqref{eqn-dirac-parabolic-cylinder-two-solutions}.
 
-In the next section, we will investigate how the eigenvalues of $\Hf_\alpha(p)$ depend on $p$ and $\alpha$.
+We have shown that the Hamiltonian $H_\alpha$ is self-adjoint and bounded from below for each $\alpha\in\R$, and that the fibre Hamiltonian $\Hf_\alpha(p)$ has a discrete spectrum for every $\alpha, p \in \R$. In the next section, we will investigate what are the eigenvalues of $\Hf_\alpha(p)$ and how they depend on $p$ and $\alpha$.
 
 \section{Eigenproblem of the fibre Hamiltonian}
-In order to use utilize the theorem \ref{thm-direct-integral-spectrum} we need to find the eigenvalues of the fibre Hamiltonian for each $p$. That is, we are looking for a real analytic function $\epsilon(p)$, such that for all $p \in \R$ there exists a $\varphi \in \Domain(\Hf_\alpha(p))$ satisfying
+In order to use utilize the theorem \ref{thm-direct-integral-spectrum} to find the spectrum of $H_\alpha$, we need to find the eigenvalues of the fibre Hamiltonian for each $p$. That is, we are looking for a real analytic function $\epsilon(p)$, such that for all $p \in \R$ there exists a $\varphi \in \Domain(\Hf_\alpha(p))$ satisfying
 \begin{equation*}
     \Hf_\alpha(p) \, \varphi = \epsilon(p) \, \varphi \: .
 \end{equation*}
@@ -203,7 +204,7 @@ As a shorthand, we will often denote $\epsilon(p)$ simply as $\epsilon$. Substit
     \varphi'(x_0+) - \varphi'(x_0-) = \alpha \, \varphi(x_0)
     \: .
 \end{gather*}
-From now on, we shall suppose that $b>0$; for $b<0$ one can perform a reflection $x \mapsto -x$ and arrive at the same results. In order to refine this differential equation into the standard form, we change variables $x\mapsto w$ and instead of one function $\varphi$ on $\R$ we introduce two functions $h_-, h_+$ on the left and right half-line respectively:
+From now on, we shall suppose that $b>0$; for $b<0$ one can perform a reflection $x \mapsto -x$ and arrive at the same results. In order to refine this differential equation into the standard form, we change variables $x\mapsto w$ and instead of one function $\varphi$ on $\R$ we introduce two functions $g_-, g_+$ on the left and right half-line respectively:
 \begin{gather*}
     w \coloneqq \sqrt{2b} \, \big( x + \frac{p}{b} \big) \: ,
     \qquad
@@ -213,20 +214,20 @@ From now on, we shall suppose that $b>0$; for $b<0$ one can perform a reflection
     \numberthis
     \label{eqn-w-nu-definition}
     \\[10pt]
-    h_-: (-\infty, w_0] \to \C \: , \qquad
-    h_+: [w_0, +\infty) \to \C \: ,
+    g_-: (-\infty, w_0] \to \C \: , \qquad
+    g_+: [w_0, +\infty) \to \C \: ,
     \\[10pt]
     \varphi(x) = \begin{cases}
-        h_+ \big( \sqrt{2b} \, (x + \frac{p}{b}) \big)
+        g_+ \big( \sqrt{2b} \, (x + \frac{p}{b}) \big)
         \quad \text{for } x \geq x_0 \: ,
         \\[5pt]
-        h_- \big( \sqrt{2b} \, (x + \frac{p}{b}) \big)
+        g_- \big( \sqrt{2b} \, (x + \frac{p}{b}) \big)
         \quad \text{for } x < x_0 \: .
     \end{cases}
 \end{gather*}
 Then we arrive at the so-called parabolic cylinder differential equation:
 \begin{align*}
-    h_\pm''(w) = \Big( \frac{1}{4}w^2 - \nu  - \frac{1}{2} \Big) \, h_\pm(w) \: ,
+    g_\pm''(w) = \Big( \frac{1}{4}w^2 - \nu  - \frac{1}{2} \Big) \, g_\pm(w) \: ,
     \numberthis
     \label{eqn-parabolic-cylinder-ode}
     \\[-2em]
@@ -234,8 +235,8 @@ Then we arrive at the so-called parabolic cylinder differential equation:
 The two functions are then \textit{“glued together”} by the following equations:
 \begin{equation}
     \begin{aligned}[c]
-        h_+(w_0) - h_-(w_0) &= 0 \: , \\[5pt]
-        h_+'(w_0) - h_-'(w_0) &= \alpha \, \sqrt{2b} \; h_+(w_0) \: .
+        g_+(w_0) - g_-(w_0) &= 0 \: , \\[5pt]
+        g_+'(w_0) - g_-'(w_0) &= \alpha \, \sqrt{2b} \; g_+(w_0) \: .
     \end{aligned}
     \label{eqn-gluing-equations}
 \end{equation}
@@ -277,10 +278,14 @@ In the special case when $\nu \in \N_0$, the function $D_\nu$ can be expressed u
 The solutions in \eqref{eqn-parabolic-cylinder-solutions} are linearly dependent. For most values of $\nu$, any of the four functions can be expressed as a linear combination of any two others. However, specifically in the case $\nu \in \N_0$ we get $D_\nu(w) = \pm D_\nu(-w)$.
 
 Asymptotic behaviour of the solutions is also given by \cite{GradshteynRyzhik}. As $|w|\to\infty$, the solutions $D_{-\nu-1}(\i w)$ and $D_{-\nu-1}(-\i w)$ grow exponentially. Meanwhile, $D_\nu(w)$ decays exponentially for $w \to +\infty$. Therefore, $D_\nu(w)$ and $D_\nu(-w)$ are better suited for the growth conditions imposed by the domain of $\Hf_\alpha(p)$. We define $c_{+1}, c_{+2}, c_{-1}, c_{-2} \in \C$, such that
-\begin{equation*}
-    h_\pm = c_{\pm 1} \, D_\nu(w) + c_{\pm 2} \, D_\nu(-w) \: .
-\end{equation*}
-It can be further shown, that if $\nu \notin \N_0$, the solution $D_\nu(w)$ diverges for $w \to -\infty$. \textbf{[Then show it.]} Therefore, $c_{-1} = c_{+2} = 0$ in order for $\varphi$ to be integrable. On the other hand, for $\nu \in \N_0$, the solutions aren't independent (as discussed above), therefore we can also set $c_{-1} = c_{+2} = 0$ without loss of generality. Applying the gluing equations \eqref{eqn-gluing-equations}, we get:
+\begin{equation}
+    g_\pm(w) = c_{\pm 1} \, D_\nu(w) + c_{\pm 2} \, D_\nu(-w) \: .
+    \label{eqn-dirac-parabolic-cylinder-two-solutions}
+\end{equation}
+
+We have promised to provide a more detailed explanation for why the deficiency indices of $h(p)$ are equal to $2$, or equivalently, why the equation \eqref{eqn-dirac-deficiency-indices-ode} has precisely two solutions for $\varphi \in \Omega'$. If we formally substituted $\epsilon=\pm\i$, all the arguments brought up in this section would still hold. Therefore, to prove $n_\pm=2$, we have to show that both $D_\nu(w)$ and $D_\nu(-w)$ are in $\Omega'$. \textbf{[Finish this.]}
+
+Now we can safely return to the eigenproblem of $\Hf_\alpha(p)$ from where we left it – that is, from the equation \eqref{eqn-dirac-parabolic-cylinder-two-solutions}. For $\epsilon\in\R$ can be further shown, that if $\nu \notin \N_0$, the solution $D_\nu(w)$ diverges for $w \to -\infty$. \textbf{[Then show it.]} Therefore, $c_{-1} = c_{+2} = 0$ in order for $\varphi$ to be integrable. On the other hand, for $\nu \in \N_0$, the solutions aren't independent (as discussed above), therefore we can also set $c_{-1} = c_{+2} = 0$ without loss of generality. Applying the gluing equations \eqref{eqn-gluing-equations}, we get:
 \begin{gather*}
     c_{+1} \, D_\nu(w_0) = c_{-2} \, D_\nu(-w_0) \\[5pt]
     c_{+1} \, \dd{}{w} D_\nu(w) \big|_{w_0} - c_{-2} \, \dd{}{w} D_\nu(-w) \big|_{w_0} = \alpha \, \sqrt{2b} \; c_{+1} \, D_\nu(w_0)
@@ -347,7 +352,7 @@ Truly, this is simply the equation \eqref{eqn-implicit-pre} after the substituti
     w \in \R
     \: .
 \end{equation*}
-Moreover, $F$ is analytic in the three variables, as it is a sum of products of entire functions. The implicit function theorem then tells us that, provided $\pd{}{\nu} F(0, w, k) \neq 0$ for a fixed $k \in \N_0$ (which we will prove soon), there exists an analytic function $\nu(a, w)$, such that $\nu(0,w) = k$ and $F(a, w, \nu(a,w)) = 0$ on the neighbourhood of $a=0$. Since there is a different implicit function for every $k$, we will denote them $\nu_k(a,w)$. After changing our variables back to the physical ones and putting $x_0=0$ (since it only depends on the choice of origin), we get that the energy levels for a fixed magnitude of the perturbation $\alpha$ are
+Moreover, $F$ is analytic in the three variables, as it is a sum of products of entire functions. The implicit function theorem then tells us that, provided $\pd{}{\nu} F(0, w, k) \neq 0$ for a fixed $k \in \N_0$ (which we will prove soon), there exists an analytic function $\nu(a, w)$, such that $\nu(0,w) = k$ and $F(a, w, \nu(a,w)) = 0$ on the neighbourhood of $a=0$. Since there is a different implicit function for every $k$, we will denote them $\nu_k(a,w)$. After changing our variables back to the physical ones and putting $x_0=0$ (since it only depends on the choice of origin), we see that the energy levels for a fixed magnitude of the perturbation $\alpha$ are
 \begin{equation*}
     \epsilon_k(p) = b + 2b\;\nu_k\big( \alpha \, \sqrt{2b}, \; p \, \sqrt{\tfrac{2}{b}}  \big) \: ,
     \qquad k \in \N_0 \: .
