@@ -1,4 +1,4 @@
-\chapter{Delta potential}
+\chapter{Delta potential} \label{chapter-dirac}
 In this chapter we will examine the Landau Hamiltonian with a potential perturbation (see definition \ref{defn-perturb-potential}), formally given by the potential $V(x) = \alpha\,\delta_{x_0}$, i.e. the Dirac delta in $x=x_0$, scaled by $\alpha \in \R$. Since such a potential is a distribution and not a locally integrable function, the Hamiltonian is rigorously defined as:
 \begin{equation*}
     \big( H_\alpha \psi \big)(x, y) = \left( -\pd{^2}{x^2} + \big( \i\pd{}{y} + bx \big)^2 \right) \; \psi(x,y)
@@ -15,7 +15,7 @@ with a domain given by the conditions
     \int_{\R^2} x^2 \, \big|\, \psi(x,y) \,\big|^2 \, \d{x}\d{y} < \infty \: .
 \end{gather*}
 \footnotetext{The equality holds for \textit{almost every} $y$ and $\lim_{x\to x_0}$ means the \textit{essential} limit with respect to the Lebesgue measure on $\R$.}
-Then, by an approach equivalent to that in \eqref{eqn-vague-direct-integral-decomp}, one can show that $H_\alpha$ is isomorphic to a direct integral:
+Then, by an approach analogous to \eqref{eqn-vague-direct-integral-decomp}, one can show that $H_\alpha$ is unitarily equivalent to a direct integral:
 \begin{equation*}
     H_\alpha \simeq \int^\oplus_\R \Hf_\alpha(p) \d{p} \: ,
 \end{equation*}
@@ -34,7 +34,7 @@ where $\Hf_\alpha(p)$ is a fibre Hamiltonian satisfying very similar conditions 
 \end{gather*}
 Before we start investigating the spectrum, we need to show that the problem is well-posed, i.e. that the Hamiltonian $H_\alpha$ is self-adjoint and bounded from below. Then we will show that the spectrum of $\Hf_\alpha(p)$ is discrete for every $p$, and only after that we will investigate the continuity of the spectrum of $H_\alpha$.
 
-\section{Well-posedness}
+\section{Well-posedness} \label{section-dirac-well-posedness}
 It is straightforward to check that the fibre Hamiltonian is bounded from below:
 \begin{align*}
     (\varphi, \, \Hf_\alpha(p) \, \varphi)
@@ -54,6 +54,7 @@ It is straightforward to check that the fibre Hamiltonian is bounded from below:
     \\
     &= \norm{\varphi'}_{L^2(\R)}^2
     + \alpha \, \big|\varphi(x_0)\big|^2
+    \: .
 \end{align*}
 In the last two steps we have used the fact that for $\varphi \in W^{2,2}$ both $\varphi$ and $\varphi'$ vanish at infinity, and that $\varphi(x_0+)-\varphi(x_0-) = \alpha \varphi(x_0)$. In case when $\alpha\geq0$, the right-hand side is non-negative, therefore we can use zero as the lower bound. For $\alpha<0$ we estimate $|\varphi(x_0)|^2 \leq \lVert\varphi\rVert_{L^\infty}^{\,2}$ and then use the Sobolev-type inequality
 \begin{equation*}
@@ -75,11 +76,12 @@ the proof of which is given in the chapter \ref{apdx-sobolev-ineq} of the append
     \\
     &= \big( 1 + \alpha a \big) \, \norm{\varphi'}_{L^2}^2
     +\alpha b \, \norm{\varphi}_{L^2}^2
+    \: .
 \end{align*}
 By choosing $a \leq |\alpha|^{-1}$, we get
 \begin{equation*}
     (\varphi, \, \Hf_\alpha(p) \, \varphi)
-    \leq \alpha b \, \norm{\varphi}_{L^2(\R)}^2
+    \geq \alpha b \, \norm{\varphi}_{L^2(\R)}^2
     \:,
 \end{equation*}
 thus we have shown that the fibre Hamiltonian $\Hf_\alpha(p)$ is bounded from below. And because the bound is independent of $p$, it is also a lower bound for $H_\alpha$:
@@ -87,10 +89,10 @@ thus we have shown that the fibre Hamiltonian $\Hf_\alpha(p)$ is bounded from be
     \big(\psi, \, H_\alpha \psi\big)_{L^2(\R^2)}
     &= \int_\R\! \big( \tilde\psi(\cdot, p), \, \Hf_\alpha(p) \, \tilde\psi(\cdot, p) \big)_{L^2(\R)} \d{p}
     \\[10pt]
-    &\leq \int_\R\! \alpha b \, \norm{ \tilde\psi(\cdot, p) }^2_{L^2(\R)} \d{p}
+    &\geq \int_\R\! \alpha b \, \norm{ \tilde\psi(\cdot, p) }^2_{L^2(\R)} \d{p}
     = \alpha b \, \norm{\psi}^2_{L^2(\R^2)} \: ,
     \; \text{ where } \tilde\psi = \Fourier_y \psi \: .
-    \\
+    \numberthis \label{eqn-fiber-hamiltonian-lower-bound}
 \end{align*}
 
 Now we will show that the fibre Hamiltonian is self-adjoint. Let $\varphi \in \Domain( \Hf_\alpha(p) )$ and $\psi$ from a yet-unknown subset of $\Hilb$.
@@ -99,9 +101,9 @@ Now we will show that the fibre Hamiltonian is self-adjoint. Let $\varphi \in \D
     &= \int_\R\! -\overline\varphi'' \psi + \int_\R\! \big(bx + p\big)^2 \, \overline\varphi \, \psi
     \numberthis\label{eqn-dirac-fiber-selfadj}
     \\[5pt]
-    &= \big[ -\overline\varphi'\psi + \overline\varphi\psi' \big]_{-\infty}^{x_0}
+    &= \big[ \!-\!\overline\varphi'\psi + \overline\varphi\psi' \big]_{-\infty}^{x_0}
     \!+ \big[ \overline\varphi'\psi - \overline\varphi\psi'\big]_{x_0}^{+\infty}
-    \!+ \int_\R\! -\overline\varphi \, \psi'' + \int_\R\! \big(bx + p\big)^2
+    \!+ \int_\R\! -\overline\varphi \, \psi'' + \int_\R\! \big(bx + p\big)^2 \overline\varphi \psi
     \\
     &=
     - \overline\varphi'(x_0-) \psi(x_0-)
@@ -180,7 +182,7 @@ The deficiency indices $n_\pm$ are then equal to the number of linearly independ
 \begin{equation*}
     h(p)^* \varphi = \pm \i \, \varphi
     \quad \Longleftrightarrow \quad
-    \varphi''(x) = \big( (bx + p)^2 \mp \i \big)^2 \varphi(x)
+    \varphi''(x) = \big( (bx + p)^2 \mp \i \big) \, \varphi(x)
     \quad \text{ where } \varphi \in \Omega'
     \: .
     \numberthis\label{eqn-dirac-deficiency-indices-ode}
@@ -189,7 +191,7 @@ This equation is the generalized parabolic cylinder equation which generally has
 
 We have shown that the Hamiltonian $H_\alpha$ is self-adjoint and bounded from below for each $\alpha\in\R$, and that the fibre Hamiltonian $\Hf_\alpha(p)$ has a discrete spectrum for every $\alpha, p \in \R$. In the next section, we will investigate what are the eigenvalues of $\Hf_\alpha(p)$ and how they depend on $p$ and $\alpha$.
 
-\section{Eigenproblem of the fibre Hamiltonian}
+\section{Eigenproblem of the fibre Hamiltonian} \label{section-dirac-eigenproblem}
 In order to use utilize the theorem \ref{thm-direct-integral-spectrum} to find the spectrum of $H_\alpha$, we need to find the eigenvalues of the fibre Hamiltonian for each $p$. That is, we are looking for a real analytic function $\epsilon(p)$, such that for all $p \in \R$ there exists a $\varphi \in \Domain(\Hf_\alpha(p))$ satisfying
 \begin{equation*}
     \Hf_\alpha(p) \, \varphi = \epsilon(p) \, \varphi \: .
@@ -324,7 +326,7 @@ In order for the equation to have a non-trivial solution, the determinant of the
 \end{align*}
 Since we're interested in the allowed values of $\nu$ for given $w_0$ and $\alpha \, \sqrt{2b} \eqqcolon a$, this equation effectively defines an implicit function $\nu(a, w_0)$.
 
-\section{Implicit function for energy levels}
+\section{Implicit function for energy levels} \label{section-dirac-implicit-function}
 Let $F$ be a function of three real variables given by
 \begin{equation*}
     F(a, w, \nu) =
@@ -358,7 +360,7 @@ Moreover, $F$ is analytic in the three variables, as it is a sum of products of 
     \qquad k \in \N_0 \: .
 \end{equation*}
 
-For an unperturbed system $\alpha=0$, the allowed energies are the Landau levels $\epsilon_k = b(2k+1)$. We will to show that for $p\to\pm\infty$, the energy approaches those unperturbed levels – in our rescaled coordinates, this is equivalent to $\lim_{w\to\pm\infty} \nu_k(a, w) = k$. To show this is the case, we will investigate the behaviour of $\pd{}{a} \nu_k$ and $\pd{}{w} \nu_k$ as $w \to \pm\infty$. First, let us write down the partial derivatives of~$F$:
+For an unperturbed system $\alpha=0$, the allowed energies are the Landau levels $\epsilon_k = b(2k+1)$. We will show that for $p\to\pm\infty$, the energy approaches those unperturbed levels – in our rescaled coordinates, this is equivalent to $\lim_{w\to\pm\infty} \nu_k(a, w) = k$. To show this is the case, we will investigate the behaviour of $\pd{}{a} \nu_k$ and $\pd{}{w} \nu_k$ as $w \to \pm\infty$. First, let us write down the partial derivatives of~$F$:
 \begin{gather*}
     \pd{}{a} \, F(a,w,\nu) = D_\nu(w) \, D_\nu(-w)
     \\[5pt]
@@ -379,7 +381,7 @@ In the second equality we used the recursion formulas $\dd{}{w} D_\nu(w) = \frac
     = \pd{}{\alpha} \, \sum_{n=0}^\infty \frac{(\alpha)_n \, z^n}{(\gamma)_n \, n!}
     = \pd{}{\alpha} \, \sum_{n=0}^\infty \frac{\Gamma(\alpha+n)}{\Gamma(\alpha)} \, \frac{z^n}{(\gamma)_n \, n!}
     \\[5pt]
-    &= \sum_{n=0}^\infty \tfrac{\digamma(\alpha+n) \, \Gamma(\alpha+k) \, \Gamma(\alpha) - \Gamma(\alpha+n) \, \digamma(\alpha) \, \Gamma(\alpha)}{\Gamma(\alpha)^2} \, \frac{z^n}{(\gamma)_n \, n!}
+    &= \sum_{n=0}^\infty \tfrac{\digamma(\alpha+n) \, \Gamma(\alpha+n) \, \Gamma(\alpha) - \Gamma(\alpha+n) \, \digamma(\alpha) \, \Gamma(\alpha)}{\Gamma(\alpha)^2} \, \frac{z^n}{(\gamma)_n \, n!}
     = \sum_{n=0}^\infty \big({ \scriptstyle \digamma(\alpha+n) - \digamma(\alpha) }\big) \, \frac{(\alpha)_n \, z^n}{(\gamma)_n \, n!}
 \end{align*}
 \begin{align*}
