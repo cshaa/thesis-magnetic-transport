@@ -96,7 +96,7 @@ then the fibre Hamiltonians for all values of $\alpha$ have a common symmetric r
 \begin{equation*}
     h(p) := \Hf_\alpha(p) |_\Omega
 \end{equation*}
-\textbf{[Finish this section.]}
+\textbf{[Finish this section: show $h$ is closed and $n_+=n_-<\infty$.]}
 
 \section{Eigenproblem of the fiber Hamiltonian}
 We are searching for a function $\epsilon(p)$, such that for every $p$ there exists a $\varphi \in \Domain(\Hf_\alpha(p))$ for which
@@ -114,7 +114,7 @@ Substituting from the definition, we get
 \end{align*}
 This is the parabolic cylinder equation and, as in the previous chapter, its solutions are in the form
 \begin{equation*}
-    \varphi(x) = c_1 \, D_\nu(-w) + c_2 \, D_\nu(w)
+    \varphi(x) = c \, D_\nu(w) + d \, D_\nu(-w)
     \: ,
     \quad \text{where} \quad
     w := \sqrt{2b} \big( x + \frac{p}{b} \big)
@@ -122,20 +122,73 @@ This is the parabolic cylinder equation and, as in the previous chapter, its sol
     \nu := \frac{\epsilon - b}{2b}
     \: .
 \end{equation*}
-Now we apply the boundary condition:
+Except for $\nu\in\N$, the $D_\nu(-w)$ term diverges exponentially, therefore $d$ must be zero in order for $\varphi\in\Domain(\Hf_\alpha)$. Now we apply the boundary condition:
 \begin{align*}
-    \varphi(x) &= \alpha \, \varphi'(x)
-    \\
-    c_1 \, D_\nu(-w) + c_2 \, D_\nu(w)
-    &= \alpha \, \dd{}{x} \big(
-        c_1 \, D_\nu(-w) + c_2 \, D_\nu(w)
+    \varphi(0) &= \alpha \, \varphi'(0)
+    \: ,
+    \\[5pt]
+    c \, D_\nu(w_0)
+    &= \alpha \, \dd{}{x} \, c  D_\nu(w_0)
+    \: ,
+    \quad \text{where} \quad
+    w_0 = \sqrt{2b} \, (0 + \tfrac{p}{b}) = p \, \sqrt{\tfrac{2}{b}}
+    \: ,
+    \\[5pt]
+    D_\nu(w_0)
+    &= \frac{\alpha}{\!\!\sqrt{2b}} \big(
+        \frac{w_0}{2} D_\nu(w_0)
+        - D_{\nu+1}(w_0)
     \big)
-    \\
-    c_1 \, D_\nu(-w) + c_2 \, D_\nu(w)
-    &= \tfrac{\alpha}{\!\!\sqrt{2b}} \big(
-        c_1 \tfrac{w}{2} D_\nu(w)
-        - c_1 D_{\nu+1}(w)
-        + c_2 \tfrac{w}{2} D_\nu(w)
-        + c_2 D_{\nu+1}(w)
-    \big)
+    \: ,
+    \\[5pt]
+    D_{\nu+1}(w_0)
+    &=
+    \big( 1 - \tfrac{\sqrt{2b}}{\alpha} \big)
+    \frac{w_0}{2} D_\nu(w_0)
+    \: ,
+    \\[5pt]
+    D_{\nu+1}(p \, \sqrt{\tfrac{2}{b}})
+    &=
+    \big( \tfrac{1}{\sqrt{2b}} - \tfrac{1}{\alpha} \big)
+    \, p \, D_\nu(p \, \sqrt{\tfrac{2}{b}})
+    \: .
+    \numberthis\label{eqn-robin-spectral}
 \end{align*}
+The equation \eqref{eqn-robin-spectral} is the spectral condition, it defines the implicit function $\nu(\alpha)$, which in turn tells us, which values of $\epsilon$ are in the spectrum of $\Hf_\alpha$.
+
+\textbf{[Grafy následují na další stránce.]}
+
+
+
+
+\begin{figure}[p]
+    \centering
+    \noindent
+    \includegraphics[width=0.45\textwidth]{grafy/robin0.pdf}%
+    \hspace{0.1\textwidth}%
+    \includegraphics[width=0.45\textwidth]{grafy/robin0.5.pdf}%
+    \\[1em]%
+    \includegraphics[width=0.45\textwidth]{grafy/robin0.8.pdf}%
+    \hspace{0.1\textwidth}%
+    \includegraphics[width=0.45\textwidth]{grafy/robin1.pdf}%
+    \\[1em]%
+    \includegraphics[width=0.45\textwidth]{grafy/robin1.2.pdf}%
+    \hspace{0.1\textwidth}%
+    \includegraphics[width=0.45\textwidth]{grafy/robin2.pdf}\par
+    \caption{The first energy levels $\epsilon$ as a function of the $y$-momentum $p$ for $\alpha\,\sqrt{2b} = 0.0, 0.5, 0.8, 1.0, 1.2$ and $2.0$ (starting with a system with Dirichlet bc.).}
+    \label{plots-robin-positive}
+\end{figure}
+
+\begin{figure}[p]
+    \centering
+    \noindent
+    \includegraphics[width=0.45\textwidth]{grafy/robin-1.pdf}%
+    \hspace{0.1\textwidth}%
+    \includegraphics[width=0.45\textwidth]{grafy/robin-2.pdf}%
+    \\[2em]%
+    \includegraphics[width=0.45\textwidth]{grafy/robin-5.pdf}%
+    \hspace{0.1\textwidth}%
+    \includegraphics[width=0.45\textwidth]{grafy/robin-10.pdf}\par
+    \caption{The first five energy levels $\epsilon$ as a function of the $y$-momentum $p$ for $\alpha\,\sqrt{2b} = -1, -2, -5$ and $-10$.}
+    \label{plots-robin-negative}
+\end{figure}

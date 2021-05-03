@@ -23,22 +23,21 @@ Now we can specify precisely which Hamiltonians we will investigate.
 
 \begin{defn}[Potential perturbation]
     \label{defn-perturb-potential}
-    Let $\Omega \subseteq \R^2$, $\Hilb = L^2(\Omega)$, $\Domain(H)$ a dense subset of $\Hilb$, $b>0$ and $V \in L^1_{\text{loc}}(\R)$. A self-adjoint operator $H: \Domain(H) \to \Hilb$ given by the equation
+    Let $\Omega \subseteq \R^2$, $\Hilb = L^2(\Omega)$, $b>0$ and $V \in L^1_{\text{loc}}(\R)$. A self-adjoint operator on $\Hilb$ given by the equation
     \begin{equation*}
         H
         = P^2_x
         + \big( P_y + b \, Q_x \big)^2
         + V(x)
-        \: ,
     \end{equation*}
-    is called the \textbf{Landau Hamiltonian with a potential perturbation}. We will investigate, which choices of $\Domain(H)$ and $V$ lead to $\SpE(H) \neq \emptyset$. The domain $\Domain(H)$ is determined not only by the asymptotic behaviour of $V$, but also by the boundary conditions imposed on the wave function.
+    is called the \textbf{Landau Hamiltonian with a potential perturbation}. We will investigate, which boundary conditions and which choices of $V$ lead to $\SpE(H) \neq \emptyset$. The domain $\Domain(H)$ is determined not only by the asymptotic behaviour of $V$, but also by the boundary conditions imposed on the wave function.
 \end{defn}
 
 \begin{defn}[Magnetic perturbation]
     \label{defn-perturb-magnet}
     Let $b \in C^\infty(\R)$, $\Hilb = L^2(\R^2)$ and $\mathcal{D} = C^\infty_0(\R^2)$ be the set of $\C^\infty$ functions with compact support. Let $A_y$ be a multiplication operator on $\Hilb$ given by:
     \begin{align*}
-        A_y \, \psi(x, y) = \Big( \int_0^x b(x') \d{x'} \Big) \, \psi(x, y)
+        A_y \, \psi(x, y) = \Big( \int_0^x b(x') \d{x'} \Big) \, \psi(x, y) \: .
     \end{align*}
     Let $\tilde H: \mathcal{D} \to \Hilb$ be an essentially self-adjoint operator given by the equation:
     \begin{align*}
@@ -115,7 +114,7 @@ The following definition is a rephrasing of definitions given in \cite{ReedSimon
 
 The concept of a direct integral might initially seem strange to readers who encounter it for their first time. These readers may find it helpful to think of the direct integral as a simple \textit{“rebranding”} of several concepts they already know and understand. For example, a free spin-$\frac{1}{2}$ particle is represented in the Hilbert space $L^2(\R^3, \C^2)$ of square-integrable functions from the physical space $\R^3$ to the qubit $\C^2$. This space is by definition the direct integral $L^2(\R^3, \C^2) = \int_{\R^3}^\oplus \C^2$, the qubit plays the role of the fibre space here. Another example is related to the fact that a function of two variables can be understood as a function of one variable which returns another function of one variable (programmers call this \textit{currying}). That is exactly the meaning of this direct integral: $L^2(M\times N) \simeq \int_M^\oplus L^2(N) \simeq \int_N^\oplus L^2(M)$. We mentioned that the direct integral is a generalization of the direct sum. To see that this is the case, consider a finite set $M$ together with the counting measure, then $\int^\oplus_M \Hilb' \simeq \bigoplus_{M} \Hilb'$.
 
-Before we apply the theory of direct integrals to the magnetic Hamiltonian, let us remind the Fourier-Plancherel operator. It is a standard textbook result (see \cite{BEH}) that if we take the Fourier transform as an operator on $\Schwa(\R) \subset L^2(\R)$, its closure is a unitary operator on $L^2(\R)$. This operator is called the Fourier-Plancherel operator $\Fourier$, it transforms momentum to position $\Fourier P \Fourier^{-1} = Q$, and as an isomorphism, it does not change the spectrum of self-adjoint operators:
+Before we apply the theory of direct integrals to the magnetic Hamiltonian, let us remind the Fourier-Plancherel operator. It is a standard textbook result (see \cite{BEH}) that if we take the Fourier transform as an operator on $\Schwa(\R) \subset L^2(\R)$, its closure is a unitary operator on $L^2(\R)$. This operator is called the Fourier-Plancherel operator $\Fourier$, it transforms momentum to position $\Fourier P \Fourier^{-1} = Q$, and as a unitary operator, it does not change the spectrum of self-adjoint operators:
 \begin{equation*}
     \Sp(A) = \Sp(\Fourier A \Fourier^{-1}) \: ,
     \quad
@@ -123,21 +122,23 @@ Before we apply the theory of direct integrals to the magnetic Hamiltonian, let 
     \quad
     \SpE(A) = \SpE(\Fourier A \Fourier^{-1}) \: .
 \end{equation*}
-The theory given so far regards functions of one variable. In this thesis, we will perform a \textit{partial} Fourier transformations on multivariate functions – that is, perform the Fourier transformation on one variable whilst keeping the other variables fixed. We will use a subscript to indicate which variable is being transformed, for example $\Fourier_y: \psi(x,y) \mapsto \tilde\psi(x,\xi)$.
+The theory given so far regards functions of one variable. In this thesis, we will perform a \textit{partial} Fourier transformations on multivariate functions – that~is, perform the Fourier transformation on one variable whilst keeping the other variables fixed. We will use a subscript to indicate the variable which is being transformed and the new variable, for example $\Fourier_{y\to\xi}: \psi(x,y) \mapsto \tilde\psi(x,\xi)$.
 
 Now we can show, how to express a Landau Hamiltonian with potential and magnetic perturbations in terms of the direct integral:
 \begin{align*}
     H &= \left( \vv P + \vv A(x) \right)^2 + V(x) \\[5pt]
     &= P_x^2 + \left( P_y + A_y(x) \right)^2 + V(x) \\[5pt]
-    &\simeq \Fourier_y \big( P_x^2 + \left( P_y + A_y(x) \right)^2 + V(x) \big) \Fourier_y^{-1} \\[5pt]
-    &= P_x^2 + \left( Q_y + A_y(x) \right)^2 + V(x) \\[5pt]
+    &\simeq \Fourier_{y\to p} \big( P_x^2 + \left( P_y + A_y(x) \right)^2 + V(x) \big) \Fourier_{y\to p}^{-1} \\[5pt]
+    &= P_x^2 + \left( Q_p + A_y(x) \right)^2 + V(x) \\[5pt]
     &= \int_\R^\oplus \underbrace{
         {P_x}^2 + \left( p + A_y(x) \right)^2 + V(x)
     }_{\displaystyle \Hf(p)} \; \d{p}
     \: ,
     \numberthis \label{eqn-vague-direct-integral-decomp}
 \end{align*}
-where for every $p \in \R$, $\Hf(p)$ is a self-adjoint operator on $L^2(\R)$. The physical meaning of the parameter $p$ is the particle's momentum in the $y$ direction and $\Hf(p)$ is the Hamiltonian for a particle with a fixed $y$-momentum. The following theorem is a weakened version of Theorem XIII.85 of \cite{ReedSimon4}.
+where $P_y \psi(x,y) = \i \pd{}{y} \psi(x,y)$ is a differential operator and $Q_p \psi(x,p) = p \, \psi(x,p)$ is the operator of multiplication by the second coordinate. For every $p \in \R$, $\Hf(p)$~is a self-adjoint operator on $L^2(\R)$. The physical meaning of the parameter~$p$ is the particle's momentum in the $y$ direction and $\Hf(p)$ is the Hamiltonian for a particle with a fixed $y$-momentum.
+
+The following theorem is a weakened version of Theorem XIII.85 of \cite{ReedSimon4}.
 
 \begin{thm}[Spectrum of direct integral]
     \label{thm-direct-integral-spectrum}
@@ -192,7 +193,7 @@ The following theorem is given in \cite{Weidmann} as Theorem~8.18.
 Finally, a useful theorem about differential operators on $L^2$ was compiled from the opening of section 8.4 of \cite{Weidmann}, up to the theorem 8.20 there.
 \begin{thm}[Deficiency indices of differential operators]
     \label{thm-deficiency-diff-op}
-    Let $a,b \in \R \cap \{ \pm\infty \}$ such that $a<b$. Let $p \in \Cont^1( \, (a,b), \R \, )$ be a continuously differentiable real function and $q \in \Cont( \, (a,b), \R \, )$ be a continuous real function. We define $L$ to mean:
+    Let $a,b \in \R \cup \{ \pm\infty \}$ such that $a<b$. Let $p \in \Cont^1( \, (a,b), \R \, )$ be a continuously differentiable real function and $q \in \Cont( \, (a,b), \R \, )$ be a continuous real function. We define $L$ to mean:
     \begin{equation*}
         L \psi := -(p \, \psi')' + q \, \psi
         \: .
