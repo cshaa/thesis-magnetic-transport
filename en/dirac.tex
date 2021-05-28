@@ -155,7 +155,7 @@ Since fibres $\Hf_\alpha(p)$ for various values of~$\alpha$ only differ in the b
 \end{align*}
 Furthermore, there is no way for $\varphi(x_0) \neq \varphi_n(x_0) \equiv 0$ without causing $\varphi''_n(x_0)$ to diverge. Therefore, $h(p) \, \varphi_n \to \psi \implies \varphi \in \Omega$. Finally, the requirement $h(p) \, \varphi = \psi$ follows from the fact that both second derivative and multiplication by $x^2$ are closed operators on their respective domains.
 
-We have shown that $h(p)$ is a closed symmetric operator with many different extensions $\Hf_\alpha(p)$. We know that at least one of the extensions, the fibre $\Hf_{\alpha = 0}(p)$ of the unperturbed system, has a discrete spectrum. Now, we want to use the theorem~\ref{thm-sym-extension-spectrum} to show that the spectrum of all $\Hf_\alpha(p)$ is discrete. The last premise left to demonstrate is the fact that $n_+(h(p)) = n_-(h(p)) < \infty$. Since the deficiency indices (definition \ref{defn-deficiency-indices}) are equal to the multiplicity of $\pm\i$ as an eigenvalue of $h(p)^*$, we first need to find the operator $h(p)^*$. Let $\varphi \in \Omega$ and $\psi$ from a yet-unknown set $\Omega'\subset\Hilb$.
+We have shown that $h(p)$ is a closed symmetric operator with many different extensions $\Hf_\alpha(p)$. We know that at least one of the extensions, the fibre $\Hf_{\alpha = 0}(p)$ of the unperturbed system, has a discrete spectrum. Now, we want to use the theorem~\ref{thm-sym-extension-spectrum} to show that the spectrum of all $\Hf_\alpha(p)$ is discrete. The last premise left to demonstrate is the fact that $n_+(h(p)) = n_-(h(p)) < \infty$. \textbf{[To do: simplify this argument.]} Since the deficiency indices (definition \ref{defn-deficiency-indices}) are equal to the multiplicity of $\pm\i$ as an eigenvalue of $h(p)^*$, we first need to find the operator $h(p)^*$. Let $\varphi \in \Omega$ and $\psi$ from a yet-unknown set $\Omega'\subset\Hilb$.
 \begin{align*}
     \\[-2\baselineskip]
     \big( h(p) \varphi, \, \psi \big)
@@ -285,8 +285,6 @@ Asymptotic behaviour of the solutions is also given by \cite{GradshteynRyzhik}. 
     \label{eqn-dirac-parabolic-cylinder-two-solutions}
 \end{equation}
 
-We have promised to provide a more detailed explanation for why the deficiency indices of $h(p)$ are equal to $2$, or equivalently, why the equation \eqref{eqn-dirac-deficiency-indices-ode} has precisely two solutions for $\varphi \in \Omega'$. If we formally substituted $\epsilon=\pm\i$, all the arguments brought up in this section would still hold. Therefore, to prove $n_\pm=2$, we have to show that both $D_\nu(w)$ and $D_\nu(-w)$ are in $\Omega'$. \textbf{[Finish this.]}
-
 Now we can safely return to the eigenproblem of $\Hf_\alpha(p)$ from where we left it – that is, from the equation \eqref{eqn-dirac-parabolic-cylinder-two-solutions}. For $\epsilon\in\R$ can be further shown, that if $\nu \notin \N_0$, the solution $D_\nu(w)$ diverges for $w \to -\infty$. \textbf{[Then show it.]} Therefore, $c_{-1} = c_{+2} = 0$ in order for $\varphi$ to be integrable. On the other hand, for $\nu \in \N_0$, the solutions aren't independent (as discussed above), therefore we can also set $c_{-1} = c_{+2} = 0$ without loss of generality. Applying the gluing equations \eqref{eqn-gluing-equations}, we get:
 \begin{gather*}
     c_{+1} \, D_\nu(w_0) = c_{-2} \, D_\nu(-w_0) \\[5pt]
@@ -354,7 +352,7 @@ Truly, this is simply the equation \eqref{eqn-implicit-pre} after the substituti
     w \in \R
     \: .
 \end{equation*}
-Moreover, $F$ is analytic in the three variables, as it is a sum of products of entire functions. The implicit function theorem then tells us that, provided $\pd{}{\nu} F(0, w, k) \neq 0$ for a fixed $k \in \N_0$ (which we will prove soon), there exists an analytic function $\nu(a, w)$, such that $\nu(0,w) = k$ and $F(a, w, \nu(a,w)) = 0$ on the neighbourhood of $a=0$. Since there is a different implicit function for every $k$, we will denote them $\nu_k(a,w)$. After changing our variables back to the physical ones and putting $x_0=0$ (since it only depends on the choice of origin), we see that the energy levels for a fixed magnitude of the perturbation $\alpha$ are
+Moreover, $F$ is analytic in the three variables, as it is a sum of products of entire functions. The implicit function theorem \textbf{[Source?]} then tells us that, provided $\pd{}{\nu} F(0, w, k) \neq 0$ for a fixed $k \in \N_0$ (which we will prove soon), there exists an analytic function $\nu(a, w)$, such that $\nu(0,w) = k$ and $F(a, w, \nu(a,w)) = 0$ on the neighbourhood of $a=0$. Since there is a different implicit function for every $k$, we will denote them $\nu_k(a,w)$. After changing our variables back to the physical ones and putting $x_0=0$ (since it only depends on the choice of origin), we see that the energy levels for a fixed magnitude of the perturbation $\alpha$ are
 \begin{equation*}
     \epsilon_k(p) = b + 2b\;\nu_k\big( \alpha \, \sqrt{2b}, \; p \, \sqrt{\tfrac{2}{b}}  \big) \: ,
     \qquad k \in \N_0 \: .

@@ -54,6 +54,7 @@
 \usepackage{mathrsfs}		% mathscr
 \usepackage[h]{esvect}		% vv
 \usepackage{makecell}		% makecell
+\usepackage{calc}			% widthof
 
 %%% Basic information on the thesis
 
@@ -72,7 +73,7 @@
 \def\Department{Institute of Theoretical Physics}
 
 % Is it a department (katedra), or an institute (ústav)?
-\def\DeptType{institute}
+\def\DeptType{Institute}
 
 % Thesis supervisor: name, surname and titles
 \def\Supervisor{prof. RNDr. Pavel Exner, DrSc.}
@@ -121,6 +122,7 @@ Abstract.
 %%% Each chapter is kept in a separate file
 \include{preface}
 \include{formulation}
+\include{known-results}
 \include{dirac}
 \include{halfplane-robin}
 

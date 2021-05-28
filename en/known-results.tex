@@ -1,0 +1,108 @@
+\chapter{Known results}
+In this chapter we will restate results about Landau Hamiltonians with potential, geometric and magnetic perturbations, which have already been proven.
+
+\section{Potential perturbation}
+
+\subsection{Macris et al., 1999}
+\cite{Macris1999} investigated the problem of Landau Hamiltonians with a steep (but locally integrable) potential wall along the edge of a half-plane. What follows is a summary of their results.
+
+\begin{defn}[Hamiltonian]
+    Let $\mu \in (0, \infty)$ and $\gamma \in [1, \infty])$. We define the wall potential $U$:
+    \begin{equation*}
+        U(x) = \mu \, x^\gamma \, \chi_{\R_+\!}(x)
+        \: ,
+    \end{equation*}
+    where $\chi_{\R_+\!}$ is the characteristic function of $\R_+ = [0, \infty)$. Let $V \in C^1(\R^2, \R)$ be a differentiable real function of two variables, such that
+    \begin{equation*}
+        \sup_{x,y \in \R} \big| V(x,y) \big| =: V_0 < \infty
+        \: , \qquad
+        \sup_{x,y \in \R} \big| \pd{}{x} V(x,y) \big| =: V_0' < \infty
+        \: .
+    \end{equation*}
+    Let $B \in \R$. We define the Hamiltonian $H$:
+    \begin{equation*}
+        H
+        = \tfrac{1}{2} \, P_x^{\,2}
+        + \tfrac{1}{2}(P_y - B\, Q_x)^2
+        + V(x, y)
+        + U(x)
+        \: .
+    \end{equation*}
+    The Hamiltonian is essentially self-adjoint on $C^\infty_0(\R^2)$.
+\end{defn}
+\begin{defn}[Auxiliary]
+    Finally we define a functional $A(E; U)$, where $E>0$ and $U$ is as above.
+    \begin{equation*}
+        A(E; U)
+        = \sup_{0 \leq x \leq x_0}
+        \left( \frac{U(x)^4}{U'(x)} \right)
+        + 8 \int_{x_0}^\infty
+        \frac{ \sqrt[4]{U(\tfrac{x}{2})} \, U(x)^4 }{ \sqrt{2\pi x} \, U'(x)}
+        \, \exp \big( {-x} \, \sqrt{\tfrac{1}{8}\,U(\tfrac{x}{2})} \big)
+        \, \d{x}
+        \: ,
+    \end{equation*}
+    where $x_0$ is such that $U(\tfrac{x_0}{2}) = 2E$. And for $n \in \N$, $\delta>0$ we define a set $\Omega_{n,\delta}$:
+    \begin{equation*}
+        \Omega_{n, \delta} = \Nbhood_\delta\big( n \, B \big)
+        \: ,
+    \end{equation*}
+    where $\Nbhood_a(b)$ is the open $a$-neighbourhood of $b$.
+\end{defn}
+
+\begin{thm}
+    Let $\delta>0$, such that $\tfrac{B}{2} > \delta$. If
+    \begin{equation*}
+        V_0' < \frac{
+            \left(\tfrac{B}{2} - \delta - V_0\right)^4
+        }{
+            \displaystyle \sup_{E \in \Omega_{n,\delta}}
+            A(E+V_0; U)
+        }
+        \: ,
+    \end{equation*}
+    then $\Omega_{n,\delta} \cap \SpP(H) = \emptyset$. Furthermore if
+    \begin{equation*}
+        V_0' < \frac{
+            \left(\tfrac{B}{2} - \delta - V_0\right)^4
+        }{
+            \displaystyle
+            \sup_{0 \leq a \leq \tfrac{B}{2} \;}
+            \sup_{\; E \in \Omega_{n,\delta}}
+            A(E+a; U)
+        }
+        \: ,
+    \end{equation*}
+    then $\Omega_{n, \delta} \subset \SpAc(H) \cup \SpSc(H)$.
+\end{thm}
+
+
+\subsection{Fröhlich et al., 2000}
+\cite{Frohlich2000} investigated the problem of Landau Hamiltonians with a steep potential wall in a half-plane (similar to \textit{Macris et al.}), and Landau Hamiltonians with a Dirichlet boundary on more general subspaces $\Omega \subset \R^2$, which were not translationally invariant in general, but also included the half-plane $\Omega = \R \times \R_+$ as a subcase.
+
+In the case of the steep potential, they used the theory of \textit{Mourre estimates}, introduced in \cite{Mourre1981}.
+
+\begin{defn}[Conjugate operator]
+    Let $H$ and $A$ be self-adjoint operators with domains $\Domain(H)$ and $\Domain(A)$. Let $\Omega := \Domain(H) \cap \Domain(A)$. Then $A$ is called a conjugate operator for $H$ if all of the following conditions apply:
+    \begin{enumerate}
+        \item $\Omega$ is a core for $H$ (ie. $H|_\Omega$ is essentially self-adjoint).
+        \item The unitary group $s \mapsto \e{\i \, s \, A}$ leaves $\Domain(H)$ invariant and $$ \sup_{s\,<\,1} \norm{H \, \e{\i \, s \, A}} < \infty \: .$$
+        \item The quadratic form $$Q: \Omega \to \R \: , \qquad Q(\psi) = \norm{ \sqrt{[ H, \i A ]} \, \psi }^2$$ is closable and bounded below and its associated self-adjoint operator admits a domain containing $\Domain(H)$.
+        \item Let $B = \sqrt{\big[ [H, \i A], \i A \big]}$ and let $|H|$ be the absolute value of $H$, then $$\norm{ B \psi }^2 \leq \norm{ |H| \, \psi}^2 \qquad \text{ for all } \psi \in \Domain(B) \: .$$
+    \end{enumerate}
+    The four conditions for the conjugacy of $A$ are also called the Mourre conditions.
+\end{defn}
+
+\begin{defn}[Hamiltonian with steep wall]
+    Let $H_0 = P_x^2 + (P_y + b \, Q_x)^2$ be the unperturbed Landau Hamiltonian on $\R^2$. Let $\Pi = P_y + b \, Q_x$ be a self-adjoint operator. Let $U(x)$ be a differentiable function that vanishes for $x\leq 0$.
+\end{defn}
+
+\subsection{Combes et al., 2001}
+(Combes, 2001 ?) studied the case of a particle confined to a strip.
+\textbf{[Find the actual paper.]}
+
+\section{Magnetic perturbation}
+\textbf{REWORK THIS SECTION.} The case of non-local perturbations (i.e. those which don't disappear at infinity) of the magnetic field were studied by (Iwatsuka, 1985).
+
+\section{Geometric perturbation}
+\textbf{REWORK THIS SECTION.} A tilted planar layer of fixed width, as well as more general thin layers with translationally invariant bends were studied in (Exner, 2018) and some sufficient conditions for the continuity of spectrum were given.

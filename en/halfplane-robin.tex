@@ -18,7 +18,7 @@ In this chapter we will examine the Landau Hamiltonian of a particle confined to
         \, \big\} \: .
     \end{gathered}
 \end{equation}
-Using \eqref{eqn-vague-direct-integral-decomp}, we can once again show that the Hamiltonian is unitarily equivalent to a direct integral $H_\alpha = \int^\oplus_\R \Hf_\alpha(p) \d{p}$, where $\Hf(p)$ is the fiber Hamiltonian given by
+Using \eqref{eqn-vague-direct-integral-decomp}, we can once again show that the Hamiltonian is unitarily equivalent to a direct integral $H_\alpha \simeq \int^\oplus_\R \Hf_\alpha(p) \d{p}$, where $\Hf(p)$ is the fiber Hamiltonian given by
 \begin{equation}
     \begin{gathered}
         \big( \Hf_\alpha(p) \varphi \big)(x)
@@ -32,41 +32,54 @@ Using \eqref{eqn-vague-direct-integral-decomp}, we can once again show that the 
         \, \big\} \: .
     \end{gathered}
 \end{equation}
+When $\alpha=0$, the problem reduces to the well-known Dirichlet b.c.\footnote{b.c. = boundary condition}
 
 \section{Well-posedness}
 We will start by showing that the Hamiltonian is bounded from below, starting with the fibre Hamiltonian:
 \begin{align*}
     \\[-2\baselineskip]
-    &\big( \varphi, \Hf_\alpha(p) \, \varphi \big)
-    = - \int_{\R_+} \overline\varphi \varphi''
-    + \overbrace{\int_{\R_+} (bx + p)^2 \, |\varphi|^2}^{\geq 0}
-    \geq -\big[ \overline\varphi \varphi' \big]_0^{\infty}
+    \big( \varphi, \Hf_\alpha(p) \, \varphi \big)
+    &= - \int_{\R_+} \!\! \overline\varphi \varphi''
+    + \overbrace{\int_{\R_+} \! (bx + p)^2 \, |\varphi|^2}^{\geq 0}
+    \\
+    &\geq -\big[ \overline\varphi \varphi' \big]_0^{\infty}
     + \int_{\R_+} |\varphi'|^2
-    = \\ &\qquad
-    = \overline{ \varphi(0) } \, \varphi'(0)
+    \;=\;
+    \overline{ \varphi(0) } \, \varphi'(0)
+    + \norm{ \varphi' }_{L^2(\R_+)}^2
+\end{align*}
+We have used integration by parts and the fact that for $\varphi \in W^{2,2}$ both $\varphi$ and $\varphi'$ vanish at infinity. If $\alpha=0$, then the boundary condition $\varphi(0) + \alpha \, \varphi'(0) = 0$ dictates that $\varphi(0)=0$ and the right-hand side is non-negative, hence we have found the lower bound. If $\alpha \neq 0$, we substitute for $\varphi'(0)$ from the boundary condition:
+\begin{align*}
+    \big( \varphi, \Hf_\alpha(p) \, \varphi \big)
+    \geq \overline{ \varphi(0) } \, \varphi'(0)
     + \norm{ \varphi' }_{L^2(\R_+)}^2
     = - \frac{1}{\alpha} \, \big| \varphi(0) \big|^2
     + \norm{ \varphi' }_{L^2(\R_+)}^2
     \: .
 \end{align*}
-We have used integration by parts, the fact that for $\varphi \in W^{2,2}$ both $\varphi$ and $\varphi'$ vanish at infinity, and finally the boundary condition $\alpha \, \varphi'(0) = -\varphi(0)$. For~$\alpha < 0$, the whole right-hand side is non-negative, hence we have found the lower bound. For~$\alpha > 0$, we have:
+For~$\alpha < 0$, the whole right-hand side is non-negative. For~$\alpha > 0$, we have:
 \begin{align*}
     &\big( \varphi, \Hf_\alpha(p) \, \varphi \big)
     \geq - \frac{1}{\alpha} \, \big| \varphi(0) \big|^2
     + \norm{ \varphi' }_{L^2(\R_+)}^2
-    \geq -\frac{1}{\alpha} \norm{\varphi}_{L^{\!\infty}(\R_+\!)}
+    \geq -\frac{1}{\alpha} \norm{\varphi}_{L^{\!\infty}(\R_+\!)}^2
     \! + \norm{ \varphi' }_{L^2(\R_+\!)}^2
     \: .
 \end{align*}
-Now using the lemma \ref{lemma-sobolev-type-inequality} from the Appendix, we know that for every $a>0$ there exists $b>0$ such that $-\frac{1}{\alpha} \norm{\varphi}_{L^{\!\infty}} \geq -\frac{a}{\alpha} \norm{\varphi'}_{L^2} - \frac{b}{\alpha} \norm{\varphi}_{L^2}$. Setting $a = \alpha$, we obtain
+Now using the lemma \ref{lemma-sobolev-type-inequality} from the Appendix, we know that for every $a>0$ there exists $b>0$ such that $-\frac{1}{\alpha} \norm{\varphi}_{L^{\!\infty}}^2 \geq -\frac{a}{\alpha} \norm{\varphi'}_{L^2}^2 - \frac{b}{\alpha} \norm{\varphi}_{L^2}^2$. Setting $a = \alpha$, we obtain
 \begin{equation*}
     \big( \varphi, \Hf_\alpha(p) \big)
-    \geq
-    \big( 1 - \frac{b}{\alpha} \big) \,
-    \norm{\varphi}_{L^2(\R_+)}
+    \geq \big(
+        -\norm{\varphi'}_{L^2(\R_+)}^2
+        - \frac{b}{\alpha} \norm{\varphi}_{L^2(\R_+)}^2
+    \big)
+     + \norm{ \varphi' }_{L^2(\R_+\!)}^2
+    =
+    - \frac{b}{\alpha} \,
+    \norm{\varphi}_{L^2(\R_+)}^2
     \: .
 \end{equation*}
-As demonstrated in \eqref{eqn-fiber-hamiltonian-lower-bound} in the previous chapter, the Hamiltonian $H$ is therefore also bounded from below with the same lower bound.
+As demonstrated in \eqref{eqn-fiber-hamiltonian-lower-bound} in the previous chapter, the Hamiltonian $H_\alpha$ is therefore also bounded from below with the same lower bound.
 
 Now we will show the self-adjointness, again starting with the fibre Hamiltonian. Let $\varphi \in \Domain(\Hf_\alpha(p))$ and $\psi \in M \subset L^2(\R_+\!)$.
 \begin{align*}
@@ -85,7 +98,7 @@ Now we will show the self-adjointness, again starting with the fibre Hamiltonian
     }
     + \int_{\R_+}\!\! \overline\varphi \, \big( {-\psi''} + (bx+p)^2 \psi \big) \: .
 \end{align*}
-First, we integrated by parts, assuming that $M\subseteq W^{2,2}(\R_+\!)$ ­– if it weren't, the result couldn't be independent of $\varphi$, as demonstrated in the previous chapter after \eqref{eqn-dirac-fiber-selfadj}. Then we used the fact that functions from $W^{2,2}$ vanish at infinity, and finally we applied the boundary condition $\varphi'(0) + \alpha \varphi'(0) = 0$. It is clear that $\psi$ must fulfill the same boundary condition in order for the result to be independent of $\varphi'(0)$. Therefore $M=\Domain(\Hf_\alpha(p))$ and the fibre Hamiltonian is self-adjoint. The Hamiltonian $H$, a direct integral of a self-adjoint operator, is hence also self-adjoint.
+First, we integrated by parts, assuming that $M\subseteq W^{2,2}(\R_+\!)$ ­– if it were not, the result could not be independent of $\varphi$, as demonstrated in the previous chapter after \eqref{eqn-dirac-fiber-selfadj}. Then we used the fact that functions from $W^{2,2}$ vanish at infinity, and finally we applied the boundary condition $\varphi'(0) + \alpha \varphi'(0) = 0$. It is clear that $\psi$ must fulfill the same boundary condition in order for the result to be independent of $\varphi'(0)$. Therefore $M=\Domain(\Hf_\alpha(p))$ and the fibre Hamiltonian is self-adjoint. The Hamiltonian $H$, a direct integral of a self-adjoint operator, is hence also self-adjoint.
 
 Lastly, we will show that the spetrum of $\Hf_\alpha(p)$ is discrete using the theorem~\ref{thm-sym-extension-spectrum}. We define:
 \begin{equation*}
@@ -128,33 +141,48 @@ Except for $\nu\in\N$, the $D_\nu(-w)$ term diverges exponentially, therefore $d
     \: ,
     \\[5pt]
     c \, D_\nu(w_0)
-    &= \alpha \, \dd{}{x} \, c  D_\nu(w_0)
+    &= \alpha \, \dd{}{x} \, c  D_\nu(w) \big|_{w=w_0}
     \: ,
     \quad \text{where} \quad
     w_0 = \sqrt{2b} \, (0 + \tfrac{p}{b}) = p \, \sqrt{\tfrac{2}{b}}
     \: ,
     \\[5pt]
     D_\nu(w_0)
-    &= \frac{\alpha}{\!\!\sqrt{2b}} \big(
+    &= \alpha \, \sqrt{2b} \,
+    \dd{}{w} \,  D_\nu(w) \big|_{w=w_0}
+    \: ,
+    \\[5pt]
+    D_\nu(w_0)
+    &= \alpha \, \sqrt{2b} \, \big(
         \frac{w_0}{2} D_\nu(w_0)
         - D_{\nu+1}(w_0)
     \big)
     \: ,
     \\[5pt]
-    D_{\nu+1}(w_0)
+    \frac{1}{\alpha \sqrt{2b}} \, D_\nu(w_0)
     &=
-    \big( 1 - \tfrac{\sqrt{2b}}{\alpha} \big)
-    \frac{w_0}{2} D_\nu(w_0)
+    \frac{p}{\sqrt{2b}} D_\nu(w_0)
+    - D_{\nu+1}(w_0)
+    \: ,
+    \quad \text{assuming} \quad \alpha \neq 0
     \: ,
     \\[5pt]
+    \sqrt{2b} \,
+    D_{\nu+1}(w_0)
+    &=
+    \big( p - \tfrac{1}{\alpha} \big) \,
+    D_\nu(w_0)
+    \: ,
+    \\[5pt]
+    \sqrt{2b} \,
     D_{\nu+1}(p \, \sqrt{\tfrac{2}{b}})
     &=
-    \big( \tfrac{1}{\sqrt{2b}} - \tfrac{1}{\alpha} \big)
-    \, p \, D_\nu(p \, \sqrt{\tfrac{2}{b}})
+    \big( p - \tfrac{1}{\alpha} \big) \,
+    D_\nu(p \, \sqrt{\tfrac{2}{b}})
     \: .
     \numberthis\label{eqn-robin-spectral}
 \end{align*}
-The equation \eqref{eqn-robin-spectral} is the spectral condition, it defines the implicit function $\nu(\alpha)$, which in turn tells us, which values of $\epsilon$ are in the spectrum of $\Hf_\alpha$.
+The equation \eqref{eqn-robin-spectral} is the spectral condition, it defines the implicit function $\nu(p)$, which in turn tells us, which values of $\epsilon \equiv (2\nu + 1) \, b$ are in the spectrum of $\Hf_\alpha$. For $\alpha=0$ (the Dirichlet b.c.), the spectral condition is $D_\nu(p \, \sqrt{\frac{2}{b}})=0$.
 
 \textbf{[Grafy následují na další stránce.]}
 
