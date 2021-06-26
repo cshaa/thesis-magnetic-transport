@@ -7,7 +7,7 @@ The simplest example of a quantum system with a magnetic field is the system con
     H = (\vv P + \vv A)^2 \: , \quad
     \vv B = \nabla \times \vv A = (0, 0, b_0) \: .
 \end{align*}
-Here $\vv P = -\i \nabla$ is the momentum operator, $\vv B$ is the magnetic field, which is constant with magnitude $b_0$, without loss of generality pointing along the $z$ axis, and $\vv A$ is a corresponding vector potential. Notice that we have used nondimensionalization to remove physical units from the Hamiltonian. The spectrum of $H$ is absolutely continuous and the Hamiltonian commutes with $P_z$, thus it allows the particle to move freely along the $z$-axis. However, if we restrict the particle to the layer $z=0$, either physically, or only formally because we are not interested in the movement along~$z$ \textbf{[EXPAND]}, we get a two-dimensional Hamiltonian with infinitely degenerate discrete spectrum, the so-called Landau Hamiltonian:
+Here $\vv P = -\i \nabla$ is the momentum operator, $\vv B$ is the magnetic field, which is constant with magnitude $b_0$, without loss of generality pointing along the $z$ axis, and $\vv A$ is a corresponding vector potential. Notice that we have used nondimensionalization to remove physical units from the Hamiltonian. The spectrum of $H$ is absolutely continuous and the Hamiltonian commutes with $P_z$, thus it allows the particle to move freely along the $z$-axis. However, if we restrict the particle to the layer $z=0$, either physically, or only formally because we are not interested in the movement along~$z$ \textbf{[EXPAND]}, we get a two-dimensional Hamiltonian with infinitely degenerate pure point spectrum, the so-called Landau Hamiltonian:
 \begin{align*}
     H = (P_x + A_x)^2 + (P_y + A_y)^2 \: .
 \end{align*}
@@ -15,9 +15,9 @@ A detailed analysis of this well-known Hamiltonian can be found e.g. in §112 of
 
 Throughout this thesis, we will use the Landau gauge:
 \begin{align*}
-    A_x &= 0 \: , \\
-    A_y &= \int_0^x B_z(x') \d{x'} \: , \\
-    A_z &= 0 \: .
+    A_x = 0 \: , \quad
+    A_y = \int_0^x B_z(x') \d{x'} \: , \quad
+    A_z = 0 \: .
 \end{align*}
 Now we can specify precisely which Hamiltonians we will investigate.
 
@@ -30,12 +30,12 @@ Now we can specify precisely which Hamiltonians we will investigate.
         + \big( P_y + b \, Q_x \big)^2
         + V(x)
     \end{equation*}
-    is called the \textbf{Landau Hamiltonian with a potential perturbation}. We will investigate, which boundary conditions and which choices of $V$ lead to $\SpE(H) \neq \emptyset$. The domain $\Domain(H)$ is determined not only by the asymptotic behaviour of $V$, but also by the boundary conditions imposed on the wave function.
+    is called the \textbf{Landau Hamiltonian with a potential perturbation}. We will investigate, which boundary conditions and which choices of $V$ lead to $\SpAc(H) \neq \emptyset$. The domain $\Domain(H)$ is determined not only by the asymptotic behaviour of $V$, but also by the boundary conditions imposed on the wave function.
 \end{defn}
 
 \begin{defn}[Magnetic perturbation]
     \label{defn-perturb-magnet}
-    Let $b \in C^\infty(\R)$, $\Hilb = L^2(\R^2)$ and $\mathcal{D} = C^\infty_0(\R^2)$ be the set of $\C^\infty$ functions with compact support. Let $A_y$ be a multiplication operator on $\Hilb$ given by:
+    Let $b \in C^\infty(\R)$, $\Hilb = L^2(\R^2)$, let $\mathcal{D} = C^\infty_0(\R^2)$ be the set of $\C^\infty$ functions with compact support and $A_y$ be a multiplication operator on $\Hilb$ given by:
     \begin{align*}
         A_y \, \psi(x, y) = \Big( \int_0^x b(x') \d{x'} \Big) \, \psi(x, y) \: .
     \end{align*}
@@ -43,7 +43,7 @@ Now we can specify precisely which Hamiltonians we will investigate.
     \begin{align*}
         \tilde H = P^2_x + \big( P_y + A_y \big)^2 \: ,
     \end{align*}
-    Its closure $H$ is called the \textbf{Landau Hamiltonian with a magnetic perturbation}. We will investigate, which choices of $b$ lead to $\SpE(H) \neq \emptyset$.
+    Its closure $H$ is called the \textbf{Landau Hamiltonian with a magnetic perturbation}. We will investigate, which choices of $b$ lead to $\SpAc(H) \neq \emptyset$.
 \end{defn}
 
 \begin{defn}[Geometric perturbation, transl. inv. layer]
@@ -71,8 +71,10 @@ Now we can specify precisely which Hamiltonians we will investigate.
         \Delta^\Omega_{\mathrm{D}, A} \psi(x,y,z)
         = \Delta \psi + 2\i b \, x \, \pd{\psi}{y} - b^2 x^2 \, \psi
     \end{align*}
-    defined on functions $\psi \in C^\infty(\Omega)$, such that $\psi(x,y,z) = 0$ on the boundary of $\Omega$. The~operator $H$ which is the closure of $-\Delta^\Omega_{\mathrm{D}, A}$ in $L^2(\Omega)$ is called the \textbf{Landau Hamiltonian with a geometric perturbation}. We will investigate, which choices of~$\omega$ lead to $\SpE(H) \neq \emptyset$.
+    defined on functions $\psi \in C^\infty(\Omega)$, such that $\psi(x,y,z) = 0$ on the boundary of $\Omega$. The~operator $H$ which is the closure of $-\Delta^\Omega_{\mathrm{D}, A}$ in $L^2(\Omega)$ is called the \textbf{Landau Hamiltonian with a geometric perturbation}. We will investigate, which choices of~$\omega$ lead to $\SpAc(H) \neq \emptyset$.
 \end{defn}
+
+The Landau Hamiltonian with a translationally invariant magnetic perturbation is also called \textit{“the Iwatsuka Hamiltonian”} by some authors (e.g. \cite{Miranda2017} and \cite{Hislop2015}) after Akira Iwatsuka who studied how perturbations to the Landau Hamiltonian affect its spectrum. In similar spirit, \cite{Exner2018} use the term \textit{“Iwatsuka type effect”} to describe the phenomenon when a particular perturbation changes the spectrum of the Landau Hamiltonian to absolutely continuous. It is exactly this \textit{Iwatsuka type effect} that will be the main focus of this thesis. We will look into more details of Akira Iwatsuka's work in section \ref{section-known-magnetic}.
 
 
 

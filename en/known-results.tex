@@ -1,5 +1,5 @@
 \chapter{Known results}
-In this chapter we will restate results about Landau Hamiltonians with potential, geometric and magnetic perturbations, which have already been proven.
+In this chapter we will restate the results about Landau Hamiltonians with potential, geometric and magnetic perturbations, which have already been proven. Effort was made to unify notation and conventions across the various sources.
 
 \section{Potential perturbation}
 
@@ -12,7 +12,7 @@ In this chapter we will restate results about Landau Hamiltonians with potential
         U(x) = \mu \, x^\gamma \, \chi_{\R_+\!}(x)
         \: ,
     \end{equation*}
-    where $\chi_{\R_+\!}$ is the characteristic function of $\R_+ = [0, \infty)$. Let $V \in C^1(\R^2, \R)$ be a differentiable real function of two variables, such that
+    where $\chi_{\R_+\!}$ is the characteristic function of $\R_+ \equiv [0, \infty)$. Let $V \in C^1(\R^2, \R)$ be a differentiable real function of two variables, such that
     \begin{equation*}
         \sup_{x,y \in \R} \big| V(x,y) \big| =: V_0 < \infty
         \: , \qquad
@@ -28,10 +28,10 @@ In this chapter we will restate results about Landau Hamiltonians with potential
         + U(x)
         \: .
     \end{equation*}
-    The Hamiltonian is essentially self-adjoint on $C^\infty_0(\R^2)$.
+    The Hamiltonian is essentially self-adjoint on $\Cont^\infty_0(\R^2)$.
 \end{defn}
 \begin{defn}[Auxiliary]
-    Finally we define a functional $A(E; U)$, where $E>0$ and $U$ is as above.
+    Finally, we define a functional $A(E; U)$, where $E>0$ and $U$ is as above.
     \begin{equation*}
         A(E; U)
         = \sup_{0 \leq x \leq x_0}
@@ -61,7 +61,7 @@ In this chapter we will restate results about Landau Hamiltonians with potential
         }
         \: ,
     \end{equation*}
-    then $\Omega_{n,\delta} \cap \SpP(H) = \emptyset$. Furthermore if
+    then $\Omega_{n,\delta} \cap \SpP(H) = \emptyset$. Furthermore, if
     \begin{equation*}
         V_0' < \frac{
             \left(\tfrac{B}{2} - \delta - V_0\right)^4
@@ -73,19 +73,19 @@ In this chapter we will restate results about Landau Hamiltonians with potential
         }
         \: ,
     \end{equation*}
-    then $\Omega_{n, \delta} \subset \SpAc(H) \cup \SpSc(H)$.
+    then $\Omega_{n, \delta} \subset \sigma_{\mathrm{c}}(H) \equiv \SpAc(H) \cup \SpSc(H)$.
 \end{thm}
 
 
 \subsection{Fröhlich et al., 2000}
-\cite{Frohlich2000} investigated the problem of Landau Hamiltonians with a steep potential wall in a half-plane (similar to \textit{Macris et al.}), and Landau Hamiltonians with a Dirichlet boundary on more general subspaces $\Omega \subset \R^2$, which were not translationally invariant in general, but also included the half-plane $\Omega = \R \times \R_+$ as a subcase.
+\cite{Frohlich2000} investigated the problem of systems constrained to a half-plane $\R \times \R_+$ by either a potential wall (bounded or unbounded), or a Dirichlet boundary condition. The Dirichlet b.c. was also treated for more general subspaces $\Omega \subset \R^2$ – we will not list these, as they were not translationally invariant.
 
 In the case of the steep potential, they used the theory of \textit{Mourre estimates}, introduced in \cite{Mourre1981}.
 
 \begin{defn}[Conjugate operator]
     Let $H$ and $A$ be self-adjoint operators with domains $\Domain(H)$ and $\Domain(A)$. Let $\Omega := \Domain(H) \cap \Domain(A)$. Then $A$ is called a conjugate operator for $H$ if all of the following conditions apply:
     \begin{enumerate}
-        \item $\Omega$ is a core for $H$ (ie. $H|_\Omega$ is essentially self-adjoint).
+        \item $\Omega$ is a core for $H$ (i.e. $H|_\Omega$ is essentially self-adjoint).
         \item The unitary group $s \mapsto \e{\i \, s \, A}$ leaves $\Domain(H)$ invariant and $$ \sup_{s\,<\,1} \norm{H \, \e{\i \, s \, A}} < \infty \: .$$
         \item The quadratic form $$Q: \Omega \to \R \: , \qquad Q(\psi) = \norm{ \sqrt{[ H, \i A ]} \, \psi }^2$$ is closable and bounded below and its associated self-adjoint operator admits a domain containing $\Domain(H)$.
         \item Let $B = \sqrt{\big[ [H, \i A], \i A \big]}$ and let $|H|$ be the absolute value of $H$, then $$\norm{ B \psi }^2 \leq \norm{ |H| \, \psi}^2 \qquad \text{ for all } \psi \in \Domain(B) \: .$$
@@ -93,16 +93,111 @@ In the case of the steep potential, they used the theory of \textit{Mourre estim
     The four conditions for the conjugacy of $A$ are also called the Mourre conditions.
 \end{defn}
 
-\begin{defn}[Hamiltonian with steep wall]
-    Let $H_0 = P_x^2 + (P_y + b \, Q_x)^2$ be the unperturbed Landau Hamiltonian on $\R^2$. Let $\Pi = P_y + b \, Q_x$ be a self-adjoint operator. Let $U(x)$ be a differentiable function that vanishes for $x\leq 0$.
+\begin{defn}[Hamiltonian with a wall]
+    Let $H_0 = P_x^2 + (P_y + b \, Q_x)^2$ be the unperturbed Landau Hamiltonian on $\R^2$. Let $\Pi = P_y + b \, Q_x$ be a self-adjoint operator. Let $U(x)$ be a differentiable function that vanishes for $x\leq 0$. Let $V(x,y)$ be a differentiable function. We define the Hamiltonian:
+    $$ H = H_0 + V(x,y) + U(y). $$
 \end{defn}
+
+\begin{thm}[Spectrum for an unbounded wall]
+    We define $\mathit\Pi := P_x + b \, Q_y$. Let $U$ and $V$ be such that $\mathit\Pi$ is a conjugate operator for the Hamiltonian $H$. Furthermore, let there be $\delta>0$ such that $|V(x,y)|<\delta$ for all $x,y$ and let $U$ be unbounded with $U'(x) \geq 0$ and $\underset{x\geq\varepsilon}{\inf} \, U'(x) > 0$ for all $\varepsilon>0$. If $E \in \C \setminus \Sp(H_0)$, then there exists some open neighbourhood $\Nbhood_a(E)$, such that $\Sp(H) \cap \Nbhood_a(E) \subseteq \SpAc(H)$.
+\end{thm}
+
+\begin{lemma}[Sufficient conditions for conjugacy]
+    Out of the Mourre conditions, 1. holds trivially for $H, \mathit\Pi$, since $\Cont_0^\infty$ forms a core of the two operators, and 2. is satisfied if for each $s\in\R$ there is some $C$, such that $U(x+s) \leq C \, U(x)$ uniformly for all $x$. If $U+V$ is a bound for its own derivatives, then the conditions 3. and 4. are also satisfied.
+\end{lemma}
+
+\begin{lemma}[Bounded wall]
+    The theorem can be generalized to $U$ which, instead of growing without a bound, levels off at some height $E_0$, if $U'(x)\geq 0$ still holds.
+\end{lemma}
+
+Now, we restate the results regarding a half-plane with a Dirichlet boundary condition:
+
+\begin{defn}[Hamiltonian with a Dirichlet b.c.]
+    Let $\Omega=\R\times\R_+$ and let $H_0$ be a self-adjoint operator on $L^2(\Omega)$ given by:
+    \begin{gather*}
+        \big( H_0 \, \psi \big)(x, y)
+        = -\pd{^2}{x^2} \psi(x, y)
+        + \big( -\pd{^2}{y^2} + b \, x \big)^2 \psi(x, y)
+        \: ,
+        \\[3pt]
+        \Domain(H_0)
+        = \big\{
+            \;
+            \psi \in W^{2,2}(\Omega)
+            \cap L^2_{x^4}(\Omega)
+            \; \big| \;
+            \varphi(0, y) = 0
+            \;
+        \big\}
+        \: .
+    \end{gather*}
+    Let $V$ be a bounded real differentiable function. We define the Hamiltonian as $H = H_0 + V$.
+\end{defn}
+\begin{thm}[Spectrum for Dirichlet b.c.]
+
+\end{thm}
 
 \subsection{Combes et al., 2001}
 (Combes, 2001 ?) studied the case of a particle confined to a strip.
 \textbf{[Find the actual paper.]}
 
 \section{Magnetic perturbation}
-\textbf{REWORK THIS SECTION.} The case of non-local perturbations (i.e. those which don't disappear at infinity) of the magnetic field were studied by (Iwatsuka, 1985).
+\label{section-known-magnetic}
+Lorem ipsum.
+
+\subsection{Iwatsuka, 1983}
+\cite{Iwatsuka1983} proved a very general and important result: a magnetic perturbation which is asymptotically zero will not change the spectrum.
+\begin{defn}[Hamiltonian with asymptotically constant perturbation]
+    Let $B(x, y)$ be a smooth real function, such that $B(x, y) \to B_0 \neq 0$ as $\sqrt{x^2 + y^2} \to \infty$. Let $A_x, A_y$ be smooth functions satisfying $B(x,y) = \pd{}{x} A_y(x,y) - \pd{}{y} A_x(x,y)$. Let $\tilde H$ be the essentially self-adjoint operator on $L^2(\R^2)$ given by
+    \begin{gather*}
+        \tilde H
+        = \Big( {-\i} \, \pd{}{x} + A_x \Big)^2
+        + \Big( {-\i} \, \pd{}{y} + A_y \Big)^2
+        \: , \qquad
+        \Domain(\tilde H) = \Cont_0^\infty(\R^2)
+        \: .
+    \end{gather*}
+    Then the Hamiltonian $H$ is a self-adjoint operator defined as the closure of $\tilde H$.
+\end{defn}
+\begin{thm}[Spectrum of $H$] \label{thm-Iwatsuka-unperturb}
+    $$
+        \SpE(H) = \big\{ (2k + 1) B_0  \;\big|\; k \in \N_0 \big\}
+        \: .
+    $$
+\end{thm}
+
+\subsection{Iwatsuka, 1985}
+\cite{Iwatsuka1985} continues the work from Iwatsuka's 1983 paper by studying translationally invariant perturbations which \textit{do not} vanish at infinity.
+\begin{defn}[Hamiltonian]
+    Let $A_y(x)$ be a smooth real function, such that $B(x) := \dd{}{x} A_y(x)$ satisfies the condition $0 < M_- < B(x) < M_+ < \infty$ for all $x \in \R$. Let $\tilde H$ be the essentially self-adjoint operator on $L^2(\R^2)$ given by
+    \begin{gather*}
+        \tilde H
+        = \Big( {-\i} \, \pd{}{x} + A_x \Big)^2
+        + \Big( {-\i} \, \pd{}{y} + A_y \Big)^2
+        \: , \qquad
+        \Domain(\tilde H) = \Cont_0^\infty(\R^2)
+        \: .
+    \end{gather*}
+    Then the Hamiltonian $H$ is a self-adjoint operator defined as the closure of $\tilde H$.
+\end{defn}
+\begin{thm}
+    Let $\operatorname{\underset{x \to -\infty}{\lim\sup}} B(x) < \operatorname{\underset{x \to +\infty}{\lim\sup}} B(x)$ or $\operatorname{\underset{x \to +\infty}{\lim\sup}} B(x) < \operatorname{\underset{x \to -\infty}{\lim\sup}} B(x)$. Then the spectrum of $H$ is purely absolutely continuous.
+\end{thm}
+\begin{thm} \label{thm-Iwatsuka-bump}
+    Let $B(x)$ satisfy the following conditions:
+    \begin{itemize}
+        \item There exist real numbers $B_0$ and $R$, such that $B(x) = B_0$ for all $|x| > R$.
+        \item $B(x)$ is not constant everywhere – there are points $|x| \!<\! R$ where $B'(x) \!\neq\! 0$.
+        \item There is a point $\bar x$, such that $B(x)$ is nondecreasing on one side of $\bar x$ and nonincreasing on the other side.\footnote{That means either $B'(x)\leq 0$ for $x\leq\bar x$ and $B'(x) \geq 0$ for $x\geq\bar x$ or $B'(x)\geq 0$ for $x\leq\bar x$ and $B'(x) \leq 0$ for $x\geq\bar x$. Hence, $B(x) - B_0$ is a bump function.}
+    \end{itemize}
+    Then the spectrum of $H$ is purely absolutely continuous.\footnote{Note that Theorem \ref{thm-Iwatsuka-bump} does not contradict Theorem \ref{thm-Iwatsuka-unperturb} – here the perturbation is a bump function but only in the $x$-direction, in $y$ it extends to infinity, as is the case for every translationally invariant system.}
+\end{thm}
+
+\section{Hislop et al., 2015}
+\cite{Hislop2015}
+
+
+
 
 \section{Geometric perturbation}
 \textbf{REWORK THIS SECTION.} A tilted planar layer of fixed width, as well as more general thin layers with translationally invariant bends were studied in (Exner, 2018) and some sufficient conditions for the continuity of spectrum were given.

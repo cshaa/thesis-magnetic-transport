@@ -12,3 +12,7 @@ Hermite
 Pochhammer
 digamma
 Sobolev
+Macris
+Fröhlich
+Mourre
+Annales

@@ -1,2 +1,11 @@
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qwith a domain given by the conditions \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q for a.e.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\Q[tc]\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q The spectrum of normal operator \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q; the point, absolutely continuous, singular continuous, discrete, essential spectrum of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"ALL_OF_THE","sentence":"^\\QThen \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is called a conjugate operator for \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q if all of the following conditions apply: \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is a core for \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q (ie. \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is essentially self-adjoint).\\E$"}
+{"rule":"ALL_OF_THE","sentence":"^\\QThen \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is called a conjugate operator for \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q if all of the following conditions apply: \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is a core for \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q (i.e. \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is essentially self-adjoint).\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QLet \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q be a differentiable function that vanishes for \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QLet \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q be a differentiable function.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qholds trivially for \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, since \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q forms a core of the two operators, and 2.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qis satisfied if for each \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q there is some \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, such that \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q uniformly for all \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qand 4.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qare also satisfied.\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QLet \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q be the essentially self-adjoint operator on \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q given by \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
