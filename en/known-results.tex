@@ -123,27 +123,70 @@ Now, we restate the results regarding a half-plane with a Dirichlet boundary con
         \Domain(H_0)
         = \big\{
             \;
-            \psi \in W^{2,2}(\Omega)
-            \cap L^2_{x^4}(\Omega)
-            \; \big| \;
+            \psi \,\in\, W^{2,2}(\Omega)
+            \,\cap\, L^2_{x^4}(\Omega)
+            \;\, \big| \;\,
             \varphi(0, y) = 0
             \;
         \big\}
         \: .
     \end{gather*}
-    Let $V$ be a bounded real differentiable function. We define the Hamiltonian as $H = H_0 + V$.
+    Let $V$ be a bounded real differentiable function of two variables. We define the Hamiltonian as $H = H_0 + V$.
 \end{defn}
 \begin{thm}[Spectrum for Dirichlet b.c.]
-
+    Let $E \in \R \setminus \{ \; (2k+1)b \;|\; k \in \Z \;\}$. For sufficiently small $b^{-1} \, \norm{V}_{L^\infty(\R^2)}$ the spectrum of $H$ is purely absolutely continuous near $E$.
 \end{thm}
+\noindent This theorem has been shown to hold for more general $\Omega \subset \R^2$, for more information see the article.
 
 \subsection{Combes et al., 2001}
-(Combes, 2001 ?) studied the case of a particle confined to a strip.
-\textbf{[Find the actual paper.]}
+\cite{Combes2001} studied the case of a particle confined to a strip.
+\textbf{[Finish this.]}
+
+\subsection{Exner \& Kovařík, 2015}
+In the section 7.2.2 of their textbook on Quantum Waveguides, \cite{ExnerKovarik2015} provide an example of a system, which classically would not lead to any transport, but whose Hamiltonian operator has a non-empty absolute continuous spectrum nonetheless. The Hamiltonian they investigated can be formally written as \begin{equation*}
+    H
+    = \big(P_y + b \, x \big)^2
+    + P_x^{\,2}
+    + \sum_{j\in\Z} \alpha \, \delta(x - x_0 - j \, \ell)
+    \: ,
+\end{equation*}
+where the potential $V = \sum\alpha\delta(...)$ is a Dirac comb. In classical physics, such a potential would only affect a zero-measure family of initial conditions [\textbf{Investigate – would it really?}], therefore the trajectory of particles would \textit{almost surely} be unperturbed. The well-defined Hamiltonian operator is as follows.
+\begin{defn}[Hamiltonian with a Dirac comb]
+    Let $b, \ell \in \R \setminus \{0\}$ and $\alpha, x_0 \in \R$. We define $\Omega = (\R \setminus \{ x_0 + j \, \ell \;|\; j \in \Z \}) \times \R$. Then the Hamiltonian is given by:
+    \begin{equation*}
+        \big( H\psi \big)(x, y)
+        = \bigg(
+            \big(-\i\pd{}{y} + b \, x \Big)^2 - \pd{^2}{x^2}
+        \bigg) \; \psi(x, y)
+        \quad
+        \text{for}
+        \quad
+        (x, y) \in \Omega
+        \: ,
+    \end{equation*}
+    \begin{align*}
+        \Domain(H)
+        &= W^{1,2}(\R^2)
+        \;\cap\; W^{2,2}(\Omega)
+        \;\cap\; L^2_{x^4}(\R^2) \\
+        &\;\cap\;
+        \big\{
+            \psi
+            \;\big|\
+            \lim_{x \to x_j+} \psi - \lim_{x \to x_j-} \psi
+            = \alpha \, \lim_{x \to x_j} \psi
+            \;\; \forall x_j = x_0 + j \ell, \; j \in \Z
+        \big\}
+        \:.
+    \end{align*}
+\end{defn}
+\begin{thm}
+    The spectrum of $H$ consists of the Landau levels $(2k + 1) \, b$ where $k$ is a non-negative integer, and an infinite family of absolutely continuous spectral bands between any two adjacent Landau levels and below $b$.
+\end{thm}
+[\textbf{To do: Ask for details.}]
 
 \section{Magnetic perturbation}
 \label{section-known-magnetic}
-Lorem ipsum.
 
 \subsection{Iwatsuka, 1983}
 \cite{Iwatsuka1983} proved a very general and important result: a magnetic perturbation which is asymptotically zero will not change the spectrum.
@@ -167,7 +210,7 @@ Lorem ipsum.
 \end{thm}
 
 \subsection{Iwatsuka, 1985}
-\cite{Iwatsuka1985} continues the work from Iwatsuka's 1983 paper by studying translationally invariant perturbations which \textit{do not} vanish at infinity.
+\cite{Iwatsuka1985} continues the work from Iwatsuka's 1983 article by studying translationally invariant perturbations which \textit{do not} vanish at infinity.
 \begin{defn}[Hamiltonian]
     Let $A_y(x)$ be a smooth real function, such that $B(x) := \dd{}{x} A_y(x)$ satisfies the condition $0 < M_- < B(x) < M_+ < \infty$ for all $x \in \R$. Let $\tilde H$ be the essentially self-adjoint operator on $L^2(\R^2)$ given by
     \begin{gather*}
@@ -181,7 +224,7 @@ Lorem ipsum.
     Then the Hamiltonian $H$ is a self-adjoint operator defined as the closure of $\tilde H$.
 \end{defn}
 \begin{thm}
-    Let $\operatorname{\underset{x \to -\infty}{\lim\sup}} B(x) < \operatorname{\underset{x \to +\infty}{\lim\sup}} B(x)$ or $\operatorname{\underset{x \to +\infty}{\lim\sup}} B(x) < \operatorname{\underset{x \to -\infty}{\lim\sup}} B(x)$. Then the spectrum of $H$ is purely absolutely continuous.
+    Let $\underset{x \, \to \; {-\infty}}{\operatorname{\lim\sup}} B(x) < \underset{x \, \to \; {+\infty}}{\operatorname{\lim\sup}} B(x)$ or $\underset{x \, \to \; {+\infty}}{\operatorname{\lim\sup}} B(x) < \underset{x \, \to \; {-\infty}}{\operatorname{\lim\sup}} B(x)$. Then the spectrum of $H$ is purely absolutely continuous.
 \end{thm}
 \begin{thm} \label{thm-Iwatsuka-bump}
     Let $B(x)$ satisfy the following conditions:
@@ -194,10 +237,48 @@ Lorem ipsum.
 \end{thm}
 
 \section{Hislop et al., 2015}
-\cite{Hislop2015}
+\cite{Hislop2015} [\textbf{Finish this.}]
 
 
 
 
 \section{Geometric perturbation}
-\textbf{REWORK THIS SECTION.} A tilted planar layer of fixed width, as well as more general thin layers with translationally invariant bends were studied in (Exner, 2018) and some sufficient conditions for the continuity of spectrum were given.
+
+\subsection{Exner \& Kovařík, 2015}
+Section 7.1.2 of \cite{ExnerKovarik2015}. [\textbf{Finish this.}]
+
+\subsection{Exner et al., 2018}
+\cite{Exner2018} investigated the Landau Hamiltonian on thin layers.
+
+\begin{defn}
+    Let $H\!$ be the Landau Hamiltonian with a magnetic field of strength $b$ and a geometric perturbation (see Definition \ref{defn-perturb-geom}) which confines the system to a translationally invariant layer $\Omega$ of width $2\ell$ given by a curve $\omega$, such that $\kappa$, the signed curvature of $\omega$, is bounded and that $\Omega$ doesn't intersect itself (i.e. $\ell < 1/\lVert\kappa\rVert_{L^\infty}$).
+\end{defn}
+
+\begin{thm}[One-sided fold]
+    Let $\Omega$ be a one-sided-fold layer, i.e. either $\lim_{s \to {+\infty}} \omega_x(s) = +\infty$ or $\lim_{s \to {-\infty}} \omega_x(s) = -\infty$. Let [second part of (9)]. Then the spectrum of $H$ is purely absolutely continuous.
+\end{thm}
+
+\begin{thm}
+    Let $\Omega$ be asymptotically flat, i.e. $\dot{\omega}_x(s) = \alpha_\pm$ for large enough positive and negative $s$, and let $\alpha_+ \neq \alpha_-$. Let $\ell$ [satisfy bound in IV.3 and IV.4]. Then the spectrum of $H$ is purely absolutely continuous.
+\end{thm}
+
+In the following theorem, we will use this notation:
+\begin{align*}
+    \underline{f}_+ &:= \sup_{a \in \R} \; \underset{t\in(a, +\infty)}{\operatorname{ess \, inf}} \; f(t) \: ,&
+    \overline{f}_+ &:= \inf_{a \in \R} \; \underset{t\in(a, +\infty)}{\operatorname{ess \, sup}} \; f(t) \: ,\\
+    \underline{f}_- &:= \sup_{a \in \R} \; \underset{t\in(-\infty, a)}{\operatorname{ess \, inf}} \; f(t) \: , &
+    \overline{f}_- &:= \inf_{a \in \R} \; \underset{t\in(-\infty, a)}{\operatorname{ess \, sup}} \; f(t) \: .
+\end{align*}
+Also, by writing $x(s)$ we will mean $\omega_x(s)$.
+
+\begin{thm}
+    Let $E \in \R$ and let $\dot\kappa, \ddot\kappa \in L^\infty$. Furthermore, suppose either one of the following conditions hold:
+    \begin{enumerate}
+        \item $\underline{\dot x}_\pm > 0 \;$ and $\; \underline{\dot x}_+ \geq \overline{\dot x}_- \;$ and $\; \underline{\kappa^2}_+ - \overline{\kappa^2}_- < 4 \, b \, (\underline{\dot x}_+ - \overline{\dot x}_-)$
+        \item $x(s) = s$ for $s \leq 0 \;$ and $\; \dot x(s) \geq 0$ for $s>0 \;$ and $\; \underline{\dot x}_+ > 0 \;$ and $\; x \neq \operatorname{Id}$.
+    \end{enumerate}
+    Then for $\ell$ sufficiently small, the spectrum of $H$ is absolutely continuous below $E + \big( \frac{\pi}{2\ell} \big)^2$.
+\end{thm}
+
+[\textbf{To do: fill in conditions (9), IV.3 and IV.4}]
+

@@ -9,7 +9,7 @@ with a domain given by the conditions
 \begin{gather*}
     \psi \in W^{1,2}(\R^2) \; \cap \; W^{2,2}\big( \,(\R \setminus \{ x_0 \}) \times \R \, \big) \: ,
     \\[5pt]
-    \lim_{x \to x_0 +} \!\psi'(x,y)\; - \lim_{x \to x_0 -} \!\psi'(x,y) = \alpha \lim_{x \to x_0} \!\psi(x, y)
+    \lim_{x \to x_0 +} \pd{}{x}\psi(x,y)\; - \lim_{x \to x_0 -} \pd{}{x}\psi(x,y) = \alpha \lim_{x \to x_0} \!\psi(x, y)
     \quad \text{for a.e. } y \: ,\footnotemark
     \\[5pt]
     \int_{\R^2} x^2 \, \big|\, \psi(x,y) \,\big|^2 \, \d{x}\d{y} < \infty \: .
@@ -352,7 +352,7 @@ Truly, this is simply the equation \eqref{eqn-implicit-pre} after the substituti
     w \in \R
     \: .
 \end{equation*}
-Moreover, $F$ is analytic in the three variables, as it is a sum of products of entire functions. The implicit function theorem \textbf{[Source?]} then tells us that, provided $\pd{}{\nu} F(0, w, k) \neq 0$ for a fixed $k \in \N_0$ (which we will prove soon), there exists an analytic function $\nu(a, w)$, such that $\nu(0,w) = k$ and $F(a, w, \nu(a,w)) = 0$ on the neighbourhood of $a=0$. Since there is a different implicit function for every $k$, we will denote them $\nu_k(a,w)$. After changing our variables back to the physical ones and putting $x_0=0$ (since it only depends on the choice of origin), we see that the energy levels for a fixed magnitude of the perturbation $\alpha$ are
+Moreover, $F$ is analytic in the three variables, as it is a sum of products of entire functions. The implicit mapping theorem (listed as 8.6 in \cite{KaupKaup1983}) then tells us that, provided $\pd{}{\nu} F(0, w, k) \neq 0$ for a fixed $k \in \N_0$ (which we will prove soon), there exists an analytic function $\nu(a, w)$, such that $\nu(0,w) = k$ and $F(a, w, \nu(a,w)) = 0$ on the neighbourhood of $a=0$. Since there is a different implicit function for every $k$, we will denote them $\nu_k(a,w)$. After changing our variables back to the physical ones and putting $x_0=0$ (since it only depends on the choice of origin), we see that the energy levels for a fixed magnitude of the perturbation $\alpha$ are
 \begin{equation*}
     \epsilon_k(p) = b + 2b\;\nu_k\big( \alpha \, \sqrt{2b}, \; p \, \sqrt{\tfrac{2}{b}}  \big) \: ,
     \qquad k \in \N_0 \: .

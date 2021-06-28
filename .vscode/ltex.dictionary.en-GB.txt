@@ -16,3 +16,7 @@ Macris
 Fröhlich
 Mourre
 Annales
+Kovařík
+nondecreasing
+nonincreasing
+Hislop

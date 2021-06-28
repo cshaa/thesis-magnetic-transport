@@ -9,3 +9,4 @@
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qand 4.\\E$"}
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qare also satisfied.\\E$"}
 {"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QLet \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q be the essentially self-adjoint operator on \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q given by \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QLet [second part of (9)].\\E$"}
