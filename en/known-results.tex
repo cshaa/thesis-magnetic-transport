@@ -113,11 +113,12 @@ In the case of the steep potential, they used the theory of \textit{Mourre estim
 Now, we restate the results regarding a half-plane with a Dirichlet boundary condition:
 
 \begin{defn}[Hamiltonian with a Dirichlet b.c.]
+    \label{defn-hamiltonian-dirichlet}
     Let $\Omega=\R\times\R_+$ and let $H_0$ be a self-adjoint operator on $L^2(\Omega)$ given by:
     \begin{gather*}
         \big( H_0 \, \psi \big)(x, y)
         = -\pd{^2}{x^2} \psi(x, y)
-        + \big( -\pd{^2}{y^2} + b \, x \big)^2 \psi(x, y)
+        + \big( {-\i} \, \pd{}{y} + b \, x \big)^2 \psi(x, y)
         \: ,
         \\[3pt]
         \Domain(H_0)
@@ -143,14 +144,15 @@ Now, we restate the results regarding a half-plane with a Dirichlet boundary con
 \textbf{[Finish this.]}
 
 \subsection{Exner \& Kovařík, 2015}
-In the section 7.2.2 of their textbook on Quantum Waveguides, \cite{ExnerKovarik2015} provide an example of a system, which classically would not lead to any transport, but whose Hamiltonian operator has a non-empty absolute continuous spectrum nonetheless. The Hamiltonian they investigated can be formally written as \begin{equation*}
+In the section 7.2.2 of their textbook on Quantum Waveguides, \cite{ExnerKovarik2015} provide an example of a system, which classically would not lead to any transport, but whose Hamiltonian operator has a non-empty absolute continuous spectrum nonetheless. The Hamiltonian they investigated can be formally written~as
+\begin{equation*}
     H
     = \big(P_y + b \, x \big)^2
     + P_x^{\,2}
-    + \sum_{j\in\Z} \alpha \, \delta(x - x_0 - j \, \ell)
+    + \sum_{j\in\Z} \alpha \, \delta(x - x_0 - j \, \ell) \, \delta(y)
     \: ,
 \end{equation*}
-where the potential $V = \sum\alpha\delta(...)$ is a Dirac comb. In classical physics, such a potential would only affect a zero-measure family of initial conditions [\textbf{Investigate – would it really?}], therefore the trajectory of particles would \textit{almost surely} be unperturbed. The well-defined Hamiltonian operator is as follows.
+where the potential $V = \sum\alpha\delta(...)\delta(y)$ is a Dirac comb situated on the axis $y=0$. In classical physics, such a potential would only affect a zero-measure family of initial conditions, therefore the trajectory of particles would \textit{almost surely} be unperturbed. The well-defined Hamiltonian operator is as follows.
 \begin{defn}[Hamiltonian with a Dirac comb]
     Let $b, \ell \in \R \setminus \{0\}$ and $\alpha, x_0 \in \R$. We define $\Omega = (\R \setminus \{ x_0 + j \, \ell \;|\; j \in \Z \}) \times \R$. Then the Hamiltonian is given by:
     \begin{equation*}
@@ -168,14 +170,16 @@ where the potential $V = \sum\alpha\delta(...)$ is a Dirac comb. In classical ph
         \Domain(H)
         &= W^{1,2}(\R^2)
         \;\cap\; W^{2,2}(\Omega)
-        \;\cap\; L^2_{x^4}(\R^2) \\
-        &\;\cap\;
+        \;\cap\; L^2_{x^4}(\R^2)
+        \;\cap \\
+        &\hspace{-10pt}
+        \cap\;
         \big\{
             \psi
             \;\big|\
-            \lim_{x \to x_j+} \psi - \lim_{x \to x_j-} \psi
-            = \alpha \, \lim_{x \to x_j} \psi
-            \;\; \forall x_j = x_0 + j \ell, \; j \in \Z
+            \lim_{x \to x_j+}\! \psi(x, 0) - \!\lim_{x \to x_j-}\! \psi(x, 0)
+            = \alpha \lim_{x \to x_j}\! \psi(x, 0)
+            \;\; \forall x_j = x_0 + j \ell, \; j \!\in\! \Z
         \big\}
         \:.
     \end{align*}
@@ -183,7 +187,6 @@ where the potential $V = \sum\alpha\delta(...)$ is a Dirac comb. In classical ph
 \begin{thm}
     The spectrum of $H$ consists of the Landau levels $(2k + 1) \, b$ where $k$ is a non-negative integer, and an infinite family of absolutely continuous spectral bands between any two adjacent Landau levels and below $b$.
 \end{thm}
-[\textbf{To do: Ask for details.}]
 
 \section{Magnetic perturbation}
 \label{section-known-magnetic}
@@ -236,7 +239,7 @@ where the potential $V = \sum\alpha\delta(...)$ is a Dirac comb. In classical ph
     Then the spectrum of $H$ is purely absolutely continuous.\footnote{Note that Theorem \ref{thm-Iwatsuka-bump} does not contradict Theorem \ref{thm-Iwatsuka-unperturb} – here the perturbation is a bump function but only in the $x$-direction, in $y$ it extends to infinity, as is the case for every translationally invariant system.}
 \end{thm}
 
-\section{Hislop et al., 2015}
+\subsection{Hislop et al., 2015}
 \cite{Hislop2015} [\textbf{Finish this.}]
 
 

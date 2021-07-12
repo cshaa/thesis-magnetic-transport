@@ -128,8 +128,8 @@ Substituting $\varphi'(x_0+) - \varphi'(x_0-) = \alpha \varphi(x_0)$ and solving
 Finally, we will show that the fibre Hamiltonian has a discrete spectrum. The family of operators $\{  \Hf_\alpha(p) \, | \, \alpha {\,\in\,} \R \}$ has a common symmetric restriction:
 \begin{gather*}
     \Omega := \big\{
-        \varphi \in W^{2,2}(\R) \;\big|\;
-        x^2 \, \varphi(x) \in L^2(\R), \;
+        \varphi \in W^{2,2}(\R) \cap L^2_{x^4}(\R)
+        \;\big|\;
         \varphi(x_0) = 0
     \big\}
     \: ,
@@ -155,39 +155,7 @@ Since fibres $\Hf_\alpha(p)$ for various values of~$\alpha$ only differ in the b
 \end{align*}
 Furthermore, there is no way for $\varphi(x_0) \neq \varphi_n(x_0) \equiv 0$ without causing $\varphi''_n(x_0)$ to diverge. Therefore, $h(p) \, \varphi_n \to \psi \implies \varphi \in \Omega$. Finally, the requirement $h(p) \, \varphi = \psi$ follows from the fact that both second derivative and multiplication by $x^2$ are closed operators on their respective domains.
 
-We have shown that $h(p)$ is a closed symmetric operator with many different extensions $\Hf_\alpha(p)$. We know that at least one of the extensions, the fibre $\Hf_{\alpha = 0}(p)$ of the unperturbed system, has a discrete spectrum. Now, we want to use the theorem~\ref{thm-sym-extension-spectrum} to show that the spectrum of all $\Hf_\alpha(p)$ is discrete. The last premise left to demonstrate is the fact that $n_+(h(p)) = n_-(h(p)) < \infty$. \textbf{[To do: simplify this argument.]} Since the deficiency indices (definition \ref{defn-deficiency-indices}) are equal to the multiplicity of $\pm\i$ as an eigenvalue of $h(p)^*$, we first need to find the operator $h(p)^*$. Let $\varphi \in \Omega$ and $\psi$ from a yet-unknown set $\Omega'\subset\Hilb$.
-\begin{align*}
-    \\[-2\baselineskip]
-    \big( h(p) \varphi, \, \psi \big)
-    &= \int_\R\! -\overline\varphi'' \psi
-    + \int_\R\! \big( bx + p \big)^2 \overline\varphi\psi
-    = \int_\R \overline\varphi \, \overbrace{\Big(
-        \psi'' + \int_\R\! \big(bx + p\big)^2 \psi
-    \Big)}^{=: \, h(p)^* \psi} + \ph{x}\\
-    &+ \underbrace{\vph{\big|} \overline\varphi(x_0)}_0 \psi'(x_0-)
-    - \underbrace{\vph{\big|} \overline\varphi(x_0)}_0 \psi'(x_0+)
-    + \overline\varphi'(x_0) \big( \psi(x_0+) - \psi(x_0-) \big)
-    \: .
-\end{align*}
-We performed an integration by parts, assuming $\Omega' \subseteq W^{2,2}(\R \setminus \{x_0\})$, which can be justified by an argument analogical to that under equation \eqref{eqn-dirac-fiber-selfadj}. Since $\overline\varphi'(x_0)$ can take on any value, it must hold that $\psi(x_0+) - \psi(x_0-) = 0$. However, there is no constraint on the values of $\psi'$. Therefore, the domain of $h(p)^*$ is:
-\begin{equation*}
-    \Omega' := \big\{
-        \varphi \in W^{1,2}(\R) \cap W^{2,2}(\R \setminus \{x_0\})
-        \; | \;
-        x^2 \varphi(x) \in L^2(\R)
-    \big\}
-    \: .
-\end{equation*}
-The deficiency indices $n_\pm$ are then equal to the number of linearly independent solutions of the ordinary differential equation:
-\begin{equation*}
-    h(p)^* \varphi = \pm \i \, \varphi
-    \quad \Longleftrightarrow \quad
-    \varphi''(x) = \big( (bx + p)^2 \mp \i \big) \, \varphi(x)
-    \quad \text{ where } \varphi \in \Omega'
-    \: .
-    \numberthis\label{eqn-dirac-deficiency-indices-ode}
-\end{equation*}
-This equation is the generalized parabolic cylinder equation which generally has two solutions. The fact that $\varphi'$ can have an arbitrarily large jump in~$x_0$ allows us to make both of the solutions obey the growth conditions given by $\Omega'$ hence we have $n_+ = n_- = 2$. The details of this calculation will be flashed out in the next section, right under the equation \eqref{eqn-dirac-parabolic-cylinder-two-solutions}.
+We have shown that $h(p)$ is a closed symmetric operator with many different extensions $\Hf_\alpha(p)$. We know that at least one of the extensions, the fibre $\Hf_{\alpha = 0}(p)$ of the unperturbed system, has a discrete spectrum. Now, we want to use Theorem~\ref{thm-sym-extension-spectrum} to show that the spectrum of all $\Hf_\alpha(p)$ is discrete. The last premise left to demonstrate is the fact that $n_+(h(p)) = n_-(h(p)) < \infty$. We can use Theorem~\ref{thm-deficiency-diff-op} to show that the deficiency indices are equal. Furthermore, $h(p)^*$ is a second-order differential operator, therefore $n_\pm \leq 2$, hence they are also finite.
 
 We have shown that the Hamiltonian $H_\alpha$ is self-adjoint and bounded from below for each $\alpha\in\R$, and that the fibre Hamiltonian $\Hf_\alpha(p)$ has a discrete spectrum for every $\alpha, p \in \R$. In the next section, we will investigate what are the eigenvalues of $\Hf_\alpha(p)$ and how they depend on $p$ and $\alpha$.
 
@@ -251,7 +219,7 @@ As stated in \cite{GradshteynRyzhik}, the solutions to \eqref{eqn-parabolic-cyli
     D_{-\nu-1}(-\i w) \: ,
     \label{eqn-parabolic-cylinder-solutions}
 \end{equation}
-where $D_\nu$ is a so-called \textit{parabolic cylinder function}, which is a special function that can be expressed in terms of the gamma function $\Gamma$ and the confluent hypergeometric function $\hypF$:
+where $D_\nu$ is the so-called \textit{parabolic cylinder function}, which is a special function that can be expressed in terms of the gamma function $\Gamma$ and the confluent hypergeometric function $\hypF$:
 \begin{align*}
     D_\nu(w)
     = 2^{\frac{\nu}{2}}
@@ -285,7 +253,7 @@ Asymptotic behaviour of the solutions is also given by \cite{GradshteynRyzhik}. 
     \label{eqn-dirac-parabolic-cylinder-two-solutions}
 \end{equation}
 
-Now we can safely return to the eigenproblem of $\Hf_\alpha(p)$ from where we left it – that is, from the equation \eqref{eqn-dirac-parabolic-cylinder-two-solutions}. For $\epsilon\in\R$ can be further shown, that if $\nu \notin \N_0$, the solution $D_\nu(w)$ diverges for $w \to -\infty$. \textbf{[Then show it.]} Therefore, $c_{-1} = c_{+2} = 0$ in order for $\varphi$ to be integrable. On the other hand, for $\nu \in \N_0$, the solutions aren't independent (as discussed above), therefore we can also set $c_{-1} = c_{+2} = 0$ without loss of generality. Applying the gluing equations \eqref{eqn-gluing-equations}, we get:
+For $\nu\in\R$ it can be further shown, that if $\nu \notin \N_0$, the solution $D_\nu(w)$ diverges for $w \to -\infty$. \textbf{[Then show it.]} Therefore, $c_{-1} = c_{+2} = 0$ in order for $\varphi$ to be integrable. On the other hand, if $\nu \in \N_0$, the solutions aren't independent (as discussed above), therefore we can also set $c_{-1} = c_{+2} = 0$ without loss of generality. Applying the gluing equations \eqref{eqn-gluing-equations}, we get:
 \begin{gather*}
     c_{+1} \, D_\nu(w_0) = c_{-2} \, D_\nu(-w_0) \\[5pt]
     c_{+1} \, \dd{}{w} D_\nu(w) \big|_{w_0} - c_{-2} \, \dd{}{w} D_\nu(-w) \big|_{w_0} = \alpha \, \sqrt{2b} \; c_{+1} \, D_\nu(w_0)
@@ -343,7 +311,7 @@ We have shown that
         \frac{\, \epsilon(p) + b \,}{2b}
     \Big) = 0 \: .
 \end{align*}
-Truly, this is simply the equation \eqref{eqn-implicit-pre} after the substitution from \eqref{eqn-w-nu-definition}. Furthermore, for $\alpha = 0$ the fibre Hamiltonian $\Hf_\alpha(p)$ reduces to that of a harmonic oscillator. From this fact, it is straightforward to derive the following result:
+Truly, this is simply the equation \eqref{eqn-implicit-pre} after the substitution from \eqref{eqn-w-nu-definition}. Furthermore, for $\alpha = 0$ the fibre Hamiltonian $\Hf_\alpha(p)$ reduces to that of an unperturbed Landau Hamiltonian. From this fact, it is straightforward to derive the following result:
 \begin{equation*}
     F(0, w, k) = 0
     \text{ holds for }

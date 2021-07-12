@@ -7,14 +7,14 @@ In this chapter we will examine the Landau Hamiltonian of a particle confined to
         \big( H_\alpha \psi \big)(x,y)
         = \left(
             -\pd{^2}{x^2} +
-            \big( \i \pd{^2}{y^2} + bx \big)^2
+            \big( {-\i} \pd{}{y} + bx \big)^2
         \right) \, \psi(x,y) \: ,
         \\
         \Domain(H_\alpha)
         = \big\{ \,
             \psi \in W^{2,2}(\Omega) \cap L^2_{x^4}(\Omega)
             \; \big| \;
-            \psi(0,y) + \alpha \, \psi'(0,y) = 0
+            \alpha \, \psi(0,y) + \psi'(0,y) = 0
         \, \big\} \: .
     \end{gathered}
 \end{equation}
@@ -28,11 +28,11 @@ Using \eqref{eqn-vague-direct-integral-decomp}, we can once again show that the 
         = \big\{ \,
             \varphi \in W^{2,2}(\R_+) \cap L^2_{x^4}(\R_+)
             \; \big| \;
-            \varphi(0) + \alpha \, \varphi'(0) = 0
+            \alpha \, \varphi(0) + \varphi'(0) = 0
         \, \big\} \: .
     \end{gathered}
 \end{equation}
-When $\alpha=0$, the problem reduces to the well-known Dirichlet b.c.\footnote{b.c. = boundary condition}
+When $\alpha=0$, the problem reduces to the Neumann boundary condition.
 
 \section{Well-posedness}
 We will start by showing that the Hamiltonian is bounded from below, starting with the fibre Hamiltonian:
@@ -48,34 +48,34 @@ We will start by showing that the Hamiltonian is bounded from below, starting wi
     \overline{ \varphi(0) } \, \varphi'(0)
     + \norm{ \varphi' }_{L^2(\R_+)}^2
 \end{align*}
-We have used integration by parts and the fact that for $\varphi \in W^{2,2}$ both $\varphi$ and $\varphi'$ vanish at infinity. If $\alpha=0$, then the boundary condition $\varphi(0) + \alpha \, \varphi'(0) = 0$ dictates that $\varphi(0)=0$ and the right-hand side is non-negative, hence we have found the lower bound. If $\alpha \neq 0$, we substitute for $\varphi'(0)$ from the boundary condition:
+We have used integration by parts and the fact that for $\varphi \in W^{2,2}$ both $\varphi$ and $\varphi'$ vanish at infinity. We substitute for $\varphi'(0) = -\alpha \, \varphi(0)$ from the boundary condition:
 \begin{align*}
     \big( \varphi, \Hf_\alpha(p) \, \varphi \big)
     \geq \overline{ \varphi(0) } \, \varphi'(0)
     + \norm{ \varphi' }_{L^2(\R_+)}^2
-    = - \frac{1}{\alpha} \, \big| \varphi(0) \big|^2
+    = - \alpha \, \big| \varphi(0) \big|^2
     + \norm{ \varphi' }_{L^2(\R_+)}^2
     \: .
 \end{align*}
-For~$\alpha < 0$, the whole right-hand side is non-negative. For~$\alpha > 0$, we have:
+For~$\alpha \leq 0$, the whole right-hand side is non-negative. For~$\alpha > 0$, we have:
 \begin{align*}
     &\big( \varphi, \Hf_\alpha(p) \, \varphi \big)
-    \geq - \frac{1}{\alpha} \, \big| \varphi(0) \big|^2
+    \geq - \alpha \, \big| \varphi(0) \big|^2
     + \norm{ \varphi' }_{L^2(\R_+)}^2
-    \geq -\frac{1}{\alpha} \norm{\varphi}_{L^{\!\infty}(\R_+\!)}^2
+    \geq -\alpha \norm{\varphi}_{L^{\!\infty}(\R_+\!)}^2
     \! + \norm{ \varphi' }_{L^2(\R_+\!)}^2
     \: .
 \end{align*}
-Now using the lemma \ref{lemma-sobolev-type-inequality} from the Appendix, we know that for every $a>0$ there exists $b>0$ such that $-\frac{1}{\alpha} \norm{\varphi}_{L^{\!\infty}}^2 \geq -\frac{a}{\alpha} \norm{\varphi'}_{L^2}^2 - \frac{b}{\alpha} \norm{\varphi}_{L^2}^2$. Setting $a = \alpha$, we obtain
+Now using the lemma \ref{lemma-sobolev-type-inequality} from the Appendix, we know that for every $a>0$ there exists $b>0$ such that $-\alpha \norm{\varphi}_{L^{\!\infty}}^2 \geq -a \, \alpha \norm{\varphi'}_{L^2}^2 - b \, \alpha \norm{\varphi}_{L^2}^2$. Setting $a = \alpha^{-1}$, we obtain
 \begin{equation*}
     \big( \varphi, \Hf_\alpha(p) \big)
     \geq \big(
         -\norm{\varphi'}_{L^2(\R_+)}^2
-        - \frac{b}{\alpha} \norm{\varphi}_{L^2(\R_+)}^2
+        - b \, \alpha \norm{\varphi}_{L^2(\R_+)}^2
     \big)
      + \norm{ \varphi' }_{L^2(\R_+\!)}^2
     =
-    - \frac{b}{\alpha} \,
+    - b \, \alpha \,
     \norm{\varphi}_{L^2(\R_+)}^2
     \: .
 \end{equation*}
@@ -93,12 +93,12 @@ Now we will show the self-adjointness, again starting with the fibre Hamiltonian
         + \overline\varphi(0) \, \psi'(0)
         \vphantom{\Big|}
     }_{
-        -\overline\varphi'(0) \,
-        \big( \psi(0) + \alpha \psi'(0) \big)
+        -\overline\varphi(0) \,
+        \big( \alpha \psi(0) + \psi'(0) \big)
     }
     + \int_{\R_+}\!\! \overline\varphi \, \big( {-\psi''} + (bx+p)^2 \psi \big) \: .
 \end{align*}
-First, we integrated by parts, assuming that $M\subseteq W^{2,2}(\R_+\!)$ ­– if it were not, the result could not be independent of $\varphi$, as demonstrated in the previous chapter after \eqref{eqn-dirac-fiber-selfadj}. Then we used the fact that functions from $W^{2,2}$ vanish at infinity, and finally we applied the boundary condition $\varphi'(0) + \alpha \varphi'(0) = 0$. It is clear that $\psi$ must fulfill the same boundary condition in order for the result to be independent of $\varphi'(0)$. Therefore $M=\Domain(\Hf_\alpha(p))$ and the fibre Hamiltonian is self-adjoint. The Hamiltonian $H$, a direct integral of a self-adjoint operator, is hence also self-adjoint.
+First, we integrated by parts, assuming that $M\subseteq W^{2,2}(\R_+\!)$ ­– if it were not, the result could not be independent of $\varphi$, as demonstrated in the previous chapter after \eqref{eqn-dirac-fiber-selfadj}. Then we used the fact that functions from $W^{2,2}$ vanish at infinity, and finally we applied the boundary condition $\alpha \varphi(0) + \varphi'(0) = 0$. It is clear that $\psi$ must fulfill the same boundary condition in order for the result to be independent of $\varphi'(0)$. Therefore $M=\Domain(\Hf_\alpha(p))$ and the fibre Hamiltonian is self-adjoint. The Hamiltonian $H$, a direct integral of a self-adjoint operator, is hence also self-adjoint.
 
 Lastly, we will show that the spetrum of $\Hf_\alpha(p)$ is discrete using the theorem~\ref{thm-sym-extension-spectrum}. We define:
 \begin{equation*}
@@ -109,7 +109,26 @@ then the fibre Hamiltonians for all values of $\alpha$ have a common symmetric r
 \begin{equation*}
     h(p) := \Hf_\alpha(p) |_\Omega
 \end{equation*}
-\textbf{[Finish this section: show $h$ is closed and $n_+=n_-<\infty$.]}
+
+The operator $h(p)$ is closed, we show this directly from the definition: let $\{ \varphi_n \} \subset \Omega$ such that $\varphi_n \to \varphi \in L^2(\R)$, then
+\begin{align*}
+    &\lim_{n\to\infty} h(p) \, \varphi_n
+    = \lim_{n\to\infty} \big( -\varphi''_n + (bx+p)^2 \varphi_n \big)
+    \in L^2
+    \\[5pt]
+    &\quad\Longleftrightarrow\quad
+    \lim_{n\to\infty} \varphi_n'' \in L^2
+    \;\wedge\;
+    \lim_{n\to\infty} x^2 \varphi_n \in L^2
+    \quad\Longleftrightarrow\quad
+    \varphi'' \in L^2
+    \;\wedge\;
+    x^2 \varphi  \in L^2
+    \: .
+\end{align*}
+Furthermore, there is no way for $\varphi(0) \neq \varphi_n(0) \equiv 0$ or $\varphi'(0) \neq \varphi'_n(0) \equiv 0$ without causing $\varphi''_n(0)$ to diverge. Therefore, $h(p) \, \varphi_n \to \psi \implies \varphi \in \Omega$. Finally, the requirement $h(p) \, \varphi = \psi$ follows from the fact that both second derivative and multiplication by $x^2$ are closed operators on their respective domains.
+
+The deficiency indices of $h(p)$ are equal (from Theorem \ref{thm-deficiency-diff-op}) and finite (as $h(p)$ is a finite-order differential operator).
 
 \section{Eigenproblem of the fiber Hamiltonian}
 We are searching for a function $\epsilon(p)$, such that for every $p$ there exists a $\varphi \in \Domain(\Hf_\alpha(p))$ for which
@@ -137,48 +156,48 @@ This is the parabolic cylinder equation and, as in the previous chapter, its sol
 \end{equation*}
 Except for $\nu\in\N$, the $D_\nu(-w)$ term diverges exponentially, therefore $d$ must be zero in order for $\varphi\in\Domain(\Hf_\alpha)$. Now we apply the boundary condition:
 \begin{align*}
-    \varphi(0) &= \alpha \, \varphi'(0)
+    \alpha \, \varphi(0) &= -\varphi'(0)
     \: ,
     \\[5pt]
-    c \, D_\nu(w_0)
-    &= \alpha \, \dd{}{x} \, c  D_\nu(w) \big|_{w=w_0}
+    \alpha \, c \, D_\nu(w_0)
+    &= -\dd{}{x} \, c \,  D_\nu(w) \big|_{w=w_0}
     \: ,
     \quad \text{where} \quad
     w_0 = \sqrt{2b} \, (0 + \tfrac{p}{b}) = p \, \sqrt{\tfrac{2}{b}}
     \: ,
     \\[5pt]
-    D_\nu(w_0)
-    &= \alpha \, \sqrt{2b} \,
+    \alpha \, D_\nu(w_0)
+    &= -\sqrt{2b} \,
     \dd{}{w} \,  D_\nu(w) \big|_{w=w_0}
     \: ,
     \\[5pt]
-    D_\nu(w_0)
-    &= \alpha \, \sqrt{2b} \, \big(
+    \alpha \, D_\nu(w_0)
+    &= -\sqrt{2b} \, \big(
         \frac{w_0}{2} D_\nu(w_0)
         - D_{\nu+1}(w_0)
     \big)
     \: ,
     \\[5pt]
-    \frac{1}{\alpha \sqrt{2b}} \, D_\nu(w_0)
+    \alpha \, D_\nu(w_0)
     &=
-    \frac{p}{\sqrt{2b}} D_\nu(w_0)
-    - D_{\nu+1}(w_0)
-    \: ,
-    \quad \text{assuming} \quad \alpha \neq 0
+    -\sqrt{2b} \Big(
+        \frac{p}{\sqrt{2b}} D_\nu(w_0)
+        - D_{\nu+1}(w_0)
+    \Big)
     \: ,
     \\[5pt]
+    \big( \alpha + p\big) \,
+    D_\nu(w_0)
+    &=
     \sqrt{2b} \,
     D_{\nu+1}(w_0)
-    &=
-    \big( p - \tfrac{1}{\alpha} \big) \,
-    D_\nu(w_0)
     \: ,
     \\[5pt]
+    \big( \alpha + p\big) \,
+    D_\nu(p \, \sqrt{\tfrac{2}{b}})
+    &=
     \sqrt{2b} \,
     D_{\nu+1}(p \, \sqrt{\tfrac{2}{b}})
-    &=
-    \big( p - \tfrac{1}{\alpha} \big) \,
-    D_\nu(p \, \sqrt{\tfrac{2}{b}})
     \: .
     \numberthis\label{eqn-robin-spectral}
 \end{align*}
@@ -192,31 +211,17 @@ The equation \eqref{eqn-robin-spectral} is the spectral condition, it defines th
 \begin{figure}[p]
     \centering
     \noindent
-    \includegraphics[width=0.45\textwidth]{grafy/robin0.pdf}%
+    \includegraphics[width=0.45\textwidth]{grafy/robin-1000.pdf}%
     \hspace{0.1\textwidth}%
-    \includegraphics[width=0.45\textwidth]{grafy/robin0.5.pdf}%
-    \\[1em]%
-    \includegraphics[width=0.45\textwidth]{grafy/robin0.8.pdf}%
-    \hspace{0.1\textwidth}%
-    \includegraphics[width=0.45\textwidth]{grafy/robin1.pdf}%
-    \\[1em]%
-    \includegraphics[width=0.45\textwidth]{grafy/robin1.2.pdf}%
-    \hspace{0.1\textwidth}%
-    \includegraphics[width=0.45\textwidth]{grafy/robin2.pdf}\par
-    \caption{The first energy levels $\epsilon$ as a function of the $y$-momentum $p$ for $\alpha\,\sqrt{2b} = 0.0, 0.5, 0.8, 1.0, 1.2$ and $2.0$ (starting with a system with Dirichlet b.c.).}
-    \label{plots-robin-positive}
-\end{figure}
-
-\begin{figure}[p]
-    \centering
-    \noindent
     \includegraphics[width=0.45\textwidth]{grafy/robin-1.pdf}%
+    \\[1em]%
+    \includegraphics[width=0.45\textwidth]{grafy/robin0.5.pdf}%
     \hspace{0.1\textwidth}%
-    \includegraphics[width=0.45\textwidth]{grafy/robin-2.pdf}%
-    \\[2em]%
-    \includegraphics[width=0.45\textwidth]{grafy/robin-5.pdf}%
+    \includegraphics[width=0.45\textwidth]{grafy/robin0.8.pdf}%
+    \\[1em]%
+    \includegraphics[width=0.45\textwidth]{grafy/robin1.pdf}%
     \hspace{0.1\textwidth}%
-    \includegraphics[width=0.45\textwidth]{grafy/robin-10.pdf}\par
-    \caption{The first five energy levels $\epsilon$ as a function of the $y$-momentum $p$ for $\alpha\,\sqrt{2b} = -1, -2, -5$ and $-10$.}
-    \label{plots-robin-negative}
+    \includegraphics[width=0.45\textwidth]{grafy/robin10.pdf}\par
+    \caption{The first energy levels $\epsilon$ as a function of the $y$-momentum $p$ for $\alpha\,\sqrt{b} = -1000, \, -1, \, 0.5, \, 0.8, \, 1$ and $10$.}
+    \label{plots-robin-positive}
 \end{figure}
