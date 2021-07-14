@@ -253,7 +253,7 @@ Asymptotic behaviour of the solutions is also given by \cite{GradshteynRyzhik}. 
     \label{eqn-dirac-parabolic-cylinder-two-solutions}
 \end{equation}
 
-For $\nu\in\R$ it can be further shown, that if $\nu \notin \N_0$, the solution $D_\nu(w)$ diverges for $w \to -\infty$. \textbf{[Then show it.]} Therefore, $c_{-1} = c_{+2} = 0$ in order for $\varphi$ to be integrable. On the other hand, if $\nu \in \N_0$, the solutions aren't independent (as discussed above), therefore we can also set $c_{-1} = c_{+2} = 0$ without loss of generality. Applying the gluing equations \eqref{eqn-gluing-equations}, we get:
+Furthermore, if $\nu \notin \N_0$, the solution $D_\nu(w)$ diverges for $w \to -\infty$, as demonstrated in Lemma \ref{lemma-parabolic-cylinder-asymp} in Chapter \ref{apdx-parabolic-cylinder-asymp} of the appendix. Therefore, $c_{-1} = c_{+2} = 0$ in order for $\varphi$ to be integrable. On the other hand, if $\nu \in \N_0$, the solutions aren't independent (as discussed above), therefore we can also set $c_{-1} = c_{+2} = 0$ without loss of generality. Applying the gluing equations \eqref{eqn-gluing-equations}, we get:
 \begin{gather*}
     c_{+1} \, D_\nu(w_0) = c_{-2} \, D_\nu(-w_0) \\[5pt]
     c_{+1} \, \dd{}{w} D_\nu(w) \big|_{w_0} - c_{-2} \, \dd{}{w} D_\nu(-w) \big|_{w_0} = \alpha \, \sqrt{2b} \; c_{+1} \, D_\nu(w_0)
@@ -294,15 +294,16 @@ Since we're interested in the allowed values of $\nu$ for given $w_0$ and $\alph
 
 \section{Implicit function for energy levels} \label{section-dirac-implicit-function}
 Let $F$ be a function of three real variables given by
-\begin{equation*}
+\begin{equation}
     F(a, w, \nu) =
     D_\nu(w) \, D_{\nu+1}(-w)
     \;+\; D_\nu(-w) \, D_{\nu+1}(w)
     \;+\; a \, D_\nu(w) \, D_\nu(-w)
     \: .
-\end{equation*}
+    \label{eqn-dirac-energy-implicit}
+\end{equation}
 We have shown that
-\begin{align*}
+\begin{equation}
     \epsilon(p) \text{ is an eigenvalue of } \Hf_\alpha(p)
     \; \Longleftrightarrow \;
     F\Big(
@@ -310,92 +311,9 @@ We have shown that
         \sqrt{2b} \, \big( x_0 + \frac{p}{b} \, \big), \;
         \frac{\, \epsilon(p) + b \,}{2b}
     \Big) = 0 \: .
-\end{align*}
-Truly, this is simply the equation \eqref{eqn-implicit-pre} after the substitution from \eqref{eqn-w-nu-definition}. Furthermore, for $\alpha = 0$ the fibre Hamiltonian $\Hf_\alpha(p)$ reduces to that of an unperturbed Landau Hamiltonian. From this fact, it is straightforward to derive the following result:
-\begin{equation*}
-    F(0, w, k) = 0
-    \text{ holds for }
-    k \in \N_0
-    \text{ and all }
-    w \in \R
-    \: .
-\end{equation*}
-Moreover, $F$ is analytic in the three variables, as it is a sum of products of entire functions. The implicit mapping theorem (listed as 8.6 in \cite{KaupKaup1983}) then tells us that, provided $\pd{}{\nu} F(0, w, k) \neq 0$ for a fixed $k \in \N_0$ (which we will prove soon), there exists an analytic function $\nu(a, w)$, such that $\nu(0,w) = k$ and $F(a, w, \nu(a,w)) = 0$ on the neighbourhood of $a=0$. Since there is a different implicit function for every $k$, we will denote them $\nu_k(a,w)$. After changing our variables back to the physical ones and putting $x_0=0$ (since it only depends on the choice of origin), we see that the energy levels for a fixed magnitude of the perturbation $\alpha$ are
-\begin{equation*}
-    \epsilon_k(p) = b + 2b\;\nu_k\big( \alpha \, \sqrt{2b}, \; p \, \sqrt{\tfrac{2}{b}}  \big) \: ,
-    \qquad k \in \N_0 \: .
-\end{equation*}
-
-For an unperturbed system $\alpha=0$, the allowed energies are the Landau levels $\epsilon_k = b(2k+1)$. We will show that for $p\to\pm\infty$, the energy approaches those unperturbed levels – in our rescaled coordinates, this is equivalent to $\lim_{w\to\pm\infty} \nu_k(a, w) = k$. To show this is the case, we will investigate the behaviour of $\pd{}{a} \nu_k$ and $\pd{}{w} \nu_k$ as $w \to \pm\infty$. First, let us write down the partial derivatives of~$F$:
-\begin{gather*}
-    \pd{}{a} \, F(a,w,\nu) = D_\nu(w) \, D_\nu(-w)
-    \\[5pt]
-    \pd{}{w} \, F(a,w,\nu)
-    = a \, w \, D_\nu(w) \, D_\nu(-w)
-    + a \big(
-        D_\nu(w) \, D_{\nu + 1}(-w) - D_\nu(-w) \, D_{\nu+1}(w)
-    \big)
-\end{gather*}
-In the second equality we used the recursion formulas $\dd{}{w} D_\nu(w) = \frac{w}{2} \, D_\nu(w) - D_{\nu+1}(w)$ and $\dd{}{w} D_{\nu+1}(w) = -\frac{w}{2} \, D_{\nu+1}(w) + (\nu+1) \, D_\nu(w)$ from \cite{GradshteynRyzhik}. The last partial derivative of $F$ is a little tougher, therefore we will start with the small bits and build our way up.
-\begin{align*}
-    \digamma(x) := \dd{}{x} \ln \Gamma(x)
-    \quad \Longrightarrow \quad
-    \dd{}{x} \Gamma(x) = \digamma(x) \, \Gamma(x)
-\end{align*}
-\begin{align*}
-    \pd{}{\alpha} \, \hypF&(\alpha, \gamma; z)
-    = \pd{}{\alpha} \, \sum_{n=0}^\infty \frac{(\alpha)_n \, z^n}{(\gamma)_n \, n!}
-    = \pd{}{\alpha} \, \sum_{n=0}^\infty \frac{\Gamma(\alpha+n)}{\Gamma(\alpha)} \, \frac{z^n}{(\gamma)_n \, n!}
-    \\[5pt]
-    &= \sum_{n=0}^\infty \tfrac{\digamma(\alpha+n) \, \Gamma(\alpha+n) \, \Gamma(\alpha) - \Gamma(\alpha+n) \, \digamma(\alpha) \, \Gamma(\alpha)}{\Gamma(\alpha)^2} \, \frac{z^n}{(\gamma)_n \, n!}
-    = \sum_{n=0}^\infty \big({ \scriptstyle \digamma(\alpha+n) - \digamma(\alpha) }\big) \, \frac{(\alpha)_n \, z^n}{(\gamma)_n \, n!}
-\end{align*}
-\begin{align*}
-    \pd{}{\nu} \, &D_\nu(w)
-    = \pd{}{\nu} \, 2^{\frac{\nu}{2}} \,
-    \e{-\frac{w^2\!}{4}} \,
-    \scalemath{0.8}{
-    \Bigg(
-        \frac{\sqrt{\pi}}{\Gamma\big( \frac{1-\nu}{2} \big)} \,
-        \hypF\big( -\frac{\nu}{2}, \; \frac{1}{2} ; \; \frac{w^2}{2} \big)
-        - \frac{w \, \sqrt{2\pi}}{\Gamma\big( -\frac{\nu}{2} \big)} \;
-        \hypF\big( \frac{1-\nu}{2}, \, \frac{3}{2} ; \; \frac{w^2}{2} \big)
-    \Bigg)
-    }
-    \\
-    &= \frac{\ln 2}{2} \, D_\nu(w) + 2^{\frac{\nu}{2}} \,
-    \e{-\frac{w^2\!}{4}} \, \Big(
-        \scalemath{0.8}{
-            -\frac{\sqrt{\pi} \, \digamma(\frac{1-\nu}{2})}{2 \, \Gamma(\frac{1-\nu}{2})}
-            \hypF\big( -\tfrac{\nu}{2}, \, \tfrac{1}{2}; \, \tfrac{w^2}{2} \big)
-            +\frac{w \, \sqrt{2\pi} \, \digamma(-\frac{\nu}{2})}{2 \, \Gamma(-\frac{\nu}{2})}
-            \hypF\big( \tfrac{1-\nu}{2}, \, \tfrac{3}{2}; \, \tfrac{w^2}{2} \big)
-            \, -
-        }
-        \\
-        &\ph{=} \;
-        \scalemath{0.8}{
-            - \, \frac{\sqrt{\pi}}{2 \, \Gamma(\frac{1-\nu}{2})}
-            \sum_{n=0}^\infty \big({ \scriptstyle \digamma(-\tfrac{\nu}{2}+n) - \digamma(-\tfrac{\nu}{2}) }\big) \, \frac{(-\tfrac{\nu}{2})_n \, (\frac{w^2}{2})^n}{(\tfrac{1}{2})_n \; n!}
-            + \frac{w \, \sqrt{2\pi}}{2 \, \Gamma(-\frac{\nu}{2})}
-            \sum_{n=0}^\infty \big({ \scriptstyle \digamma(\tfrac{1-\nu}{2}+n) - \digamma(\tfrac{1-\nu}{2}) }\big) \, \frac{(\tfrac{1-\nu}{2})_n \, (\tfrac{w^2}{2})^n}{(\tfrac{3}{2})_n \; n!}
-        }
-    \Big)
-\end{align*}
-Here, $(a)_n \equiv a (a+1) ... (a+n-1)$ is the Pochhammer symbol and $\digamma(x)$ is the digamma function.
-
-\textbf{Následují poznámky a nedotažené myšlenky.} Pravděpodobně se budou hodit odhady:
-\begin{gather*}
-    \sum_{n=0}^\infty \frac{z^n}{n! \, (\tfrac{1}{2})_n}
-    = \cosh(2 \sqrt{z})
-    \\[5pt]
-    \sum_{n=0}^\infty \frac{z^n}{n! \, (\tfrac{3}{2})_n}
-    = \frac{1}{2\sqrt{z}} \, \sinh(2 \sqrt{z})
-\end{gather*}
-
-
-
-
+    \label{eqn-dirac-epsilon-F-relation}
+\end{equation}
+Truly, this is simply the equation \eqref{eqn-implicit-pre} after the substitution from \eqref{eqn-w-nu-definition}. The solutions of $F(...) = 0$, i.e. the eigenvalues of the fibre Hamiltonian, are plotted in figures \ref{plots-dirac-repulsive} and \ref{plots-dirac-attractive}.
 
 
 \begin{figure}[p]
@@ -430,3 +348,12 @@ Here, $(a)_n \equiv a (a+1) ... (a+n-1)$ is the Pochhammer symbol and $\digamma(
     \label{plots-dirac-attractive}
 \end{figure}
 
+\bigskip
+
+For each fixed $\alpha$, the relation \eqref{eqn-dirac-epsilon-F-relation} defines a set of non-intersecting analytic functions $\big\{ \epsilon_0(p), \epsilon_1(p), ... \big\}$ defined on the entire $\R$. This can be demonstrated either from the properties of $F$ via the implicit mapping theorem (listed as 8.6 in \cite{KaupKaup1983}), or from the properties of $\Hf_\alpha(p)$ via Theorem \ref{thm-eigenval-holo}. We choose the latter approach:
+\begin{equation*}
+    \Hf_\alpha(p)
+    = -\dd{^2}{x^2} + \big( b \, x + p \big)^2
+    = \Hf_\alpha(0) + 2bp \, x + p^2
+\end{equation*}
+The fibre Hamiltonian is clearly holomorphic in $p$ and meets the assumptions of Theorem \ref{thm-eigenval-holo} for all $p \in \R$.

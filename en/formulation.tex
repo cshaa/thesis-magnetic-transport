@@ -202,7 +202,7 @@ The following theorem is given in \cite{Weidmann} as Theorem~8.18.
     \end{equation*}
     Then the essential spectrum of every self-adjoint extension of $T$ is the same. In~particular, if one self-adjoint extension of $T$ has a pure discrete spectrum, all of them do.
 \end{thm}
-Finally, a useful theorem about differential operators on $L^2$ was compiled from the opening of section 8.4 of \cite{Weidmann}, up to the theorem 8.20 there.
+The previous theorems are especially useful in combination with the following theorem about differential operators on $L^2$, which was compiled from the opening of section 8.4 of \cite{Weidmann}, up to the theorem 8.20 there.
 \begin{thm}[Deficiency indices of differential operators]
     \label{thm-deficiency-diff-op}
     Let $a,b \in \R \cup \{ \pm\infty \}$ such that $a<b$. Let $p \in \Cont^1( \, (a,b), \R \, )$ be a continuously differentiable real function and $q \in \Cont( \, (a,b), \R \, )$ be a continuous real function. We define $L$ to mean:
@@ -229,6 +229,16 @@ Finally, a useful theorem about differential operators on $L^2$ was compiled fro
     Then $n_-(T) = n_+(T)$.
 \end{thm}
 
+Finally, we will remind two important bits from \cite{Kato1995}. The following definition is adapted from Chapter VII, section §2.1.
+\begin{defn}[Holomorphic family of type A]
+    \label{defn-holo-type-A}
+    Let $s \mapsto T(s)$ be an operator-valued function from an open set $\Omega \subset \C$ to closed operators on $\Hilb$. If the domain $\Domain(T(s))$ is identical for all $s$ and the map $s \mapsto T(s) \, \psi$ is holomorphic for all $s \in \Omega$ and $\psi \in \Domain(T(s))$, we say that $T(s)$ is a \textbf{holomorphic family of type A}.
+\end{defn}
+The following theorem is listed as Theorem 3.9 in Chapter VII, section §3.5 of \cite{Kato1995}.
+\begin{thm}[On discrete spectrum of type-A holom. operators]
+    \label{thm-eigenval-holo}
+    Let $I\subset\R$ be an interval on the real axis and let $T(s)$ be a holomorphic family of type A for $s \in \Omega \supset I$. Furthermore, let $T(s)$ be self-adjoint for all $s \in I$ and let the spectrum of $T(s)$ be discrete. Then all eigenvalues of $T(s)$ as functions of $s$ are holomorphic on $I$.
+\end{thm}
 
 
 

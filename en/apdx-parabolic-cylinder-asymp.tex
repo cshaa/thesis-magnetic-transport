@@ -1,0 +1,82 @@
+\section{Asymptotics of \texorpdfstring{$D_\nu(w)$}{Dₙ(w)}}
+\label{apdx-parabolic-cylinder-asymp}
+
+In this section we will demonstrate the asymptotic behaviour of the parabolic function $D_\nu(w)$, which is needed for chapters \ref{chapter-dirac} and \ref{chapter-robin}.
+
+The Digital Library of Mathematical Functions (see \cite{DLMF} in Bibliography) lists several useful identities for functions $D_\nu(w), \, U(a, z)$ and $V(a, z)$ – all three of these functions are called \textit{parabolic cylinder functions}. Equations 12.2.5 and 12.2.15 in \cite{DLMF} state:
+\begin{gather}
+	D_\nu(w) = U(-\tfrac{1}{2} - \nu, \, w)
+	\qquad \text{ for } \nu, w \in \C
+	\: ,
+	\label{eqn-D-via-U}
+	\\[3pt]
+	U(a, \, -z)
+	= - \sin(\pi \, a)
+	\; U(a, \, z)
+	+ \frac{\pi}{\Gamma(\tfrac{1}{2} + a)}
+	\, V(a, \, z)
+	\qquad \text{ for } a, z \in \C
+	\: ,
+	\label{eqn-U-via-U-V}
+\end{gather}
+where $\Gamma(z)$ is the gamma function.
+
+\cite{DLMF} also lists expansions for large $z$. Let $a\in\C$ and $z = x \, \e{\i \varphi}$ where $x \in \R$ and $\varphi \in (-\tfrac{3\pi}{4}, \, \tfrac{3\pi}{4})$, then:
+\begin{gather}
+	U(a, \, z)
+	\sim \e{-\frac{1}{4} z^2} \,
+	z^{-a-\frac{1}{2}} \,
+	\sum_{s=0}^\infty (-1)^s \frac{(\tfrac{1}{2} + a)_{2s}}{s! (2z^2)^s}
+	\qquad \text{ as } x \to +\infty
+	\: ,
+	\label{eqn-U-asymptotic}
+	\\[3pt]
+	V(a, \, z)
+	\sim \sqrt{\tfrac{2}{\pi}} \;\;
+	\e{+\frac{1}{4} z^2} \,
+	z^{+a-\frac{1}{2}} \,
+	\sum_{s=0}^\infty \frac{(\tfrac{1}{2} - a)_{2s}}{s! (2z^2)^s}
+	\qquad \text{ as } x \to +\infty
+	\: ,
+	\label{eqn-V-asymptotic}
+\end{gather}
+where $(a)_s$ is the Pochhammer symbol. These two expansions are listed as 12.9.1 and 12.9.2.
+
+\begin{lemma}
+	\begin{equation*}
+		\lim_{w \to -\infty} D_\nu(w) = 0
+		\qquad \text{if and only if} \qquad
+		\nu \in \N_0
+		\: .
+	\end{equation*}
+	\label{lemma-parabolic-cylinder-asymp}
+\end{lemma}
+\begin{proof}
+	\footnote{Thanks to Gergő Nemes for pointing this out to me, see \url{https://math.stackexchange.com/a/4193412/142487}}
+	By substituting \eqref{eqn-D-via-U} into \eqref{eqn-U-via-U-V}, we get:
+	\begin{align*}
+		D_\nu(-w)
+		= \underbrace{- \sin\big(\pi(-\tfrac{1}{2} - \nu)\big)}_{\cos(\pi \, \nu)}
+		\, U(-\tfrac{1}{2} - \nu, \, w)
+		+ \frac{\pi}{\Gamma(-\nu)}
+		\, V(-\tfrac{1}{2} - \nu, \, w)
+		\: .
+	\end{align*}
+	Now, we use the expansions \eqref{eqn-U-asymptotic} and \eqref{eqn-V-asymptotic} with $x = w, \; \varphi = 0$.
+	\begin{align*}
+		D_\nu(-w)
+		=
+		\underbrace{
+			\vph{\frac{A}{B}}
+			\cos(\pi \, \nu)
+			\; \e{-\frac{1}{4} w^2}
+			\, w^\nu
+			\, \big( 1 + O(w^{-2}) \big)
+		}_{\to \; 0}
+		+\, \frac{\sqrt{2\pi}}{\Gamma(-\nu)}
+		\; \e{+\frac{1}{4} w^2}
+		\, w^{-1-\nu}
+		\, \big( 1 + O(w^{-2})\big) ,
+	\end{align*}
+	where $O(...)$ is the big-O notation. As $w \to \infty$, the first summand decreases exponentially, while the second summand is zero for $\nu\in\N_0$ and increases exponentially for all other values of $\nu$.
+\end{proof}

@@ -154,7 +154,7 @@ This is the parabolic cylinder equation and, as in the previous chapter, its sol
     \nu := \frac{\epsilon - b}{2b}
     \: .
 \end{equation*}
-Except for $\nu\in\N$, the $D_\nu(-w)$ term diverges exponentially, therefore $d$ must be zero in order for $\varphi\in\Domain(\Hf_\alpha)$. Now we apply the boundary condition:
+Except for $\nu\in\N$, the $D_\nu(-w)$ term diverges exponentially, see Lemma \ref{lemma-parabolic-cylinder-asymp} in the appendix, therefore $d$ must be zero in order for $\varphi\in\Domain(\Hf_\alpha)$. Now we apply the boundary condition:
 \begin{align*}
     \alpha \, \varphi(0) &= -\varphi'(0)
     \: ,
@@ -201,12 +201,7 @@ Except for $\nu\in\N$, the $D_\nu(-w)$ term diverges exponentially, therefore $d
     \: .
     \numberthis\label{eqn-robin-spectral}
 \end{align*}
-The equation \eqref{eqn-robin-spectral} is the spectral condition, it defines the implicit function $\nu(p)$, which in turn tells us, which values of $\epsilon \equiv (2\nu + 1) \, b$ are in the spectrum of $\Hf_\alpha$. For $\alpha=0$ (the Dirichlet b.c.), the spectral condition is $D_\nu(p \, \sqrt{\frac{2}{b}})=0$.
-
-\textbf{[Grafy následují na další stránce.]}
-
-
-
+The equation \eqref{eqn-robin-spectral} is the spectral condition, it defines the implicit function $\nu(p)$, which in turn tells us, which values of $\epsilon \equiv (2\nu + 1) \, b$ are in the spectrum of $\Hf_\alpha$. For $\alpha=0$ we get the Neumann b.c. Formally taking $\alpha \to +\infty$, we get the Dirichlet b.c., whose spectral condition is $D_\nu(p \, \sqrt{\frac{2}{b}})=0$.
 
 \begin{figure}[p]
     \centering
