@@ -32,6 +32,8 @@ where $\Hf_\alpha(p)$ is a fibre Hamiltonian satisfying very similar conditions 
     \\[3pt]
     \int_\R x^2 \, |\varphi(x)|^2 \d{x} < \infty \: .
 \end{gather*}
+Sometimes, we will want to explicitly specify not only $\alpha$ and $p$, but also the value of $x_0$. In that case, we will denote the fibre Hamiltonian as $\Hf_{\alpha, \, x_0}(p)$.
+
 Before we start investigating the spectrum, we need to show that the problem is well-posed, i.e. that the Hamiltonian $H_\alpha$ is self-adjoint and bounded from below. Then we will show that the spectrum of $\Hf_\alpha(p)$ is discrete for every $p$, and only after that we will investigate the continuity of the spectrum of $H_\alpha$.
 
 \section{Well-posedness} \label{section-dirac-well-posedness}
@@ -160,7 +162,7 @@ We have shown that $h(p)$ is a closed symmetric operator with many different ext
 We have shown that the Hamiltonian $H_\alpha$ is self-adjoint and bounded from below for each $\alpha\in\R$, and that the fibre Hamiltonian $\Hf_\alpha(p)$ has a discrete spectrum for every $\alpha, p \in \R$. In the next section, we will investigate what are the eigenvalues of $\Hf_\alpha(p)$ and how they depend on $p$ and $\alpha$.
 
 \section{Eigenproblem of the fibre Hamiltonian} \label{section-dirac-eigenproblem}
-In order to use utilize the theorem \ref{thm-direct-integral-spectrum} to find the spectrum of $H_\alpha$, we need to find the eigenvalues of the fibre Hamiltonian for each $p$. That is, we are looking for a real analytic function $\epsilon(p)$, such that for all $p \in \R$ there exists a $\varphi \in \Domain(\Hf_\alpha(p))$ satisfying
+In order to use utilize the theorem \ref{thm-direct-integral-spectrum} to find the spectrum of $H_\alpha$, we need to find the eigenvalues of the fibre Hamiltonian for each $p$. That is, we are looking for a real function $\epsilon(p)$, such that for all $p \in \R$ there exists a $\varphi \in \Domain(\Hf_\alpha(p))$ satisfying
 \begin{equation*}
     \Hf_\alpha(p) \, \varphi = \epsilon(p) \, \varphi \: .
 \end{equation*}
@@ -211,7 +213,7 @@ The two functions are then \textit{“glued together”} by the following equati
     \label{eqn-gluing-equations}
 \end{equation}
 
-As stated in \cite{GradshteynRyzhik}, the solutions to \eqref{eqn-parabolic-cylinder-ode} can be expressed as a linear combination of the functions
+As stated in chapter 9.2 of \cite{GradshteynRyzhik}, the solutions to \eqref{eqn-parabolic-cylinder-ode} can be expressed as a linear combination of the functions
 \begin{equation}
     D_\nu(w) \: , \;\;
     D_\nu(-w) \: , \;\;
@@ -239,12 +241,13 @@ where $D_\nu$ is the so-called \textit{parabolic cylinder function}, which is a 
 Since $1/\Gamma(z)$ is an entire function and $(\alpha, z) \mapsto \hypF(\alpha, \gamma; z)$ is holomorphic on $\C^2$ for all $\gamma$ other than non-positive integers, it follows that $(\nu, w) \mapsto D_\nu(w)$ is also holomorphic on $\C^2$.
 
 In the special case when $\nu \in \N_0$, the function $D_\nu$ can be expressed using the Hermite polynomials $H_n$:
-\begin{align*}
+\begin{equation}
     D_\nu(w)
-    = 2^{\frac{\nu}{2}}
+    = 2^{-\frac{\nu}{2}}
     \exp \big({-}\tfrac{w^2}{4} \big) \,
     H_\nu \big( \frac{w}{\sqrt{2}} \big)
-\end{align*}
+    \label{eqn-parabolic-cylinder-hermite}
+\end{equation}
 The solutions in \eqref{eqn-parabolic-cylinder-solutions} are linearly dependent. For most values of $\nu$, any of the four functions can be expressed as a linear combination of any two others. However, specifically in the case $\nu \in \N_0$ we get $D_\nu(w) = \pm D_\nu(-w)$.
 
 Asymptotic behaviour of the solutions is also given by \cite{GradshteynRyzhik}. As $|w|\to\infty$, the solutions $D_{-\nu-1}(\i w)$ and $D_{-\nu-1}(-\i w)$ grow exponentially. Meanwhile, $D_\nu(w)$ decays exponentially for $w \to +\infty$. Therefore, $D_\nu(w)$ and $D_\nu(-w)$ are better suited for the growth conditions imposed by the domain of $\Hf_\alpha(p)$. We define $c_{+1}, c_{+2}, c_{-1}, c_{-2} \in \C$, such that
@@ -292,7 +295,7 @@ In order for the equation to have a non-trivial solution, the determinant of the
 \end{align*}
 Since we're interested in the allowed values of $\nu$ for given $w_0$ and $\alpha \, \sqrt{2b} \eqqcolon a$, this equation effectively defines an implicit function $\nu(a, w_0)$.
 
-\section{Implicit function for energy levels} \label{section-dirac-implicit-function}
+\section{Energy levels as analytic functions} \label{section-dirac-implicit-function}
 Let $F$ be a function of three real variables given by
 \begin{equation}
     F(a, w, \nu) =
@@ -357,3 +360,80 @@ For each fixed $\alpha$, the relation \eqref{eqn-dirac-epsilon-F-relation} defin
     = \Hf_\alpha(0) + 2bp \, x + p^2
 \end{equation*}
 The fibre Hamiltonian is clearly holomorphic in $p$ and meets the assumptions of Theorem \ref{thm-eigenval-holo} for all $p \in \R$.
+
+It is also true that the energy levels tend to the unperturbed Landau levels $\epsilon_k(p) \to (2k + 1)\, b$ as $p \to \pm \infty$. This follows from the fact that shifting $p$ by a constant amount is equivalent to changing $x_0$. Or more precisely, the fibre Hamiltonian $\Hf_{\alpha, \, x_0}(p)$ is unitarily equivalent to $\Hf_{\alpha, \, x_0 \, + \, p/b}(0)$. The bound states are concentrated around $x=0$ and decay exponentially away from it. Therefore, moving the point interaction further from $x=0$ will cause it to have an diminishing effect, completely vanishing at infinity.
+
+We want to investigate, whether the functions $\epsilon_k(p)$ touch (or even cross) their respective Landau levels. From \eqref{eqn-dirac-epsilon-F-relation} we know that $\epsilon(p) = (2k + 1) \, b$ has a solution precisely if
+\begin{equation*}
+    F(a, w, k) = 0
+    \qquad \text{ for some } w \in \R
+    \: .
+\end{equation*}
+Using \eqref{eqn-parabolic-cylinder-hermite} and the fact that $H_k(-x) = (-1)^k \, H_k(x)$, we get:
+\begin{align*}
+    F(a, w, k)
+    &=
+    D_k(w) \, D_{k+1}(-w)
+    \;+\; D_k(-w) \, D_{k+1}(w)
+    \;+\; a \, D_k(w) \, D_k(-w)
+    \\[10pt]
+    &= 2^{-\frac{k}{2}-\frac{k+1}{2}} \;
+    \e{-\frac{w^2}{4}-\frac{w^2}{4}} \;
+    \Big(
+        H_k\big(\tfrac{w}{\sqrt{2}}\big)
+        H_{k+1}\big(\tfrac{-w}{\sqrt{2}}\big)
+        +
+        H_k\big(\tfrac{-w}{\sqrt{2}}\big)
+        H_{k+1}\big(\tfrac{w}{\sqrt{2}}\big)
+    \Big)
+    \\
+    &+ a \;
+    2^{-\frac{k}{2}-\frac{k}{2}} \;
+    \e{-\frac{w^2}{4}-\frac{w^2}{4}} \;
+    H_k\big(\tfrac{w}{\sqrt{2}}\big)
+    H_k\big(\tfrac{-w}{\sqrt{2}}\big)
+    \\[-5pt]
+    &= 2^{-k-\frac{1}{2}} \;
+    \e{-\frac{w^2}{2}} \;
+    (-1)^{k+1}
+    \Big(
+        \overbrace{
+            H_k\big(\tfrac{w}{\sqrt{2}}\big)
+            H_{k+1}\big(\tfrac{w}{\sqrt{2}}\big)
+            -
+            H_k\big(\tfrac{w}{\sqrt{2}}\big)
+            H_{k+1}\big(\tfrac{w}{\sqrt{2}}\big)
+        }^0
+    \Big)
+    \\
+    &+ a \;
+    2^{-k} \;
+    \e{-\frac{w^2}{2}} \;
+    (-1)^k \;
+    H_k\big(\tfrac{w}{\sqrt{2}}\big)
+    H_k\big(\tfrac{w}{\sqrt{2}}\big)
+    \\[10pt]
+    &= a \;
+    (-1)^k \;
+    2^{-k} \;
+    \e{-( p \, + \, b x_0)^2 / b} \;
+    \Big( H_k\big(\tfrac{p \, + \, b x_0}{\sqrt{b}}\big) \Big)^2
+    \: .
+\end{align*}
+Unsuprisingly, for $a = \alpha \sqrt{2b} = 0$ the expression is zero. This reflects the fact that $\alpha = 0$ is the unperturbed system with constant energy levels $\epsilon_k(p) = (2k+1)b$. For $\alpha \neq 0$, there are several important observations we can make. First, if both $a$ and $k$ are constant, the sign of the expression doesn't change – it is either nonnegative or nonpositive – which means that the functions $\epsilon_k(p)$ never cross the Landau levels.\footnote{The sign of $F$ clearly flips between the energy levels, it is positive above/below each $\epsilon_k(p)$ and negative on the other side. Therefore, if $\epsilon_k(p)$ were to cross the Landau level, the sign of $F$ would have to change.} Second, we can tell how many times each $\epsilon_k(p)$ touches the Landau level; such points must satisfy
+\begin{equation*}
+    F(a, w = \sqrt{2b} ( x_0 + \tfrac{p}{b} ), \, k) =
+    a \;
+    (-1)^k \;
+    2^{-k} \;
+    \e{-( p \, + \, b x_0)^2 / b} \;
+    \Big( H_k\big(\tfrac{p \, + \, b x_0}{\sqrt{b}}\big) \Big)^2
+    = 0
+    \: .
+\end{equation*}
+And because the $k$-th Hermite polynomial $H_k$ has precisely $k$ roots, we know that $\epsilon_k(p)$ touches the $k$-th Landau level in $k$ distinct points and these points do not depend on the value of $\alpha$.
+
+Finally, we can make the following observation:
+\begin{claim}
+    If $\alpha \neq 0$, each energy level $\epsilon_k$ as a function of $p$ is not constant on any interval and its maximum is strictly less than the minimum of $\epsilon_{k+1}$.
+\end{claim}
