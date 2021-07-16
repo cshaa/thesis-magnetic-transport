@@ -98,7 +98,7 @@ Now we will show the self-adjointness, again starting with the fibre Hamiltonian
     }
     + \int_{\R_+}\!\! \overline\varphi \, \big( {-\psi''} + (bx+p)^2 \psi \big) \: .
 \end{align*}
-First, we integrated by parts, assuming that $M\subseteq W^{2,2}(\R_+\!)$ ­– if it were not, the result could not be independent of $\varphi$, as demonstrated in the previous chapter after \eqref{eqn-dirac-fiber-selfadj}. Then we used the fact that functions from $W^{2,2}$ vanish at infinity, and finally we applied the boundary condition $\alpha \varphi(0) + \varphi'(0) = 0$. It is clear that $\psi$ must fulfill the same boundary condition in order for the result to be independent of $\varphi'(0)$. Therefore $M=\Domain(\Hf_\alpha(p))$ and the fibre Hamiltonian is self-adjoint. The Hamiltonian $H$, a direct integral of a self-adjoint operator, is hence also self-adjoint.
+First, we integrated by parts, assuming that $M\subseteq W^{2,2}(\R_+\!)$ ­– if it were not, the result could not be independent of $\varphi$, as demonstrated in the previous chapter after \eqref{eqn-dirac-fiber-selfadj}. Then we used the fact that functions from $W^{2,2}$ vanish at infinity, and finally we applied the boundary condition $\alpha \varphi(0) + \varphi'(0) = 0$. It is clear that $\psi$ must fulfill the same boundary condition in order for the result to be independent of $\varphi(0)$. Therefore $M=\Domain(\Hf_\alpha(p))$ and the fibre Hamiltonian is self-adjoint. The Hamiltonian $H$, a direct integral of a self-adjoint operator, is hence also self-adjoint.
 
 Lastly, we will show that the spetrum of $\Hf_\alpha(p)$ is discrete using the theorem~\ref{thm-sym-extension-spectrum}. We define:
 \begin{equation*}
@@ -108,6 +108,7 @@ Lastly, we will show that the spetrum of $\Hf_\alpha(p)$ is discrete using the t
 then the fibre Hamiltonians for all values of $\alpha$ have a common symmetric restriction:
 \begin{equation*}
     h(p) := \Hf_\alpha(p) |_\Omega
+    \: .
 \end{equation*}
 
 The operator $h(p)$ is closed, we show this directly from the definition: let $\{ \varphi_n \} \subset \Omega$ such that $\varphi_n \to \varphi \in L^2(\R)$, then
@@ -143,6 +144,7 @@ Substituting from the definition, we get
     \: , \\
     \big( (p + bx)^2 - \epsilon \big) \, \varphi(x)
     &= \varphi''(x)
+    \: .
 \end{align*}
 This is the parabolic cylinder equation and, as in the previous chapter, its solutions are in the form
 \begin{equation*}
@@ -203,12 +205,35 @@ Except for $\nu\in\N$, the $D_\nu(-w)$ term diverges exponentially, see Lemma \r
 \end{align*}
 The equation \eqref{eqn-robin-spectral} is the spectral condition, it defines the implicit function $\nu(p)$, which in turn tells us, which values of $\epsilon \equiv (2\nu + 1) \, b$ are in the spectrum of $\Hf_\alpha$. For $\alpha=0$ we get the Neumann b.c. Formally taking $\alpha \to +\infty$, we get the Dirichlet b.c., whose spectral condition is $D_\nu(p \, \sqrt{\frac{2}{b}})=0$.
 
+\section{Energy levels as analytic functions} \label{section-robin-implicit-function}
+Let $F$ be a function of three real variables given by
+\begin{equation}
+    F(\alpha, p, \nu) =
+    \big( \alpha + p\big) \,
+    D_\nu(p \, \sqrt{\tfrac{2}{b}})
+    - \sqrt{2b} \,
+    D_{\nu+1}(p \, \sqrt{\tfrac{2}{b}})
+    \: .
+\end{equation}
+Comparing this with \eqref{eqn-robin-spectral}, we see that:
+\begin{equation}
+    \epsilon(p) \text{ is an eigenvalue of } \Hf_\alpha(p)
+    \; \Longleftrightarrow \;
+    F\Big(
+        \alpha, \,
+        p, \,
+        \frac{\, \epsilon(p) + b \,}{2b}
+    \Big) = 0 \: .
+    \label{eqn-robin-epsilon-F-relation}
+\end{equation}
+The eigenvalues $\epsilon$ as functions of $p$ are plotted in Figure \ref{plots-robin}. As was the case in the previous chapter, Theorem \ref{thm-eigenval-holo} implies that the relation \eqref{eqn-robin-epsilon-F-relation} defines a set of analytic non-intersecting functions $\epsilon_k: \R \to \R$, where $k \in \N_0$.
+
 \begin{figure}[p]
     \centering
     \noindent
-    \includegraphics[width=0.45\textwidth]{grafy/robin-1000.pdf}%
-    \hspace{0.1\textwidth}%
     \includegraphics[width=0.45\textwidth]{grafy/robin-1.pdf}%
+    \hspace{0.1\textwidth}%
+    \includegraphics[width=0.45\textwidth]{grafy/robin0-degennes.pdf}%
     \\[1em]%
     \includegraphics[width=0.45\textwidth]{grafy/robin0.5.pdf}%
     \hspace{0.1\textwidth}%
@@ -216,7 +241,79 @@ The equation \eqref{eqn-robin-spectral} is the spectral condition, it defines th
     \\[1em]%
     \includegraphics[width=0.45\textwidth]{grafy/robin1.pdf}%
     \hspace{0.1\textwidth}%
-    \includegraphics[width=0.45\textwidth]{grafy/robin10.pdf}\par
-    \caption{The first energy levels $\epsilon$ as a function of the $y$-momentum $p$ for $\alpha\,\sqrt{b} = -1000, \, -1, \, 0.5, \, 0.8, \, 1$ and $10$.}
-    \label{plots-robin-positive}
+    \includegraphics[width=0.45\textwidth]{grafy/robin2.pdf}\par
+    \caption{The first energy levels $\epsilon$ as a function of the $y$-momentum $p$ for $\alpha\,\sqrt{b} = -1, \, 0, \, 0.5, \, 0.8, \, 1$ and $2$. The red line marks the predicted minimum $\epsilon = \Theta_0 \, b$.}
+    \label{plots-robin}
 \end{figure}
+
+We are interested in the behavior of $\epsilon_k(p)$ as $p \to \pm \infty$. The fibre Hamiltonian $\Hf_\alpha(p)$ with $p$ fixed is unitarily equivalent to a fibre Hamiltonian with $p=0$ translated by $p/b$, that is $\Hf_\alpha(p) \simeq T_{p/b} \, \Hf_\alpha(0) \, T_{-p/b}$, where $T_c \varphi(x) = {\varphi(x - c)}$. If~$p < 0$, this causes the Robin boundary to move to the left, away from the minimum of the effective potential. As $p \to -\infty$, the influence of the boundary decreases and the fibre Hamiltonian approaches that of a one-dimensional harmonic oscillator, hence $\epsilon_k \to b \, (2k+1)$. On the other hand, $p \to +\infty$ moves the boundary to the right, making increasingly larger areas with low effective potential forbidden, hence $\epsilon_k \to +\infty$.
+
+These asymptotics make it clear that all energy levels above the lowest Landau level $\epsilon = b$ are allowed. However, one question still remains: what is the lowest alowed energy level? For the Neumann boundary ($\alpha = 0$), \cite{Noel2012} has proven the minimum energy to be
+\begin{equation}
+    \Theta_0
+    \; := \;
+    \min_{p \in \R \vph{\frac{1}{1}}}
+    \frac{\epsilon_0(p)}{b}
+    \; = \;
+    0.590106125 \pm 10^{-9}
+    \: .
+\end{equation}
+The constant $\Theta_0$ is called the \textit{de Gennes constant} by some (e.g. \cite{ExnerLotoreichik2018}). For $\alpha > 0$ we will use the fact that the quadratic form of $\Hf_\alpha(p)$ is nonincreasing in $\alpha$. Let $\beta > \alpha$, then:
+\begin{align*}
+    \big( \varphi, \, \Hf_\alpha(p) \, \varphi \big)
+    &= - \int_{\R_+} \overline\varphi \varphi''
+    + \int_{\R_+} (bx+p)^2 |\varphi|^2
+    \\[5pt]
+    &= -\alpha \, |\varphi(0)|^2
+    + \norm{\varphi'}_{L^2(\R_+)}
+    + \norm{\varphi}_{L^2_{(bx+p)^2}(\R_+)}
+    \\[5pt]
+    &> -\beta \, |\varphi(0)|^2
+    + \norm{\varphi'}_{L^2(\R_+)}
+    + \norm{\varphi}_{L^2_{(bx+p)^2}(\R_+)}
+    = \big( \varphi, \, \Hf_\beta(p) \, \varphi \big)
+    \: .
+    \numberthis\label{eqn-robin-form-monotonous}
+\end{align*}
+Therefore the minimum energy for $\Hf_\alpha(p), \, \alpha > 0$ will be less than $\Theta_0 \, b$.
+
+For $\alpha < 0$, on the other hand, the inequality \eqref{eqn-robin-form-monotonous} implies that the minimum energy will be greater than $\Theta_0 \, b$. We will prove that it is still less than the lowest Landau level $b$. Searching for solutions of $F(...) = 0$ along $\epsilon = b$, we get:
+\begin{align*}
+    0 &=
+    F(\alpha, \, p, \, \nu = 0)
+    \\[5pt]
+    0 &=
+    \big( \alpha + p\big) \,
+    D_0(p \, \sqrt{\tfrac{2}{b}})
+    - \sqrt{2b} \,
+    D_1(p \, \sqrt{\tfrac{2}{b}})
+    \\[5pt]
+    0 &=
+    \big( \alpha + p\big) \,
+    2^{-\frac{0}{2}} \,
+    \e{-\frac{w^2}{4}} \,
+    H_0\big( \frac{p}{\sqrt{b}} \big)
+    \; - \;
+    \sqrt{2b} \;
+    2^{-\frac{1}{2}} \,
+    \e{-\frac{w^2}{4}} \,
+    H_1\big( \frac{p}{\sqrt{b}} \big)
+    \\[5pt]
+    0 &=
+    \big( \alpha + p\big) \,
+    H_0\big( \frac{p}{\sqrt{b}} \big)
+    \; - \;
+    \sqrt{b} \,
+    H_1\big( \frac{p}{\sqrt{b}} \big)
+    \\[5pt]
+    0 &=
+    \big( \alpha + p\big)
+    \; - \;
+    \sqrt{b} \;
+    2 \; \frac{p}{\sqrt{b}}
+    \\
+    p &= \alpha
+\end{align*}
+Clearly, the solution always exists. It is straightforward to check that the sign of $F$ changes at $\alpha=p$, indicating that $\epsilon_0(p)$ actually \textit{crosses} the lowest Landau level. And since $\epsilon_0(p \to +\infty) \to +\infty$, the only way it can cross $\epsilon = b$ and still approach it as $p\to -\infty$ is by approaching it \textit{from below}. Thus, we have shown that $\min \epsilon_0(p) < b$.
+
+
