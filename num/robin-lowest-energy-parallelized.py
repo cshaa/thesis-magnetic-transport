@@ -1,7 +1,7 @@
 from multiprocessing import cpu_count, Pool, set_start_method
 exec(open("./robin-lowest-energy.py").read())
 
-num_threads = 6
+num_threads = 8
 
 if __name__ == '__main__':
     set_start_method("spawn")
