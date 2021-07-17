@@ -1,21 +1,17 @@
 import decimal
+from multiprocessing import cpu_count, Pool
 from mpmath import mp
 from itertools import chain
 
 def float_range(start, stop, step):
-  while start < stop:
+  while start <= stop:
     yield float(start)
     start += decimal.Decimal(step)
 
 
-
-step_p = 0.001
-step_e = 0.01
-step_a = 0.1
-
 # start searching in the most likely place
 # then continue outward
-def range_p():
+def range_p(step_p: float):
     return chain(
         float_range(-1,  1, step_p),
         float_range( 1,  2, step_p),
@@ -26,7 +22,7 @@ def range_p():
 # after reaching this energy, abort
 min_e = -5
 
-def F(a, p, e):
+def F(a: float, p: float, e: float) -> float:
     return (
         (a + p)
         * mp.pcfd((e-1)/2, p * mp.sqrt(2))
@@ -35,30 +31,57 @@ def F(a, p, e):
         * mp.pcfd((e+1)/2, p * mp.sqrt(2))
     )
 
-def is_allowed_energy(a, e):
-    for p in range_p():
+def is_allowed_energy(a: float, e: float, step_p: float) -> float:
+    for p in range_p(step_p):
         if F(a, p, e) >= 0:
             return True
     return False
 
-def find_minimum_energy(a, start_e):
+def find_minimum_energy(
+    a: float, start_e: float,
+    step_p: float, step_e: float
+) -> float:
     e = start_e
-    while is_allowed_energy(a, e):
+    while is_allowed_energy(a, e, step_p):
         e -= step_e
         if e < min_e:
             return float("nan")
 
     return e
 
-def print_minimum_energies(min_a, max_a):
-    e = 1
-    for a in float_range(min_a, max_a, step_a):
-        e = find_minimum_energy(a, e)
+def boundary_minimum_energy_tuple(
+    a: float, start_e: float,
+    step_p: float, step_e: float
+) -> tuple[float, float]:
+    return (a, find_minimum_energy(a, start_e, step_p, step_e))
+
+def print_estimates(
+    estimates: list[tuple[float, float]],
+    prec: int = 1
+):
+    print('boundary, \t energy', flush=True)
+    for (a, e) in estimates:
         print(
-            "{0:.1f}, \t {1:.2f}".format(a, e),
+            "{0:.1f}, \t {1:.{prec}f}".format(a, e, prec=prec),
             flush=True
         )
 
+e = 1.
+rough_estimates = [
+    (a, e := find_minimum_energy(a, e, 0.01, 0.1))
+    for a in float_range(-2, 2, 0.1)
+]
 
-print('boundary, \t energy', flush=True)
-print_minimum_energies(-2, 2)
+print_estimates(rough_estimates)
+
+pool = Pool(cpu_count())
+
+good_estimates = pool.starmap(
+    boundary_minimum_energy_tuple,
+    [(a, e, 0.01, 0.1) for (a, e) in rough_estimates]
+)
+
+print_estimates(good_estimates)
+
+    
+
