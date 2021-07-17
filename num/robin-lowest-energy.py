@@ -54,7 +54,10 @@ def print_minimum_energies(min_a, max_a):
     e = 1
     for a in float_range(min_a, max_a, step_a):
         e = find_minimum_energy(a, e)
-        print("{0:.1f}, \t {1:.2f}".format(a, e), flush=True)
+        print(
+            "{0:.1f}, \t {1:.2f}".format(a, e),
+            flush=True
+        )
 
 
 print('boundary, \t energy', flush=True)

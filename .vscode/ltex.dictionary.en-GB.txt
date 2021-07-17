@@ -20,3 +20,9 @@ Kovařík
 nondecreasing
 nonincreasing
 Hislop
+Gennes
+mpmath
+nonnegative
+nonpositive
+infimum
+supremum
