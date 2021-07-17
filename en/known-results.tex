@@ -152,9 +152,9 @@ In the section 7.2.2 of their textbook on Quantum Waveguides, \cite{ExnerKovarik
     + \sum_{j\in\Z} \alpha \, \delta(x - x_0 - j \, \ell) \, \delta(y)
     \: ,
 \end{equation*}
-where the potential $V = \sum\alpha\delta(...)\delta(y)$ is a Dirac comb situated on the axis $y=0$. In classical physics, such a potential would only affect a zero-measure family of initial conditions, therefore the trajectory of particles would \textit{almost surely} be unperturbed. The well-defined Hamiltonian operator is as follows.
+where the potential $V = \sum\alpha\delta(...)\delta(y)$ is a Dirac comb situated on the axis $y=0$. In classical physics, such a potential would only affect a zero-measure family of initial conditions, therefore the trajectory of particles would \textit{almost surely} be unperturbed. This operator is not translationally invariant in the continuous sense – it is periodic in $x$ – but we list it nonetheless as an interesting example. The rigorous definition of the Hamiltonian operator is:
 \begin{defn}[Hamiltonian with a Dirac comb]
-    Let $b, \ell \in \R \setminus \{0\}$ and $\alpha, x_0 \in \R$. We define $\Omega = (\R \setminus \{ x_0 + j \, \ell \;|\; j \in \Z \}) \times \R$. Then the Hamiltonian is given by:
+    Let $b, \ell \in \R \setminus \{0\}$ and $\alpha, x_0 \in \R$. We define $\Omega = \R^2 \setminus \{ (x_0 + j \, \ell, \; 0) \;|\; j \in \Z \}$. Then the Hamiltonian is given by:
     \begin{equation*}
         \big( H\psi \big)(x, y)
         = \bigg(

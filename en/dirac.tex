@@ -1,21 +1,26 @@
 \chapter{Delta potential} \label{chapter-dirac}
-In this chapter we will examine the Landau Hamiltonian with a potential perturbation (see definition \ref{defn-perturb-potential}), formally given by the potential $V(x) = \alpha\,\delta_{x_0}$, i.e. the Dirac delta in $x=x_0$ with a coupling constant (\textit{magnitude}) $\alpha \in \R$. Since such a~potential is a~distribution and not a~locally integrable function, the Hamiltonian is rigorously defined as:
-\begin{equation*}
-    \big( H_\alpha \psi \big)(x, y) = \left( -\pd{^2}{x^2} + \big( \i\pd{}{y} + bx \big)^2 \right) \; \psi(x,y)
-    \quad \text{a.e.\footnotemark on } (\R \setminus \{ x_0 \}) \times \R
-\end{equation*}
-\footnotetext{The pointwise equality is to be understood \textit{almost everywhere} with respect to the Lebesgue measure on $\R^2$.}
-with a domain given by the conditions
-\begin{gather*}
-    \psi \in W^{1,2}(\R^2) \; \cap \; W^{2,2}\big( \,(\R \setminus \{ x_0 \}) \times \R \, \big) \: ,
-    \\[5pt]
-    \lim_{x \to x_0 +} \pd{}{x}\psi(x,y)\; - \lim_{x \to x_0 -} \pd{}{x}\psi(x,y) = \alpha \lim_{x \to x_0} \!\psi(x, y)
-    \quad \text{for a.e. } y \: ,\footnotemark
-    \\[5pt]
-    \int_{\R^2} x^2 \, \big|\, \psi(x,y) \,\big|^2 \, \d{x}\d{y} < \infty \: .
-\end{gather*}
-\footnotetext{The equality holds for \textit{almost every} $y$ and $\lim_{x\to x_0}$ means the \textit{essential} limit with respect to the Lebesgue measure on $\R$.}
-Then, by an approach analogous to \eqref{eqn-vague-direct-integral-decomp}, one can show that $H_\alpha$ is unitarily equivalent to a direct integral:
+In this chapter we will examine the Landau Hamiltonian with a potential perturbation (see definition \ref{defn-perturb-potential}), formally given by the potential $V(x) = \alpha\,\delta_{x_0}$, i.e. the Dirac delta in $x=x_0$ with a coupling constant (\textit{magnitude}) $\alpha \in \R$. Since such a~potential is a~distribution and not a~locally integrable function, the Hamiltonian is rigorously defined as follows.
+\begin{defn}[Landau Hamiltonian with a Dirac delta perturbation]
+    \label{defn-hamiltonian-dirac}
+    \ph{.}\\
+    Let $\alpha, b \in \R \setminus \{ 0 \}$ and $x_0 \in \R$. We define a linear operator $H_\alpha$ on $L^2(\R^2)$
+    \begin{equation*}
+        \big( H_\alpha \psi \big)(x, y) := \left( -\pd{^2}{x^2} + \big( \i\pd{}{y} + bx \big)^2 \right) \; \psi(x,y)
+        \quad \text{a.e.\footnotemark on } (\R \setminus \{ x_0 \}) \times \R
+    \end{equation*}
+    \footnotetext{The pointwise equality is to be understood \textit{almost everywhere} with respect to the Lebesgue measure on $\R^2$.}
+    with a domain given by the conditions
+    \begin{gather*}
+        \psi \in W^{1,2}(\R^2) \; \cap \; W^{2,2}\big( \,(\R \setminus \{ x_0 \}) \times \R \, \big) \: ,
+        \\[5pt]
+        \lim_{x \to x_0 +} \pd{}{x}\psi(x,y)\; - \lim_{x \to x_0 -} \pd{}{x}\psi(x,y) = \alpha \lim_{x \to x_0} \!\psi(x, y)
+        \quad \text{for a.e. } y \: ,\footnotemark
+        \\[5pt]
+        \int_{\R^2} x^2 \, \big|\, \psi(x,y) \,\big|^2 \, \d{x}\d{y} < \infty \: .
+    \end{gather*}
+    \footnotetext{The equality holds for \textit{almost every} $y$ and $\lim_{x\to x_0}$ means the \textit{essential} limit with respect to the Lebesgue measure on $\R$.}
+\end{defn}
+By an approach analogous to \eqref{eqn-vague-direct-integral-decomp}, one can show that $H_\alpha$ is unitarily equivalent to a direct integral:
 \begin{equation*}
     H_\alpha \simeq \int^\oplus_\R \Hf_\alpha(p) \d{p} \: ,
 \end{equation*}
@@ -420,7 +425,7 @@ Using \eqref{eqn-parabolic-cylinder-hermite} and the fact that $H_k(-x) = (-1)^k
     \Big( H_k\big(\tfrac{p \, + \, b x_0}{\sqrt{b}}\big) \Big)^2
     \: .
 \end{align*}
-Unsuprisingly, for $a = \alpha \sqrt{2b} = 0$ the expression is zero. This reflects the fact that $\alpha = 0$ is the unperturbed system with constant energy levels $\epsilon_k(p) = (2k+1)b$. For $\alpha \neq 0$, there are several important observations we can make. First, if both $a$ and $k$ are constant, the sign of the expression doesn't change – it is either nonnegative or nonpositive – which means that the functions $\epsilon_k(p)$ never cross the Landau levels.\footnote{The sign of $F$ clearly flips between the energy levels, it is positive above/below each $\epsilon_k(p)$ and negative on the other side. Therefore, if $\epsilon_k(p)$ were to cross the Landau level, the sign of $F$ would have to change.} Second, we can tell how many times each $\epsilon_k(p)$ touches the Landau level; such points must satisfy
+Unsuprisingly, for $a = \alpha \sqrt{2b} = 0$ the expression is zero. This reflects the fact that $\alpha = 0$ is the unperturbed system with constant energy levels $\epsilon_k(p) = (2k+1)b$. For $\alpha \neq 0$, there are several important observations we can make. First, if both $a$ and $k$ are constant, the sign of the expression doesn't change – it is either nonnegative or nonpositive – which means that the functions $\epsilon_k(p)$ never cross the Landau levels.\footnote{The sign of $F$ clearly flips between the energy levels, it is positive above/below each $\epsilon_k(p)$ and negative on the other side. Therefore, if $\epsilon_k(p)$ were to cross the Landau level, the sign of $F$ would have to change.} Second, for given $\alpha \neq 0$, either all energy functions are above their Landau level, or all are under it – this follows from the fact that the sign of $F$ alternates when incrementing $k$. Third, we can tell how many times each $\epsilon_k(p)$ touches the Landau level; such points must satisfy
 \begin{equation*}
     F(a, w = \sqrt{2b} ( x_0 + \tfrac{p}{b} ), \, k) =
     a \;
@@ -431,9 +436,59 @@ Unsuprisingly, for $a = \alpha \sqrt{2b} = 0$ the expression is zero. This refle
     = 0
     \: .
 \end{equation*}
-And because the $k$-th Hermite polynomial $H_k$ has precisely $k$ roots, we know that $\epsilon_k(p)$ touches the $k$-th Landau level in $k$ distinct points and these points do not depend on the value of $\alpha$.
+And because the $k$-th Hermite polynomial $H_k$ has precisely $k$ roots, we know that the $k$-th Landau level touches an energy function in $k$ distinct points and these points do not depend on the value of $\alpha$.
 
 Finally, we can make the following observation:
 \begin{claim}
-    If $\alpha \neq 0$, each energy level $\epsilon_k$ as a function of $p$ is not constant on any interval and its maximum is strictly less than the minimum of $\epsilon_{k+1}$.
+    If $\alpha \neq 0$, then each energy function $\epsilon_k(p)$ is not constant on any interval and its supremum is strictly less than the infimum of $\epsilon_{k+1}$.
 \end{claim}
+\begin{proof}
+    We have shown that $\epsilon_k$ are analytic – an analytic function which is constant on an interval is constant everywhere. However, we know that $\epsilon_k(p) \neq b \, (2k+1)$ almost everywhere, yet $\epsilon_k(p) \to (2k+1)$, hence it is constant nowhere.
+
+    The fact that the $k$-th Landau level touches an energy function $k$ times for any $\alpha \neq 0$, even infinitesimally small, implies that each $\epsilon_k$ touches \textit{its own} Landau level. There is no $\epsilon_k(p)$ that touches the $(k\pm 1)$-th Landau level – if there were one, it would have to touch the Landau level exactly at the same point as $\epsilon_{k\pm 1}(p)$, because the touching points do not depend on $\alpha$. However, this would violate the non-intersection of energy levels. Combined with the fact that all energy functions are above (or below) their Landau levels, this proves that there is a gap between the extrema of adjacent energy functions.
+\end{proof}
+
+\begin{claim}
+    If $\alpha > 0$, then $\epsilon_k \geq b \, (2k+1)$, and if $\alpha < 0$, then $\epsilon_k \leq b \, (2k+1)$.
+\end{claim}
+\begin{proof}
+    We have already shown that all energy functions are either above or below their Landau levels. Now, which is it? This question can be decided using the quadratic form of $\Hf_\alpha(p)$. Let $\alpha < \beta$, then:
+    \begin{align*}
+        (\varphi, \, \Hf_\alpha(p) \, \varphi)
+        &= -\int_\R \overline{\varphi} \varphi''
+        + \int_\R (b x + p)^2 \;\, \big|\varphi(x)\big|^2 \; \d{x}
+        \\[5pt]
+        &= \alpha \, \big|\varphi(x_0)\big|^2
+        + \norm{\varphi'}_{L^2(\R)}^2
+        + \norm{\varphi}_{L^2_{(bx+p)^2}(\R)}
+        \\[5pt]
+        &\leq \beta \, \big|\varphi(x_0)\big|^2
+        + \norm{\varphi'}_{L^2(\R)}^2
+        + \norm{\varphi}_{L^2_{(bx+p)^2}(\R)}
+        =
+        (\varphi, \, \Hf_\beta(p) \, \varphi)
+        \: .
+    \end{align*}
+    The quadratic form of $\Hf_\alpha(p)$ is clearly nondecreasing in $\alpha$. Therefore, the energy functions will be under the Landau level for $\alpha$ negative and above it for $\alpha$ positive.
+\end{proof}
+
+Now, we have all we need to characterize the spectrum of $H_\alpha$ using Theorem~\ref{thm-direct-integral-spectrum}. If $\alpha \neq 0$, the pure point spectrum is clearly empty, because the functions $\epsilon_k(p)$ are not constant, hence the set $\{ p \; | \; \epsilon(p) = E \}$ has measure zero for every $E$. Furthermore, as $H_\alpha$ is a direct integral of an analytic operator-valued function $\Hf_\alpha(p)$ whose spectrum is discrete, the singular continuous spectrum of $H_\alpha$ is also empty, as proven by \cite{Filonov2006}. Thus, the spectrum of $H_\alpha$ will be entirely absolute continuous, consisting of disjoint bands spanning from the Landau levels up (for $\alpha>0$) or down (for $\alpha<0$).
+
+\section{Summary}
+The following theorem summarizes the information obtained about the spectrum of the Landau Hamiltonian with a Dirac delta perturbation:
+\begin{thm}
+    Let $\alpha, \, b$ and $H_\alpha$ be as in Definition~\ref{defn-hamiltonian-dirac}. If $\alpha>0$, then for each $k \in \N_0$ there exists $E_k \in (0, 2)$ such that
+    \begin{equation*}
+        \Sp(H_\alpha) = \SpAc(H_\alpha) =
+        \bigcup_{k \in \N_0}
+        \big[ b \, (2k+1), \; b \, (2k+1+E_k) \big]
+        \: .
+    \end{equation*}
+    If $\alpha<0$, then there exists $E_0 \in (0, \infty)$ and for each $n \in \N$ there is $E_n \in (0, 2)$ such that
+    \begin{equation*}
+        \Sp(H_\alpha) = \SpAc(H_\alpha) =
+        \bigcup_{k \in \N_0}
+        \big[ b \, (2k+1-E_k), \; b \, (2k+1) \big]
+        \: .
+    \end{equation*}
+\end{thm}

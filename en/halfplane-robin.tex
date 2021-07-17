@@ -34,6 +34,8 @@ Using \eqref{eqn-vague-direct-integral-decomp}, we can once again show that the 
 \end{equation}
 When $\alpha=0$, the problem reduces to the Neumann boundary condition.
 
+
+
 \section{Well-posedness}
 We will start by showing that the Hamiltonian is bounded from below, starting with the fibre Hamiltonian:
 \begin{align*}
@@ -268,7 +270,7 @@ The constant $\Theta_0$ is called the \textit{de Gennes constant} by some (e.g. 
     + \norm{\varphi'}_{L^2(\R_+)}
     + \norm{\varphi}_{L^2_{(bx+p)^2}(\R_+)}
     \\[5pt]
-    &> -\beta \, |\varphi(0)|^2
+    &\geq -\beta \, |\varphi(0)|^2
     + \norm{\varphi'}_{L^2(\R_+)}
     + \norm{\varphi}_{L^2_{(bx+p)^2}(\R_+)}
     = \big( \varphi, \, \Hf_\beta(p) \, \varphi \big)
@@ -315,5 +317,7 @@ For $\alpha < 0$, on the other hand, the inequality \eqref{eqn-robin-form-monoto
     p &= \alpha
 \end{align*}
 Clearly, the solution always exists. It is straightforward to check that the sign of $F$ changes at $\alpha=p$, indicating that $\epsilon_0(p)$ actually \textit{crosses} the lowest Landau level. And since $\epsilon_0(p \to +\infty) \to +\infty$, the only way it can cross $\epsilon = b$ and still approach it as $p\to -\infty$ is by approaching it \textit{from below}. Thus, we have shown that $\min \epsilon_0(p) < b$.
+
+Our estimate of the minimum energy for different values of $\alpha$ still leaves a lot to be desired. That is why we also computed a numerical approximation using \textit{mpmath} (see \cite{mpmath}). A table of the computed values and the code used to compute them is available in Section \ref{apdx-pythom} of the Appendix.
 
 

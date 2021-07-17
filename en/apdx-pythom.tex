@@ -1,0 +1,25 @@
+\section{Minimal energies for the Robin boundary condition}
+\label{apdx-pythom}
+In this section we list the numerically computed minimal energies for the Landau Hamiltonian in a half-plane with a Robin boundary.
+
+\ph{.}
+\begin{minipage}{\linewidth-25pt}
+    \vspace{\baselineskip}
+    \centering
+    \begin{tabular}{ c|c }
+        \bfseries $\alpha / \sqrt{b}$ &
+        \bfseries $\epsilon / b \pm 0.01$
+		\csvreader[ head to column names ]{../num/robin-lowest-energy-table.csv}{}
+        {
+            \csviffirstrow{\\\hline}{\\}
+            $\boundary$ & $\energy$
+        }
+    \end{tabular}
+    \vspace{0.3\baselineskip}
+    \vspace{\baselineskip}
+\end{minipage}
+
+\noindent
+Now follows the code which was used to compute the energies.
+
+\lstinputlisting[language=Python]{../num/robin-lowest-energy.py}
