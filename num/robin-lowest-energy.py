@@ -1,5 +1,4 @@
 import decimal
-from multiprocessing import cpu_count, Pool
 from mpmath import mp
 from itertools import chain
 
@@ -65,23 +64,3 @@ def print_estimates(
             "{0:.1f}, \t {1:.{prec}f}".format(a, e, prec=prec),
             flush=True
         )
-
-e = 1.
-rough_estimates = [
-    (a, e := find_minimum_energy(a, e, 0.01, 0.1))
-    for a in float_range(-2, 2, 0.1)
-]
-
-print_estimates(rough_estimates)
-
-pool = Pool(cpu_count())
-
-good_estimates = pool.starmap(
-    boundary_minimum_energy_tuple,
-    [(a, e, 0.01, 0.1) for (a, e) in rough_estimates]
-)
-
-print_estimates(good_estimates)
-
-    
-
