@@ -20,6 +20,22 @@ In this section we list the numerically computed minimal energies for the Landau
 \end{minipage}
 
 \noindent
-Now follows the code which was used to compute the energies.
+Now follows the algorithm which was used to compute the energies.
 
 \lstinputlisting[language=Python]{../num/robin-lowest-energy.py}
+\begin{lstlisting}[language=Python]
+
+# set up limits and steps
+step_e = 0.1
+step_p = 0.01
+step_a = 0.1
+min_a = -2
+max_a = 2
+
+estimates = [
+    (a, e := find_minimum_energy(a, e, step_p, step_e))
+    for a in float_range(min_a, max_a, step_a)
+]
+
+print_estimates(estimates)
+\end{lstlisting}
