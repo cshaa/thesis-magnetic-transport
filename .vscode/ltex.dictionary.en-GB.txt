@@ -26,3 +26,10 @@ nonnegative
 nonpositive
 infimum
 supremum
+nonzero
+nonhomogeneous
+Gesztesy
+Albeverio
+Høegh-Krohn
+Broglie
+nondegenerate

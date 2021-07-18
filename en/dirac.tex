@@ -39,6 +39,10 @@ where $\Hf_\alpha(p)$ is a fibre Hamiltonian satisfying very similar conditions 
 \end{gather*}
 Sometimes, we will want to explicitly specify not only $\alpha$ and $p$, but also the value of $x_0$. In that case, we will denote the fibre Hamiltonian as $\Hf_{\alpha, \, x_0}(p)$.
 
+\medskip
+
+As discussed in section 1.3.2 of \cite{Albeverio2005}, Hamiltonians with a $\delta$-interaction are the limit\footnote{In the strong resolvent sense.} of Hamiltonians with strongly peaked regular potentials such as $V_n(x) = n \, \e{-n^2 x^2}$. The Hamiltonian $H_\alpha$ can therefore be thought of as an approximation of a strongly peaked potential supported along $x = x_0$, provided that the characteristic width of the potential is much less than the de Broglie wavelength of the studied particle.
+
 Before we start investigating the spectrum, we need to show that the problem is well-posed, i.e. that the Hamiltonian $H_\alpha$ is self-adjoint and bounded from below. Then we will show that the spectrum of $\Hf_\alpha(p)$ is discrete for every $p$, and only after that we will investigate the continuity of the spectrum of $H_\alpha$.
 
 \section{Well-posedness} \label{section-dirac-well-posedness}
@@ -261,7 +265,7 @@ Asymptotic behaviour of the solutions is also given by \cite{GradshteynRyzhik}. 
     \label{eqn-dirac-parabolic-cylinder-two-solutions}
 \end{equation}
 
-Furthermore, if $\nu \notin \N_0$, the solution $D_\nu(w)$ diverges for $w \to -\infty$, as demonstrated in Lemma \ref{lemma-parabolic-cylinder-asymp} in Chapter \ref{apdx-parabolic-cylinder-asymp} of the appendix. Therefore, $c_{-1} = c_{+2} = 0$ in order for $\varphi$ to be integrable. On the other hand, if $\nu \in \N_0$, the solutions aren't independent (as discussed above), therefore we can also set $c_{-1} = c_{+2} = 0$ without loss of generality. Applying the gluing equations \eqref{eqn-gluing-equations}, we get:
+Furthermore, if $\nu \notin \N_0$, the solution $D_\nu(w)$ diverges for $w \to -\infty$, as demonstrated in Lemma \ref{lemma-parabolic-cylinder-asymp} in chapter \ref{apdx-parabolic-cylinder-asymp} of the appendix. Therefore, $c_{-1} = c_{+2} = 0$ in order for $\varphi$ to be integrable. On the other hand, if $\nu \in \N_0$, the solutions aren't independent (as discussed above), therefore we can also set $c_{-1} = c_{+2} = 0$ without loss of generality. Applying the gluing equations \eqref{eqn-gluing-equations}, we get:
 \begin{gather*}
     c_{+1} \, D_\nu(w_0) = c_{-2} \, D_\nu(-w_0) \\[5pt]
     c_{+1} \, \dd{}{w} D_\nu(w) \big|_{w_0} - c_{-2} \, \dd{}{w} D_\nu(-w) \big|_{w_0} = \alpha \, \sqrt{2b} \; c_{+1} \, D_\nu(w_0)

@@ -8,19 +8,18 @@ In this section we list the numerically computed minimal energies for the Landau
     \centering
     \begin{tabular}{ c|c }
         \bfseries $\alpha / \sqrt{b}$ &
-        \bfseries $\epsilon / b \pm 0.01$
+        \bfseries $\epsilon / b \pm 0.001$
 		\csvreader[ head to column names ]{../num/robin-lowest-energy-table.csv}{}
         {
             \csviffirstrow{\\\hline}{\\}
             $\boundary$ & $\energy$
         }
     \end{tabular}
-    \vspace{0.3\baselineskip}
-    \vspace{\baselineskip}
+    \vspace{0.2\baselineskip}
 \end{minipage}
 
 \noindent
-Now follows the algorithm which was used to compute the energies.
+The following naïve algorithm was used to compute the energies. Better performance could be achieved in many ways, for example by using the Newton's method to find the solutions of $F(...) = 0$ and the Levenberg-Marquardt algorithm to find the minimum.
 
 \lstinputlisting[language=Python]{../num/robin-lowest-energy.py}
 \begin{lstlisting}[language=Python]
