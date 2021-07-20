@@ -150,10 +150,34 @@ In the section 7.2.2 of their textbook on Quantum Waveguides, \cite{ExnerKovarik
     H
     = \big(P_y + b \, x \big)^2
     + P_x^{\,2}
-    + \sum_{j\in\Z} \alpha \, \delta(x - x_0 - j \, \ell) \, \delta(y)
+    + \sum_{j\in\Z} \alpha \, \delta(x - x_0 - j \, \ell, \, y) \, \delta(y)
     \: ,
 \end{equation*}
-where the potential $V = \sum\alpha\delta(...)\delta(y)$ is a Dirac comb situated on the axis $y=0$. In classical physics, such a potential would only affect a zero-measure family of initial conditions, therefore the trajectory of particles would \textit{almost surely} be unperturbed. This operator is not translationally invariant in the continuous sense – it is periodic in $x$ – but we list it nonetheless as an interesting example. The rigorous definition of the Hamiltonian operator is:
+where the potential $V = \sum\alpha\delta(...)\delta(y)$ is a Dirac comb situated on the axis $y=0$. (Proper treatment of point interactions in two dimensions requires special care, see also chapter I.5 of \cite{Albeverio2005} or chapter 5.1 of \cite{ExnerKovarik2015}.) In classical physics, such a potential would only affect a zero-measure family of initial conditions, therefore the trajectory of particles would \textit{almost surely} be unperturbed. This operator is not translationally invariant in the continuous sense – it is periodic in $x$ – but we list it nonetheless as an interesting example.
+\begin{defn}[$\delta$-interaction in two dimensions]
+    Let $\psi \in L^2(\R^2)$ and $\vec x_0 \in \R^2$. We define:
+    \begin{gather*}
+        L_0(\psi, \vec x_0)
+        = - \lim_{\vec x \to \vec x_0}
+        \frac{2\pi}{\ln| \vec x - \vec x_0 |} \,
+        \psi(\vec x)
+        \: ,
+        \\[7pt]
+        L_1(\psi, \vec x_1)
+        = \lim_{\vec x \to \vec x_0}
+        \Big(
+            \psi(\vec x) +
+            \frac{\ln| \vec x - \vec x_0 |}{2\pi} \,
+            L_0(\psi, \vec x_0)
+        \Big)
+        \: .
+    \end{gather*}
+    We identify the two-dimensional $\delta$-interaction of strength $\alpha$ in $\vec x_0$ with the following boundary condition:
+    \begin{equation*}
+        L_1(\psi, \vec x_0) - \alpha \, L_0(\psi, \vec x_0) = 0
+        \: .
+    \end{equation*}
+\end{defn}
 \begin{defn}[Hamiltonian with a Dirac comb]
     Let $b, \ell \in \R \setminus \{0\}$ and $\alpha, x_0 \in \R$. We define $\Omega = \R^2 \setminus \{ (x_0 + j \, \ell, \; 0) \;|\; j \in \Z \}$. Then the Hamiltonian is given by:
     \begin{equation*}
@@ -178,9 +202,13 @@ where the potential $V = \sum\alpha\delta(...)\delta(y)$ is a Dirac comb situate
         \big\{
             \psi
             \;\big|\
-            \lim_{x \to x_j+}\! \psi(x, 0) - \!\lim_{x \to x_j-}\! \psi(x, 0)
-            = \alpha \lim_{x \to x_j}\! \psi(x, 0)
-            \;\; \forall x_j = x_0 + j \ell, \; j \!\in\! \Z
+            L_1(\psi, \vec x_j)
+            - \alpha \, L_0(\psi, \vec x_j)
+            = 0
+            \quad
+            \forall \vec x_j =
+            \big( x_0 + j \ell, \, 0 \big)
+            \; j \!\in\! \Z
         \big\}
         \:.
     \end{align*}
@@ -248,22 +276,72 @@ where the potential $V = \sum\alpha\delta(...)\delta(y)$ is a Dirac comb situate
 
 \section{Geometric perturbation}
 
-\subsection{Exner \& Kovařík, 2015}
-Section 7.1.2 of \cite{ExnerKovarik2015}. [\textbf{Finish this.}]
+% \subsection{Exner \& Kovařík, 2015}
+% In section 7.1.2 of their textbook on Quantum Waveguides, \cite{ExnerKovarik2015}
+% ^^ Does not appear to be relevant ^^
 
 \subsection{Exner et al., 2018}
 \cite{Exner2018} investigated the Landau Hamiltonian on thin layers.
 
 \begin{defn}
-    Let $H\!$ be the Landau Hamiltonian with a magnetic field of strength $b$ and a geometric perturbation (see Definition \ref{defn-perturb-geom}) which confines the system to a translationally invariant layer $\Omega$ of width $2\ell$ given by a curve $\omega$, such that $\kappa$, the signed curvature of $\omega$, is bounded and that $\Omega$ doesn't intersect itself (i.e. $\ell < 1/\lVert\kappa\rVert_{L^\infty}$).
+    Let $H\!$ be the Landau Hamiltonian with a magnetic field of strength $b$ and a geometric perturbation (see Definition \ref{defn-perturb-geom}) which confines the system to a translationally invariant layer $\Omega$ of width $2\ell$ given by a curve $\omega(s) \equiv \big(x(s),z(s)\big)$, such that $\kappa$, the signed curvature of $\omega$, is bounded and that $\Omega$ doesn't intersect itself (i.e. $\ell < 1/\lVert\kappa\rVert_{L^\infty}$).
 \end{defn}
 
-\begin{thm}[One-sided fold]
-    Let $\Omega$ be a one-sided-fold layer, i.e. either $\lim_{s \to {+\infty}} \omega_x(s) = +\infty$ or $\lim_{s \to {-\infty}} \omega_x(s) = -\infty$. Let [second part of (9)]. Then the spectrum of $H$ is purely absolutely continuous.
+\begin{thm}[Straightened Hamiltonian]
+    Let $f(s,u) = 1 - \ell \, u \, \kappa(s)$ and $\tildeA(s,u) $ $ = b \,(x(s) - \ell \, u \, \dot z(s))$. Then the Hamiltonian $H\!$ is unitarily equivalent to the Hamiltonian $\tildeH\!$ on $L^2(\R^2 {\times} [-\ell, \ell], \d{y}\!\d{s}\!\d{u}\!)\!$ given by
+    \begin{equation*}
+        H \simeq \tildeH
+        = - \dd{}{s} \; \frac{1}{f(s,u)^2} \; \dd{}{s}
+        +  \Big( - \i \dd{}{y} + \tildeA(s,u) \Big)^2
+        - \frac{1}{\ell^2} \, \dd{^2}{u^2}
+        + V(s,u)
+        \: ,
+    \end{equation*}
+    where
+    \begin{equation*}
+        V(s,u)
+        = -\frac{1}{4} \, \frac{\kappa(s)^2}{f(s,u)^2}
+        - \frac{1}{2} \, \frac{\ell \, u \, \ddot\kappa(s)}{f(s,u)^3}
+        - \frac{5}{4} \, \frac{\ell^2 \, u^2 \, \dot\kappa(s)^2}{f(s,u)^4}
+        \: .
+    \end{equation*}
 \end{thm}
 
-\begin{thm}
-    Let $\Omega$ be asymptotically flat, i.e. $\dot{\omega}_x(s) = \alpha_\pm$ for large enough positive and negative $s$, and let $\alpha_+ \neq \alpha_-$. Let $\ell$ [satisfy bound in IV.3 and IV.4]. Then the spectrum of $H$ is purely absolutely continuous.
+\begin{thm}[One-sided fold]
+    Let $\Omega$ be a one-sided-fold layer, i.e. either $\lim_{s \to {+\infty}} x(s) = +\infty$ or $\lim_{s \to {-\infty}} x(s) = -\infty$. Let the negative part of $V(s,u)$ be bounded. Then the spectrum of $H$ is purely absolutely continuous.
+\end{thm}
+
+\begin{thm}[Asymptotically flat]
+    Let $\Omega$ be asymptotically flat, i.e. $\dot x(s) = \alpha_\pm$ for large enough positive and negative $s$, and let $\alpha_- > \alpha_+ > 0$. Suppose the inequality
+    \begin{equation*}
+        \ell < \frac{1}{\sqrt{b}} \;
+        \sqrt{
+            \frac{
+                g(\alpha_-, \, -\varepsilon) -
+                g(\alpha_+, \, \varepsilon)
+            }{
+                1 - {\alpha_+}^2 +
+                \varepsilon^{-1} \, \big(
+                    \alpha_+ \, \sqrt{1-{\alpha_+}^2} +
+                    \alpha_- \, \sqrt{1-{\alpha_-}^2}
+                \big)
+            }
+        }
+        \;\: ,
+    \end{equation*}
+    where $g(\alpha, \varepsilon) := \sqrt{\alpha^2 + \alpha \, \varepsilon \, \sqrt{1-\alpha^2}}$, holds for some $\varepsilon$ such that
+    \begin{equation*}
+        0
+        \,<\,
+        \varepsilon
+        \,<\,
+        \frac{ {\alpha_-}^2 - {\alpha_+}^2 }{
+            \alpha_+ \, \sqrt{1-{\alpha_+}^2} +
+            \alpha_- \, \sqrt{1-{\alpha_-}^2}
+        }
+        \; .
+    \end{equation*}
+    Then the spectrum of $H$ is purely absolutely continuous.
 \end{thm}
 
 In the following theorem, we will use this notation:
@@ -273,9 +351,8 @@ In the following theorem, we will use this notation:
     \underline{f}_- &:= \sup_{a \in \R} \; \underset{t\in(-\infty, a)}{\operatorname{ess \, inf}} \; f(t) \: , &
     \overline{f}_- &:= \inf_{a \in \R} \; \underset{t\in(-\infty, a)}{\operatorname{ess \, sup}} \; f(t) \: .
 \end{align*}
-Also, by writing $x(s)$ we will mean $\omega_x(s)$.
 
-\begin{thm}
+\begin{thm}[Very thin layer]
     Let $E \in \R$ and let $\dot\kappa, \ddot\kappa \in L^\infty$. Furthermore, suppose either one of the following conditions hold:
     \begin{enumerate}
         \item $\underline{\dot x}_\pm > 0 \;$ and $\; \underline{\dot x}_+ \geq \overline{\dot x}_- \;$ and $\; \underline{\kappa^2}_+ - \overline{\kappa^2}_- < 4 \, b \, (\underline{\dot x}_+ - \overline{\dot x}_-)$
@@ -283,6 +360,4 @@ Also, by writing $x(s)$ we will mean $\omega_x(s)$.
     \end{enumerate}
     Then for $\ell$ sufficiently small, the spectrum of $H$ is absolutely continuous below $E + \big( \frac{\pi}{2\ell} \big)^2$.
 \end{thm}
-
-[\textbf{To do: fill in conditions (9), IV.3 and IV.4}]
 

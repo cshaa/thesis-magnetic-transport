@@ -9,7 +9,7 @@ The simplest example of a quantum system with a magnetic field is the system con
 \end{align*}
 Here $\vv P = -\i \nabla$ is the momentum operator, $\vv B$ is the magnetic field, which is constant with magnitude $b_0$, without loss of generality pointing along the $z$ axis, and $\vv A$ is a corresponding vector potential. Notice that we have used nondimensionalization to remove physical units from the Hamiltonian. The spectrum of $H$ is absolutely continuous and the Hamiltonian commutes with $P_z$, thus it allows the particle to move freely along the $z$ axis.
 
-One might wonder what happens if we restrict the particle to the plane $z=0$. One way to do this is only formally: if the particle is free to move along $z$, but we are simply not interested in this degree of freedom, we may subtract $P_z^{\,2}$ from the Hamiltonian. Then we get a two-dimensional Hamiltonian with infinitely degenerate pure point spectrum, the so-called \textit{Landau Hamiltonian}:
+One might wonder what happens if we restrict the particle to the plane $z=0$. One way to do this is formal: if the particle is free to move along $z$, but we are simply not interested in this degree of freedom, we may subtract $P_z^{\,2}$ from the Hamiltonian. Then we get a two-dimensional Hamiltonian with infinitely degenerate pure point spectrum, the so-called \textit{Landau Hamiltonian}:
 \begin{align*}
     H_\mathrm{Landau} = (P_x + A_x)^2 + (P_y + A_y)^2 \: .
 \end{align*}
@@ -40,7 +40,7 @@ Now we can specify precisely which Hamiltonians we will investigate.
         + \big( P_y + b \, Q_x \big)^2
         + V(x)
     \end{equation*}
-    is called the \textbf{Landau Hamiltonian with a potential perturbation}. We will investigate, which boundary conditions and which choices of $V$ lead to $\SpAc(H) \neq \emptyset$. The domain $\Domain(H)$ is determined not only by the asymptotic behaviour of $V$, but also by the boundary conditions imposed on the wave function.
+    is called the \textbf{Landau Hamiltonian with a potential perturbation}. The domain $\Domain(H)$ is determined not only by the asymptotic behaviour of $V$, but also by the boundary conditions imposed on the wave function.
 \end{defn}
 
 \begin{defn}[Magnetic perturbation]
@@ -53,12 +53,12 @@ Now we can specify precisely which Hamiltonians we will investigate.
     \begin{align*}
         \tilde H = P^2_x + \big( P_y + A_y \big)^2 \: ,
     \end{align*}
-    Its closure $H$ is called the \textbf{Landau Hamiltonian with a magnetic perturbation}. We will investigate, which choices of $b$ lead to $\SpAc(H) \neq \emptyset$.
+    Its closure $H$ is called the \textbf{Landau Hamiltonian with a magnetic perturbation}.
 \end{defn}
 
 \begin{defn}[Geometric perturbation, transl. inv. layer]
     \label{defn-perturb-geom}
-    Let $b>0$ and $\ell > 0$. Let $\omega: \R \to \R^2$ be a $C^4$-smooth curve. We define a set $\Omega' \subset \R^2$ by
+    Let $b>0$ and $\ell > 0$. Let $\omega: \R \to \R^2$ be a $C^4$-smooth curve, parametrized such that $\lVert\dot\omega\rVert=1$. We define a set $\Omega' \subset \R^2$ by
     \begin{equation*}
         \Omega' = \big\{\;
             P \in \R^2
@@ -81,10 +81,10 @@ Now we can specify precisely which Hamiltonians we will investigate.
         \Delta^\Omega_{\mathrm{D}, A} \psi(x,y,z)
         = \Delta \psi + 2\i b \, x \, \pd{\psi}{y} - b^2 x^2 \, \psi
     \end{align*}
-    defined on functions $\psi \in C^\infty(\Omega)$, such that $\psi(x,y,z) = 0$ on the boundary of $\Omega$. The~operator $H$ which is the closure of $-\Delta^\Omega_{\mathrm{D}, A}$ in $L^2(\Omega)$ is called the \textbf{Landau Hamiltonian with a geometric perturbation}. We will investigate, which choices of~$\omega$ lead to $\SpAc(H) \neq \emptyset$.
+    defined on functions $\psi \in C^\infty(\Omega)$, such that $\psi(x,y,z) = 0$ on the boundary of $\Omega$. The~operator $H$ which is the closure of $-\Delta^\Omega_{\mathrm{D}, A}$ in $L^2(\Omega)$ is called the \textbf{Landau Hamiltonian with a geometric perturbation}.
 \end{defn}
 
-The Landau Hamiltonian with a translationally invariant magnetic perturbation is also called \textit{the Iwatsuka Hamiltonian} by some authors (e.g. \cite{Miranda2017} and \cite{Hislop2015}) after Akira Iwatsuka who studied how perturbations to the Landau Hamiltonian affect its spectrum. In similar spirit, \cite{Exner2018} use the term \textit{Iwatsuka type effect} to describe the phenomenon when a particular perturbation changes the spectrum of the Landau Hamiltonian to absolutely continuous. It is exactly this Iwatsuka type effect that is the main focus of this thesis. We will look into more details of Akira Iwatsuka's work in section \ref{section-known-magnetic}.
+The Landau Hamiltonian with a translationally invariant magnetic perturbation is also called \textit{the Iwatsuka Hamiltonian} by some authors (e.g. \cite{Miranda2018} and \cite{Hislop2015}) after Akira Iwatsuka who studied how perturbations to the Landau Hamiltonian affect its spectrum. In similar spirit, \cite{Exner2018} use the term \textit{Iwatsuka type effect} to describe the phenomenon when a particular perturbation changes the spectrum of the Landau Hamiltonian to absolutely continuous. It is exactly this Iwatsuka type effect that is the main focus of this thesis. We will look into more details of Akira Iwatsuka's work in section \ref{section-known-magnetic}.
 
 
 

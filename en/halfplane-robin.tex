@@ -213,7 +213,7 @@ Except for $\nu\in\N$, the $D_\nu(-w)$ term diverges exponentially, see Lemma \r
     \: .
     \numberthis\label{eqn-robin-spectral}
 \end{align*}
-The equation \eqref{eqn-robin-spectral} is the spectral condition, it defines the implicit function $\nu(p)$, which in turn tells us, which values of $\epsilon \equiv (2\nu + 1) \, b$ are in the spectrum of $\Hf_\alpha$. For $\alpha=0$ we get the Neumann b.c. Formally taking $\alpha \to +\infty$, we get the Dirichlet b.c., whose spectral condition is $D_\nu(p \, \sqrt{\frac{2}{b}})=0$.
+The equation \eqref{eqn-robin-spectral} is the spectral condition, it defines the implicit function $\nu(p)$, which in turn tells us, which values of $\epsilon \equiv (2\nu + 1) \, b$ are in the spectrum of $\Hf_\alpha$. For $\alpha=0$ we get the Neumann b.c. Formally taking $\alpha \to -\infty$, we get the Dirichlet b.c., whose spectral condition is $D_\nu(p \, \sqrt{\frac{2}{b}})=0$.
 
 \section{Energy levels as analytic functions} \label{section-robin-implicit-function}
 Let $F$ be a function of three real variables given by
@@ -264,8 +264,10 @@ These asymptotics make it clear that all energy levels above the lowest Landau l
     \; := \;
     \min_{p \in \R \vph{\frac{1}{1}}}
     \frac{\epsilon_0(p)}{b}
-    \; = \;
-    0.590106125 \pm 10^{-9}
+    \: ,
+    \qquad
+    |\Theta_0 - 0.590106125|
+    \leq 10^{-9}
     \: .
 \end{equation}
 The constant $\Theta_0$ is called the \textit{de Gennes constant} by some (e.g. \cite{ExnerLotoreichik2018}). For $\alpha > 0$ we will use the fact that the quadratic form of $\Hf_\alpha(p)$ is nonincreasing in $\alpha$. Let $\beta > \alpha$, then:
