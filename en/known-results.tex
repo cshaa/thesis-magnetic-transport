@@ -7,7 +7,7 @@ In this chapter we will restate the results about Landau Hamiltonians with poten
 \cite{Macris1999} investigated the problem of Landau Hamiltonians with a steep (but locally integrable) potential wall along the edge of a half-plane. What follows is a summary of their results.
 
 \begin{defn}[Hamiltonian]
-    Let $\mu \in (0, \infty)$ and $\gamma \in [1, \infty])$. We define the wall potential $U$:
+    Let $\mu \in (0, \infty)$ and $\gamma \in [1, \infty)$. We define the wall potential $U$:
     \begin{equation*}
         U(x) = \mu \, x^\gamma \, \chi_{\R_+\!}(x)
         \: ,
@@ -94,7 +94,7 @@ In the case of the steep potential, they used the theory of \textit{Mourre estim
 \end{defn}
 
 \begin{defn}[Hamiltonian with a wall]
-    Let $H_0 = P_x^2 + (P_y + b \, Q_x)^2$ be the unperturbed Landau Hamiltonian on $\R^2$. Let $\Pi = P_y + b \, Q_x$ be a self-adjoint operator. Let $U(x)$ be a differentiable function that vanishes for $x\leq 0$. Let $V(x,y)$ be a differentiable function. We define the Hamiltonian:
+    Let $H_0 = P_x^2 + (P_y + b \, Q_x)^2$ be the unperturbed Landau Hamiltonian on $\R^2$. Let $U(x)$ be a differentiable function that vanishes for $x\leq 0$. Let $V(x,y)$ be a differentiable function. We define the Hamiltonian:
     $$ H = H_0 + V(x,y) + U(y). $$
 \end{defn}
 
@@ -137,7 +137,7 @@ Now, we restate the results regarding a half-plane with a Dirichlet boundary con
 \begin{thm}[Spectrum for Dirichlet b.c.]
     Let $E \in \R \setminus \{ \; (2k+1)b \;|\; k \in \Z \;\}$. For sufficiently small $b^{-1} \, \norm{V}_{L^\infty(\R^2)}$ the spectrum of $H$ is purely absolutely continuous near $E$.
 \end{thm}
-\noindent This theorem has been shown to hold for more general $\Omega \subset \R^2$, for more information see the article.
+\noindent This theorem has been shown to hold for more general $\Omega \subset \R^2$, for more information see the indicated article.
 
 % \subsection{Combes et al., 2001}
 % \cite{Combes2001} studied the case of a particle confined to a strip.
@@ -163,7 +163,7 @@ where the potential $V = \sum\alpha\delta(...)\delta(y)$ is a Dirac comb situate
         \psi(\vec x)
         \: ,
         \\[7pt]
-        L_1(\psi, \vec x_1)
+        L_1(\psi, \vec x_0)
         = \lim_{\vec x \to \vec x_0}
         \Big(
             \psi(\vec x) +
@@ -221,7 +221,7 @@ where the potential $V = \sum\alpha\delta(...)\delta(y)$ is a Dirac comb situate
 \label{section-known-magnetic}
 
 \subsection{Iwatsuka, 1983}
-\cite{Iwatsuka1983} proved a very general and important result: a magnetic perturbation which is asymptotically zero will not change the spectrum.
+\cite{Iwatsuka1983} proved a very general and important result: a localized magnetic perturbation does not change the Landau spectrum.
 \begin{defn}[Hamiltonian with asymptotically constant perturbation]
     Let $B(x, y)$ be a smooth real function, such that $B(x, y) \to B_0 \neq 0$ as $\sqrt{x^2 + y^2} \to \infty$. Let $A_x, A_y$ be smooth functions satisfying $B(x,y) = \pd{}{x} A_y(x,y) - \pd{}{y} A_x(x,y)$. Let $\tilde H$ be the essentially self-adjoint operator on $L^2(\R^2)$ given by
     \begin{gather*}

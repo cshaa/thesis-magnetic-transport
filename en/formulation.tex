@@ -13,9 +13,9 @@ One might wonder what happens if we restrict the particle to the plane $z=0$. On
 \begin{align*}
     H_\mathrm{Landau} = (P_x + A_x)^2 + (P_y + A_y)^2 \: .
 \end{align*}
-The spectrum of $H_\mathrm{Landau}$ consists of the so-called \textit{Landau levels} $\SpE = \{ \; {(2k + 1) \, b_0} $ $\;|\; k \in \N_0 \; \}$. A detailed analysis of the Landau Hamiltonian can be found e.g. in §112 of \cite{LandauLifshitz3}.
+The spectrum of $H_\mathrm{Landau}$ is pure point, consisting of infinitely degenerate eigenvalues, the so-called \textit{Landau levels} $\SpE = \{ \; {(2k + 1) \, b_0} $ $\;|\; k \in \N_0 \; \}$. A detailed analysis of the Landau Hamiltonian can be found e.g. in §112 of \cite{LandauLifshitz3}.
 
-Another way of restricting the system would be physically: we can put two planar walls at $z=\pm\ell$. If the walls are repulsive enough, they can be modelled by a Dirichlet (or more generally a Robin) boundary condition, creating a so-called \textit{quantum waveguide}. Such a system would be described by the Hamiltonian:
+Another way of restricting the system allows for a physical interpretation: we can put two planar walls at $z=\pm\ell$. The walls can be modelled by a Dirichlet (or more generally a Robin) boundary condition, creating a so-called \textit{quantum waveguide}. Such a system would be described by the Hamiltonian:
 \begin{align*}
     H = H_\mathrm{Landau} \oplus H_\mathrm{transverse} \: ,
 \end{align*}
@@ -40,7 +40,7 @@ Now we can specify precisely which Hamiltonians we will investigate.
         + \big( P_y + b \, Q_x \big)^2
         + V(x)
     \end{equation*}
-    is called the \textbf{Landau Hamiltonian with a potential perturbation}. The domain $\Domain(H)$ is determined not only by the asymptotic behaviour of $V$, but also by the boundary conditions imposed on the wave function.
+    is called the \textbf{Landau Hamiltonian with a potential perturbation}.
 \end{defn}
 
 \begin{defn}[Magnetic perturbation]
@@ -96,7 +96,7 @@ The following definition is a rephrasing of definitions given in \cite{ReedSimon
     \label{defn-direct-integral}
     Let $\Hilb'$ be a separable Hilbert space and $(M, \mu)$ a measure space. We define a Hilbert space $\Hilb$, which is the space of all square-integrable functions from $M$ to $\Hilb'$:
     \begin{equation*}
-        \Hilb = L^2(M, \d{\mu}, \Hilb') \: .
+        \Hilb = L^2(M, \d{\mu}; \Hilb') \: .
     \end{equation*}
 
     Let $\Af$ be a measurable function from $M$ to the self-adjoint operators on $\Hilb'$. Let $f_\psi: M \to \R$ be a function defined by
@@ -124,7 +124,7 @@ The following definition is a rephrasing of definitions given in \cite{ReedSimon
     We shall call $\Hilb$ and $A$ \textbf{the direct integral} of $\Hilb'$ and $\Af$, respectively. Reversely, we shall call $\Hilb'$ a \textbf{fibre space} of $\Hilb$ and $\Af(s)$ a \textbf{fibre} of $A$.
 \end{defn}
 
-The concept of a direct integral might initially seem strange to readers who encounter it for their first time. These readers may find it helpful to think of the direct integral as a simple \textit{“rebranding”} of several concepts they already know and understand. For example, a free spin-$\frac{1}{2}$ particle is represented in the Hilbert space $L^2(\R^3, \C^2)$ of square-integrable functions from the physical space $\R^3$ to the qubit $\C^2$. This space is by definition the direct integral $L^2(\R^3, \C^2) = \int_{\R^3}^\oplus \C^2$, the qubit plays the role of the fibre space here. Another example is related to the fact that a function of two variables can be understood as a function of one variable which returns another function of one variable (programmers call this \textit{currying}). That is exactly the meaning of this direct integral: $L^2(M\times N) \simeq \int_M^\oplus L^2(N) \simeq \int_N^\oplus L^2(M)$. We mentioned that the direct integral is a generalization of the direct sum. To see that this is the case, consider a finite set $M$ together with the counting measure, then $\int^\oplus_M \Hilb' \simeq \bigoplus_{M} \Hilb'$.
+The concept of a direct integral might initially seem strange to readers who encounter it for their first time. These readers may find it helpful to think of the direct integral as a simple \textit{“rebranding”} of several concepts they already know and understand. For example, a free spin-$\frac{1}{2}$ particle is represented in the Hilbert space $L^2(\R^3; \C^2)$ of square-integrable functions from the physical space $\R^3$ to the qubit~$\C^2$. This space is by definition the direct integral $L^2(\R^3, \C^2) = \int_{\R^3}^\oplus \C^2$, the qubit plays the role of the fibre space here. Another example is related to the fact that a function of two variables can be understood as a function of one variable which returns another function of one variable (programmers call this \textit{currying}). That is exactly the meaning of this direct integral: $L^2(M\times N) \simeq \int_M^\oplus L^2(N) \simeq \int_N^\oplus L^2(M)$. We mentioned that the direct integral is a generalization of the direct sum. To see that this is the case, consider a finite set $M$ together with the counting measure, then $\int^\oplus_M \Hilb' \simeq \bigoplus_{M} \Hilb'$.
 
 Before we apply the theory of direct integrals to the magnetic Hamiltonian, let us remind the Fourier-Plancherel operator. It is a standard textbook result (see \cite{BEH}) that if we take the Fourier transform as an operator on $\Schwa(\R) \subset L^2(\R)$, its closure is a unitary operator on $L^2(\R)$. This operator is called the Fourier-Plancherel operator $\Fourier$, it transforms momentum to position $\Fourier P \Fourier^{-1} = Q$, and as a unitary operator, it does not change the spectrum of self-adjoint operators:
 \begin{equation*}
@@ -134,7 +134,7 @@ Before we apply the theory of direct integrals to the magnetic Hamiltonian, let 
     \quad
     \SpE(A) = \SpE(\Fourier A \Fourier^{-1}) \: .
 \end{equation*}
-The theory given so far regards functions of one variable. In this thesis, we will perform a \textit{partial} Fourier transformations on multivariate functions – that~is, perform the Fourier transformation on one variable whilst keeping the other variables fixed. We will use a subscript to indicate the variable which is being transformed and the new variable, for example $\Fourier_{y\to\xi}: \psi(x,y) \mapsto \tilde\psi(x,\xi)$.
+The theory given so far concerns functions of one variable. In this thesis, we will perform a \textit{partial} Fourier transformations on multivariate functions – that~is, perform the Fourier transformation on one variable whilst keeping the other variables fixed. We will use a subscript to indicate the variable which is being transformed and the new variable, for example $\Fourier_{y\to\xi}: \psi(x,y) \mapsto \tilde\psi(x,\xi)$.
 
 Now we can show, how to express a Landau Hamiltonian with potential and magnetic perturbations in terms of the direct integral:
 \begin{align*}
