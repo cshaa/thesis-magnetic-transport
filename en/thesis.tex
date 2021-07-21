@@ -89,8 +89,7 @@
 \def\StudyProgramme{Physics}
 \def\StudyBranch{FOF}
 
-% An optional dedication: you can thank whomever you wish (your supervisor,
-% consultant, a person who lent the software, etc.)
+% A dedication
 \def\Dedication{%
 \textbf{Acknowledgement} \\[5pt]
 I am deeply grateful to \Supervisor, whose insurmountable knowledge has broadened my horizons in quantum mechanics at least tenfold. I~must also thank my friends, especially Miroslav Burýšek, Daniel Herman, Jakub Novotný and Jan Střeleček, for their invaluable support – both emotional and technical. Finally, I would like to thank my partner and my family for their patience when I could not make time for them during my work on the thesis.
@@ -101,7 +100,7 @@ This thesis is open-source, the source code is available from: \\ \url{https://g
 \end{center}
 }
 
-% Abstract (recommended length around 80-200 words; this is not a copy of your thesis assignment!)
+% Abstract
 \def\Abstract{%
 We discuss the spectra of magnetic Schrödinger operators of the form ${(-\i\nabla + \vec{A}(x))^2 + V(x)}$ on ${L^2(\Omega)}$, where $\Omega$ is either $\R^2$, a half-plane, a strip, or a thin layer in $\R^3$. This class of operators includes the Landau Hamiltonian, as well as the Iwatsuka Hamiltonian and other translationally invariant perturbations of it. We provide a comprehensive list of the known results regarding these operators, and inspect two Hamiltonians that have not yet been studied: the Landau Hamiltonian with a $\delta$-interaction supported on a line and the Landau Hamiltonian in a half-plane with a Robin boundary condition. We prove that the spectra of these two Hamiltonians are purely absolute continuous and that the former has gaps between adjacent Landau levels.
 }
@@ -122,15 +121,11 @@ We discuss the spectra of magnetic Schrödinger operators of the form ${(-\i\nab
 \include{hyphenation}
 
 \begin{document}
-% comment out the following line to see the bad paragraphs:
-% \emergencystretch 3em
-
 
 % Title page and various mandatory informational pages
 \include{title}
 
 %%% A page with automatically generated table of contents of the bachelor thesis
-
 \tableofcontents
 
 %%% Each chapter is kept in a separate file
@@ -148,31 +143,12 @@ We discuss the spectra of magnetic Schrödinger operators of the form ${(-\i\nab
 %%% Figures used in the thesis (consider if this is needed)
 \listoffigures
 
-%%% Tables used in the thesis (consider if this is needed)
-%%% In mathematical theses, it could be better to move the list of tables to the beginning of the thesis.
-% \listoftables
-
-%%% Abbreviations used in the thesis, if any, including their explanation
-%%% In mathematical theses, it could be better to move the list of abbreviations to the beginning of the thesis.
-% \chapwithtoc{List of Abbreviations}
-
-%%% Attachments to the bachelor thesis, if any. Each attachment must be
-%%% referred to at least once from the text of the thesis. Attachments
-%%% are numbered.
-%%%
-%%% The printed version should preferably contain attachments, which can be
-%%% read (additional tables and charts, supplementary text, examples of
-%%% program output, etc.). The electronic version is more suited for attachments
-%%% which will likely be used in an electronic form rather than read (program
-%%% source code, data files, interactive charts, etc.). Electronic attachments
-%%% should be uploaded to SIS and optionally also included in the thesis on a~CD/DVD.
-%%% Allowed file formats are specified in provision of the rector no. 72/2017.
+%%% Appendices
 \appendix
 \chapter{Appendix}
 \input{apdx-sobolev-ineq}
 \input{apdx-parabolic-cylinder-asymp}
 \input{apdx-pythom}
-
 
 \openright
 \end{document}

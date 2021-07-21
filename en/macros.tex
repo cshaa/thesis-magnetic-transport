@@ -1,6 +1,4 @@
 %%% This file contains definitions of various useful macros and environments %%%
-%%% Please add more macros here instead of cluttering other files with them. %%%
-
 %%% Minor tweaks of style
 
 % These macros employ a little dirty trick to convince LaTeX to typeset
@@ -29,7 +27,7 @@
 }
 
 % Draw black "slugs" whenever a line overflows, so that we can spot it easily.
-\overfullrule=1mm
+% \overfullrule=1mm
 
 %%% Macros for definitions, theorems, claims, examples, ... (requires amsthm package)
 
@@ -113,7 +111,18 @@
 \newcommand{\tildeA}{\overset{\;\,\scriptscriptstyle\sim}{A}}
 \newcommand{\tildeH}{\overset{\;\,\scriptscriptstyle\sim}{H}}
 
+\newcommand{\dd}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+\newcommand{\pd}[2]{\frac{\partial  #1}{\partial  #2}}
+\newcommand{\e}[1]{\mathrm{e}^{#1}}
 
+\newcommand{\coloneqq}{:=}
+\newcommand{\eqqcolon}{=:}
+
+% Manual numbering of equations
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+
+% Whitespace magic
 \def\ph{\phantom}
 \def\vph{\vphantom}
 \def\hph{\hphantom}
@@ -122,16 +131,4 @@
 \def\czw{\mathclap}
 \newcommand*{\mask}[2]{\mathord{\makebox[\widthof{\(#1\)}]{\(#2\)}}}
 \newcommand{\scalemath}[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}
-
-
-\newcommand{\dd}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
-\newcommand{\pd}[2]{\frac{\partial  #1}{\partial  #2}}
-\newcommand{\e}[1]{\mathrm{e}^{#1}}
-
-\newcommand{\coloneqq}{:=}
-\newcommand{\eqqcolon}{=:}
-
-\newcommand{\digamma}{\Psi} % haha dobrý
-
-\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 

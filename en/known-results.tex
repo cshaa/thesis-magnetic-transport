@@ -99,7 +99,7 @@ In the case of the steep potential, they used the theory of \textit{Mourre estim
 \end{defn}
 
 \begin{thm}[Spectrum for an unbounded wall]
-    We define $\mathit\Pi := P_x + b \, Q_y$. Let $U$ and $V$ be such that $\mathit\Pi$ is a conjugate operator for the Hamiltonian $H$. Furthermore, let there be $\delta>0$ such that $|V(x,y)|<\delta$ for all $x,y$ and let $U$ be unbounded with $U'(x) \geq 0$ and $\underset{x\geq\varepsilon}{\inf} \, U'(x) > 0$ for all $\varepsilon>0$. If $E \in \C \setminus \Sp(H_0)$, then there exists some open neighbourhood $\Nbhood_a(E)$, such that $\Sp(H) \cap \Nbhood_a(E) \subseteq \SpAc(H)$.
+    We define $\mathit\Pi := P_x + b \, Q_y$. Let $U$ and $V$ be such that $\mathit\Pi$ is a conjugate operator for the Hamiltonian $H$. Furthermore, let there be $\delta>0$ such that $|V(x,y)|<\delta$ for all $x,y$ and let $U$ be unbounded with $U'(x) \geq 0$ and $\underset{x\geq\ve}{\inf} \, U'(x) > 0$ for all $\ve>0$. If $E \in \C \setminus \Sp(H_0)$, then there exists some open neighbourhood $\Nbhood_a(E)$, such that $\Sp(H) \cap \Nbhood_a(E) \subseteq \SpAc(H)$.
 \end{thm}
 
 \begin{lemma}[Sufficient conditions for conjugacy]
@@ -138,11 +138,6 @@ Now, we restate the results regarding a half-plane with a Dirichlet boundary con
     Let $E \in \R \setminus \{ \; (2k+1)b \;|\; k \in \Z \;\}$. For sufficiently small $b^{-1} \, \norm{V}_{L^\infty(\R^2)}$ the spectrum of $H$ is purely absolutely continuous near $E$.
 \end{thm}
 \noindent This theorem has been shown to hold for more general $\Omega \subset \R^2$, for more information see the indicated article.
-
-% \subsection{Combes et al., 2001}
-% \citet{Combes2001} studied the case of a particle confined to a strip.
-% \textbf{[Finish this.]}
-% TODO TODO TODO TODO %
 
 \subsection{Exner \& Kovařík, 2015}
 In the section 7.2.2 of their textbook on Quantum Waveguides, \citet{ExnerKovarik2015} provide an example of a system, which classically would not lead to any transport, but whose Hamiltonian operator has a non-empty absolute continuous spectrum nonetheless. The Hamiltonian they investigated can be formally written~as
@@ -269,17 +264,9 @@ where the potential $V = \sum\alpha\delta(...)\delta(y)$ is a Dirac comb situate
     Then the spectrum of $H$ is purely absolutely continuous.\footnote{Note that Theorem \ref{thm-Iwatsuka-bump} does not contradict Theorem \ref{thm-Iwatsuka-unperturb} – here the perturbation is a bump function but only in the $x$-direction, in $y$ it extends to infinity, as is the case for every translationally invariant system.}
 \end{thm}
 
-% \subsection{Hislop et al., 2015}
-% \citet{Hislop2015} [\textbf{Finish this.}]
-% TODO TODO TODO TODO %
-
 
 
 \section{Geometric perturbation}
-
-% \subsection{Exner \& Kovařík, 2015}
-% In section 7.1.2 of their textbook on Quantum Waveguides, \citet{ExnerKovarik2015}
-% ^^ Does not appear to be relevant ^^
 
 \subsection{Exner et al., 2018}
 \citet{Exner2018} investigated the Landau Hamiltonian on thin layers.
@@ -318,11 +305,11 @@ where the potential $V = \sum\alpha\delta(...)\delta(y)$ is a Dirac comb situate
         \ell < \frac{1}{\sqrt{b}} \;
         \sqrt{
             \frac{
-                g(\alpha_-, \, -\varepsilon) -
-                g(\alpha_+, \, \varepsilon)
+                g(\alpha_-, \, -\ve) -
+                g(\alpha_+, \, \ve)
             }{
                 1 - {\alpha_+}^2 +
-                \varepsilon^{-1} \, \big(
+                \ve^{-1} \, \big(
                     \alpha_+ \, \sqrt{1-{\alpha_+}^2} +
                     \alpha_- \, \sqrt{1-{\alpha_-}^2}
                 \big)
@@ -330,11 +317,11 @@ where the potential $V = \sum\alpha\delta(...)\delta(y)$ is a Dirac comb situate
         }
         \;\: ,
     \end{equation*}
-    where $g(\alpha, \varepsilon) := \sqrt{\alpha^2 + \alpha \, \varepsilon \, \sqrt{1-\alpha^2}}$, holds for some $\varepsilon$ such that
+    where $g(\alpha, \ve) := \sqrt{\alpha^2 + \alpha \, \ve \, \sqrt{1-\alpha^2}}$, holds for some $\ve$ such that
     \begin{equation*}
         0
         \,<\,
-        \varepsilon
+        \ve
         \,<\,
         \frac{ {\alpha_-}^2 - {\alpha_+}^2 }{
             \alpha_+ \, \sqrt{1-{\alpha_+}^2} +
