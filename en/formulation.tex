@@ -13,13 +13,13 @@ One might wonder what happens if we restrict the particle to the plane $z=0$. On
 \begin{align*}
     H_\mathrm{Landau} = (P_x + A_x)^2 + (P_y + A_y)^2 \: .
 \end{align*}
-The spectrum of $H_\mathrm{Landau}$ is pure point, consisting of infinitely degenerate eigenvalues, the so-called \textit{Landau levels} $\SpE = \{ \; {(2k + 1) \, b_0} $ $\;|\; k \in \N_0 \; \}$. A detailed analysis of the Landau Hamiltonian can be found e.g. in §112 of \cite{LandauLifshitz3}.
+The spectrum of $H_\mathrm{Landau}$ is pure point, consisting of infinitely degenerate eigenvalues, the so-called \textit{Landau levels} $\SpE = \{ \; {(2k + 1) \, b_0} $ $\;|\; k \in \N_0 \; \}$. A detailed analysis of the Landau Hamiltonian can be found e.g. in §112 of \citet{LandauLifshitz3}.
 
 Another way of restricting the system allows for a physical interpretation: we can put two planar walls at $z=\pm\ell$. The walls can be modelled by a Dirichlet (or more generally a Robin) boundary condition, creating a so-called \textit{quantum waveguide}. Such a system would be described by the Hamiltonian:
 \begin{align*}
     H = H_\mathrm{Landau} \oplus H_\mathrm{transverse} \: ,
 \end{align*}
-where $H_\mathrm{transverse}$ is the kinetic energy of a particle on a line segment $[ -\ell, \ell ]$. Since the spectrum of both $H_\mathrm{Landau}$ and $H_\mathrm{transverse}$ is pure point, the spectrum of $H$ is pure point too. A deeper analysis of the concept of quantum waveguides can be found in \cite{ExnerKovarik2015}.
+where $H_\mathrm{transverse}$ is the kinetic energy of a particle on a line segment $[ -\ell, \ell ]$. Since the spectrum of both $H_\mathrm{Landau}$ and $H_\mathrm{transverse}$ is pure point, the spectrum of $H$ is pure point too. A deeper analysis of the concept of quantum waveguides can be found in \citet{ExnerKovarik2015}.
 
 The pure point spectrum of the two Hamiltonians means that the particle is not free to move along $x$ or $y$, but instead it is “trapped” in some superposition of stationary states. In this thesis, we will investigate perturbations to the Landau Hamiltonian, which cause its spectrum to become continuous and allow the particle to move freely along one axis. These perturbations can be either in the form of a scalar potential, a modification of the magnetic field, or a purely geometric deformation of the layer to which our particle is constrained. We will require all of these perturbations to be translationally invariant, thus constant along one axis – without loss of generality, we choose that they are independent of~$y$ and only depend on~$x$.
 
@@ -84,14 +84,14 @@ Now we can specify precisely which Hamiltonians we will investigate.
     defined on functions $\psi \in C^\infty(\Omega)$, such that $\psi(x,y,z) = 0$ on the boundary of $\Omega$. The~operator $H$ which is the closure of $-\Delta^\Omega_{\mathrm{D}, A}$ in $L^2(\Omega)$ is called the \textbf{Landau Hamiltonian with a geometric perturbation}.
 \end{defn}
 
-The Landau Hamiltonian with a translationally invariant magnetic perturbation is also called \textit{the Iwatsuka Hamiltonian} by some authors (e.g. \cite{Miranda2018} and \cite{Hislop2015}) after Akira Iwatsuka who studied how perturbations to the Landau Hamiltonian affect its spectrum. In similar spirit, \cite{Exner2018} use the term \textit{Iwatsuka type effect} to describe the phenomenon when a particular perturbation changes the spectrum of the Landau Hamiltonian to absolutely continuous. It is exactly this Iwatsuka type effect that is the main focus of this thesis. We will look into more details of Akira Iwatsuka's work in section \ref{section-known-magnetic}.
+The Landau Hamiltonian with a translationally invariant magnetic perturbation is also called \textit{the Iwatsuka Hamiltonian} by some authors (e.g. \citet{Miranda2018} and \citet{Hislop2015}) after Akira Iwatsuka who studied how perturbations to the Landau Hamiltonian affect its spectrum. In similar spirit, \citet{Exner2018} use the term \textit{Iwatsuka type effect} to describe the phenomenon when a particular perturbation changes the spectrum of the Landau Hamiltonian to absolutely continuous. It is exactly this Iwatsuka type effect that is the main focus of this thesis. We will look into more details of Akira Iwatsuka's work in section \ref{section-known-magnetic}.
 
 
 
 \section{Direct integral}
 The key insight to all three of these problems is that the Hamiltonians in question only depend on the momentum $p_y$ of the particle, and not on its position $y$. If we were to fix $p_y$ of the particle to a certain value somehow, we could reduce the problem to a one-dimensional operator and solve for each $p_y$ separately. This vague idea can be given a rigorous meaning in terms of the \textit{direct integral}, a generalization of the direct sum.
 
-The following definition is a rephrasing of definitions given in \cite{ReedSimon4}, pages 280 and 281.
+The following definition is a rephrasing of definitions given in \citet{ReedSimon4}, pages 280 and 281.
 \begin{defn}[Direct integral, fibre]
     \label{defn-direct-integral}
     Let $\Hilb'$ be a separable Hilbert space and $(M, \mu)$ a measure space. We define a Hilbert space $\Hilb$, which is the space of all square-integrable functions from $M$ to $\Hilb'$:
@@ -126,7 +126,7 @@ The following definition is a rephrasing of definitions given in \cite{ReedSimon
 
 The concept of a direct integral might initially seem strange to readers who encounter it for their first time. These readers may find it helpful to think of the direct integral as a simple \textit{“rebranding”} of several concepts they already know and understand. For example, a free spin-$\frac{1}{2}$ particle is represented in the Hilbert space $L^2(\R^3; \C^2)$ of square-integrable functions from the physical space $\R^3$ to the qubit~$\C^2$. This space is by definition the direct integral $L^2(\R^3, \C^2) = \int_{\R^3}^\oplus \C^2$, the qubit plays the role of the fibre space here. Another example is related to the fact that a function of two variables can be understood as a function of one variable which returns another function of one variable (programmers call this \textit{currying}). That is exactly the meaning of this direct integral: $L^2(M\times N) \simeq \int_M^\oplus L^2(N) \simeq \int_N^\oplus L^2(M)$. We mentioned that the direct integral is a generalization of the direct sum. To see that this is the case, consider a finite set $M$ together with the counting measure, then $\int^\oplus_M \Hilb' \simeq \bigoplus_{M} \Hilb'$.
 
-Before we apply the theory of direct integrals to the magnetic Hamiltonian, let us remind the Fourier-Plancherel operator. It is a standard textbook result (see \cite{BEH}) that if we take the Fourier transform as an operator on $\Schwa(\R) \subset L^2(\R)$, its closure is a unitary operator on $L^2(\R)$. This operator is called the Fourier-Plancherel operator $\Fourier$, it transforms momentum to position $\Fourier P \Fourier^{-1} = Q$, and as a unitary operator, it does not change the spectrum of self-adjoint operators:
+Before we apply the theory of direct integrals to the magnetic Hamiltonian, let us remind the Fourier-Plancherel operator. It is a standard textbook result (see \citet{BEH}) that if we take the Fourier transform as an operator on $\Schwa(\R) \subset L^2(\R)$, its closure is a unitary operator on $L^2(\R)$. This operator is called the Fourier-Plancherel operator $\Fourier$, it transforms momentum to position $\Fourier P \Fourier^{-1} = Q$, and as a unitary operator, it does not change the spectrum of self-adjoint operators:
 \begin{equation*}
     \Sp(A) = \Sp(\Fourier A \Fourier^{-1}) \: ,
     \quad
@@ -150,7 +150,7 @@ Now we can show, how to express a Landau Hamiltonian with potential and magnetic
 \end{align*}
 where $P_y \psi(x,y) = -\i \pd{}{y} \psi(x,y)$ is a differential operator and $Q_p \psi(x,p) = p \, \psi(x,p)$ is the operator of multiplication by the second coordinate. For every $p \in \R$, $\Hf(p)$~is a self-adjoint operator on $L^2(\R)$. The physical meaning of the parameter~$p$ is the particle's momentum in the direction of $y$ and $\Hf(p)$ is the Hamiltonian for a particle with a fixed $y$-momentum.
 
-The following theorem is a weakened version of Theorem XIII.85 of \cite{ReedSimon4}.
+The following theorem is a weakened version of Theorem XIII.85 of \citet{ReedSimon4}.
 
 \begin{thm}[Spectrum of direct integral]
     \label{thm-direct-integral-spectrum}
@@ -176,7 +176,7 @@ The following theorem is a weakened version of Theorem XIII.85 of \cite{ReedSimo
 This means that we can deduce the spectrum of the Hamiltonian $H$ simply by investigating how the spectrum of its fibre $\Hf(p)$ depends on $p$. Furthermore, the spectrum of $\Hf(p)$ typically consists of simple eigenvalues which are particularly convenient to work with.
 
 \section{Refresher on linear operators}
-Before we start investigating specific Hamiltonians, let us remind a few textbook theorems regarding self-adjointness and spectral properties of linear operators, which will be useful later. The following definition and the subsequent theorem are from the chapter 4.7 in \cite{BEH}.
+Before we start investigating specific Hamiltonians, let us remind a few textbook theorems regarding self-adjointness and spectral properties of linear operators, which will be useful later. The following definition and the subsequent theorem are from the chapter 4.7 in \citet{BEH}.
 \begin{defn}[Deficiency indices]
     \label{defn-deficiency-indices}
     Let $T$ be a linear operator on $\Hilb$. We define two numbers $n_+, \, n_- \in \N_0 \cup \{ \infty \}$ as follows:
@@ -193,7 +193,7 @@ Before we start investigating specific Hamiltonians, let us remind a few textboo
     \end{equation*}
     Then all maximal extensions of $T$ are self-adjoint. Furthermore, if $n_\pm = 0$, then~$T$ is already self-adjoint.
 \end{thm}
-The following theorem is given in \cite{Weidmann} as Theorem~8.18.
+The following theorem is given in \citet{Weidmann} as Theorem~8.18.
 \begin{thm}[Spectrum of self-adjoint extensions]
     \label{thm-sym-extension-spectrum}
     Let $T$ be a closed symmetric operator on $\Hilb$, such that
@@ -202,7 +202,7 @@ The following theorem is given in \cite{Weidmann} as Theorem~8.18.
     \end{equation*}
     Then the essential spectrum of every self-adjoint extension of $T$ is the same. In~particular, if one self-adjoint extension of $T$ has a pure discrete spectrum, all of them do.
 \end{thm}
-The previous theorems are especially useful in combination with the following theorem about differential operators on $L^2$, which was compiled from the opening of section 8.4 of \cite{Weidmann}, up to the theorem 8.20 there.
+The previous theorems are especially useful in combination with the following theorem about differential operators on $L^2$, which was compiled from the opening of section 8.4 of \citet{Weidmann}, up to the theorem 8.20 there.
 \begin{thm}[Deficiency indices of differential operators]
     \label{thm-deficiency-diff-op}
     Let $a,b \in \R \cup \{ \pm\infty \}$ such that $a<b$. Let $p \in \Cont^1( \, (a,b), \R \, )$ be a continuously differentiable real function and $q \in \Cont( \, (a,b), \R \, )$ be a continuous real function. We define $L$ to mean:
@@ -229,12 +229,12 @@ The previous theorems are especially useful in combination with the following th
     Then $n_-(T) = n_+(T)$.
 \end{thm}
 
-Finally, we will remind two important bits from \cite{Kato1995}. The following definition is adapted from chapter VII, section §2.1.
+Finally, we will remind two important bits from \citet{Kato1995}. The following definition is adapted from chapter VII, section §2.1.
 \begin{defn}[Holomorphic family of type A]
     \label{defn-holo-type-A}
     Let $s \mapsto T(s)$ be an operator-valued function from an open set $\Omega \subset \C$ to closed operators on $\Hilb$. If the domain $\Domain(T(s))$ is identical for all $s$ and the map $s \mapsto T(s) \, \psi$ is holomorphic for all $s \in \Omega$ and $\psi \in \Domain(T(s))$, we say that $T(s)$ is a \textbf{holomorphic family of type A}.
 \end{defn}
-The following theorem is listed as Theorem 3.9 in chapter VII, section §3.5 of \cite{Kato1995}.
+The following theorem is listed as Theorem 3.9 in chapter VII, section §3.5 of \citet{Kato1995}.
 \begin{thm}[On discrete spectrum of type-A holom. operators]
     \label{thm-eigenval-holo}
     Let $I\subset\R$ be an interval on the real axis and let $T(s)$ be a holomorphic family of type A for $s \in \Omega \supset I$. Furthermore, let $T(s)$ be self-adjoint for all $s \in I$ and let the spectrum of $T(s)$ be discrete. Then all eigenvalues of $T(s)$ as functions of $s$ are holomorphic on $I$.

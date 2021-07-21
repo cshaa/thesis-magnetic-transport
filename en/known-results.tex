@@ -4,7 +4,7 @@ In this chapter we will restate the results about Landau Hamiltonians with poten
 \section{Potential perturbation}
 
 \subsection{Macris et al., 1999}
-\cite{Macris1999} investigated the problem of Landau Hamiltonians with a steep (but locally integrable) potential wall along the edge of a half-plane. What follows is a summary of their results.
+\citet{Macris1999} investigated the problem of Landau Hamiltonians with a steep (but locally integrable) potential wall along the edge of a half-plane. What follows is a summary of their results.
 
 \begin{defn}[Hamiltonian]
     Let $\mu \in (0, \infty)$ and $\gamma \in [1, \infty)$. We define the wall potential $U$:
@@ -78,9 +78,9 @@ In this chapter we will restate the results about Landau Hamiltonians with poten
 
 
 \subsection{Fröhlich et al., 2000}
-\cite{Frohlich2000} investigated the problem of systems constrained to a half-plane $\R \times \R_+$ by either a potential wall (bounded or unbounded), or a Dirichlet boundary condition. The Dirichlet b.c. was also treated for more general subspaces $\Omega \subset \R^2$ – we will not list these, as they were not translationally invariant.
+\citet{Frohlich2000} investigated the problem of systems constrained to a half-plane $\R \times \R_+$ by either a potential wall (bounded or unbounded), or a Dirichlet boundary condition. The Dirichlet b.c. was also treated for more general subspaces $\Omega \subset \R^2$ – we will not list these, as they were not translationally invariant.
 
-In the case of the steep potential, they used the theory of \textit{Mourre estimates}, introduced in \cite{Mourre1981}.
+In the case of the steep potential, they used the theory of \textit{Mourre estimates}, introduced in \citet{Mourre1981}.
 
 \begin{defn}[Conjugate operator]
     Let $H$ and $A$ be self-adjoint operators with domains $\Domain(H)$ and $\Domain(A)$. Let $\Omega := \Domain(H) \cap \Domain(A)$. Then $A$ is called a conjugate operator for $H$ if all of the following conditions apply:
@@ -140,12 +140,12 @@ Now, we restate the results regarding a half-plane with a Dirichlet boundary con
 \noindent This theorem has been shown to hold for more general $\Omega \subset \R^2$, for more information see the indicated article.
 
 % \subsection{Combes et al., 2001}
-% \cite{Combes2001} studied the case of a particle confined to a strip.
+% \citet{Combes2001} studied the case of a particle confined to a strip.
 % \textbf{[Finish this.]}
 % TODO TODO TODO TODO %
 
 \subsection{Exner \& Kovařík, 2015}
-In the section 7.2.2 of their textbook on Quantum Waveguides, \cite{ExnerKovarik2015} provide an example of a system, which classically would not lead to any transport, but whose Hamiltonian operator has a non-empty absolute continuous spectrum nonetheless. The Hamiltonian they investigated can be formally written~as
+In the section 7.2.2 of their textbook on Quantum Waveguides, \citet{ExnerKovarik2015} provide an example of a system, which classically would not lead to any transport, but whose Hamiltonian operator has a non-empty absolute continuous spectrum nonetheless. The Hamiltonian they investigated can be formally written~as
 \begin{equation*}
     H
     = \big(P_y + b \, x \big)^2
@@ -153,7 +153,7 @@ In the section 7.2.2 of their textbook on Quantum Waveguides, \cite{ExnerKovarik
     + \sum_{j\in\Z} \alpha \, \delta(x - x_0 - j \, \ell, \, y) \, \delta(y)
     \: ,
 \end{equation*}
-where the potential $V = \sum\alpha\delta(...)\delta(y)$ is a Dirac comb situated on the axis $y=0$. (Proper treatment of point interactions in two dimensions requires special care, see also chapter I.5 of \cite{Albeverio2005} or chapter 5.1 of \cite{ExnerKovarik2015}.) In classical physics, such a potential would only affect a zero-measure family of initial conditions, therefore the trajectory of particles would \textit{almost surely} be unperturbed. This operator is not translationally invariant in the continuous sense – it is periodic in $x$ – but we list it nonetheless as an interesting example.
+where the potential $V = \sum\alpha\delta(...)\delta(y)$ is a Dirac comb situated on the axis $y=0$. (Proper treatment of point interactions in two dimensions requires special care, see also chapter I.5 of \citet{Albeverio2005} or chapter 5.1 of \citet{ExnerKovarik2015}.) In classical physics, such a potential would only affect a zero-measure family of initial conditions, therefore the trajectory of particles would \textit{almost surely} be unperturbed. This operator is not translationally invariant in the continuous sense – it is periodic in $x$ – but we list it nonetheless as an interesting example.
 \begin{defn}[$\delta$-interaction in two dimensions]
     Let $\psi \in L^2(\R^2)$ and $\vec x_0 \in \R^2$. We define:
     \begin{gather*}
@@ -221,7 +221,7 @@ where the potential $V = \sum\alpha\delta(...)\delta(y)$ is a Dirac comb situate
 \label{section-known-magnetic}
 
 \subsection{Iwatsuka, 1983}
-\cite{Iwatsuka1983} proved a very general and important result: a localized magnetic perturbation does not change the Landau spectrum.
+\citet{Iwatsuka1983} proved a very general and important result: a localized magnetic perturbation does not change the Landau spectrum.
 \begin{defn}[Hamiltonian with asymptotically constant perturbation]
     Let $B(x, y)$ be a smooth real function, such that $B(x, y) \to B_0 \neq 0$ as $\sqrt{x^2 + y^2} \to \infty$. Let $A_x, A_y$ be smooth functions satisfying $B(x,y) = \pd{}{x} A_y(x,y) - \pd{}{y} A_x(x,y)$. Let $\tilde H$ be the essentially self-adjoint operator on $L^2(\R^2)$ given by
     \begin{gather*}
@@ -242,7 +242,7 @@ where the potential $V = \sum\alpha\delta(...)\delta(y)$ is a Dirac comb situate
 \end{thm}
 
 \subsection{Iwatsuka, 1985}
-\cite{Iwatsuka1985} continues the work from Iwatsuka's 1983 article by studying translationally invariant perturbations which \textit{do not} vanish at infinity.
+\citet{Iwatsuka1985} continues the work from Iwatsuka's 1983 article by studying translationally invariant perturbations which \textit{do not} vanish at infinity.
 \begin{defn}[Hamiltonian]
     Let $A_y(x)$ be a smooth real function, such that $B(x) := \dd{}{x} A_y(x)$ satisfies the condition $0 < M_- < B(x) < M_+ < \infty$ for all $x \in \R$. Let $\tilde H$ be the essentially self-adjoint operator on $L^2(\R^2)$ given by
     \begin{gather*}
@@ -269,7 +269,7 @@ where the potential $V = \sum\alpha\delta(...)\delta(y)$ is a Dirac comb situate
 \end{thm}
 
 % \subsection{Hislop et al., 2015}
-% \cite{Hislop2015} [\textbf{Finish this.}]
+% \citet{Hislop2015} [\textbf{Finish this.}]
 % TODO TODO TODO TODO %
 
 
@@ -277,11 +277,11 @@ where the potential $V = \sum\alpha\delta(...)\delta(y)$ is a Dirac comb situate
 \section{Geometric perturbation}
 
 % \subsection{Exner \& Kovařík, 2015}
-% In section 7.1.2 of their textbook on Quantum Waveguides, \cite{ExnerKovarik2015}
+% In section 7.1.2 of their textbook on Quantum Waveguides, \citet{ExnerKovarik2015}
 % ^^ Does not appear to be relevant ^^
 
 \subsection{Exner et al., 2018}
-\cite{Exner2018} investigated the Landau Hamiltonian on thin layers.
+\citet{Exner2018} investigated the Landau Hamiltonian on thin layers.
 
 \begin{defn}
     Let $H\!$ be the Landau Hamiltonian with a magnetic field of strength $b$ and a geometric perturbation (see Definition \ref{defn-perturb-geom}) which confines the system to a translationally invariant layer $\Omega$ of width $2\ell$ given by a curve $\omega(s) \equiv \big(x(s),z(s)\big)$, such that $\kappa$, the signed curvature of $\omega$, is bounded and that $\Omega$ doesn't intersect itself (i.e. $\ell < 1/\lVert\kappa\rVert_{L^\infty}$).

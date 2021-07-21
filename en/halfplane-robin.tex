@@ -41,7 +41,7 @@ When $\alpha=0$, the problem reduces to the Neumann boundary condition.
 
 \medskip
 
-The Robin boundary condition is a generalization of the Dirichlet and Neumann boundary conditions. In their article\footnote{To the author's knowledge, the article has not been published in any journal yet.}, \cite{Allwright2016} argued that the Robin b.c. should be viewed as the generic boundary condition for long-wavelength approximations of short-ranged potentials. They give several examples where the characteristic length $L$ of a potential leads to a Robin boundary with $\alpha = 1/L$ in the long-wavelength limit.
+The Robin boundary condition is a generalization of the Dirichlet and Neumann boundary conditions. In their article\footnote{To the author's knowledge, the article has not been published in any journal yet.}, \citet{Allwright2016} argued that the Robin b.c. should be viewed as the generic boundary condition for long-wavelength approximations of short-ranged potentials. They give several examples where the characteristic length $L$ of a potential leads to a Robin boundary with $\alpha = 1/L$ in the long-wavelength limit.
 
 
 \section{Well-posedness}
@@ -258,7 +258,7 @@ The eigenvalues $\epsilon$ as functions of $p$ are plotted in Figure \ref{plots-
 
 We are interested in the behaviour of $\epsilon_k(p)$ as $p \to \pm \infty$. The fibre Hamiltonian $\Hf_\alpha(p)$ with $p$ fixed is unitarily equivalent to a fibre Hamiltonian with $p=0$ translated by $p/b$, that is $\Hf_\alpha(p) \simeq T_{p/b} \, \Hf_\alpha(0) \, T_{-p/b}$, where $T_c \varphi(x) = {\varphi(x - c)}$. If~$p < 0$, this causes the Robin boundary to move to the left, away from the minimum of the effective potential. As $p \to -\infty$, the influence of the boundary decreases and the fibre Hamiltonian approaches that of a one-dimensional harmonic oscillator, hence $\epsilon_k \to b \, (2k+1)$. On the other hand, $p \to +\infty$ moves the boundary to the right, making increasingly larger areas with low effective potential forbidden, hence $\epsilon_k \to +\infty$.
 
-These asymptotics make it clear that all energy levels above the lowest Landau level $\epsilon = b$ are allowed. However, one question still remains: what is the lowest allowed energy level? For the Neumann boundary ($\alpha = 0$), \cite{Noel2012} has proven the minimum energy to be
+These asymptotics make it clear that all energy levels above the lowest Landau level $\epsilon = b$ are allowed. However, one question still remains: what is the lowest allowed energy level? For the Neumann boundary ($\alpha = 0$), \citet{Noel2012} has proven the minimum energy to be
 \begin{equation}
     \Theta_0
     \; := \;
@@ -268,7 +268,7 @@ These asymptotics make it clear that all energy levels above the lowest Landau l
     0.590106125
     \: .
 \end{equation}
-The constant $\Theta_0$ is called the \textit{de Gennes constant} by some (e.g. \cite{ExnerLotoreichik2018}). For $\alpha > 0$ we will use the fact that the quadratic form of $\Hf_\alpha(p)$ is nonincreasing in $\alpha$. Let $\beta > \alpha$, then:
+The constant $\Theta_0$ is called the \textit{de Gennes constant} by some (e.g. \citet{ExnerLotoreichik2018}). For $\alpha > 0$ we will use the fact that the quadratic form of $\Hf_\alpha(p)$ is nonincreasing in $\alpha$. Let $\beta > \alpha$, then:
 \begin{align*}
     \big( \varphi, \, \Hf_\alpha(p) \, \varphi \big)
     &= - \int_{\R_+} \overline\varphi \varphi''
@@ -327,9 +327,9 @@ For $\alpha < 0$, on the other hand, the inequality \eqref{eqn-robin-form-monoto
 \end{align*}
 Clearly, the solution to \eqref{eqn-landau-lvl-hermite-solution} always exists. It is straightforward to check that the sign of $F$ changes at $\alpha=p$, indicating that $\epsilon_0(p)$ actually \textit{crosses} the lowest Landau level. And since $\epsilon_0(p \to +\infty) \to +\infty$, the only way it can cross $\epsilon = b$ and still approach it as $p\to -\infty$ is by approaching it \textit{from below}. Thus, we have shown that $\min \epsilon_0(p) < b$.
 
-Our estimate of the minimum energy for different values of $\alpha$ still leaves a lot to be desired. That is why we also computed a numerical approximation using \textit{mpmath} (see \cite{mpmath}). A table of the computed values and the code used to compute them is available in Section \ref{apdx-pythom} of the Appendix.
+Our estimate of the minimum energy for different values of $\alpha$ still leaves a lot to be desired. That is why we also computed a numerical approximation using \textit{mpmath} \citep{mpmath}. A table of the computed values and the code used to compute them is available in Section \ref{apdx-pythom} of the Appendix.
 
-We have all the information needed to characterize the spectrum of $H_\alpha$ using Theorem~\ref{thm-direct-integral-spectrum}. Since neither of the energy functions is constant (they are analytic and grow indefinitely), the pure point spectrum of $H_\alpha$ is empty. Applying the result by \cite{Filonov2006}, we see that the singular continuous spectrum is empty too. What remains is the absolute continuous spectrum which goes from the energy minimum to infinity.
+We have all the information needed to characterize the spectrum of $H_\alpha$ using Theorem~\ref{thm-direct-integral-spectrum}. Since neither of the energy functions is constant (they are analytic and grow indefinitely), the pure point spectrum of $H_\alpha$ is empty. Applying the result by \citet{Filonov2006}, we see that the singular continuous spectrum is empty too. What remains is the absolute continuous spectrum which goes from the energy minimum to infinity.
 
 \begin{figure}[t]
     \centering

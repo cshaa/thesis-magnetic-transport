@@ -41,9 +41,9 @@ Sometimes, we will want to explicitly specify not only $\alpha$ and $p$, but als
 
 \medskip
 
-As discussed in section I.3.2 of \cite{Albeverio2005}, Hamiltonians with a $\delta$-interaction are the limit\footnote{In the strong resolvent sense.} of Hamiltonians with strongly peaked regular potentials such as $V_n(x) = \alpha \, n \, \e{-n^2 x^2}$. The Hamiltonian $H_\alpha$ can therefore be thought of as an approximation of a strongly peaked potential supported along $x = x_0$, provided that the characteristic width of the potential is much less than the de Broglie wavelength of the studied particle.
+As discussed in section I.3.2 of \citet{Albeverio2005}, Hamiltonians with a $\delta$-interaction are the limit\footnote{In the strong resolvent sense.} of Hamiltonians with strongly peaked regular potentials such as $V_n(x) = \alpha \, n \, \e{-n^2 x^2}$. The Hamiltonian $H_\alpha$ can therefore be thought of as an approximation of a strongly peaked potential supported along $x = x_0$, provided that the characteristic width of the potential is much less than the de Broglie wavelength of the studied particle.
 
-A similar problem was studied by \cite{BehrndtExner2020}. Their work concerns Landau Hamiltonians with a $\delta$-interaction supported on $C^{1,1}$-smooth \textit{finite} (hence not translationally invariant) curves. They show that such Hamiltonians have a pure point spectrum with discrete points accumulating towards the infinitely-degenerate Landau levels.
+A similar problem was studied by \citet{BehrndtExner2020}. Their work concerns Landau Hamiltonians with a $\delta$-interaction supported on $C^{1,1}$-smooth \textit{finite} (hence not translationally invariant) curves. They show that such Hamiltonians have a pure point spectrum with discrete points accumulating towards the infinitely-degenerate Landau levels.
 
 \medskip
 
@@ -226,7 +226,7 @@ The two functions are then \textit{“glued together”} by the following equati
     \label{eqn-gluing-equations}
 \end{equation}
 
-As stated in chapter 9.2 of \cite{GradshteynRyzhik}, the solutions to \eqref{eqn-parabolic-cylinder-ode} can be expressed as a linear combination of the functions
+As stated in chapter 9.2 of \citet{GradshteynRyzhik}, the solutions to \eqref{eqn-parabolic-cylinder-ode} can be expressed as a linear combination of the functions
 \begin{equation}
     D_\nu(w) \: , \;\;
     D_\nu(-w) \: , \;\;
@@ -263,7 +263,7 @@ In the special case when $\nu \in \N_0$, the function $D_\nu$ can be expressed u
 \end{equation}
 The solutions in \eqref{eqn-parabolic-cylinder-solutions} are linearly dependent. For most values of $\nu$, any of the four functions can be expressed as a linear combination of any two others. However, specifically in the case $\nu \in \N_0$ we get $D_\nu(w) = \pm D_\nu(-w)$.
 
-Asymptotic behaviour of the solutions is also given by \cite{GradshteynRyzhik}. As $|w|\to\infty$, the solutions $D_{-\nu-1}(\i w)$ and $D_{-\nu-1}(-\i w)$ grow exponentially. Meanwhile, $D_\nu(w)$ decays exponentially for $w \to +\infty$. Therefore, $D_\nu(w)$ and $D_\nu(-w)$ are better suited for the growth conditions imposed by the domain of $\Hf_\alpha(p)$. We define $c_{+1}, c_{+2}, c_{-1}, c_{-2} \in \C$, such that
+Asymptotic behaviour of the solutions is also given by \citet{GradshteynRyzhik}. As $|w|\to\infty$, the solutions $D_{-\nu-1}(\i w)$ and $D_{-\nu-1}(-\i w)$ grow exponentially. Meanwhile, $D_\nu(w)$ decays exponentially for $w \to +\infty$. Therefore, $D_\nu(w)$ and $D_\nu(-w)$ are better suited for the growth conditions imposed by the domain of $\Hf_\alpha(p)$. We define $c_{+1}, c_{+2}, c_{-1}, c_{-2} \in \C$, such that
 \begin{equation}
     g_\pm(w) = c_{\pm 1} \, D_\nu(w) + c_{\pm 2} \, D_\nu(-w) \: .
     \label{eqn-dirac-parabolic-cylinder-two-solutions}
@@ -274,7 +274,7 @@ Furthermore, if $\nu \notin \N_0$, the solution $D_\nu(w)$ diverges for $w \to -
     c_{+1} \, D_\nu(w_0) = c_{-2} \, D_\nu(-w_0) \\[5pt]
     c_{+1} \, \dd{}{w} D_\nu(w) \big|_{w_0} - c_{-2} \, \dd{}{w} D_\nu(-w) \big|_{w_0} = \alpha \, \sqrt{2b} \; c_{+1} \, D_\nu(w_0)
 \end{gather*}
-We substitute using the equality $\dd{}{w} D_\nu(w) = \frac{w}{2} \, D_\nu(w) - D_{\nu+1}(w)$ from \cite{GradshteynRyzhik} and arrive at the equation:
+We substitute using the equality $\dd{}{w} D_\nu(w) = \frac{w}{2} \, D_\nu(w) - D_{\nu+1}(w)$ from \citet{GradshteynRyzhik} and arrive at the equation:
 \begin{align*}
     \begin{pmatrix}
         D_\nu(w_0) & -D_\nu(-w_0) \\[5pt]
@@ -366,7 +366,7 @@ In fact, this is simply the equation \eqref{eqn-implicit-pre} after the substitu
 
 \bigskip
 
-For each fixed $\alpha$, the relation \eqref{eqn-dirac-epsilon-F-relation} defines a set of non-intersecting analytic functions $\big\{ \epsilon_0(p), \epsilon_1(p), ... \big\}$ defined on the entire $\R$. This can be demonstrated either from the properties of $F$ via the implicit mapping theorem (listed as 8.6 in \cite{KaupKaup1983}), or from the properties of $\Hf_\alpha(p)$ via Theorem \ref{thm-eigenval-holo}. We choose the latter approach:
+For each fixed $\alpha$, the relation \eqref{eqn-dirac-epsilon-F-relation} defines a set of non-intersecting analytic functions $\big\{ \epsilon_0(p), \epsilon_1(p), ... \big\}$ defined on the entire $\R$. This can be demonstrated either from the properties of $F$ via the implicit mapping theorem (listed as 8.6 in \citet{KaupKaup1983}), or from the properties of $\Hf_\alpha(p)$ via Theorem \ref{thm-eigenval-holo}. We choose the latter approach:
 \begin{equation*}
     \Hf_\alpha(p)
     = -\dd{^2}{x^2} + \big( b \, x + p \big)^2
@@ -480,7 +480,7 @@ Finally, we can make the following observation:
     The quadratic form of $\Hf_\alpha(p)$ is clearly nondecreasing in $\alpha$. Therefore, the energy functions will be under the Landau level for $\alpha$ negative and above it for $\alpha$ positive.
 \end{proof}
 
-Now, we have all we need to characterize the spectrum of $H_\alpha$ using Theorem~\ref{thm-direct-integral-spectrum}. If $\alpha \neq 0$, the pure point spectrum is clearly empty, because the functions $\epsilon_k(p)$ are not constant, hence the set $\{ p \; | \; \epsilon(p) = E \}$ has measure zero for every $E$. Furthermore, as $H_\alpha$ is a direct integral of an analytic operator-valued function $\Hf_\alpha(p)$ whose spectrum is discrete, the singular continuous spectrum of $H_\alpha$ is also empty, as proven by \cite{Filonov2006}. Thus, the spectrum of $H_\alpha$ will be entirely absolute continuous, consisting of disjoint bands extending from the Landau levels up (for $\alpha>0$) or down (for $\alpha<0$).
+Now, we have all we need to characterize the spectrum of $H_\alpha$ using Theorem~\ref{thm-direct-integral-spectrum}. If $\alpha \neq 0$, the pure point spectrum is clearly empty, because the functions $\epsilon_k(p)$ are not constant, hence the set $\{ p \; | \; \epsilon(p) = E \}$ has measure zero for every $E$. Furthermore, as $H_\alpha$ is a direct integral of an analytic operator-valued function $\Hf_\alpha(p)$ whose spectrum is discrete, the singular continuous spectrum of $H_\alpha$ is also empty, as proven by \citet{Filonov2006}. Thus, the spectrum of $H_\alpha$ will be entirely absolute continuous, consisting of disjoint bands extending from the Landau levels up (for $\alpha>0$) or down (for $\alpha<0$).
 
 \section{Summary}
 The following theorem summarizes the information obtained about the spectrum of the Landau Hamiltonian with a Dirac delta perturbation:
