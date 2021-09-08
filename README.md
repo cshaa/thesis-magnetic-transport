@@ -1,5 +1,5 @@
 # Magnetic Transport Along Translationally Invariant Obstacles
-A thesis by Michal Grňo, supervised by prof. Pavel Exner. The PDF is available [here](https://github.com/m93a/thesis-magnetic-transport/blob/main/en/thesis.pdf).
+A thesis by Michal Grňo, supervised by prof. Pavel Exner. The PDF is available [here](https://github.com/m93a/thesis-magnetic-transport/blob/main/thesis/thesis.pdf).
 
 ## Template
 The template used for the TeX document was made by:
