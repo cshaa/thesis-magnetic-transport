@@ -23,3 +23,7 @@
 # BibTeX
 *.bbl
 *.blg
+
+# Beamer
+*.nav
+*.snm
