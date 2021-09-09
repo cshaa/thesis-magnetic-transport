@@ -33,3 +33,6 @@ def F_dirichlet(p, ε):
     return D(ν, p*sqrt2)
 
 
+# at this very point
+# I found plotting in Python
+# to be stinky poo
