@@ -1,0 +1,667 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28618,        659]
+NotebookOptionsPosition[     26030,        616]
+NotebookOutlinePosition[     26569,        635]
+CellTagsIndexPosition[     26526,        632]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "This file will create ",
+ StyleBox[".png ",
+  FontSlant->"Italic"],
+ "images with animated plots."
+}], "Text",
+ CellChangeTimes->{{3.840196112513541*^9, 3.840196167648045*^9}, 
+   3.8401962039722023`*^9},ExpressionUUID->"d61f0540-aced-47f3-9db3-\
+23e3c2116657"],
+
+Cell["\<\
+
+
+Some technical stuff\
+\>", "Text",
+ CellChangeTimes->{{3.840193421091445*^9, 3.840193421747407*^9}, {
+  3.840193456431489*^9, 3.8401934587276382`*^9}, {3.840196206300356*^9, 
+  3.840196220790142*^9}},ExpressionUUID->"2d9398ba-7436-4392-b36b-\
+4c90b952e017"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"ResourceFunction", "[", "\"\<MaTeXInstall\>\"", "]"}], "[", "]"}],
+   ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "MaTeX`"}], "\n", 
+ RowBox[{
+  RowBox[{"texout", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "410"}], ",", 
+     RowBox[{"BaseStyle", "\[Rule]", 
+      RowBox[{"Directive", "[", 
+       RowBox[{"FontSize", "\[Rule]", "12"}], "]"}]}], ",", 
+     RowBox[{"AxesStyle", "\[Rule]", 
+      RowBox[{"Directive", "[", 
+       RowBox[{"FontSize", "\[Rule]", "12"}], "]"}]}], ",", 
+     RowBox[{"TicksStyle", "\[Rule]", 
+      RowBox[{"Directive", "[", 
+       RowBox[{"FontSize", "\[Rule]", "12"}], "]"}]}], ",", 
+     RowBox[{"LabelStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"FontFamily", "\[Rule]", "\"\<Latin Modern Roman\>\""}], ",", 
+        
+        RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}]}], "}"}]}], 
+  ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.824665937574201*^9, 3.8246659520217323`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"797e3a68-4d33-465f-9f22-77a25ae7438f"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"PD", "[", 
+    RowBox[{"\[Nu]_", ",", " ", "w_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"ParabolicCylinderD", "[", 
+    RowBox[{"\[Nu]", ",", " ", "w"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Nu]", "[", "\[CurlyEpsilon]_", "]"}], " ", ":=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"\[CurlyEpsilon]", "+", "1"}], ")"}], "/", "2"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"s2", " ", ":=", " ", 
+    RowBox[{"Sqrt", "[", "2", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"plot", "[", 
+     RowBox[{
+     "F_", ",", "pintvl_", ",", " ", "\[CurlyEpsilon]intvl_", ",", " ", 
+      "plotLabel_", ",", " ", "frameLabel_"}], "]"}], ":=", 
+    RowBox[{"ContourPlot", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"F", "\[Equal]", "0"}], ",", " ", "pintvl", ",", 
+      "\[CurlyEpsilon]intvl", ",", "\[IndentingNewLine]", 
+      RowBox[{"ColorFunction", "\[Rule]", 
+       RowBox[{"Function", "[", 
+        RowBox[{"x", ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "]"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Evaluate", "@", "texout"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"PlotLabel", "\[Rule]", 
+       RowBox[{"MaTeX", "[", "plotLabel", "]"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"FrameLabel", "\[Rule]", 
+       RowBox[{"MaTeX", "/@", "frameLabel"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"PerformanceGoal", "\[Rule]", "\"\<Quality\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"WorkingPrecision", "\[Rule]", "200"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"MaxRecursion", " ", "\[Rule]", " ", "3"}]}], 
+     "\[IndentingNewLine]", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"EP", "[", 
+    RowBox[{"name_", ",", " ", "plot_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"Export", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"NotebookDirectory", "[", "]"}], "<>", "name"}], ",", 
+     "\[IndentingNewLine]", "plot", ",", "\[IndentingNewLine]", 
+     RowBox[{"ImageResolution", "\[Rule]", "600"}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.840188052267459*^9, 3.840188355020267*^9}, {
+  3.840188408242546*^9, 3.840188512286236*^9}, {3.840188641638989*^9, 
+  3.8401886906761503`*^9}, {3.840189698651915*^9, 3.840189701307132*^9}, {
+  3.840193375648662*^9, 3.840193394720467*^9}, {3.8401960994642973`*^9, 
+  3.8401961004013968`*^9}, {3.840199788729048*^9, 3.840199841223027*^9}, {
+  3.840211007115749*^9, 3.840211007566798*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"49b56a43-2bb7-44ac-8741-3489d74a2159"],
+
+Cell[TextData[{
+ "\n\n\nThe implicit function ",
+ StyleBox["F(",
+  FontSlant->"Italic"],
+ "\[Alpha]",
+ StyleBox[", p, ",
+  FontSlant->"Italic"],
+ "\[CurlyEpsilon]",
+ StyleBox[")",
+  FontSlant->"Italic"],
+ " for the \[Delta]-interaction, see eq. (3.12)"
+}], "Text",
+ CellChangeTimes->{{3.84019346641658*^9, 3.840193525607736*^9}, {
+  3.840196176801167*^9, 
+  3.84019618346567*^9}},ExpressionUUID->"c3498968-0066-484e-a940-\
+9aad40c2d2a4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Fdelta", "[", 
+    RowBox[{"\[Alpha]_", ",", " ", "p_", ",", " ", "\[CurlyEpsilon]_"}], 
+    "]"}], " ", ":=", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"PD", "[", 
+      RowBox[{
+       RowBox[{"\[Nu]", "[", "\[CurlyEpsilon]", "]"}], ",", " ", 
+       RowBox[{"p", " ", "s2"}]}], "]"}], " ", 
+     RowBox[{"PD", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"\[Nu]", "[", "\[CurlyEpsilon]", "]"}], "+", "1"}], ",", " ", 
+       
+       RowBox[{
+        RowBox[{"-", "p"}], " ", "s2"}]}], "]"}]}], " ", "+", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"PD", "[", 
+      RowBox[{
+       RowBox[{"\[Nu]", "[", "\[CurlyEpsilon]", "]"}], ",", " ", 
+       RowBox[{
+        RowBox[{"-", "p"}], " ", "s2"}]}], "]"}], " ", 
+     RowBox[{"PD", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"\[Nu]", "[", "\[CurlyEpsilon]", "]"}], "+", "1"}], ",", " ", 
+       
+       RowBox[{"p", " ", "s2"}]}], "]"}]}], " ", "+", "\[IndentingNewLine]", 
+    RowBox[{"\[Alpha]", " ", "s2", " ", 
+     RowBox[{"PD", "[", 
+      RowBox[{
+       RowBox[{"\[Nu]", "[", "\[CurlyEpsilon]", "]"}], ",", 
+       RowBox[{"p", " ", "s2"}]}], "]"}], " ", 
+     RowBox[{"PD", "[", 
+      RowBox[{
+       RowBox[{"\[Nu]", "[", "\[CurlyEpsilon]", "]"}], ",", " ", 
+       RowBox[{
+        RowBox[{"-", "p"}], " ", "s2"}]}], "]"}]}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.840193376743388*^9, 3.8401933805271873`*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"69d85686-5dfb-4848-a121-15b86c963179"],
+
+Cell[TextData[{
+ "\nThe implicit function ",
+ StyleBox["F(",
+  FontSlant->"Italic"],
+ "\[Alpha]",
+ StyleBox[", p, ",
+  FontSlant->"Italic"],
+ "\[CurlyEpsilon]",
+ StyleBox[")",
+  FontSlant->"Italic"],
+ " for the Robin boundary, see eq. (4.4)"
+}], "Text",
+ CellChangeTimes->{{3.840193531600004*^9, 
+  3.8401935702286367`*^9}},ExpressionUUID->"8fb5a1c7-8727-411d-be0d-\
+28955e95e11e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Frobin", "[", 
+    RowBox[{"\[Alpha]_", ",", " ", "p_", ",", " ", "\[CurlyEpsilon]_"}], 
+    "]"}], " ", ":=", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"\[Alpha]", "+", "p"}], ")"}], 
+     RowBox[{"PD", "[", 
+      RowBox[{
+       RowBox[{"\[Nu]", "[", "\[CurlyEpsilon]", "]"}], ",", " ", 
+       RowBox[{"p", " ", "s2"}]}], "]"}]}], " ", "-", " ", 
+    RowBox[{"s2", " ", 
+     RowBox[{"PD", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"\[Nu]", "[", "\[CurlyEpsilon]", "]"}], "+", "1"}], ",", " ", 
+       
+       RowBox[{"p", " ", "s2"}]}], "]"}]}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8401933891921577`*^9, 3.840193390848387*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"a2067c52-3366-4687-a16e-e2b4a98d59b2"],
+
+Cell[TextData[{
+ "\nThe implicit function ",
+ StyleBox["F(p, ",
+  FontSlant->"Italic"],
+ "\[CurlyEpsilon]",
+ StyleBox[")",
+  FontSlant->"Italic"],
+ " for the Dirichlet boundary, see under eq. (4.3)"
+}], "Text",
+ CellChangeTimes->{{3.840193588726763*^9, 3.8401936025201*^9}, {
+  3.840196065684251*^9, 
+  3.8401960817421417`*^9}},ExpressionUUID->"b18f12bb-edf1-4ec2-ae99-\
+081dd0273ea8"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Fdirichlet", "[", 
+    RowBox[{"\[Alpha]_", ",", " ", "p_", ",", " ", "\[CurlyEpsilon]_"}], 
+    "]"}], " ", ":=", "\[IndentingNewLine]", 
+   RowBox[{"PD", "[", 
+    RowBox[{
+     RowBox[{"\[Nu]", "[", "\[CurlyEpsilon]", "]"}], ",", " ", 
+     RowBox[{"p", " ", "s2"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{3.84019339968151*^9},
+ CellLabel->"In[14]:=",ExpressionUUID->"8bca9fcf-e26f-4663-bcf6-9be23cd40b56"],
+
+Cell["\<\
+
+
+
+Create plots of the Robin boundary condition\
+\>", "Text",
+ CellChangeTimes->{{3.840193326472533*^9, 3.840193344674677*^9}, {
+  3.8401961802414217`*^9, 3.840196198171433*^9}, {3.840203424264927*^9, 
+  3.840203427024975*^9}},ExpressionUUID->"56b9b3d0-6035-4eac-a998-\
+cf9fd16c56bb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"\[Alpha]values", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "10"}], ",", 
+     RowBox[{"-", "5"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "0.5"}], ",", "0", ",", "0.5", ",", "1", ",", "1.5", ",", 
+     "2", ",", "2.5", ",", "3", ",", "3.5", ",", "4", ",", "4.5", ",", "5", 
+     ",", "7", ",", "10"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Do", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"EP", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<robin\>\"", "<>", 
+       RowBox[{"ToString", "[", "i", "]"}], "<>", "\"\<.pdf\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"plot", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Frobin", "[", 
+         RowBox[{
+          RowBox[{"\[Alpha]values", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], ",", "p", ",", "\[CurlyEpsilon]"}],
+          "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"p", ",", 
+          RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\[CurlyEpsilon]", ",", 
+          RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "\"\<\\\\text{Robin boundary with }\\\\alpha/\\\\sqrt{b}=\>\"", "<>", 
+         
+         RowBox[{"ToString", "[", 
+          RowBox[{"\[Alpha]values", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], "]"}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"\"\<p/\\\\sqrt{b}\>\"", ",", " ", "\"\<\\\\epsilon/b\>\""}],
+          "}"}]}], "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+     "]"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", " ", 
+      RowBox[{"Range", "[", 
+       RowBox[{"Length", "[", "\[Alpha]values", "]"}], "]"}]}], "}"}]}], 
+   "\[IndentingNewLine]", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.840188958675768*^9, 3.8401889939270163`*^9}, {
+   3.840189370636153*^9, 3.840189410768084*^9}, {3.8401894611186438`*^9, 
+   3.8401894697914877`*^9}, 3.840189546425529*^9, 3.84018970464354*^9, {
+   3.840189984195928*^9, 3.840190080255945*^9}, {3.840191850054743*^9, 
+   3.840191862183207*^9}, {3.840191938592183*^9, 3.840191944152952*^9}, {
+   3.84019197573245*^9, 3.8401919946625347`*^9}, {3.840192097346506*^9, 
+   3.840192237635283*^9}, {3.8401923046362123`*^9, 3.840192314788423*^9}, {
+   3.84019239316691*^9, 3.840192425977416*^9}, {3.84019256257872*^9, 
+   3.840192568682063*^9}, {3.840193027776237*^9, 3.840193075012199*^9}, {
+   3.840193133875054*^9, 3.840193193201747*^9}, {3.840199483975461*^9, 
+   3.840199510256453*^9}, {3.840199552085588*^9, 3.84019958638562*^9}, {
+   3.840199670101487*^9, 3.840199705367216*^9}, {3.840199831464592*^9, 
+   3.840199854336774*^9}, {3.840200900861773*^9, 3.8402009257015676`*^9}, {
+   3.840201038453055*^9, 3.840201093961802*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"2f3f9b87-42cf-465b-896e-4e2a3a537628"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ContourPlot", "precw", 
+   "\"The precision of the argument function \
+(\\!\\(\\*RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"0.5`\\\"}], \\\"+\\\", \\\"p\\\"}], \
+\\\")\\\"}], \\\" \\\", RowBox[{\\\"ParabolicCylinderD\\\", \\\"[\\\", \
+RowBox[{FractionBox[RowBox[{\\\"1\\\", \\\"+\\\", \\\"\[CurlyEpsilon]\\\"}], \
+\\\"2\\\"], \\\",\\\", RowBox[{SqrtBox[\\\"2\\\"], \\\" \\\", \\\"p\\\"}]}], \
+\\\"]\\\"}]}], \\\"-\\\", RowBox[{SqrtBox[\\\"2\\\"], \\\" \\\", \
+RowBox[{\\\"ParabolicCylinderD\\\", \\\"[\\\", RowBox[{RowBox[{\\\"1\\\", \
+\\\"+\\\", FractionBox[RowBox[{\\\"1\\\", \\\"+\\\", \
+\\\"\[CurlyEpsilon]\\\"}], \\\"2\\\"]}], \\\",\\\", \
+RowBox[{SqrtBox[\\\"2\\\"], \\\" \\\", \\\"p\\\"}]}], \\\"]\\\"}]}]}], \
+\\\")\\\"}], \\\"-\\\", \\\"0\\\"}]\\)) is less than WorkingPrecision (\\!\\(\
+\\*RowBox[{\\\"200.`\\\"}]\\)).\"", 2, 16, 1, 30763635180282482359, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.840211155435543*^9},
+ CellLabel->
+  "During evaluation of \
+In[15]:=",ExpressionUUID->"f5f908e6-b991-46f5-ab54-7857336a52b8"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ContourPlot", "precw", 
+   "\"The precision of the argument function \
+(\\!\\(\\*RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"0.5`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
+\\\"p\\\"}], \\\")\\\"}], \\\" \\\", RowBox[{\\\"ParabolicCylinderD\\\", \
+\\\"[\\\", RowBox[{FractionBox[RowBox[{\\\"1\\\", \\\"+\\\", \\\"\
+\[CurlyEpsilon]\\\"}], \\\"2\\\"], \\\",\\\", RowBox[{SqrtBox[\\\"2\\\"], \
+\\\" \\\", \\\"p\\\"}]}], \\\"]\\\"}]}], \\\"-\\\", \
+RowBox[{SqrtBox[\\\"2\\\"], \\\" \\\", RowBox[{\\\"ParabolicCylinderD\\\", \\\
+\"[\\\", RowBox[{RowBox[{\\\"1\\\", \\\"+\\\", FractionBox[RowBox[{\\\"1\\\", \
+\\\"+\\\", \\\"\[CurlyEpsilon]\\\"}], \\\"2\\\"]}], \\\",\\\", \
+RowBox[{SqrtBox[\\\"2\\\"], \\\" \\\", \\\"p\\\"}]}], \\\"]\\\"}]}]}], \
+\\\")\\\"}], \\\"-\\\", \\\"0\\\"}]\\)) is less than WorkingPrecision (\\!\\(\
+\\*RowBox[{\\\"200.`\\\"}]\\)).\"", 2, 16, 2, 30763635180282482359, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.840211217682117*^9},
+ CellLabel->
+  "During evaluation of \
+In[15]:=",ExpressionUUID->"29342192-8fb2-4464-b236-e13d924d444b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ContourPlot", "precw", 
+   "\"The precision of the argument function \
+(\\!\\(\\*RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"1.5`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
+\\\"p\\\"}], \\\")\\\"}], \\\" \\\", RowBox[{\\\"ParabolicCylinderD\\\", \
+\\\"[\\\", RowBox[{FractionBox[RowBox[{\\\"1\\\", \\\"+\\\", \\\"\
+\[CurlyEpsilon]\\\"}], \\\"2\\\"], \\\",\\\", RowBox[{SqrtBox[\\\"2\\\"], \
+\\\" \\\", \\\"p\\\"}]}], \\\"]\\\"}]}], \\\"-\\\", \
+RowBox[{SqrtBox[\\\"2\\\"], \\\" \\\", RowBox[{\\\"ParabolicCylinderD\\\", \\\
+\"[\\\", RowBox[{RowBox[{\\\"1\\\", \\\"+\\\", FractionBox[RowBox[{\\\"1\\\", \
+\\\"+\\\", \\\"\[CurlyEpsilon]\\\"}], \\\"2\\\"]}], \\\",\\\", \
+RowBox[{SqrtBox[\\\"2\\\"], \\\" \\\", \\\"p\\\"}]}], \\\"]\\\"}]}]}], \
+\\\")\\\"}], \\\"-\\\", \\\"0\\\"}]\\)) is less than WorkingPrecision (\\!\\(\
+\\*RowBox[{\\\"200.`\\\"}]\\)).\"", 2, 16, 3, 30763635180282482359, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.840211284217856*^9},
+ CellLabel->
+  "During evaluation of \
+In[15]:=",ExpressionUUID->"f6145fa0-688f-4f8e-bec1-42163dddb967"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General", "stop", 
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ContourPlot\\\", \\\"::\
+\\\", \\\"precw\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"", 2, 16, 4, 30763635180282482359, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8402112842260227`*^9},
+ CellLabel->
+  "During evaluation of \
+In[15]:=",ExpressionUUID->"00f8d83e-75b4-4680-9833-e18116472ea6"]
+}, Open  ]],
+
+Cell["\<\
+
+Create plots of the \[Delta]-interaction\
+\>", "Text",
+ CellChangeTimes->{{3.840203411463369*^9, 
+  3.840203421832407*^9}},ExpressionUUID->"0f702d1e-9b43-482c-9f73-\
+f94d734aa52e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"\[Alpha]values", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "0.25"}], ",", 
+     RowBox[{"-", "0.5"}], ",", 
+     RowBox[{"-", "0.75"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1.5"}], ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "3"}], ",", 
+     RowBox[{"-", "5"}], ",", 
+     RowBox[{"-", "7"}], ",", 
+     RowBox[{"-", "10"}], ",", 
+     RowBox[{"-", "15"}], ",", "100", ",", "10", ",", "5", ",", "3", ",", "2",
+      ",", "1.5", ",", "1", ",", "0.5", ",", "0.25", ",", "0"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Do", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"EP", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<dirac\>\"", "<>", 
+       RowBox[{"ToString", "[", "i", "]"}], "<>", "\"\<.pdf\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"plot", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Fdelta", "[", 
+         RowBox[{
+          RowBox[{"\[Alpha]values", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], ",", "p", ",", "\[CurlyEpsilon]"}],
+          "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"p", ",", 
+          RowBox[{"-", "15"}], ",", "15"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\[CurlyEpsilon]", ",", 
+          RowBox[{"-", "3"}], ",", "9"}], "}"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "\"\<\\\\delta\\\\text{-interaction with \
+}\\\\alpha\\\\,\\\\sqrt{b}=\>\"", "<>", 
+         RowBox[{"ToString", "[", 
+          RowBox[{"\[Alpha]values", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], "]"}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"\"\<p/\\\\sqrt{b}\>\"", ",", " ", "\"\<\\\\epsilon/b\>\""}],
+          "}"}]}], "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+     "]"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", " ", 
+      RowBox[{"Range", "[", 
+       RowBox[{"Length", "[", "\[Alpha]values", "]"}], "]"}]}], "}"}]}], 
+   "\[IndentingNewLine]", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8402034032843657`*^9, 3.8402034072075443`*^9}, {
+   3.840209695584484*^9, 3.840209717242648*^9}, {3.8402097855386972`*^9, 
+   3.84020980366107*^9}, {3.840209846873975*^9, 3.840209882038028*^9}, {
+   3.840210309495933*^9, 3.840210379583905*^9}, {3.840210482091546*^9, 
+   3.840210483899876*^9}, {3.840210556125018*^9, 3.840210557172182*^9}, {
+   3.840210737945485*^9, 3.840210744057991*^9}, 3.840210818490952*^9, {
+   3.8402108902112303`*^9, 3.840210910525372*^9}},
+ CellLabel->"In[17]:=",ExpressionUUID->"39792e20-8da6-4603-a519-23e917347135"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ContourPlot", "precw", 
+   "\"The precision of the argument function \
+(\\!\\(\\*RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \
+\\\"0.3535533905932738`\\\"}], \\\" \\\", RowBox[{\\\"ParabolicCylinderD\\\", \
+\\\"[\\\", RowBox[{FractionBox[RowBox[{\\\"1\\\", \\\"+\\\", \\\"\
+\[CurlyEpsilon]\\\"}], \\\"2\\\"], \\\",\\\", RowBox[{RowBox[{\\\"-\\\", \
+SqrtBox[\\\"2\\\"]}], \\\" \\\", \\\"p\\\"}]}], \\\"]\\\"}], \\\" \\\", \
+RowBox[{\\\"ParabolicCylinderD\\\", \\\"[\\\", RowBox[{FractionBox[RowBox[{\\\
+\"1\\\", \\\"+\\\", \\\"\[CurlyEpsilon]\\\"}], \\\"2\\\"], \\\",\\\", \
+RowBox[{SqrtBox[\\\"2\\\"], \\\" \\\", \\\"p\\\"}]}], \\\"]\\\"}]}], \
+\\\"+\\\", RowBox[{RowBox[{\\\"ParabolicCylinderD\\\", \\\"[\\\", \
+RowBox[{FractionBox[RowBox[{\\\"1\\\", \\\"+\\\", \\\"\[CurlyEpsilon]\\\"}], \
+\\\"2\\\"], \\\",\\\", RowBox[{SqrtBox[\\\"2\\\"], \\\" \\\", \\\"p\\\"}]}], \
+\\\"]\\\"}], \\\" \\\", RowBox[{\\\"ParabolicCylinderD\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"1\\\", \\\"+\\\", FractionBox[RowBox[{\\\"1\\\", \
+\\\"+\\\", \\\"\[CurlyEpsilon]\\\"}], \\\"2\\\"]}], \\\",\\\", \
+RowBox[{RowBox[{\\\"-\\\", SqrtBox[\\\"2\\\"]}], \\\" \\\", \\\"p\\\"}]}], \\\
+\"]\\\"}]}], \\\"+\\\", RowBox[{RowBox[{\\\"ParabolicCylinderD\\\", \
+\\\"[\\\", RowBox[{FractionBox[RowBox[{\\\"1\\\", \\\"+\\\", \\\"\
+\[CurlyEpsilon]\\\"}], \\\"2\\\"], \\\",\\\", RowBox[{RowBox[{\\\"-\\\", \
+SqrtBox[\\\"2\\\"]}], \\\" \\\", \\\"p\\\"}]}], \\\"]\\\"}], \\\" \\\", \
+RowBox[{\\\"ParabolicCylinderD\\\", \\\"[\\\", RowBox[{RowBox[{\\\"1\\\", \
+\\\"+\\\", FractionBox[RowBox[{\\\"1\\\", \\\"+\\\", \
+\\\"\[CurlyEpsilon]\\\"}], \\\"2\\\"]}], \\\",\\\", \
+RowBox[{SqrtBox[\\\"2\\\"], \\\" \\\", \\\"p\\\"}]}], \\\"]\\\"}]}]}], \
+\\\")\\\"}], \\\"-\\\", \\\"0\\\"}]\\)) is less than WorkingPrecision (\\!\\(\
+\\*RowBox[{\\\"200.`\\\"}]\\)).\"", 2, 18, 5, 30763635180282482359, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.84021187081894*^9},
+ CellLabel->
+  "During evaluation of \
+In[17]:=",ExpressionUUID->"0cd3b243-5f1e-4a56-ac52-f0111cfbf19e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ContourPlot", "precw", 
+   "\"The precision of the argument function \
+(\\!\\(\\*RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \
+\\\"0.7071067811865476`\\\"}], \\\" \\\", RowBox[{\\\"ParabolicCylinderD\\\", \
+\\\"[\\\", RowBox[{FractionBox[RowBox[{\\\"1\\\", \\\"+\\\", \\\"\
+\[CurlyEpsilon]\\\"}], \\\"2\\\"], \\\",\\\", RowBox[{RowBox[{\\\"-\\\", \
+SqrtBox[\\\"2\\\"]}], \\\" \\\", \\\"p\\\"}]}], \\\"]\\\"}], \\\" \\\", \
+RowBox[{\\\"ParabolicCylinderD\\\", \\\"[\\\", RowBox[{FractionBox[RowBox[{\\\
+\"1\\\", \\\"+\\\", \\\"\[CurlyEpsilon]\\\"}], \\\"2\\\"], \\\",\\\", \
+RowBox[{SqrtBox[\\\"2\\\"], \\\" \\\", \\\"p\\\"}]}], \\\"]\\\"}]}], \
+\\\"+\\\", RowBox[{RowBox[{\\\"ParabolicCylinderD\\\", \\\"[\\\", \
+RowBox[{FractionBox[RowBox[{\\\"1\\\", \\\"+\\\", \\\"\[CurlyEpsilon]\\\"}], \
+\\\"2\\\"], \\\",\\\", RowBox[{SqrtBox[\\\"2\\\"], \\\" \\\", \\\"p\\\"}]}], \
+\\\"]\\\"}], \\\" \\\", RowBox[{\\\"ParabolicCylinderD\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"1\\\", \\\"+\\\", FractionBox[RowBox[{\\\"1\\\", \
+\\\"+\\\", \\\"\[CurlyEpsilon]\\\"}], \\\"2\\\"]}], \\\",\\\", \
+RowBox[{RowBox[{\\\"-\\\", SqrtBox[\\\"2\\\"]}], \\\" \\\", \\\"p\\\"}]}], \\\
+\"]\\\"}]}], \\\"+\\\", RowBox[{RowBox[{\\\"ParabolicCylinderD\\\", \
+\\\"[\\\", RowBox[{FractionBox[RowBox[{\\\"1\\\", \\\"+\\\", \\\"\
+\[CurlyEpsilon]\\\"}], \\\"2\\\"], \\\",\\\", RowBox[{RowBox[{\\\"-\\\", \
+SqrtBox[\\\"2\\\"]}], \\\" \\\", \\\"p\\\"}]}], \\\"]\\\"}], \\\" \\\", \
+RowBox[{\\\"ParabolicCylinderD\\\", \\\"[\\\", RowBox[{RowBox[{\\\"1\\\", \
+\\\"+\\\", FractionBox[RowBox[{\\\"1\\\", \\\"+\\\", \
+\\\"\[CurlyEpsilon]\\\"}], \\\"2\\\"]}], \\\",\\\", \
+RowBox[{SqrtBox[\\\"2\\\"], \\\" \\\", \\\"p\\\"}]}], \\\"]\\\"}]}]}], \
+\\\")\\\"}], \\\"-\\\", \\\"0\\\"}]\\)) is less than WorkingPrecision (\\!\\(\
+\\*RowBox[{\\\"200.`\\\"}]\\)).\"", 2, 18, 6, 30763635180282482359, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.840212141975789*^9},
+ CellLabel->
+  "During evaluation of \
+In[17]:=",ExpressionUUID->"327da2b4-16d1-40d0-9c2f-2b238c499b9f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ContourPlot", "precw", 
+   "\"The precision of the argument function \
+(\\!\\(\\*RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{RowBox[{\\\"-\\\", \
+\\\"1.0606601717798214`\\\"}], \\\" \\\", RowBox[{\\\"ParabolicCylinderD\\\", \
+\\\"[\\\", RowBox[{FractionBox[RowBox[{\\\"1\\\", \\\"+\\\", \\\"\
+\[CurlyEpsilon]\\\"}], \\\"2\\\"], \\\",\\\", RowBox[{RowBox[{\\\"-\\\", \
+SqrtBox[\\\"2\\\"]}], \\\" \\\", \\\"p\\\"}]}], \\\"]\\\"}], \\\" \\\", \
+RowBox[{\\\"ParabolicCylinderD\\\", \\\"[\\\", RowBox[{FractionBox[RowBox[{\\\
+\"1\\\", \\\"+\\\", \\\"\[CurlyEpsilon]\\\"}], \\\"2\\\"], \\\",\\\", \
+RowBox[{SqrtBox[\\\"2\\\"], \\\" \\\", \\\"p\\\"}]}], \\\"]\\\"}]}], \
+\\\"+\\\", RowBox[{RowBox[{\\\"ParabolicCylinderD\\\", \\\"[\\\", \
+RowBox[{FractionBox[RowBox[{\\\"1\\\", \\\"+\\\", \\\"\[CurlyEpsilon]\\\"}], \
+\\\"2\\\"], \\\",\\\", RowBox[{SqrtBox[\\\"2\\\"], \\\" \\\", \\\"p\\\"}]}], \
+\\\"]\\\"}], \\\" \\\", RowBox[{\\\"ParabolicCylinderD\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"1\\\", \\\"+\\\", FractionBox[RowBox[{\\\"1\\\", \
+\\\"+\\\", \\\"\[CurlyEpsilon]\\\"}], \\\"2\\\"]}], \\\",\\\", \
+RowBox[{RowBox[{\\\"-\\\", SqrtBox[\\\"2\\\"]}], \\\" \\\", \\\"p\\\"}]}], \\\
+\"]\\\"}]}], \\\"+\\\", RowBox[{RowBox[{\\\"ParabolicCylinderD\\\", \
+\\\"[\\\", RowBox[{FractionBox[RowBox[{\\\"1\\\", \\\"+\\\", \\\"\
+\[CurlyEpsilon]\\\"}], \\\"2\\\"], \\\",\\\", RowBox[{RowBox[{\\\"-\\\", \
+SqrtBox[\\\"2\\\"]}], \\\" \\\", \\\"p\\\"}]}], \\\"]\\\"}], \\\" \\\", \
+RowBox[{\\\"ParabolicCylinderD\\\", \\\"[\\\", RowBox[{RowBox[{\\\"1\\\", \
+\\\"+\\\", FractionBox[RowBox[{\\\"1\\\", \\\"+\\\", \
+\\\"\[CurlyEpsilon]\\\"}], \\\"2\\\"]}], \\\",\\\", \
+RowBox[{SqrtBox[\\\"2\\\"], \\\" \\\", \\\"p\\\"}]}], \\\"]\\\"}]}]}], \
+\\\")\\\"}], \\\"-\\\", \\\"0\\\"}]\\)) is less than WorkingPrecision (\\!\\(\
+\\*RowBox[{\\\"200.`\\\"}]\\)).\"", 2, 18, 7, 30763635180282482359, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.84021242613588*^9},
+ CellLabel->
+  "During evaluation of \
+In[17]:=",ExpressionUUID->"f7948ec0-df91-4898-8afd-57d8fcef875e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General", "stop", 
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"ContourPlot\\\", \\\"::\
+\\\", \\\"precw\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"", 2, 18, 8, 30763635180282482359, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.840212426144725*^9},
+ CellLabel->
+  "During evaluation of \
+In[17]:=",ExpressionUUID->"380d7f5d-725f-47e7-a87c-7c556045a336"]
+}, Open  ]]
+},
+WindowSize->{630., 741.75},
+WindowMargins->{{Automatic, 0}, {0, Automatic}},
+TaggingRules->{
+ "WelcomeScreenSettings" -> {"FEStarting" -> False}, "TryRealOnly" -> False},
+SpellingDictionaries->{"CorrectWords"->{"png"}},
+FrontEndVersion->"12.2 for Linux x86 (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"99f17f85-eceb-4c6d-8e4d-8c122c722c2e"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 279, 8, 35, "Text",ExpressionUUID->"d61f0540-aced-47f3-9db3-23e3c2116657"],
+Cell[840, 30, 269, 8, 81, "Text",ExpressionUUID->"2d9398ba-7436-4392-b36b-4c90b952e017"],
+Cell[1112, 40, 1172, 30, 170, "Input",ExpressionUUID->"797e3a68-4d33-465f-9f22-77a25ae7438f",
+ InitializationCell->True],
+Cell[2287, 72, 2809, 65, 422, "Input",ExpressionUUID->"49b56a43-2bb7-44ac-8741-3489d74a2159"],
+Cell[5099, 139, 437, 15, 104, "Text",ExpressionUUID->"c3498968-0066-484e-a940-9aad40c2d2a4"],
+Cell[5539, 156, 1554, 43, 92, "Input",ExpressionUUID->"69d85686-5dfb-4848-a121-15b86c963179"],
+Cell[7096, 201, 381, 14, 58, "Text",ExpressionUUID->"8fb5a1c7-8727-411d-be0d-28955e95e11e"],
+Cell[7480, 217, 816, 22, 51, "Input",ExpressionUUID->"a2067c52-3366-4687-a16e-e2b4a98d59b2"],
+Cell[8299, 241, 385, 12, 58, "Text",ExpressionUUID->"b18f12bb-edf1-4ec2-ae99-081dd0273ea8"],
+Cell[8687, 255, 464, 11, 51, "Input",ExpressionUUID->"8bca9fcf-e26f-4663-bcf6-9be23cd40b56"],
+Cell[9154, 268, 294, 9, 104, "Text",ExpressionUUID->"56b9b3d0-6035-4eac-a998-cf9fd16c56bb"],
+Cell[CellGroupData[{
+Cell[9473, 281, 2959, 62, 298, "Input",ExpressionUUID->"2f3f9b87-42cf-465b-896e-4e2a3a537628"],
+Cell[12435, 345, 1146, 20, 75, "Message",ExpressionUUID->"f5f908e6-b991-46f5-ab54-7857336a52b8"],
+Cell[13584, 367, 1161, 20, 93, "Message",ExpressionUUID->"29342192-8fb2-4464-b236-e13d924d444b"],
+Cell[14748, 389, 1161, 20, 93, "Message",ExpressionUUID->"f6145fa0-688f-4f8e-bec1-42163dddb967"],
+Cell[15912, 411, 458, 10, 22, "Message",ExpressionUUID->"00f8d83e-75b4-4680-9833-e18116472ea6"]
+}, Open  ]],
+Cell[16385, 424, 191, 6, 58, "Text",ExpressionUUID->"0f702d1e-9b43-482c-9f73-f94d734aa52e"],
+Cell[CellGroupData[{
+Cell[16601, 434, 2656, 62, 298, "Input",ExpressionUUID->"39792e20-8da6-4603-a519-23e917347135"],
+Cell[19260, 498, 2096, 33, 147, "Message",ExpressionUUID->"0cd3b243-5f1e-4a56-ac52-f0111cfbf19e"],
+Cell[21359, 533, 2097, 33, 147, "Message",ExpressionUUID->"327da2b4-16d1-40d0-9c2f-2b238c499b9f"],
+Cell[23459, 568, 2096, 33, 147, "Message",ExpressionUUID->"f7948ec0-df91-4898-8afd-57d8fcef875e"],
+Cell[25558, 603, 456, 10, 22, "Message",ExpressionUUID->"380d7f5d-725f-47e7-a87c-7c556045a336"]
+}, Open  ]]
+}
+]
+*)
+
