@@ -19,6 +19,7 @@
 % Math
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{mathrsfs}
 
 % Custom commands
 \renewcommand{\d}{\ensuremath{\mathrm d}}
@@ -26,6 +27,8 @@
 \renewcommand{\i}{\ensuremath{\mathrm i}}
 \newcommand{\R}{\ensuremath{\mathbb R}}
 \renewcommand{\C}{\ensuremath{\mathbb C}}
+\newcommand{\N}{\ensuremath{\mathbb N}}
+\newcommand{\Hf}{\ensuremath{\mathscr H}}
 
 \title[Magnetic Transport]{Magnetic Transport Along \\ Translationally Invariant Obstacles}
 \subtitle{A Bachelor's Thesis Defense}
@@ -41,7 +44,7 @@
 \begin{frame}
     \frametitle{Magnetic \color{gray} Transport Along \\ Translationally Invariant Obstacles}
     \pause
-    A magnetic Hamiltonian
+    A magnetic quantum Hamiltonian
     \begin{equation*}
         H_0 = \big({ -\i\vec\nabla + \vec A }\big)^2 \: ,
     \end{equation*}
@@ -55,6 +58,9 @@
     \\\phantom{.}\\
     \pause
     This is the \textit{Landau Hamiltonian}.
+    \\\phantom{.}\\
+    \pause
+    Its spectrum is $\sigma(H) = \sigma_{\mathrm p}(H) = \Big\{ \, (2n+1) \, \lVert B_0\rVert \;\Big|\; n \in \N_0 \Big\}$.
 \end{frame}
 
 \begin{frame}
@@ -71,7 +77,7 @@
             \pause
             \item the layer is smoothly \structure{bent}
             \pause
-            \item Dirichlet boundary is assumed
+            \item Dirichlet boundary is assumed ($\psi(x) = 0$ for $x$ on boundary)
         \end{itemize}
     \end{itemize}
 \end{frame}
@@ -85,7 +91,7 @@
         \begin{itemize}
             \item the system is not restricted to a plane, but to a thin layer
             \item the layer is smoothly bent and \structure{invariant under translation $y \mapsto y + c$}
-            \item Dirichlet boundary is assumed
+            \item Dirichlet boundary is assumed ($\psi(x) = 0$ for $x$ on boundary)
         \end{itemize}
     \end{itemize}
 \end{frame}
@@ -124,7 +130,7 @@
             \pause
             \item[$\leftrightsquigarrow$] there are no stationary states
             \pause
-            \item[$\leftrightsquigarrow$] \structure{\textbf{Magnetic Transport!}}
+            \item[$\leftrightsquigarrow$] \structure{\textbf{Magnetic Transport!}} \textit{(or Iwatsuka type effect)}
         \end{itemize}
     \end{itemize}
     \vspace*{2cm}
@@ -147,6 +153,7 @@
     \frametitle{The two parts}
 
     \begin{enumerate}
+        \pause
         \item Summary of known results
         \\[5pt]
         \begin{itemize}
@@ -160,26 +167,96 @@
             \\[15pt]
         \end{itemize}
         \pause
-        \item Original work
+        \item Original work (potential obstacles)
         \\[5pt]
         \begin{itemize}
             \item Half-plane with Robin boundary
-            \\[5pt]
+            \begin{itemize}
+                \item $\psi \in L^2([0,\infty)) \:, \qquad \alpha \, \psi(0, y) + \partial_x \psi(0,y) = 0$
+                \\[15pt]
+            \end{itemize}
             \item Dirac $\delta$-interaction on a line
+            \begin{itemize}
+                \item $\psi \in L^2(\R) \:, \qquad \partial_x \psi(0+, y) - \partial_x \psi(0-, y) = \alpha \, \psi(0, y)$
+            \end{itemize}
         \end{itemize}
     \end{enumerate}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Frame Title}
-    \centering
-    \animategraphics[autoplay,loop,height=225pt]{1}{plots/robin}{1}{17}
+    \frametitle{General Technique \color{gray} for a potential perturbation}
+    \pause
+    We choose the Landau gauge:
+    \begin{equation*}
+        A_x = 0 \: , \quad
+        A_y = b \, Q_x \: .
+    \end{equation*}
+    The Hamiltonian is:
+    \begin{equation*}
+    \begin{aligned}
+        H &= P_x^{\,2} + \big( \structure{P_y} + b \, Q_x \big)^2 + V(x)
+        \pause & & {/} \; P_y \overset{\mathscr F}{\longmapsto} Q_p
+        \\[5pt] \pause
+        &\simeq P_x^{\,2} + \big( \structure{Q_p} + b \, Q_x \big)^2 + V(x)
+        \pause & & {/} \; \text{“fix } p \text{”}
+        \\[5pt] \pause
+        &\simeq \int^\oplus_\R \!\! \Big(
+            P_x^{\,2} + \big( \structure{p} + b \, Q_x \big)^2 + V(x)
+        \Big) \; \d p
+        \\[5pt] \pause
+        &=: \int^\oplus_\R \; \structure{\Hf(p)} \; \d p
+        \: ,
+    \end{aligned}
+    \end{equation*}
+    where $\Hf(p)$ is 1D and (hopefully) has discrete spectrum.
 \end{frame}
 
 \begin{frame}
-    \frametitle{Frame Title}
+    \frametitle{The Spectrum of a Direct Integral}
+    \vspace{0.5cm}
     \centering
-    \animategraphics[autoplay,loop,height=225pt]{1}{plots/dirac}{1}{22}
+    \includegraphics[scale=0.8]{direct_integral_spectrum.pdf}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Half-plane with Robin boundary}
+    \centering
+    \includegraphics[height=225pt]{plots/robin7.pdf}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Half-plane with Robin boundary}
+    \centering
+    \includegraphics[height=225pt]{plots/robin1.pdf}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Half-plane with Robin boundary}
+    \centering
+    \animategraphics[autoplay,loop,height=225pt]{2}{plots/robin}{1}{17}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Dirac $\delta$-interaction}
+    \centering
+    \includegraphics[height=225pt]{plots/dirac4.pdf}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Dirac $\delta$-interaction}
+    \centering
+    \includegraphics[height=225pt]{plots/dirac18.pdf}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Dirac $\delta$-interaction}
+    \centering
+    \animategraphics[autoplay,loop,height=225pt]{2}{plots/dirac}{1}{22}
+\end{frame}
+
+\begin{frame}
+    \centering \Large
+    Thank you for your attention!
 \end{frame}
 
 
