@@ -29,6 +29,8 @@
 \renewcommand{\C}{\ensuremath{\mathbb C}}
 \newcommand{\N}{\ensuremath{\mathbb N}}
 \newcommand{\Hf}{\ensuremath{\mathscr H}}
+\newcommand{\Sp}{\ensuremath{\sigma}}
+\newcommand{\SpAc}{\ensuremath{\sigma_{\mathrm{ac.}}}}
 
 \title[Magnetic Transport]{Magnetic Transport Along \\ Translationally Invariant Obstacles}
 \subtitle{A Bachelor's Thesis Defense}
@@ -252,6 +254,31 @@
     \frametitle{Dirac $\delta$-interaction}
     \centering
     \animategraphics[autoplay,loop,height=225pt]{2}{plots/dirac}{1}{22}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Results}
+    \small
+    Let $H_\alpha$ be the Landau Hamiltonian in a half-plane with Robin boundary. If $\alpha > 0$, then there exists $E \in (-\infty, \Theta_0)$ such that $ \Sp(H_\alpha) = \SpAc(H_\alpha) = [E \, b, \; \infty )$.
+    If $\alpha < 0$, then there exists $E \in (\Theta_0, 1)$ such that $\Sp(H_\alpha) = \SpAc(H_\alpha) = [E \, b, \; \infty )$.
+    And finally, if $\alpha = 0$, then $\Sp(H_\alpha) = \SpAc(H_\alpha) = [\Theta_0 \, b, \; \infty )$. Here $\Theta_0 \approx 0.590106125$.
+
+    \bigskip
+
+    Let $H_\alpha$ be the Landau Hamiltonian in a plane with $\delta$-interaction. If $\alpha>0$, then for each $k \in \N_0$ there exists $E_k \in (0, 2)$ such that
+    \begin{equation*}
+        \Sp(H_\alpha) = \SpAc(H_\alpha) =
+        \bigcup_{k \in \N_0}
+        \big[ b \, (2k+1), \; b \, (2k+1+E_k) \big]
+        \: .
+    \end{equation*}
+    If $\alpha<0$, then there exists $E_0 \in (0, \infty)$ and for each $n \in \N$ there is $E_n \in (0, 2)$ such that
+    \begin{equation*}
+        \Sp(H_\alpha) = \SpAc(H_\alpha) =
+        \bigcup_{k \in \N_0}
+        \big[ b \, (2k+1-E_k), \; b \, (2k+1) \big]
+        \: .
+    \end{equation*}
 \end{frame}
 
 \begin{frame}
